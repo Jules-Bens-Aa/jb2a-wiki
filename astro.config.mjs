@@ -3,8 +3,9 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://jules-bens-aa.github.io/jb2a-wiki',
-	// base: 'jb2a-wiki',
+	site: process.env.CI
+	? 'https://jules-bens-aa.github.io' : 'http://localhost:4321',
+	base: '/jb2a-wiki',
 	integrations: [
 		starlight({
 
