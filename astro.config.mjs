@@ -57,6 +57,7 @@ export default defineConfig({
                 items: [
                     'template/template',
                     'template/website-cmd',
+                    'template/tidbits'
                 ]
             }
         ],

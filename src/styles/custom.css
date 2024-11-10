@@ -86,6 +86,51 @@
 	};
 }
 
+/* width */
+::-webkit-scrollbar {
+	width: 10px;
+	}
+
+/* Track */
+::-webkit-scrollbar-track {
+	background: var(--jb2a_grey-000);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+	background: var(--jb2a_yellow-300);
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+	background: var(--jb2a_orange-000);
+}
+
+/* width */
+[data-theme='light']
+::-webkit-scrollbar {
+	width: 100px;
+	}
+
+/* Track */
+[data-theme='light']
+::-webkit-scrollbar-track {
+	background: var(--jb2a_grey-000);
+}
+
+/* Handle */
+[data-theme='light']
+::-webkit-scrollbar-thumb {
+	background: var(--jb2a_yellow-300);
+}
+
+/* Handle on hover */
+[data-theme='light']
+::-webkit-scrollbar-thumb:hover {
+	background: var(--jb2a_orange-000);
+}
+
+
 :root[data-theme='light'], [data-theme='light'] 
 /* Light Theme Color */
 ::backdrop {
@@ -203,7 +248,7 @@
 
 
 
-/* Image Zoon CSS */
+/* Image Zoom CSS */
 
 :root {
 
@@ -214,4 +259,4 @@
 :root[data-theme='light'] {
 	/* Custom backdrop background color in light mode. */
 	--starlight-image-zoom-backdrop-bg: oklch(100% 0 0);
-  }
+}
