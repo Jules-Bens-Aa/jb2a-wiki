@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import starlightImageZoom from 'starlight-image-zoom'
 
 // https://astro.build/config
 export default defineConfig({
@@ -7,6 +8,7 @@ export default defineConfig({
     ? 'https://jules-bens-aa.github.io' : 'http://localhost:4321',
     base: '/jb2a-wiki',
     integrations: [starlight({
+        plugins: [starlightImageZoom()],
         title: 'JB2A Wiki',
         logo: {
             src: './src/assets/img/jb2a-wiki-banner-02.png',

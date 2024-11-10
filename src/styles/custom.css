@@ -155,7 +155,7 @@
 }
 
 
-
+/* Scrollbar CSS */
 
 /* width */
 ::-webkit-scrollbar {
@@ -200,3 +200,18 @@
 ::-webkit-scrollbar-thumb:hover {
     background: var(--jb2a-orange-000);
 }
+
+
+
+/* Image Zoon CSS */
+
+:root {
+
+	/* Custom backdrop background color in dark mode. */
+	--starlight-image-zoom-backdrop-bg: oklch(0 0 0);
+}
+
+:root[data-theme='light'] {
+	/* Custom backdrop background color in light mode. */
+	--starlight-image-zoom-backdrop-bg: oklch(100% 0 0);
+  }
