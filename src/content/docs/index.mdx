@@ -1,0 +1,36 @@
+---
+title: Welcome to JB2A Wiki
+description: Official JB2A documentation
+template: splash
+hero:
+  tagline: All you need to know about JB2A content !
+  image:
+    file: ../../assets/gif/logo_circle_400.gif
+  actions:
+    - text: Getting Started
+      link: /getting-started/prerequisites
+      icon: right-arrow
+    - text: Patreon
+      link: https://www.patreon.com/JB2A
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+
+## Next steps
+
+<CardGrid stagger>
+	<Card title="Update content" icon="pencil">
+		Edit `src/content/docs/index.mdx` to see this page change.
+	</Card>
+	<Card title="Add new content" icon="add-document">
+		Add Markdown or MDX files to `src/content/docs` to create new pages.
+	</Card>
+	<Card title="Configure your site" icon="setting">
+		Edit your `sidebar` and other config in `astro.config.mjs`.
+	</Card>
+	<Card title="Read the docs" icon="open-book">
+		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+	</Card>
+</CardGrid>
