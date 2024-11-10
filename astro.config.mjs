@@ -7,7 +7,6 @@ export default defineConfig({
     ? 'https://jules-bens-aa.github.io' : 'http://localhost:4321',
     base: '/jb2a-wiki',
     integrations: [starlight({
-
         title: 'JB2A Wiki',
         logo: {
             src: './src/assets/img/jb2a-wiki-banner-02.png',
