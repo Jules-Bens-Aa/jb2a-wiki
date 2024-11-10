@@ -3,8 +3,8 @@ import starlight from '@astrojs/starlight';
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://jules-bens-aa.github.io',
-	base: 'jb2a-wiki',
+	site: 'https://jules-bens-aa.github.io/jb2a-wiki',
+	// base: 'jb2a-wiki',
 	integrations: [
 		starlight({
 
@@ -14,7 +14,7 @@ export default defineConfig({
 				replacesTitle: true,
 			  },
 			social: {
-				github: 'https://github.com/withastro/starlight',
+				github: 'https://github.com/Jules-Bens-Aa/jb2a-wiki',
 			},
 			customCss: [
 				'./src/styles/custom.css',
