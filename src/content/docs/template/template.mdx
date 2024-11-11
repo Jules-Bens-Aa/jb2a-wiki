@@ -2,6 +2,12 @@
 title: Template
 description: This is a template for categories
 draft: false
+banner:
+  content: |
+    Pages can have annoucement with links !
+    <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> Awesome 😎</a>,
+    check the Frontmatter.
+    
 ---
 
 # A compendium of tools for the wiki
@@ -13,6 +19,129 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor i
 ## Automatic heading anchor links
 
 We can create a custom [anchor](#anchor) like this. So usefull !
+
+## Blockquotes
+
+> Straightforward and simple enough!
+>
+> No need to go any further to explain how it works ... Maybe one more thing ... You need to leave an empty line in the `*.mdx` file to create a new paragraph.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+## Code Blocks
+
+The copy code button is always there by default.
+
+### Simple Block
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+```js
+new Sequence()
+    .effect()
+.play()
+```
+
+### Frames and Titles
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+#### A Tab
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+
+```js
+// Awesome-text.js
+new Sequence()
+    .effect()
+.play()
+```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+#### Terminal Style
+
+```bash title="Serious Title"
+new Sequence()
+    .effect()
+.play()
+```
+
+### Text Markers
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+
+
+#### Mark selection of text
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+
+```js "Sequence()" /Even.*supported/
+new Sequence()
+    .effect()
+.play()
+//'Even regular expressions are supported'
+```
+#### Mark as inserted or deleted
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi.
+
+```js ins=".scaleToObject" del=".scaletoobject"
+new Sequence()
+    .effect()
+        .scaletoobject
+        .scaleToObject
+.play()
+//'Even regular expressions are supported'
+```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+
+```diff lang="js"
+new Sequence()
+    .effect()
+-       .scaletoobject
++       .scaleToObject
+.play()
+```
+
+#### Mark a line
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+
+```js {2}
+new Sequence()
+    .effect()
+.play()
+```
+#### Or multiple ones
+
+```js {2-4,6}
+new Sequence()
+    .effect()
+        .file()
+        .name()
+        .scaleToObject()
+.play()
+```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+
+
+## Details or Accordions
+
+Perfect for questions of issues, the answers is hidden but default and allow to show more questions/issues on screen.
+
+<details>
+<summary>How can I install the patreon module?</summary>
+
+Read the doc !
+
+</details>
+
 
 ## Asides or Callouts
 
@@ -62,31 +191,24 @@ Don't say Beatlejuice three times in front of a mirror.
 Look behind you!
 :::
 
-## Blockquotes
-
-> Straightforward and simple enough!
->
-> No need to go any further to explain how it works ... Maybe one more thing ... You need to leave an empty line in the `*.mdx` file to create a new paragraph.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-
-Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
-## Code Blocks
-
-The copy code button is always there by default.
-
-```js
-new Sequence()
-.effect()
-.play()
-```
-
 ## Images
 
+We can display images like this with the following code
+
+```mdx
 import { Image } from 'astro:assets'
-import algorithm from '/src/assets/img/jb2a-wiki-banner-02.png'
+import JB2Abanner from '/src/assets/img/jb2a-wiki-banner-02.png'
 
-<Image src={algorithm} alt="JB2A Wiki Logo"/>
+<p align="center">
+  <Image src={JB2Abanner} alt="JB2A Banner" style="width: 50%;"/>
+</p>
+```
 
+And get this result
 
+import { Image } from 'astro:assets'
+import JB2Abanner from '/src/assets/img/jb2a-wiki-banner-02.png'
+
+<p align="center">
+  <Image src={JB2Abanner} alt="JB2A Banner" style="width: 50%;"/>
+</p>
