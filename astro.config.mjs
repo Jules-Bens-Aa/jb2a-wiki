@@ -28,14 +28,14 @@ export default defineConfig({
             baseUrl: 'https://github.com/Jules-Bens-Aa/jb2a-wiki/tree/main',
           }, 
         disable404Route: true,
-        favicon: './src/assets/vect/favicon.svg',
+        favicon: '/favicon.svg',
         head: [
             // Add ICO favicon fallback for Safari.
             {
               tag: 'link',
               attrs: {
                 rel: 'icon',
-                href: './src/assets/ico/favicon.ico',
+                href: '/favicon.ico',
                 sizes: '32x32',
               },
             },
