@@ -55,6 +55,7 @@ export default defineConfig({
             },
             {
                 label: 'Getting Started',
+                badge: 'Important',
                 collapsed: true,
                 items: [
                     'getting-started/prerequisites',
