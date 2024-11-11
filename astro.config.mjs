@@ -53,7 +53,7 @@ export default defineConfig({
         customCss: [
             './src/styles/custom.css',
             // Relative path to the @font-face CSS file.
-            //'./src/assets/fonts/font-face.css',
+            //'./src/assets/fonts/futura.css',
           ],
 
 // Sidebar config          
