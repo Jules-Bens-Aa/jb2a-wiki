@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightImageZoom from 'starlight-image-zoom'
+import starlightHeadingBadges from 'starlight-heading-badges'
 
 // https://astro.build/config
 export default defineConfig({
@@ -10,7 +11,10 @@ export default defineConfig({
     integrations: [starlight({
 
 // Plugins        
-        plugins: [starlightImageZoom()],
+        plugins: [
+            starlightImageZoom(),
+            starlightHeadingBadges()
+        ],
 
 // Website Config        
         title: 'JB2A Wiki',
