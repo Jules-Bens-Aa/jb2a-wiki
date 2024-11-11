@@ -62,7 +62,7 @@ import { Badge } from '@astrojs/starlight/components';
 </CardGrid>
 
 
-## File Tree 
+### File Tree 
 
 <LinkCard title="File Tree Documentation" href="http://localhost:4321/jb2a-wiki/template/website-cmd#file-tree"/>
 
@@ -93,24 +93,29 @@ import { Badge } from '@astrojs/starlight/components';
 
 </FileTree>
 
-## Link Buttons
+### Link Buttons
 
 <LinkCard title="Link Buttons Documentation" href="https://starlight.astro.build/components/link-buttons/" />
 
 ```js 
 import { LinkButton } from '@astrojs/starlight/components';
 
-<LinkButton href="src/content/docs/getting-started/jb2a-fvtt/">Get started - Foundry VTT</LinkButton>
-<LinkButton href="/jb2a-wiki/src/content/docs/getting-started/jb2a-fvtt/" variant="secondary">
-  Get started - Foundry VTT
+<LinkButton href="/jb2a-wiki/template/website-cmd/">Website Commands</LinkButton>
+<LinkButton href="/jb2a-wiki/home/" variant="secondary">
+  Home
 </LinkButton>
 ```
-<LinkButton href="/jb2a-wiki/template/website-cmd/">Get started - Foundry VTT</LinkButton>
-<LinkButton href="/jb2a-wiki/src/content/docs/getting-started/jb2a-fvtt/" variant="secondary">
-  Get started - Foundry VTT
+<LinkButton href="/jb2a-wiki/template/website-cmd/">Website Commands</LinkButton>
+<LinkButton href="/jb2a-wiki/home/" variant="secondary">
+  Home
 </LinkButton>
 
-[Link](/src/content/docs/getting-started/)
+### Simple Markdown Internal Link
+```js 
+[Markdown Link to Home](/jb2a-wiki/home/)
+```
+
+[Markdown Link to Home](/jb2a-wiki/home/)
 
 ### Icons
 <LinkCard title="Icons Documentation" href="https://starlight.astro.build/components/icons/"/>
@@ -119,6 +124,10 @@ import { LinkButton } from '@astrojs/starlight/components';
 <Icon name="open-book" />
 <a href="https://starlight.astro.build/reference/icons/#all-icons">All available icons from Starlight</a>  
 
+### Steps
+
+[See below for Steps](#merge-new-changes-from-main-to-my-local-branch)
+
 ## Github References:
 
 ### Merge new changes from main to my local branch
@@ -126,7 +135,6 @@ import { LinkButton } from '@astrojs/starlight/components';
 You need to make sure your current branch(dev1) is up to date with the main branch to avoid conflicts.
 :::
 
-## Steps
 <Steps>
 
 1. Import the component into your MDX file:
@@ -137,25 +145,17 @@ You need to make sure your current branch(dev1) is up to date with the main bran
 
 2. Wrap `<Steps>` around your ordered list items.
 
+    ```js  
+    <Steps>
+
+    1. Import the component into your MDX file:
+
+    2. Wrap `<Steps>` around your ordered list items.
+
+    </Steps>
+    ```
+
 </Steps>
-
-## Aside (Callouts)
-
-:::danger
-The `<Steps>` component does not accept any props
-:::
-
-## [Discord JS Formatting Code](#JS-Formatting)
-:::note
-You can format code in Discord like so:
-
-\`\`\`js  
-Code here  
-\`\`\`  
-
-:::
-
-
 
 <Steps>
 1. You can stash your changes on your current branch(this will store your changes in a stash while you pull the latest on main):
@@ -214,3 +214,16 @@ Code here
     git push origin --delete branchName 
     ```
 </Steps>
+
+
+## Discord 
+
+### [Discord JS Formatting Code](#JS-Formatting)
+:::note
+You can format code in Discord like so:
+
+\`\`\`js  
+Code here  
+\`\`\`  
+
+:::
