@@ -8,18 +8,47 @@ export default defineConfig({
     ? 'https://jules-bens-aa.github.io' : 'http://localhost:4321',
     base: '/jb2a-wiki',
     integrations: [starlight({
+
+// Plugins        
         plugins: [starlightImageZoom()],
+
+// Website Config        
         title: 'JB2A Wiki',
         logo: {
             src: './src/assets/img/jb2a-wiki-banner-02.png',
             replacesTitle: true
           },
         social: {
-            github: 'https://github.com/Jules-Bens-Aa/jb2a-wiki'
+            github: 'https://github.com/Jules-Bens-Aa/jb2a-wiki',
+            discord: 'https://discord.gg/gmd8MAPX4m',
+            patreon: 'https://www.patreon.com/JB2A',
+            youtube: 'https://www.youtube.com/channel/UCqLusRtLV7GXJo_xNNM3dOw',
         },
+        editLink: {
+            baseUrl: 'https://github.com/Jules-Bens-Aa/jb2a-wiki/tree/main',
+          }, 
+        disable404Route: true,
+        favicon: './src/assets/vect/favicon.svg',
+        head: [
+            // Add ICO favicon fallback for Safari.
+            {
+              tag: 'link',
+              attrs: {
+                rel: 'icon',
+                href: './src/assets/ico/favicon.ico',
+                sizes: '32x32',
+              },
+            },
+          ],
+
+// Custom Css files        
         customCss: [
             './src/styles/custom.css',
+            // Relative path to the @font-face CSS file.
+            //'./src/assets/fonts/font-face.css',
           ],
+
+// Sidebar config          
         sidebar: [
             {
                 label: 'Home', link: '/home'
@@ -60,6 +89,9 @@ export default defineConfig({
                 ]
             }
         ],
+
+// Table of contents global config
+        tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 4 },
 		}),
     ],
 });
