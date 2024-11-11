@@ -15,7 +15,7 @@ export default defineConfig({
 // Website Config        
         title: 'JB2A Wiki',
         logo: {
-            src: './src/assets/img/jb2a-wiki-banner-02.png',
+            src: './src/assets/img/jb2a-wiki-logo_340x100.webp',
             replacesTitle: true
           },
         social: {
@@ -40,7 +40,11 @@ export default defineConfig({
               },
             },
           ],
-
+// Custom Components
+        //components: {
+        //Override the SiteTitle.astro
+        //SiteTitle: './src/components/SiteTitleCustom.astro',
+        //},  
 // Custom Css files        
         customCss: [
             './src/styles/custom.css',
@@ -82,11 +86,22 @@ export default defineConfig({
                 ]
             },
             {
-                label: 'Template',
+                label: 'Patch Notes',
                 collapsed: true,
                 items: [
+                    'patchnotes/pn-demo',
+                    'patchnotes/pn-main'
+                ]
+            },
+            {
+                label: 'Template',
+                
+                collapsed: true,
+                badge: 'Admin',
+                items: [
                     'template/template',
-                    'template/website-cmd'
+                    'template/website-cmd',
+                    'template/todolist'
                 ]
             }
         ],
