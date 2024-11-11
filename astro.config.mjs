@@ -55,7 +55,7 @@ export default defineConfig({
             },
             {
                 label: 'Getting Started',
-                badge: 'Important',
+                // badge: 'Important',
                 collapsed: true,
                 items: [
                     'getting-started/prerequisites',
@@ -86,8 +86,7 @@ export default defineConfig({
                 collapsed: true,
                 items: [
                     'template/template',
-                    'template/website-cmd',
-                    'template/tidbits'
+                    'template/website-cmd'
                 ]
             }
         ],
