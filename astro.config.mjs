@@ -2,6 +2,7 @@ import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightImageZoom from 'starlight-image-zoom'
 import starlightHeadingBadges from 'starlight-heading-badges'
+import './src/styles/custom.css'
 
 // https://astro.build/config
 export default defineConfig({
@@ -19,7 +20,8 @@ export default defineConfig({
 // Website Config        
         title: 'JB2A Wiki',
         logo: {
-            src: './src/assets/img/jb2a-wiki-logo_340x100.webp',
+            light: './src/assets/img/wikilogo-light-512x128.webp',
+            dark: './src/assets/img/wikilogo-dark-512x128.webp',
             replacesTitle: true
           },
         social: {
@@ -46,9 +48,10 @@ export default defineConfig({
           ],
 // Custom Components
         //components: {
-        //Override the SiteTitle.astro
-        //SiteTitle: './src/components/SiteTitleCustom.astro',
-        //},  
+            //Override the SiteTitle.astro
+            //SiteTitle: './src/components/SiteTitleCustom.astro',
+             //},  
+        
 // Custom Css files        
         customCss: [
             './src/styles/custom.css',
@@ -59,7 +62,12 @@ export default defineConfig({
 // Sidebar config          
         sidebar: [
             {
-                label: 'Home', link: '/home'
+                label: 'Home', link: '/home',
+            },
+            {
+                label: '',
+                link: '',
+                attrs: {style: '  border-top: 1px solid var(--sl-color-hairline); border-radius: 0px; opacity: 1'}
             },
             {
                 label: 'Getting Started',
@@ -70,6 +78,11 @@ export default defineConfig({
                     'getting-started/our-content',
                     'getting-started/jb2a-fvtt'
                 ]
+            },
+            {
+                label: '',
+                link: '',
+                attrs: {style: '  border-bottom: 1px solid var(--sl-color-hairline); border-radius: 0px; opacity: 1'}
             },
             {
                 label: 'Frequently Asked Questions',
@@ -87,6 +100,14 @@ export default defineConfig({
                     'troubleshooting/mci',
                     'troubleshooting/jb2a',
                     'troubleshooting/fvtt'
+                ]
+            },
+            {
+                label: 'External Resources',
+                collapsed: true,
+                items: [
+                    'external-resources/sfx',
+                    'external-resources/useful-tools',
                 ]
             },
             {
