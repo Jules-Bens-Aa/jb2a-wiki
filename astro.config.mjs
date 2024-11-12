@@ -62,7 +62,8 @@ export default defineConfig({
 // Sidebar config          
         sidebar: [
             {
-                label: 'Home', link: '/home',
+                label: 'Home',
+                link: '/',
             },
             {
                 label: '',
