@@ -1,0 +1,23 @@
+---
+import type { Props } from '@astrojs/starlight/props';
+import Default from '@astrojs/starlight/components/SocialIcons.astro';
+---
+
+<a 
+    href="https://library.jb2a.com/" target="_blank">
+    Asset Library Viewer
+	<style>
+		a {
+			text-decoration: none;
+			color: var(--sl-color-white);
+			font-weight: 600;
+			/* font-size: var(--sl-text-h4); */
+		}
+		a:hover {
+			color: var(--sl-color-text-accent);
+		}
+	</style>
+</a>
+
+<Default {...Astro.props}><slot /></Default>
+

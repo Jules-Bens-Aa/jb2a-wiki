@@ -9,6 +9,14 @@ banner:
     check the Frontmatter of this page.</b>
     
 ---
+import { Badge } from '@astrojs/starlight/components';
+
+
+<Badge text="Note" variant="note" />
+<Badge text="Success" variant="success" />
+<Badge text="Tip" variant="tip" />
+<Badge text="Caution" variant="caution" />
+<Badge text="Danger" variant="danger" />
 
 # A compendium of tools for the wiki
 
@@ -74,7 +82,7 @@ new Sequence()
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 
 
-#### Mark selection of text
+#### Mark selection of text <Badge text="Note" variant="note" />
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
 
