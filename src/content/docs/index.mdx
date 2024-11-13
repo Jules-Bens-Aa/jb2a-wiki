@@ -1,6 +1,6 @@
 ---
 title: Welcome to JB2A Wiki
-description: Official JB2A documentation
+description: Official JB2A documentation/
 tableOfContents: false
 hero:
   tagline: All you need to know about JB2A content and how to use them !
@@ -16,22 +16,22 @@ hero:
       variant: secondary
 	  attrs: { target: '_blank'}
 ---
-
-import { Card, CardGrid } from '@astrojs/starlight/components';
+import MyCard from '../../components/MyCard.astro';
+import { CardGrid } from '@astrojs/starlight/components';
 
 ## Category Description
 
 <CardGrid>
-	<Card title="F.A.Q." icon="information">
+	<MyCard title="F.A.Q." icon="information">
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-	</Card>
-	<Card title="Troubleshooting" icon="error">
+	</MyCard>
+	<MyCard title="Troubleshooting" icon="error">
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
-	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
-	</Card>
+	</MyCard>
+	<MyCard title="External Resources" icon="setting">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+	</MyCard>
+	<MyCard title="Patch Notes" icon="open-book">
+		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+	</MyCard>
 </CardGrid>

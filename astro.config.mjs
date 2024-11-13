@@ -1,8 +1,8 @@
 import { defineConfig } from 'astro/config';
+import starlightHeadingBadges from 'starlight-heading-badges'
 import starlight from '@astrojs/starlight';
 import starlightImageZoom from 'starlight-image-zoom'
-import starlightHeadingBadges from 'starlight-heading-badges'
-import './src/styles/custom.css'
+
 
 // https://astro.build/config
 export default defineConfig({
@@ -47,16 +47,15 @@ export default defineConfig({
             },
           ],
 // Custom Components
-        //components: {
-            //Override the SiteTitle.astro
-            //SiteTitle: './src/components/SiteTitleCustom.astro',
-             //},  
+        components: {
+            //Override *.astro
+            Badge: './src/components/MyBadge.astro',
+            Card: '/src/components/MyCard.astro',
+             },  
         
 // Custom Css files        
         customCss: [
             './src/styles/custom.css',
-            // Relative path to the @font-face CSS file.
-            //'./src/assets/fonts/futura.css',
           ],
 
 // Sidebar config          
