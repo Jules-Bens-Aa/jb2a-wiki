@@ -1,6 +1,7 @@
 import { defineConfig } from 'astro/config';
-import starlightHeadingBadges from 'starlight-heading-badges'
 import starlight from '@astrojs/starlight';
+
+import starlightHeadingBadges from 'starlight-heading-badges'
 import starlightImageZoom from 'starlight-image-zoom'
 
 
@@ -49,8 +50,8 @@ export default defineConfig({
 // Custom Components
         components: {
             //Override *.astro
-            Badge: './src/components/MyBadge.astro',
-            Card: '/src/components/MyCard.astro',
+            SocialIcons: './src/components/CustomSocialIcons.astro',
+            Hero: './src/components/CustomHero.astro',
              },  
         
 // Custom Css files        
@@ -60,7 +61,7 @@ export default defineConfig({
 
 // Sidebar config          
         sidebar: [
-            {
+            { 
                 label: 'Home',
                 link: '/',
             },

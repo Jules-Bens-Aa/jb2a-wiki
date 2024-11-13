@@ -143,12 +143,32 @@
 	--sl-z-index-navbar: 10;
 	--sl-z-index-skiplink: 20;
 
+	/* Color Badges */
+	--sl-badge-default-border: transparent;
+	--sl-badge-default-bg: var(--sl-color-accent);
+	--sl-badge-default-text: var(--sl-color-text-invert);
+
+	--sl-badge-note-border: transparent;
+	--sl-badge-note-bg: var(--sl-color-blue);
+	--sl-badge-note-text: #fff;
+
+	--sl-badge-danger-border: transparent;
+	--sl-badge-danger-bg: var(--sl-color-red);
+	--sl-badge-danger-text: #fff;
+
+	--sl-badge-success-border: transparent;
+	--sl-badge-success-bg: var(--sl-color-green);
+	--sl-badge-success-text: var(--sl-color-text-invert);
+
+	--sl-badge-caution-border: transparent;
+	--sl-badge-caution-bg: var(--sl-color-orange);
+	--sl-badge-caution-text: var(--sl-color-text-invert);
+
+	--sl-badge-tip-border: transparent;
+	--sl-badge-tip-bg: var(--sl-color-purple);
+	--sl-badge-tip-text: #fff;
+
 }
-
-
-	
-
-
 
 :root[data-theme='light'],
 [data-theme='light'] ::backdrop {
@@ -274,3 +294,13 @@
 ::-webkit-scrollbar-thumb:hover {
     background: var(--jb2a-orange-000);
 }
+
+
+@media (min-width: 50rem) {
+	.hero {
+		grid-template-columns: 7fr 4fr;
+		gap: 3%;
+		padding-block: clamp(2.5rem, calc(1rem + 10vmin), 5rem);
+	}
+  }
+

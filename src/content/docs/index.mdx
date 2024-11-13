@@ -10,28 +10,22 @@ hero:
     - text: Getting Started
       link: getting-started/prerequisites
       icon: open-book
-    - text: Asset Library Viewer
-      link: https://library.jb2a.com/
-      icon: external
-      variant: secondary
-	  attrs: { target: '_blank'}
 ---
-import MyCard from '../../components/MyCard.astro';
-import { CardGrid } from '@astrojs/starlight/components';
+import { LinkCard, Card, CardGrid } from '@astrojs/starlight/components';
 
 ## Category Description
 
 <CardGrid>
-	<MyCard title="F.A.Q." icon="information">
+	<Card title="F.A.Q." icon="information">
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-	</MyCard>
-	<MyCard title="Troubleshooting" icon="error">
+	</Card>
+	<Card title="Troubleshooting" icon="error">
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-	</MyCard>
-	<MyCard title="External Resources" icon="setting">
+	</Card>
+	<Card title="External Resources" icon="setting">
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-	</MyCard>
-	<MyCard title="Patch Notes" icon="open-book">
+	</Card>
+	<Card title="Patch Notes" icon="open-book">
 		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-	</MyCard>
+	</Card>
 </CardGrid>
