@@ -1,3 +1,59 @@
 ---
 title: Our Content
 ---
+import { Aside } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { FileTree } from '@astrojs/starlight/components';
+
+### JB2A + Foundry VTT core
+
+To help you understand why you'll need additional modules to automate animated effects, let's start with what you can do in FoundryVTT without them. What is described in this subsection applies to any game system and without additional modules. In other words, with the FoundryVTT core.
+
+We'll come back to this in more detail later, but our assets are in the `Library` folder in our modules. Once in the FoundryVTT `data` folder, you'll find them in this location: 
+
+<FileTree>
+
+- data
+  - modules
+    - jb2a-module
+      - **Library/**
+      - scripts/
+      - module.json
+      - README.md  
+
+</FileTree>
+
+<Tabs>
+  <TabItem label="Tiles" icon="star">
+
+    To use an animated asset as a tile to a FoundryVTT canvas, follow the instructions on the official website.
+    [FoundryVTT Tiles Documentation](https://foundryvtt.com/article/tiles/)
+
+    <Aside title= "What is a Tile?">
+    If you don't know what a tile is on FoundryVTT, we encourage you to read the first `Overview` section of their documentation.
+    </Aside>
+
+  </TabItem>
+  <TabItem label="Tokens" icon="moon">
+
+    To use an animated asset as a token on FoundryVTT, follow the instructions on the official website. The information you need can be found in the ‘Token Configuration Options -> The Appearance Tab’ section. 
+    [FoundryVTT Token Documentation](https://foundryvtt.com/article/tokens/)
+
+    <Aside title="What is a Token?">
+    If you don't know what a token is on FoundryVTT, we encourage you to read the first `Overview` section of their documentation.
+    </Aside>
+
+  </TabItem>
+    <TabItem label="Macros" icon="moon">
+    
+    This method requires a __good knowledge of javascript__ to be able to do just about anything with our assets. To find out more about what a macro is on FoundryVTT and how to use them, read the documentation provided on their official website.
+    [FoundryVTT Macros Documentation](https://foundryvtt.com/article/macros/)
+
+    Depending on the game system you're using, you won't necessarily have to use macros to do the most basic automation, such as triggering an animated effect when a player takes an action on their character sheet.
+
+    <Aside>
+    The Sequencer module, created by Fantasy Calendar, makes it much easier to write macros to create effects from our animated assets. We'll talk more about this later.
+    </Aside>
+
+  </TabItem>
+</Tabs>

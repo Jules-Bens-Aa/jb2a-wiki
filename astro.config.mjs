@@ -76,6 +76,8 @@ export default defineConfig({
                 collapsed: true,
                 items: [
                     'getting-started/prerequisites',
+                    'getting-started/understanding-automation',
+                    'getting-started/our-patreon',
                     'getting-started/our-content',
                     'getting-started/jb2a-fvtt'
                 ]
@@ -84,6 +86,10 @@ export default defineConfig({
                 label: '',
                 link: '',
                 attrs: {style: '  border-bottom: 1px solid var(--sl-color-hairline); border-radius: 0px; opacity: 1'}
+            },
+            { 
+                label: 'Other Projects',
+                link: '/other-projects',
             },
             {
                 label: 'Frequently Asked Questions',
