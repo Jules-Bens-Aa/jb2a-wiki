@@ -13,7 +13,6 @@ import { LinkButton } from '@astrojs/starlight/components';
 
 ## Starlight
 
-
 ### Aside (Callout)
 [HTML/JSX Documentation](https://starlight.astro.build/components/asides/)  
 [MDX Documentation](https://starlight.astro.build/guides/authoring-content/#asides)
@@ -92,6 +91,24 @@ import { Badge } from '@astrojs/starlight/components';
   - pages/
 
 </FileTree>
+
+### Images
+
+```js 
+import { Image } from 'astro:assets'
+import touch from '/src/assets/img/apple-touch-icon.png';
+
+<p align="center">
+  <Image src={touch} alt="JB2A Banner" style="width: 10%;"/>
+</p>
+```
+
+import { Image } from 'astro:assets'
+import touch from '/src/assets/img/apple-touch-icon.png';
+
+<p align="center">
+  <Image src={touch} alt="JB2A Banner" style="width: 10%;"/>
+</p>
 
 ### Link Buttons
 
