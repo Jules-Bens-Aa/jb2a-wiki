@@ -12,15 +12,20 @@ import fvttLandingPage from '/src/assets/img/fvtt-landingpage.png'
 import fvttAddOnModules from '/src/assets/img/fvtt-addon-modules.png'
 import fvttAddOnModulesInstall from '/src/assets/img/fvtt-addon-modules-install.png'
 import fvttAddOnModulesInstallFree from '/src/assets/img/fvtt-addon-modules-install-jb2afree.png'
+import fvttManageModule from '/src/assets/img/fvtt-managemodules.png'
+import fvttModuleManagement from '/src/assets/img/fvtt-modulemanagement.png'
 import fvttModuleOption from '/src/assets/img/fvtt-jb2a-module-options.png'
 
 import jb2aPatreonHomePage from '/src/assets/img/jb2a-patreon-homepage.png'
 import jb2aPatreonMembership from '/src/assets/img/jb2a-patreon-membership.png'
 import jb2aPatreonMasterPost from '/src/assets/img/jb2a-patreon-masterpost.png'
+import jb2aPatreonManifestLink from '/src/assets/img/jb2a-patreon-manifestlink.png'
 
 import forgeLinkedAccountPatreon from '/src/assets/img/theforge-linkedaccount-patreon.png'
 import forgeWouldLikeTo from '/src/assets/img/theforge-wouldliketo.png'
 import forgeAccountPatreon from '/src/assets/img/theforge-account-patreon.png'
+import forgeFreeModule from '/src/assets/img/theforge-bazaar-freemodule.png'
+import forgePatreonModule from '/src/assets/img/theforge-bazaar-patreonmodule.png'
 
 
 ## How to install
@@ -37,17 +42,25 @@ The installation process may differ depending on your hosting method. Select the
 
   <TabItem label="Self-Hosting">
     <Steps>
-      1. Go to the FoundryVTT landing page
+      1. Go to the FoundryVTT landing page and click on the “Add-On Modules” tab.
 
           <p align="center"><Image src={fvttLandingPage} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
 
-      2. and click on the “Add-On Modules” tab.
+      2. Click on the “Install Module”
 
           <p align="center"><Image src={fvttAddOnModules} alt="Add-On Modules Tab on FoundryVTT" style="width: 50%;"/></p>
 
-      3. Finally, follow the instructions on their official documentation [Installing New Modules](https://foundryvtt.com/article/modules/)
+      3. Search for JB2A and click “Install” and the installation process will occur.
 
           <p align="center"><Image src={fvttAddOnModulesInstallFree} alt="Researching JB2A in the 'Install Module' window" style="width: 50%;"/></p>
+
+      4. Once installed, you need to enable our module in your world. Start your world and click on “Manage Modules” in the Settings tab.
+
+          <p align="center"><Image src={fvttManageModule} alt="Open 'Manage Module' in the world settings" style="width: 50%;"/></p>
+
+      5. Finally find our module and enable it. That’s it, our free module is ready for you to use.
+
+          <p align="center"><Image src={fvttModuleManagement} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
 
     </Steps>
   </TabItem>
@@ -79,31 +92,38 @@ The installation process may differ depending on your hosting method. Select the
 
   <TabItem label="Self-Hosting">
     <Steps>
-      1. You must have an account and subscribe to any tier on our patreon. They all have access to the same module. To find out more about how our Patreon works, click here.
+      1. You must have an account and [subscribe to any tier](https://www.patreon.com/c/jb2a/membership) on our patreon. They all have access to the same module. To find out more about how our Patreon works, click here.
 
           <p align="center"><Image src={jb2aPatreonHomePage} alt="Patreon homepage of JB2A" style="width: 50%;"/></p>
 
       2. Find the [Master Post](https://www.patreon.com/posts/jb2a-master-post-56246490), it's a pinned post in the “Home” section. It will always be at the top of the list of recent posts.
 
-            <p align="center"><Image src={jb2aPatreonMasterPost} alt="Preview of the Master Post" style="width: 50%;"/></p>
+          <p align="center"><Image src={jb2aPatreonMasterPost} alt="Preview of the Master Post" style="width: 50%;"/></p>
 
       3. Consult the Master Post section called "Download Links".
       4. Under “Manifest Link”, right-click on the link and “Copy Link Address”.
+
+          <p align="center"><Image src={jb2aPatreonManifestLink} alt="Copy the Manifest Link" style="width: 50%;"/></p>
+
       5. Go to the FoundryVTT landing page,
 
-            <p align="center"><Image src={fvttLandingPage} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+          <p align="center"><Image src={fvttLandingPage} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
 
-      6. and click on the “Add-On Modules” tab.
+      2. Click on the “Install Module”
 
-            <p align="center"><Image src={fvttAddOnModules} alt="Add-On Modules Tab on FoundryVTT" style="width: 50%;"/></p>
+          <p align="center"><Image src={fvttAddOnModules} alt="Add-On Modules Tab on FoundryVTT" style="width: 50%;"/></p>
 
-      7. Finally, follow the instructions on their official documentation [Installing a module with a Manifest URL](https://foundryvtt.com/article/modules/). Once the installation is done, you can uninstall the free module, as it won’t be needed.
+      3. Paste the manifest link inside the field named "Manifest URL". Click “Install” and the installation process will occur.
 
-            <p align="center"><Image src={fvttAddOnModulesInstall} alt="Researching JB2A in the 'Install Module' window" style="width: 50%;"/></p>
+          <p align="center"><Image src={fvttAddOnModulesInstall} alt="Pasting the manifest link and click on 'Install'" style="width: 50%;"/></p>
 
-      8. We recommend to lock our Patreon module to prevent FoundryVTT to update it when you update all your modules. Otherwise you'll receive an error from our Patreon module each time you try to update it.
+      4. Once installed, you need to enable our module in your world. Start your world and click on “Manage Modules” in the Settings tab.
 
-            <p align="center"><Image src={fvttModuleOption} alt="Researching JB2A in the 'Install Module' window" style="width: 50%;"/></p>
+          <p align="center"><Image src={fvttManageModule} alt="Open 'Manage Module' in the world settings" style="width: 50%;"/></p>
+
+      5. Finally find our module and enable it. That’s it, our Patreon module is ready for you to use.
+
+          <p align="center"><Image src={fvttModuleManagement} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
 
     </Steps>
   </TabItem>
