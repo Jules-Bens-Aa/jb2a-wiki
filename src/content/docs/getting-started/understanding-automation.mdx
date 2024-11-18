@@ -3,40 +3,49 @@ title: Understanding Automation
 ---
 import { Aside } from '@astrojs/starlight/components';
 import { Tabs, TabItem } from '@astrojs/starlight/components';
-import { FileTree } from '@astrojs/starlight/components';
 import { Image } from 'astro:assets'
 import flowchart from '/src/assets/vect/automation-flowchart.svg'
 
 ## The one flowchart to explain them all
-This flowchart roughly explains what happens under the hood when a player uses their character sheet to perform an action and triggers an effect. This is for a complete set up and only applies to the DnD5e and PF2e systems. There are solutions for other systems but these two are the most popular. We'll talk about these solutions in more detail later.
+This flowchart roughly explains what happens under the hood when a player uses their character sheet to perform an action and triggers an effect.
 
 <p align="center">
   <Image src={flowchart} alt="Flowchart for triggering an effect on FoundryVTT" style="width: 100%;"/>
 </p>
 
+This is for a complete set up and only applies to the DnD5e and PF2e systems. There are solutions for other systems but these two are the most popular. We'll look at these solutions in more detail later on this page.
+
 ### Sequencer, the one engine
-**Made by Wasp from Fantasy Calendar**
+**Made by Wasp from [Fantasy Calendar](https://fantasy-calendar.com/)**
+
+As you can see from the flowchart, Sequencer is the keystone of the whole environment. Even if it's not quite accurate, you could think of it as the engine of this environment.
 
 <Aside>
 Sequencer is system agnostic. Which means it works with any FoundryVTT game system.
 </Aside>
 
-As you can see from the flowchart, Sequencer is the keystone of the whole environment. Even if it's not quite accurate, you could think of it as the engine of this environment. Sequencer has many built-in functions made from javascript specifically designed for effects, making them relatively simple to create and set up.
+Sequencer has many built-in functions made from javascript specifically designed for effects, making them relatively simple to create and set up.
 
-With Sequencer’s code, you can manipulate images, image sequences, videos and even sounds. Then place them on the FoundryVTT canvas in a variety of ways. For example, Sequencer has functions specifically designed to recognise our ranged attacks, place them correctly between two tokens and even modify the size of the asset when necessary! 
+With Sequencer’s code, you can manipulate images, image sequences, videos and even sounds. Then place them on the FoundryVTT canvas in a variety of ways. 
 
-**Sequencer won't let you play animated effects automatically.** You'll either need to use your knowledge of javascript to create your own set of macros or modules, or you'll need the additional modules described below.
+> For example, Sequencer has functions specifically designed to recognise our ranged attacks, place them correctly between two tokens and even modify the size of the asset when necessary! 
+
+**Sequencer won't let you play effects automatically.** You'll either need to use your knowledge of javascript to create your own set of macros or modules, or **you'll need the additional modules described below.**
 
 
 ### User Interfaces for Sequencer
+
+To explain their function simply, these modules use predefined Sequencer functions and trigger them according to user actions on FoundryVTT.
 
 <Aside type="caution" title="Important">
 These modules have Sequencer as a dependency. They cannot work if Sequencer is not installed and activated in your FoundryVTT session. 
 </Aside>
 
-To explain their function simply, these modules use predefined Sequencer functions and trigger them according to user actions on FoundryVTT. These functions are configurable and presented as an interface, allowing users to create their own effects without having to know a programming language.
+These functions are configurable and presented as an interface, allowing users to create their own effects without having to know a programming language.
 
 However, this advantage comes with its own limitations: users are constrained by the possibilities offered by these modules.
+
+Let's have a look at the existing user interfaces:
 
 <Tabs>
   <TabItem label="Automated Animations">

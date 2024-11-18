@@ -3,7 +3,152 @@ title: Our Content
 ---
 import { Aside } from '@astrojs/starlight/components';
 import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Steps } from '@astrojs/starlight/components';
 import { FileTree } from '@astrojs/starlight/components';
+
+import { Image } from 'astro:assets'
+
+import fvttLandingPage from '/src/assets/img/fvtt-landingpage.png'
+import fvttAddOnModules from '/src/assets/img/fvtt-addon-modules.png'
+import fvttAddOnModulesInstall from '/src/assets/img/fvtt-addon-modules-install.png'
+import fvttAddOnModulesInstallFree from '/src/assets/img/fvtt-addon-modules-install-jb2afree.png'
+import fvttModuleOption from '/src/assets/img/fvtt-jb2a-module-options.png'
+
+import jb2aPatreonHomePage from '/src/assets/img/jb2a-patreon-homepage.png'
+import jb2aPatreonMembership from '/src/assets/img/jb2a-patreon-membership.png'
+import jb2aPatreonMasterPost from '/src/assets/img/jb2a-patreon-masterpost.png'
+
+import forgeLinkedAccountPatreon from '/src/assets/img/theforge-linkedaccount-patreon.png'
+import forgeWouldLikeTo from '/src/assets/img/theforge-wouldliketo.png'
+import forgeAccountPatreon from '/src/assets/img/theforge-account-patreon.png'
+
+
+## How to install
+
+### Free module
+
+The free module could be considered a demo of our module on patreon. We're working hard to ensure that the module has all the animated assets we've made, minus their colour variations and a few exceptions to comply with licensing requirements.
+
+It's a good place to start, if you want to discover the whole FoundryVTT effects environment before committing yourself to our Patreon module. Simple to install, and can be updated directly on FoundryVTT.
+
+The installation process may differ depending on your hosting method. Select the corresponding tab below.
+
+<Tabs syncKey="hosting method">
+
+  <TabItem label="Self-Hosting">
+    <Steps>
+      1. Go to the FoundryVTT landing page
+
+          <p align="center"><Image src={fvttLandingPage} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+
+      2. and click on the “Add-On Modules” tab.
+
+          <p align="center"><Image src={fvttAddOnModules} alt="Add-On Modules Tab on FoundryVTT" style="width: 50%;"/></p>
+
+      3. Finally, follow the instructions on their official documentation [Installing New Modules](https://foundryvtt.com/article/modules/)
+
+          <p align="center"><Image src={fvttAddOnModulesInstallFree} alt="Researching JB2A in the 'Install Module' window" style="width: 50%;"/></p>
+
+    </Steps>
+  </TabItem>
+
+  <TabItem label="Foundry Server">
+      *Steps are to be completed*
+  </TabItem>
+
+  <TabItem label="The Forge">
+    <Steps>
+      1. We'll assume you already know the basics about The Forge. If not read their [documentation](https://forums.forge-vtt.com/t/getting-your-game-started-on-the-forge/11295)
+      2. To install the module, follow their instructions on their official [documentation](https://forums.forge-vtt.com/t/getting-your-game-started-on-the-forge/11295#installing-modules-9) 
+    </Steps>
+  </TabItem>
+
+  <TabItem label="Molten Hosting">
+      *Steps are to be completed*
+  </TabItem>
+
+</Tabs>
+
+### Patreon module
+
+Our Patreon module **has all the assets** we've produced since the early days of JB2A, with a few exceptions to comply with licensing requirements. Currently, the zip file size is around 6.5GB. 
+
+The installation process may differ depending on your hosting method. Select the corresponding tab below.
+
+<Tabs syncKey="hosting method">
+
+  <TabItem label="Self-Hosting">
+    <Steps>
+      1. You must have an account and subscribe to any tier on our patreon. They all have access to the same module. To find out more about how our Patreon works, click here.
+
+          <p align="center"><Image src={jb2aPatreonHomePage} alt="Patreon homepage of JB2A" style="width: 50%;"/></p>
+
+      2. Find the [Master Post](https://www.patreon.com/posts/jb2a-master-post-56246490), it's a pinned post in the “Home” section. It will always be at the top of the list of recent posts.
+
+            <p align="center"><Image src={jb2aPatreonMasterPost} alt="Preview of the Master Post" style="width: 50%;"/></p>
+
+      3. Consult the Master Post section called "Download Links".
+      4. Under “Manifest Link”, right-click on the link and “Copy Link Address”.
+      5. Go to the FoundryVTT landing page,
+
+            <p align="center"><Image src={fvttLandingPage} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+
+      6. and click on the “Add-On Modules” tab.
+
+            <p align="center"><Image src={fvttAddOnModules} alt="Add-On Modules Tab on FoundryVTT" style="width: 50%;"/></p>
+
+      7. Finally, follow the instructions on their official documentation [Installing a module with a Manifest URL](https://foundryvtt.com/article/modules/). Once the installation is done, you can uninstall the free module, as it won’t be needed.
+
+            <p align="center"><Image src={fvttAddOnModulesInstall} alt="Researching JB2A in the 'Install Module' window" style="width: 50%;"/></p>
+
+      8. We recommend to lock our Patreon module to prevent FoundryVTT to update it when you update all your modules. Otherwise you'll receive an error from our Patreon module each time you try to update it.
+
+            <p align="center"><Image src={fvttModuleOption} alt="Researching JB2A in the 'Install Module' window" style="width: 50%;"/></p>
+
+    </Steps>
+  </TabItem>
+
+
+
+  <TabItem label="Foundry Server">
+      *Steps are to be completed*
+  </TabItem>
+
+
+
+  <TabItem label="The Forge">
+    <Steps>
+      1. You must have an account and subscribe to any tier on our patreon. They all have access to the same module. To find out more about how our Patreon works, click here.
+      2. In the My Account section of The Forge, link your Patreon account in the "Linked Account" tab.
+
+          <p align="center"><Image src={forgeLinkedAccountPatreon} alt="Showing how to link a Patreon account in the Linked Account tab on the Forge account settings" style="width: 50%;"/></p>
+
+      3. The Forge will ask you to allow them to look for your personal info. Click on the "Allow" button.
+
+          <p align="center"><Image src={forgeWouldLikeTo} alt="Showing the window prompt from The Forge about your personal info" style="width: 20%;"/></p>
+
+      3. Then, still on The Forge, in the My Account section, go to the "Patreon" tab and click on the "Refresh Pledges" button on the right of your screen.
+
+          <p align="center"><Image src={forgeAccountPatreon} alt="Showing the 'Refresh Pledges' button in the Patreon Tab on The Forge account settings" style="width: 50%;"/></p>
+
+      4. To install the module, go to their ‘The Bazaar’ section. You can follow their instructions on their official [documentation](https://forums.forge-vtt.com/t/getting-your-game-started-on-the-forge/11295#installing-modules-9)
+ 
+    </Steps>
+    <Aside type="danger" title="Important">
+      On The Forge, linking your Patreon account in the Forge settings, then you can install our “premium” module from the Bazaar. This way it doesn’t count against your data quota!
+    </Aside>
+  </TabItem>
+
+
+
+  <TabItem label="Molten Hosting">
+      *Steps are to be completed*
+  </TabItem>
+
+</Tabs>
+
+
+
 
 ### JB2A + Foundry VTT core
 
@@ -57,3 +202,42 @@ We'll come back to this in more detail later, but our assets are in the `Library
 
   </TabItem>
 </Tabs>
+
+
+
+
+<Steps>
+
+1. Create a new Starlight project:
+
+   <Tabs syncKey="pkg">
+
+   <TabItem label="npm">
+
+   ```sh
+   npm create astro@latest -- --template starlight
+   ```
+
+   </TabItem>
+
+   <TabItem label="pnpm">
+
+   ```sh
+   pnpm create astro --template starlight
+   ```
+
+   </TabItem>
+
+   <TabItem label="Yarn">
+
+   ```sh
+   yarn create astro --template starlight
+   ```
+
+   </TabItem>
+
+   </Tabs>
+
+2. Write your first documentation page.
+
+</Steps>
