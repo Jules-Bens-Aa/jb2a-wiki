@@ -161,6 +161,11 @@ The installation process may differ depending on your hosting method. Select the
   <TabItem label="The Forge">
     <Steps>
       1. We'll assume you already know the basics about The Forge. If not, read their [documentation](https://forums.forge-vtt.com/t/getting-your-game-started-on-the-forge/11295).
+
+          <Aside type="danger" title="Important">
+          On The Forge, don’t use the manifest link to install our Patreon module or it will count against your data quota ! Follow these steps to avoid that.
+          </Aside>
+
       2. You must have an account and [subscribe to any tier](https://www.patreon.com/c/jb2a/membership) on our Patreon. They all have access to the same module. To find out more about how our Patreon works, click [here](./our-patreon#_top).
 
           <p align="center"><Image src={jb2aPatreonHomePage} alt="Patreon homepage of JB2A" style="width: 50%;"/></p>
@@ -198,9 +203,6 @@ The installation process may differ depending on your hosting method. Select the
           <p align="center"><Image src={fvttModuleManagement} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
  
     </Steps>
-    <Aside type="danger" title="Important">
-      On The Forge, linking your Patreon account in the Forge settings, then you can install our “premium” module from the Bazaar. This way it doesn’t count against your data quota!
-    </Aside>
   </TabItem>
 
 
@@ -216,19 +218,22 @@ The installation process may differ depending on your hosting method. Select the
 
 ### JB2A + Foundry VTT core
 
-To help you understand why you'll need additional modules to automate animated effects, let's start with what you can do in FoundryVTT without them. What is described in this subsection applies to any game system and without additional modules. In other words, with the FoundryVTT core.
+What is described in this subsection applies to any game system and without additional modules. In other words, with the FoundryVTT core.
 
-We'll come back to this in more detail later, but our assets are in the `Library` folder in our modules. Once in the FoundryVTT `data` folder, you'll find them in this location: 
+Our assets are in the `Library` folder in our modules. Once in the FoundryVTT `data` folder, you'll find them in this location: 
 
 <FileTree>
 
 - data
   - modules
-    - jb2a-module
+    - jb2a-moduleName
+      - artwork/
       - **Library/**
+      - packs/
       - scripts/
       - module.json
-      - README.md  
+  - systems/
+  - worlds/
 
 </FileTree>
 
