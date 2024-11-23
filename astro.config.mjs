@@ -19,7 +19,21 @@ export default defineConfig({
         ],
 
 // Website Config        
-        title: 'JB2A Wiki',
+        title: {
+            en: 'JB2A Wiki',
+            fr: 'JB2A Informations'
+        },
+        defaultLocale: 'root',
+        locales: {
+            root: {
+                label: 'English',
+                lang: 'en'
+            },
+            'fr': {
+                label: 'Français',
+                lang: 'fr'
+            }
+        },
         logo: {
             light: './src/assets/img/wikilogo-light-512x128.webp',
             dark: './src/assets/img/wikilogo-dark-512x128.webp',
@@ -63,6 +77,7 @@ export default defineConfig({
         sidebar: [
             { 
                 label: 'Home',
+                translations: { fr: 'Accueil' },
                 link: '/',
             },
             {
@@ -72,6 +87,7 @@ export default defineConfig({
             },
             {
                 label: 'Getting Started',
+                translations: { fr: 'Commencez Ici' },
                 // badge: 'Important',
                 collapsed: true,
                 items: [
@@ -89,10 +105,12 @@ export default defineConfig({
             },
             { 
                 label: 'Other Projects',
+                translations: { fr: 'Autres Projets' },
                 link: '/other-projects',
             },
             {
                 label: 'Frequently Asked Questions',
+                translations: { fr: 'Foire Aux Questions' },
                 collapsed: true,
                 items: [
                     'faq/mcq',
@@ -102,6 +120,7 @@ export default defineConfig({
             },
             {
                 label: 'Troubleshooting',
+                translations: { fr: 'Dépannage' },
                 collapsed: true,
                 items: [
                     'troubleshooting/mci',
@@ -111,6 +130,7 @@ export default defineConfig({
             },
             {
                 label: 'External Resources',
+                translations: { fr: 'Ressources Externes' },
                 collapsed: true,
                 items: [
                     'external-resources/sfx',
@@ -119,6 +139,7 @@ export default defineConfig({
             },
             {
                 label: 'Patch Notes',
+                translations: { fr: 'Notes de Mise à Jour' },
                 collapsed: true,
                 items: [
                     'patchnotes/pn-demo',
@@ -127,6 +148,7 @@ export default defineConfig({
             },
             {
                 label: 'Template',
+                translations: { fr: 'Gabarit' },
                 
                 collapsed: true,
                 badge: 'Admin',
@@ -136,7 +158,7 @@ export default defineConfig({
                     'template/todolist'
                 ]
             }
-        ],
+            ],
 
 // Table of contents global config
         tableOfContents: { minHeadingLevel: 2, maxHeadingLevel: 4 },

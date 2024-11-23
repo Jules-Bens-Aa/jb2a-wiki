@@ -1,0 +1,133 @@
+---
+title: Comprendre l'Automatisation
+---
+import { Aside } from '@astrojs/starlight/components';
+import { Tabs, TabItem } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets'
+import flowchart from '/src/assets/vect/automation-flowchart.svg'
+
+## The one flowchart to explain them all
+This flowchart roughly explains what happens under the hood when a player uses their character sheet to perform an action and triggers an effect.
+
+<p align="center">
+  <Image src={flowchart} alt="Flowchart for triggering an effect on FoundryVTT" style="width: 100%;"/>
+</p>
+
+This is for a complete set up and only applies to the DnD5e and PF2e systems. There are solutions for other systems but these two are the most popular. We'll look at these solutions in more detail later on this page.
+
+### Sequencer, the one engine
+**Made by Wasp from [Fantasy Computerworks](https://fantasycomputer.works/)**
+
+<p align="center">
+  <Image src={"https://fantasycomputer.works/FoundryVTT-Sequencer/images/fantasycomputerworks.png"} alt="Sequencer Logo" height="598" width="1444" style="width: 50%;"/>
+</p>
+
+As you can see from the flowchart, Sequencer is the keystone of the whole environment. Even if it's not quite accurate, you could think of it as the engine of this environment.
+
+<Aside>
+Sequencer is system agnostic. Which means it works with any FoundryVTT game system.
+</Aside>
+
+Sequencer has many built-in functions made from javascript specifically designed for effects, making them relatively simple to create and set up.
+
+With Sequencer’s code, you can manipulate images, image sequences, videos and even sounds. Then place them on the FoundryVTT canvas in a variety of ways. 
+
+> For example, Sequencer has functions specifically designed to recognise our ranged attacks, place them correctly between two tokens and even modify the size of the asset when necessary! 
+
+**Sequencer won't let you play effects automatically.** You'll either need to use your knowledge of javascript to create your own set of macros or modules, or **you'll need the additional modules described below.**
+
+
+### User Interfaces for Sequencer
+
+To explain their function simply, these modules use predefined Sequencer functions and trigger them according to user actions on FoundryVTT.
+
+<Aside type="caution" title="Important">
+These modules have Sequencer as a dependency. They cannot work if Sequencer is not installed and activated in your FoundryVTT session. 
+</Aside>
+
+These functions are configurable and presented as an interface, allowing users to create their own effects without having to know a programming language.
+
+However, this advantage comes with its own limitations: users are constrained by the possibilities offered by these modules.
+
+Let's have a look at the existing user interfaces:
+
+<Tabs>
+  <TabItem label="Automated Animations">
+  **Made by Otigon**
+
+    <Aside type="caution" title="Important">
+    Automated Animations is currently in maintenance mode. This means there will be no major changes or new features added.
+    </Aside>  
+
+    This module is the first user interface made for Sequencer on FoundryVTT. And it was created by one of our very first patrons! Automated Animation (or A-A) allows you to create your own effects using any animated assets, not just ours. You can set up and play effects for melee or ranged attacks, effects on tokens and templates, as well as auras and active effects.
+
+    You can also add sound effects to your effects and use custom macros if you want to go beyond the possibilities provided by the module.
+
+    It's also compatible with a number of game systems, including DnD5e and PF2e.
+
+    <Aside>
+    Automated Animations only has a limited number of pre-configured effects, generally called “Presets”. This means that you will have to configure all your effects yourself. Fortunately, there are two solutions available to you in the section Effect Presets below.
+    </Aside>
+
+  </TabItem>
+  <TabItem label="PF2e Graphics">
+  **Made by Vauxs**
+
+  This module is still in alpha as of the time writing this (November 2024) and will replace both Automated-Animations and PF2e-Animations, being both a user-interface and a library of effect presets. 
+  
+  <Aside>
+  You can contribute to these presets on the project’s Github.
+  </Aside>
+
+  </TabItem>
+</Tabs>
+
+### Librairies
+
+There are two types of libraries. Library of media assets and library of effect presets.
+
+#### Media Assets
+
+A library of media assets is just what it sounds like. A collection of sounds, images or videos in the webm format.
+
+Using a feature from the Sequencer module, we can register our assets in a database and consult this database within FoundryVTT (Sequencer Database Viewer), which allows anyone to access these assets easily and know some important details about them, like their range, or timings for looping parts for instance.
+
+<Tabs>
+    <TabItem label="JB2A modules">
+        **Made by us !**
+
+        That's where our modules are in this environment. In addition to our assets, a simple database to store them on Sequencer. This will allow you to browse them in the Sequencer Database Viewer. But also to copy the data path or file path of an asset with a single click when you need it.
+
+        It also enables user interface modules and preset modules to use data paths in their workflow.
+    </TabItem>
+    <TabItem label="jackkerouac modules">
+        **Made by jackkerouac**
+
+        There are other animated asset libraries, such as those of jackkerouac, which also have their assets registered in a database for Sequencer.
+    </TabItem>
+    <TabItem label="SoundFX Library">
+        **Made by Cris**
+
+        Our animated assets have no built-in sounds. If you're interested, there's this sound effect library module that also has a database registered on Sequencer.
+    </TabItem>
+</Tabs>
+
+#### Effect Presets
+A library of effect presets goes a step further. It can be a combination of video, sound and images to represent an attack, spell, feature…etc
+
+The community has worked to create these presets and MrVauxs has created modules to import these into Automated-Animations automatically for D&D5e and PF2e.
+<Tabs>
+    <TabItem label="D&D5e-Animations">
+        **Made by Vauxs, helped by Sisimshow, Joost and more…**
+
+        This module automatically populates the global recognition menu from Automated Animations with a lot of pre-configured effect presets for Dungeons and Dragons 5th Edition system. It also includes some sounds via the SoundFX Library module.
+    </TabItem>
+    <TabItem label="PF2e-Animations">
+        **Made by Vauxs**
+
+        This module also populates the global recognition menu from Automated Animations with a lot of pre-configured effect presets, specifically for the Pathfinder 2nd Edition system. Very little sounds are configured for this module.
+    </TabItem>
+    <TabItem label="Auto-Rec Sharing">
+        Other preset libraries you can import manually within Automated-Animations as a file in the JSON format. You can find a couple of these shared on our Discord (#autorec-sharing) for the Cyber Punk Red and Warhammer game systems.
+    </TabItem>
+</Tabs>

@@ -1,0 +1,246 @@
+---
+title: Website Command
+description: Starlight features and more
+draft: false
+---
+
+import { Steps } from '@astrojs/starlight/components';
+import { LinkCard, Card, CardGrid } from '@astrojs/starlight/components';
+import { Icon } from '@astrojs/starlight/components';
+import { Badge } from '@astrojs/starlight/components';
+import { FileTree } from '@astrojs/starlight/components';
+import { LinkButton } from '@astrojs/starlight/components';
+
+## Starlight
+
+### Aside (Callout)
+[HTML/JSX Documentation](https://starlight.astro.build/components/asides/)  
+[MDX Documentation](https://starlight.astro.build/guides/authoring-content/#asides)
+
+```js
+import { Aside } from '@astrojs/starlight/components';
+```
+
+:::danger
+This is an aside. Here's a link for all of the default ones: 
+:::
+
+### Badges
+<LinkCard title="Badges Documentation" href="https://starlight.astro.build/components/badges/"/>
+```js 
+import { Badge } from '@astrojs/starlight/components';
+
+<Badge text="Note" variant="note" />
+<Badge text="Success" variant="success" />
+<Badge text="Tip" variant="tip" />
+<Badge text="Caution" variant="caution" />
+<Badge text="Danger" variant="danger" />
+```
+<Badge text="Note" variant="note" />
+<Badge text="Success" variant="success" />
+<Badge text="Tip" variant="tip" />
+<Badge text="Caution" variant="caution" />
+<Badge text="Danger" variant="danger" />
+
+
+### Cards
+
+[Documentation](https://starlight.astro.build/components/cards/)  
+[Link Cards](https://starlight.astro.build/components/link-cards/)  
+[Card Grids](https://starlight.astro.build/components/card-grids/)
+
+<CardGrid>
+	<Card title="Discord" icon="open-book">
+	 Discord is the best way to get in touch with us
+	</Card>
+	<Card title="Patreon" icon="information">
+	 There's a pinned post in Patreon called "Master Post". This is where you can find the download links for our whole pack of animated assets.
+	</Card>
+	<LinkCard title="Join the JB2A Discord" href="https://discord.gg/gmd8MAPX4m" />
+	<LinkCard title="Components" href="https://www.patreon.com/JB2A" />
+</CardGrid>
+
+
+### File Tree 
+
+<LinkCard title="File Tree Documentation" href="http://localhost:4321/jb2a-wiki/template/website-cmd#file-tree"/>
+
+
+    ```js 
+    import { FileTree } from '@astrojs/starlight/components';
+    <FileTree>
+
+    - astro.config.mjs
+    - package.json
+    - src
+      - components
+        - Header.astro
+        - Title.astro
+      - pages/
+
+    </FileTree>
+    ```
+<FileTree>
+
+- astro.config.mjs
+- package.json
+- src
+  - components
+    - Header.astro
+    - Title.astro
+  - pages/
+
+</FileTree>
+
+### Images
+
+```js 
+import { Image } from 'astro:assets'
+import touch from '/src/assets/img/apple-touch-icon.png';
+
+<p align="center">
+  <Image src={touch} alt="JB2A Banner" style="width: 10%;"/>
+</p>
+```
+
+import { Image } from 'astro:assets'
+import touch from '/src/assets/img/apple-touch-icon.png';
+
+<p align="center">
+  <Image src={touch} alt="JB2A Banner" style="width: 10%;"/>
+</p>
+
+### Link Buttons
+
+<LinkCard title="Link Buttons Documentation" href="https://starlight.astro.build/components/link-buttons/" />
+
+```js 
+import { LinkButton } from '@astrojs/starlight/components';
+
+<LinkButton href="/jb2a-wiki/template/website-cmd/">Website Commands</LinkButton>
+<LinkButton href="/jb2a-wiki/home/" variant="secondary">
+  Home
+</LinkButton>
+```
+<LinkButton href="/jb2a-wiki/template/website-cmd/">Website Commands</LinkButton>
+<LinkButton href="/jb2a-wiki/home/" variant="secondary">
+  Home
+</LinkButton>
+
+### Simple Markdown Internal Link
+```js 
+[Markdown Link to Home](/jb2a-wiki/home/)
+```
+
+[Markdown Link to Home](/jb2a-wiki/home/)
+
+### Icons
+<LinkCard title="Icons Documentation" href="https://starlight.astro.build/components/icons/"/>
+
+``<Icon name="open-book" />``
+<Icon name="open-book" />
+<a href="https://starlight.astro.build/reference/icons/#all-icons">All available icons from Starlight</a>  
+
+### Steps
+
+[See below for Steps](#merge-new-changes-from-main-to-my-local-branch)
+
+## Github References:
+
+### Merge new changes from main to my local branch
+:::note
+You need to make sure your current branch(dev1) is up to date with the main branch to avoid conflicts.
+:::
+
+<Steps>
+
+1. Import the component into your MDX file:
+
+    ```js
+    import { Steps } from '@astrojs/starlight/components';
+    ```
+
+2. Wrap `<Steps>` around your ordered list items.
+
+    ```js  
+    <Steps>
+
+    1. Import the component into your MDX file:
+
+    2. Wrap `<Steps>` around your ordered list items.
+
+    </Steps>
+    ```
+
+</Steps>
+
+<Steps>
+1. You can stash your changes on your current branch(this will store your changes in a stash while you pull the latest on main):
+
+    ```js
+    git stash
+    ```
+
+2. Then check out main and pull the latests changes
+
+    ```js
+    git checkout main
+    git pull
+    ```
+3. From there you can check out your branch:
+
+
+    ```js
+    git checkout branchName
+    ```
+
+4. Then merge the latest changes from main into your branch:
+
+    ```js
+    git merge main
+    ```
+
+5. After that step you can pop your stash into your newly updated branch:
+
+    ```js
+    git stash pop
+    ```
+
+6. And now your branch(dev1) has all the latest changes from main as well as the changes you've made locally
+
+</Steps>
+
+### Delete your branch
+
+<Steps>
+1. Delete the local branch:
+
+
+    ```js
+    git branch -d branchName
+    ```
+
+    :::note 
+    use uppercase -D if you want to delete a branch, even though it hasn't been merged
+
+
+2. To delete a remote branch: 
+
+
+    ```js
+    git push origin --delete branchName 
+    ```
+</Steps>
+
+
+## Discord 
+
+### [Discord JS Formatting Code](#JS-Formatting)
+:::note
+You can format code in Discord like so:
+
+\`\`\`js  
+Code here  
+\`\`\`  
+
+:::
