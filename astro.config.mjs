@@ -52,6 +52,7 @@ export default defineConfig({
             //Override *.astro
             SocialIcons: './src/components/CustomSocialIcons.astro',
             Hero: './src/components/CustomHero.astro',
+            Page: './src/components/CustomStarlightPage.astro',
              },  
         
 // Custom Css files        

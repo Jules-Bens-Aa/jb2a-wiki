@@ -1,12 +1,7 @@
 ---
 title: To Do List
 description: A list of features we would like the website to have.
-draft: false
-
-import { getCollection } from 'astro:content';
-const blogEntries = await getCollection('blog', ({ data }) => {
-  return import.meta.env.PROD ? data.draft !== true : true;
-});
+draft: true
 ---
 
 ## Adding Functionality
@@ -26,7 +21,7 @@ import { Badge } from '@astrojs/starlight/components';
 
 ### Badges
 
-- [ ] Find the reason why the CSS of the badges is only applied to the localhost and not on the live server.
+- [X] Find the reason why the CSS of the badges is only applied to the localhost and not on the live server.
 
 ## Header
 - [ ] Find a better way to add links in next to the social icons.
