@@ -71,14 +71,14 @@ export default defineConfig({
                 attrs: {style: '  border-top: 1px solid var(--sl-color-hairline); border-radius: 0px; opacity: 1'}
             },
             {
-                label: 'Getting Started',
+                label: 'Getting-Started',
                 // badge: 'Important',
                 collapsed: true,
                 items: [
                     'getting-started/prerequisites',
                     'getting-started/understanding-automation',
                     'getting-started/our-patreon',
-                    'getting-started/our-content',
+                    'getting-started/guides',
                     'getting-started/jb2a-fvtt'
                 ]
             },
