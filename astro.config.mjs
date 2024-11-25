@@ -127,11 +127,9 @@ export default defineConfig({
             },
             {
                 label: 'Template',
-                
                 collapsed: true,
                 badge: 'Admin',
                 items: [
-                    'template/template',
                     'template/website-cmd',
                     'template/todolist'
                 ]
