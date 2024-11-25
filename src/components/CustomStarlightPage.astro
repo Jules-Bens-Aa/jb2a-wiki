@@ -1,11 +1,11 @@
 ---
 import StarlightPage from '@astrojs/starlight/components/StarlightPage.astro';
-import { getEntry } from 'astro:content';
+import { getEntryBySlug } from 'astro:content';
 
 const { slug } = Astro.params;
-const entry = await getEntry('docs', slug);
+const entry = await getEntryBySlug('docs', slug);
 
-// Check if we're in production and if the page is a draft
+// Redirect to 404 if it's a production build and the page is a draft
 if (import.meta.env.PROD && entry.data.draft) {
   return Astro.redirect('/404');
 }
