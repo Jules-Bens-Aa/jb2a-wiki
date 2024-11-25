@@ -52,7 +52,6 @@ export default defineConfig({
             //Override *.astro
             SocialIcons: './src/components/CustomSocialIcons.astro',
             Hero: './src/components/CustomHero.astro',
-            Page: './src/components/CustomStarlightPage.astro',
              },  
         
 // Custom Css files        
@@ -88,53 +87,53 @@ export default defineConfig({
                 link: '',
                 attrs: {style: '  border-bottom: 1px solid var(--sl-color-hairline); border-radius: 0px; opacity: 1'}
             },
-            { 
-                label: 'Other Projects',
-                link: '/other-projects',
-            },
-            {
-                label: 'Frequently Asked Questions',
-                collapsed: true,
-                items: [
-                    'faq/mcq',
-                    'faq/about-jb2a',
-                    'faq/about-fvtt'
-                ]
-            },
-            {
-                label: 'Troubleshooting',
-                collapsed: true,
-                items: [
-                    'troubleshooting/mci',
-                    'troubleshooting/jb2a',
-                    'troubleshooting/fvtt'
-                ]
-            },
-            {
-                label: 'External Resources',
-                collapsed: true,
-                items: [
-                    'external-resources/sfx',
-                    'external-resources/useful-tools',
-                ]
-            },
-            {
-                label: 'Patch Notes',
-                collapsed: true,
-                items: [
-                    'patchnotes/pn-demo',
-                    'patchnotes/pn-main'
-                ]
-            },
-            {
-                label: 'Template',
-                collapsed: true,
-                badge: 'Admin',
-                items: [
-                    'template/website-cmd',
-                    'template/todolist'
-                ]
-            }
+            // { 
+            //     label: 'Other Projects',
+            //     link: '/other-projects',
+            // },
+            // {
+            //     label: 'Frequently Asked Questions',
+            //     collapsed: true,
+            //     items: [
+            //         'faq/mcq',
+            //         'faq/about-jb2a',
+            //         'faq/about-fvtt'
+            //     ]
+            // },
+            // {
+            //     label: 'Troubleshooting',
+            //     collapsed: true,
+            //     items: [
+            //         'troubleshooting/mci',
+            //         'troubleshooting/jb2a',
+            //         'troubleshooting/fvtt'
+            //     ]
+            // },
+            // {
+            //     label: 'External Resources',
+            //     collapsed: true,
+            //     items: [
+            //         'external-resources/sfx',
+            //         'external-resources/useful-tools',
+            //     ]
+            // },
+            // {
+            //     label: 'Patch Notes',
+            //     collapsed: true,
+            //     items: [
+            //         'patchnotes/pn-demo',
+            //         'patchnotes/pn-main'
+            //     ]
+            // },
+            // {
+            //     label: 'Template',
+            //     collapsed: true,
+            //     badge: 'Admin',
+            //     items: [
+            //         'template/website-cmd',
+            //         'template/todolist'
+            //     ]
+            // }
         ],
 
 // Table of contents global config
