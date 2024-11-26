@@ -109,14 +109,15 @@ export default defineConfig({
             //         'troubleshooting/fvtt'
             //     ]
             // },
-            // {
-            //     label: 'External Resources',
-            //     collapsed: true,
-            //     items: [
-            //         'external-resources/sfx',
-            //         'external-resources/useful-tools',
-            //     ]
-            // },
+            {
+                label: 'External Resources',
+                collapsed: true,
+                items: [
+                    'external-resources/community-links',
+                    'external-resources/sfx',
+                    'external-resources/useful-tools',
+                ]
+            },
             // {
             //     label: 'Patch Notes',
             //     collapsed: true,
@@ -125,15 +126,15 @@ export default defineConfig({
             //         'patchnotes/pn-main'
             //     ]
             // },
-            // {
-            //     label: 'Template',
-            //     collapsed: true,
-            //     badge: 'Admin',
-            //     items: [
-            //         'template/website-cmd',
-            //         'template/todolist'
-            //     ]
-            // }
+            {
+                label: 'Template',
+                collapsed: true,
+                badge: 'Admin',
+                items: [
+                    'template/website-cmd',
+                    'template/todolist'
+                ]
+            }
         ],
 
 // Table of contents global config
