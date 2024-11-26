@@ -16,16 +16,22 @@ import { LinkCard, Card, CardGrid } from '@astrojs/starlight/components';
 ## Category Description
 
 <CardGrid>
-	<Card title="F.A.Q." icon="information">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+	<Card 
+		title="Getting Started" 
+		icon="setting">
+		Everything you need to know to understand the animated effects environement on FoundryVTT. Including installation, update guides for our modules but also information about our Patreon.
 	</Card>
-	<Card title="Troubleshooting" icon="error">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+	<Card 
+		title="External Resources" 
+		icon="open-book">
+		A good place to visit if you are looking for module documentations related to animated effects on FoundryVTT. But also Sound Effects and useful tools to know about. 
 	</Card>
-	<Card title="External Resources" icon="setting">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-	</Card>
-	<Card title="Patch Notes" icon="open-book">
-		Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-	</Card>
+	<LinkCard 
+		title="Let's getting started !" 
+		href="/getting-started/prerequisites"
+	/>
+	<LinkCard 
+		title="Go to External Resources" 
+		href="external-resources/community-links"
+	/>
 </CardGrid>
