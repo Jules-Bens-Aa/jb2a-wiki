@@ -1,8 +1,8 @@
 ## 📒 How to Contribute
 
-You can open an issue on this Github project to propose a change, report a mistake, an outdated information, typo, broken link or make a suggestion about this website.
+1. You can open an issue on this Github project to propose a change, report a mistake, an outdated information, typo, broken link or make a suggestion about this website.
 
-If you're familiar with the Github workflow, you're of course welcome to contribute by creating a Pull Request so we can have a look and merge it!
+2. Or if you're more familiar with the Github workflow, you're of course welcome to contribute by creating a Pull Request so we can have a look and merge it!
 More information below.
 
 
