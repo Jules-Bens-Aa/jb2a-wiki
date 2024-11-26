@@ -126,15 +126,15 @@ export default defineConfig({
             //         'patchnotes/pn-main'
             //     ]
             // },
-            {
-                label: 'Template',
-                collapsed: true,
-                badge: 'Admin',
-                items: [
-                    'template/website-cmd',
-                    'template/todolist'
-                ]
-            }
+            // {
+            //     label: 'Template',
+            //     collapsed: true,
+            //     badge: 'Admin',
+            //     items: [
+            //         'template/website-cmd',
+            //         'template/todolist'
+            //     ]
+            // }
         ],
 
 // Table of contents global config
