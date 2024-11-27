@@ -9,7 +9,7 @@ import starlightImageZoom from 'starlight-image-zoom'
 export default defineConfig({
     site: process.env.CI
     ? 'https://jules-bens-aa.github.io' : 'http://localhost:4321',
-    base: '/jb2a-wiki',
+    base: 'jb2a-wiki',
     integrations: [starlight({
 
 // Plugins        
