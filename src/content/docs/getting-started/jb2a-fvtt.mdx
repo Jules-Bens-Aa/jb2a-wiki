@@ -1,5 +1,72 @@
 ---
-title: JB2A & FoundryVTT
+title: JB2A & Foundry VTT
 ---
 
-## Link
+import { Image } from 'astro:assets';
+import { Aside } from '@astrojs/starlight/components';
+
+import consoleClear from '/src/assets/img/chrome-console-clear.png';
+import tokenTarget from '/src/assets/img/token-target.png';
+import discordSearch from '/src/assets/img/discord-search.png';
+
+
+*Advanced notions and guidelines using our content on Foundry VTT*
+
+## Best Practices
+
+### Console
+When something goes wrong, opening the console by pressing F12 (or Cmd + Options + J on Mac) should be your first impulse. 
+You can safely ignore the yellow deprecation warnings. They're not breaking anything, just letting the developers know that they'll have to modify some of their code eventually. 
+The red error messages are what we're looking for. 
+Most of the time, they'll give you information about what module is implicated in the error. Take a screenshot of it if you're reporting the error, it could be really useful!
+If you're overwhelmed with the huge amount of logs, you can clear the console by pressing a button like this one. Here it's on Chrome but there will exist a similar one on other browsers:
+<p align="center"><Image src={consoleClear} alt="console clear image" style="width: 50%;"/></p>
+Then recreate the issue and check if a red message appears. 
+
+### How to Troubleshoot
+Here are a few best practices for things to check or try when you're having an issue:
+- What is your game system? (D&D5e, PF2e...etc)
+- Non-Chromium browsers (such as Firefox, Opera, Safari) are known to cause issues. Use a Chromium based browser like Chrome or Edge.
+- Check for any updates that might be available for the module you are having issues with and all of its dependencies.
+- If you use Automated-Animations:
+    - is the Sequencer module up to date?
+    - is your system supported by Automated-Animations (AA)?
+    - Is the Diagnostic all green? (click diagnostics button in AA global recognition menu's header)
+    - Is the item/spell/feature in the global recognition menu?
+    - Is the item/spell/feature disabled in its AA configuration menu? (edit item, click AA icon in header)
+    - Is the item/spell/feature overwritten in its AA configuration menu? (see above)
+    - Have you <strong>targeted</strong> a token?
+    <p align="center"><Image src={tokenTarget} alt="console clear image" style="width: 50%;"/></p>
+    - Have you rolled for attack or damage?
+- Is there an error in the console (F12) when you trigger the macro or item? Errors are red, yellow ones are deprecation warnings and are safe for you to ignore. If you do have an error, please include a screenshot when reporting it.
+- Make sure you try with only the required modules (JB2A, Sequencer, Socketlib and any other module required for your automation). It's sometimes easier to do so in a fresh new world.
+- The Github page for each module is, almost always, the best source of information about the module. That's where the information is most up to date and you can see when the last update to the module occured.
+- Sometimes, refreshing the page (press F5 or Ctrl + F5 to also clear the cache), re-starting the server or re-installing the module with the issue can be enough. It's worth a try.
+
+<Aside type="danger" title="Important">
+- Before updating your FoundryVTT version, your system or your modules, BACKUP YOUR DATA! <p></p> <a href="https://foundryvtt.com/article/user-data-backup/" target="_blank">How to make a backup</a>
+</Aside>
+
+
+## Advanced
+
+### Macros
+You need at least a basic understanding of Javascript, knowing what variables are, how to create and manipulate arrays, objects…etc 
+Here's a simple free course to get you started for example: https://www.codecademy.com/enrolled/courses/introduction-to-javascript
+
+Then, there are some key concepts for Foundry VTT to understand. Looking through the ``#macro-polo`` channel on the main Foundry VTT discord server is really helpful and there's almost always someone around to answer any questions you may have.
+<p></p>
+<a href="https://discord.gg/foundryvtt" target="_blank">Join the Foundry VTT Discord</a>
+
+### Hooks and Worldscripts
+Now that you know a bit more about Javascript, macros and Foundry VTT's API, you may want to look into hooks. 
+#### What is a hook and why would you need it?
+In simple words, everytime something happens in your game, a hook is triggered. It can be from you hovering your mouse on a Token, using a skill, opening a character sheet, the list goes on and on. Foundry VTT provides hooks by default and every system and module can implement its own hooks.
+To interact with these hooks, retrieving the data and doing something with it, it's usually better to use a world script. If you use a macro, you'd have to execute it every time you load or refresh your game.  
+
+It's a vast subject and out of scope of this website. However, here is some <a href="https://foundryvtt.wiki/en/basics/world-scripts" target="_blank">documentation on World scripts</a>
+
+### Modules
+The next step further is to create a module.
+A common way to share your compendia and world scripts across different worlds for example is by creating a small module that you can activate in different worlds! Here is a good place to start for this: 
+<a href="https://foundryvtt.com/article/module-development/" target="_blank">module development article</a>

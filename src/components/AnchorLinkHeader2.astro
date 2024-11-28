@@ -1,0 +1,25 @@
+---
+const {title = "Title", href = ""} = Astro.props
+---
+
+<a href={href}><h2 class="anchor-link">{title}</h2></a>
+
+<style>
+    .anchor-link {
+  font-weight: bold;
+  font-size: 20px;
+  color: #000000;
+  text-decoration: none;
+}
+
+/* mouse hover link */
+.anchor-link:hover::after {
+  background: url(https://icons.iconarchive.com/icons/microsoft/fluentui-emoji-flat/512/Link-Flat-icon.png);
+  background-size: 20px 20px;
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  content: "";
+  margin-left: 10px;
+}
+</style>
