@@ -4,6 +4,8 @@ title: Understanding Automation
 import { Aside, Tabs, TabItem, LinkCard } from '@astrojs/starlight/components';
 import { Image } from 'astro:assets'
 import flowchart from '/src/assets/vect/automation-flowchart.svg'
+import { LinkButton } from '@astrojs/starlight/components';
+
 
 ## The one flowchart to explain them all
 This flowchart roughly explains what happens under the hood when a player uses their character sheet to perform an action and triggers an effect.
@@ -16,7 +18,8 @@ This is for a complete set up and only applies to the DnD5e and PF2e systems. Th
 
 ### Sequencer, the one engine
 
-**Made by Wasp from [Fantasy Computerworks](https://fantasycomputer.works/)**
+**Made by Wasp from** 
+<LinkButton href="https://fantasycomputer.works/" icon="external">Fantasy Computerworks</LinkButton>
 
 As you can see from the flowchart, Sequencer is the keystone of the whole environment. Even if it's not quite accurate, you could think of it as the engine of this environment.
 
@@ -34,7 +37,7 @@ With Sequencer’s code, you can manipulate images, image sequences, videos and 
 
 <LinkCard
   title="Learn more about Sequencer"
-  href="external-resources/community-links#sequencer"
+  href="../external-resources/community-links#sequencer"
 />
 
 ### User Interfaces for Sequencer

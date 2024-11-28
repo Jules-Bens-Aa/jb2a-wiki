@@ -80,7 +80,10 @@ export default defineConfig({
                     'getting-started/understanding-automation',
                     'getting-started/our-patreon',
                     'getting-started/guides',
-                    'getting-started/jb2a-fvtt'
+                    'getting-started/jb2a-fvtt',
+                    'getting-started/jb2a-other-vtts',
+                    'getting-started/discord',
+                    'getting-started/contribute-wiki'
                 ]
             },
             {
@@ -88,10 +91,10 @@ export default defineConfig({
                 link: '',
                 attrs: {style: '  border-bottom: 1px solid var(--sl-color-hairline); border-radius: 0px; opacity: 1'}
             },
-            // { 
-            //     label: 'Other Projects',
-            //     link: '/other-projects',
-            // },
+            { 
+                label: 'Other Projects',
+                link: '/other-projects',
+            },
             // {
             //     label: 'Frequently Asked Questions',
             //     collapsed: true,
