@@ -10,7 +10,7 @@ export default defineConfig({
     // site: process.env.CI
     // ? 'https://jules-bens-aa.github.io' : 'http://localhost:4321',
     site: 'https://jules-bens-aa.github.io',
-    base: '/jb2a-wiki',
+    base: '/jb2a-wiki/',
     integrations: [starlight({
 
 // Plugins        
