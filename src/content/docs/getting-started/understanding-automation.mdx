@@ -1,10 +1,9 @@
 ---
 title: Understanding Automation
 ---
-import { Aside, Tabs, TabItem, LinkCard } from '@astrojs/starlight/components';
+import { Aside, Tabs, TabItem, LinkCard, LinkButton } from '@astrojs/starlight/components';
 import { Image } from 'astro:assets'
 import flowchart from '/src/assets/vect/automation-flowchart.svg'
-import { LinkButton } from '@astrojs/starlight/components';
 
 
 ## The one flowchart to explain them all
@@ -80,7 +79,7 @@ Let's have a look at the existing user interfaces:
   This module is still in alpha as of the time writing this (November 2024) and will replace both Automated-Animations and PF2e-Animations, being both a user-interface and a library of effect presets. 
   
   <Aside>
-  You can contribute to these presets on the <a href="https://github.com/MrVauxs/pf2e-graphics" target="_blank">project’s Github</a>.
+  You can contribute to these presets on the <LinkButton href="https://github.com/MrVauxs/pf2e-graphics" icon="github">project’s Github</LinkButton>
   </Aside>
 
   <LinkCard
@@ -163,7 +162,8 @@ The community has worked to create these presets and MrVauxs has created modules
     <TabItem label="Auto-Rec Sharing">
         Other preset libraries you can import manually within Automated-Animations as a file in the JSON format. 
         
-        You can find a couple of these shared on the <a href="https://discord.com/channels/772596237605011466/1054068459710988438" target="_blank">#aa-autorec-sharing</a> channel on our Discord, for the Cyber Punk Red and Warhammer game systems.    
+        You can find a couple of these shared on the <a href="https://discord.com/channels/772596237605011466/1054068459710988438" icon="discord">#aa-autorec-sharing</a> channel on our Discord, for the Cyber Punk Red and Warhammer game systems.
 
+        <LinkButton href="https://discord.gg/gmd8MAPX4m" icon="discord">Join our Discord Server</LinkButton>
     </TabItem>
 </Tabs>

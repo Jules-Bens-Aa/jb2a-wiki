@@ -1,9 +1,11 @@
 ---
 title: Guides
 ---
-import { Aside, Tabs, TabItem, Steps, FileTree } from '@astrojs/starlight/components';
+import { Aside, Tabs, TabItem, Steps, FileTree, LinkCard } from '@astrojs/starlight/components';
 
-import { Image } from 'astro:assets'
+import { Image } from 'astro:assets';
+import { LinkButton } from '@astrojs/starlight/components';
+
 
 import fvttLandingPage from '/src/assets/img/fvtt-landingpage.png'
 import fvttAddOnModules from '/src/assets/img/fvtt-addon-modules.png'
@@ -163,11 +165,16 @@ The installation process may differ depending on your hosting method. Select the
 
   <TabItem label="Self-Hosting">
     <Steps>
-      1. You must have an account and [subscribe to any tier](https://www.patreon.com/c/jb2a/membership) on our Patreon. They all have access to the same module. To find out more about how our Patreon works, click [here](./our-patreon#_top).
+      1. You must have an account and [subscribe to any tier](https://www.patreon.com/c/jb2a/membership) on our Patreon. They all have access to the same module. 
+
+            <LinkCard
+              title="How our Patreon works"
+              href="/jb2a-wiki/getting-started/our-patreon#_top"
+            />
 
           <p align="center"><Image src={jb2aPatreonHomePage} alt="Patreon homepage of JB2A" style="width: 50%;"/></p>
 
-      2. Find the [Master Post](https://www.patreon.com/posts/jb2a-master-post-56246490), it's a pinned post in the “Home” section. It will always be at the top of the list of recent posts.
+      2. Find the [Master Post](https://www.patreon.com/posts/56246490/), it's a pinned post in the “Home” section. It will always be at the top of the list of recent posts.
 
           <p align="center"><Image src={jb2aPatreonMasterPost} alt="Preview of the Master Post" style="width: 50%;"/></p>
 
@@ -248,7 +255,11 @@ The installation process may differ depending on your hosting method. Select the
           On The Forge, don’t use the manifest link to install our Patreon module or it will count against your data quota ! Follow these steps to avoid that.
           </Aside>
 
-      2. You must have an account and [subscribe to any tier](https://www.patreon.com/c/jb2a/membership) on our Patreon. They all have access to the same module. To find out more about how our Patreon works, click [here](./our-patreon#_top).
+      2. You must have an account and [subscribe to any tier](https://www.patreon.com/c/jb2a/membership) on our Patreon. They all have access to the same module.
+            <LinkCard
+              title="How our Patreon works"
+              href="/jb2a-wiki/getting-started/our-patreon#_top"
+            />
 
           <p align="center"><Image src={jb2aPatreonHomePage} alt="Patreon homepage of JB2A" style="width: 50%;"/></p>
 
@@ -297,7 +308,7 @@ The installation process may differ depending on your hosting method. Select the
 
       <Steps>
         
-        1. Download the "Complete Collection" zip from the <a href="https://www.patreon.com/posts/56246490/" target="_blank">Master Post</a> on the JB2A Patreon.
+        1. Download the "Complete Collection" zip from the <a href="https://www.patreon.com/posts/56246490/">Master Post</a> on the JB2A Patreon.
 
             <p align="center"><Image src={jb2aPatreonMasterPost} alt="Preview of the Master Post" style="width: 50%;"/></p>
 
@@ -305,7 +316,7 @@ The installation process may differ depending on your hosting method. Select the
 
         3. Open up the Cloud Commander (CC).
 
-            <a href="https://molten-hosting.notion.site/Managing-Server-Files-df96be0dcde74775994a86c844ba1a4e" target="_blank">How to access the Cloud Commander</a>
+            <LinkButton href="https://molten-hosting.notion.site/Managing-Server-Files-df96be0dcde74775994a86c844ba1a4e" icon="external">How to access the Cloud Commander</LinkButton>
 
         4. In CC, navigate to the `Data/modules` folder.
 
@@ -329,6 +340,13 @@ The installation process may differ depending on your hosting method. Select the
 
 </Tabs>
 
+  <Aside title= "Having trouble with the manifest link?">
+    You can install the module manually. It's quite easy once you know how!
+    <LinkCard
+    title="Manual Installation"
+    href="/jb2a-wiki/getting-started/our-patreon#_top"
+    />
+  </Aside>
 
 ## How to use
 
@@ -357,7 +375,8 @@ Our assets are in the `Library` folder in our modules. Once in the FoundryVTT `d
   <TabItem label="Tiles" icon="star">
 
     To use an animated asset as a tile to a FoundryVTT canvas, follow the instructions on the official website.
-    [FoundryVTT Tiles Documentation](https://foundryvtt.com/article/tiles/)
+
+    <LinkButton href="https://foundryvtt.com/article/tiles/" icon="external">FoundryVTT Tiles Documentation</LinkButton>
 
     <Aside title= "What is a Tile?">
     If you don't know what a tile is on FoundryVTT, we encourage you to read the first `Overview` section of their documentation.
@@ -367,7 +386,8 @@ Our assets are in the `Library` folder in our modules. Once in the FoundryVTT `d
   <TabItem label="Tokens" icon="moon">
 
     To use an animated asset as a token on FoundryVTT, follow the instructions on the official website. The information you need can be found in the ‘Token Configuration Options -> The Appearance Tab’ section. 
-    [FoundryVTT Token Documentation](https://foundryvtt.com/article/tokens/)
+
+    <LinkButton href="https://foundryvtt.com/article/tokens/" icon="external">FoundryVTT Token Documentation</LinkButton>
 
     <Aside title="What is a Token?">
     If you don't know what a token is on FoundryVTT, we encourage you to read the first `Overview` section of their documentation.
@@ -377,7 +397,8 @@ Our assets are in the `Library` folder in our modules. Once in the FoundryVTT `d
     <TabItem label="Macros" icon="moon">
     
     This method requires a __good knowledge of javascript__ to be able to do just about anything with our assets. To find out more about what a macro is on FoundryVTT and how to use them, read the documentation provided on their official website.
-    [FoundryVTT Macros Documentation](https://foundryvtt.com/article/macros/)
+
+    <LinkButton href="https://foundryvtt.com/article/macros/" icon="external">FoundryVTT Macros Documentation</LinkButton>
 
     Depending on the game system you're using, you won't necessarily have to use macros to do the most basic automation, such as triggering an animated effect when a player takes an action on their character sheet.
 

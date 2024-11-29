@@ -3,14 +3,13 @@ title: Discord
 ---
 
 import { Image } from 'astro:assets';
-import { Aside } from '@astrojs/starlight/components';
+import { Aside, Code, Icon, LinkButton } from '@astrojs/starlight/components';
 
 import consoleClear from '/src/assets/img/chrome-console-clear.png';
 import tokenTarget from '/src/assets/img/token-target.png';
 import discordSearch from '/src/assets/img/discord-search.png';
 
-import { Icon } from '@astrojs/starlight/components';
-import { LinkButton } from '@astrojs/starlight/components';
+
 
 
 *Some useful things to know about how Discord works*
@@ -21,7 +20,9 @@ That's why we have so many channels! We've created categories to make it clearer
 
 
 <Aside type="note" title="Note">
-- Discord is the best place to get in touch with us! <p></p><LinkButton href="https://discord.gg/gmd8MAPX4m" icon="discord" target="_blank">Join our Discord Server</LinkButton>
+- Discord is the best place to get in touch with us!
+
+<LinkButton href="https://discord.gg/gmd8MAPX4m" icon="discord">Join our Discord Server</LinkButton>
 </Aside>
 
 ## Channels and Roles
@@ -34,35 +35,34 @@ The only time we'd use the ``@everyone`` notification is for important notices o
 
 
 ## Search function
-The search function on Discord can be a bit difficult to use. Here are some tips on how to get better results:
-- When you click on the search field in Discord, plenty of options appear that can help you restrict the search to specific user, channels, date...etc | 
-<a href="https://support.discord.com/hc/en-us/articles/115000468588-Using-Search" target="_blank">Do you want to know more?</a>
+The search function on Discord can be quite useful, once you know how to use it.
+When you click on the search field in Discord, plenty of options appear that can help you restrict the search to specific user, channels, date...etc
 <p align="center"><Image src={discordSearch} alt="search box in Discord" style="width: 50%;"/></p>
 
+<LinkButton href="https://support.discord.com/hc/en-us/articles/115000468588-Using-Search" icon="discord">Do you want to know more?</LinkButton>
+
 ## Syntax Highlighting
-You can format Javascript code in Markdown, which is the language Discord uses.
-<div style="margin-left: 50px;">
+Discord uses the Markdown language and you can use Syntax Highlighting. Here's how:
 
-\`\`\`js
 
-Code here
-
-\`\`\`
-
+<div style="background-color: var(--jb2a-grey-300);">
+    \`\`\`js<br></br>
+    Code here<br></br>
+    \`\`\`
 </div>
-<div style="margin-left: 50px;">
-So something like this: 
 
-\`\`\`js
+Let's have a look at a simple example. If you write this exactly in a Discord post: 
 
-const text = "Hello World";
-
-Console.log(text);
-
+<div style="background-color: var(--jb2a-grey-300);">
+\`\`\`js <br></br>
+const text = "Hello World";<br></br>
+Console.log(text);<br></br>
 \`\`\`
-
-would then appear in Discord like so:
 </div>
+
+
+
+It would then appear in Discord like so:
 ```js
 const text = "Hello World";
 Console.log(text);
