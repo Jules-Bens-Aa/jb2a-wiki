@@ -83,7 +83,6 @@ export default defineConfig({
                     'getting-started/jb2a-fvtt',
                     'getting-started/jb2a-other-vtts',
                     'getting-started/discord',
-                    'getting-started/contribute-wiki'
                 ]
             },
             {
@@ -121,6 +120,9 @@ export default defineConfig({
                     'external-resources/sfx',
                     'external-resources/useful-tools',
                 ]
+            },
+            {
+                slug: 'uncategorised/contribute-wiki'
             },
             // {
             //     label: 'Patch Notes',
