@@ -1,7 +1,7 @@
 ---
 title: Guides
 ---
-import { Aside, Tabs, TabItem, Steps, FileTree } from '@astrojs/starlight/components';
+import { Aside, Cards, CardGrid, FileTree, LinkButton, LinkCard, Steps, Tabs, TabItem } from '@astrojs/starlight/components';
 
 import { Image } from 'astro:assets'
 
@@ -26,7 +26,26 @@ import forgeSearchFree from '/src/assets/img/theforge-bazaar-search-free.png'
 import forgeSearchPatreon from '/src/assets/img/theforge-bazaar-search-patreon.png'
 import forgeFree from '/src/assets/img/theforge-bazaar-free.png'
 import forgePatreon from '/src/assets/img/theforge-bazaar-patreon.png'
+
 import aaAssetLocation from '/src/assets/img/guide-aa-assetlocation.png'
+
+import guideFvttVersion from '/src/assets/img/guide-fvtt-dnd5e-version.png'
+import guideModulesVersion from '/src/assets/img/guide-modules-version.png'
+import guideCompendiumActors from '/src/assets/img/guide-compendium-actors.png'
+import guideTokenCanvas from '/src/assets/img/guide-token-canvas.png'
+import guideAaSettings from '/src/assets/img/guide-aa-settings.png'
+import guideAaExplore from '/src/assets/img/guide-aa-autorecmenu-explore.png'
+import guideAaMacro from '/src/assets/img/guide-aa-macro.png'
+import guideAaMelee from '/src/assets/img/guide-aa-autorecmenu-melee.png'
+import guideAaRange from '/src/assets/img/guide-aa-autorecmenu-range.png'
+import guideAaTemplate from '/src/assets/img/guide-aa-autorecmenu-template.png'
+
+import guideAaMaceAttack from '/src/assets/vid/aa-mace-attack.webm'
+import guideAaCrossbowAttack from '/src/assets/vid/aa-crossbow-attack.webm'
+import guideAaFogCloud from '/src/assets/vid/aa-fogcloud-spell.webm'
+import guideAaFogDelete01 from '/src/assets/vid/aa-fogcloud-delete01.webm'
+import guideAaFogDelete02 from '/src/assets/vid/aa-fogcloud-delete02.webm'
+
 import seqDatabaseViewer from '/src/assets/img/seq-database-viewer.png'
 
 
@@ -426,3 +445,132 @@ Our assets are in the `Library` folder in our modules. Once in the Foundry VTT `
 
   </TabItem>
 </Tabs>
+
+### JB2A + Automated Animations
+
+#### Trigger your first effect
+
+Before embarking on this step, read the “Prerequisites” and “Understanding Animation” secions first or you'll be missing the basics to understand what you're doing.
+
+<CardGrid>
+    <LinkCard title="Prerequisites" href="/jb2a-wiki/getting-started/prerequisites" />
+    <LinkCard title="Understanding Automation" href="/jb2a-wiki/getting-started/understanding-automation" />
+</CardGrid>
+
+This step-by-step guide is for the **DnD5e gaming system**. Some things may be different depending on the game system you wish to use. If Automated Animations is compatible with your game system, only the character sheet part will need to be adapted.
+
+<LinkButton href="https://github.com/otigon/automated-jb2a-animations?tab=readme-ov-file#introduction" icon="external" variant="secondary">List of compatible game systems for Automated Animations</LinkButton>
+
+##### Requirements
+
+To follow this guide, here's what you need:
+- FoundryVTT
+    - A world for the DnD5e game system.
+- Modules
+    - Sequencer from Fantasy Computerworks.
+    - Automated Animations from Otigon.
+    - Our Free or Patreon module.
+
+These modules must be installed with their dependencies. FoundryVTT will alert you when this is the case. Make sure they are all updated. Then all these modules must be activated in your world.
+
+##### Versions
+
+Here are the different versions used to produce this guide. You don't need to have exactly the same versions. However, you should be aware that there may be some differences depending on the versions you use.
+
+<p align="center"><Image src={guideFvttVersion} alt="Version of FoundryVTT and D&D5e game system used in this guide" style="width: 50%;"/></p>
+<p align="center"><Image src={guideModulesVersion} alt="Versions of modules used in this guide" style="width: 50%;"/></p>
+
+<Aside>
+The version of our Free or Patreon is not important for this guide.
+</Aside>
+
+##### Scene setup
+
+<Steps>
+
+1. First, import two actors from the SRD compendium and drag and drop them onto the canvas. We'll use `Akra` as the Player Character and an `Acolyte` as the Non-Player Character.
+
+    <p align="center"><Image src={guideCompendiumActors} alt="Actor Compendiums from the D&D5e game system" style="width: 50%;"/></p>
+    <p align="center"><Image src={guideTokenCanvas} alt="Canvas on FoundryVTT with 2 tokens" style="width: 50%;"/></p>
+
+2. Automated Animations has a number of animated effects already configured. There are only a few of them and they serve as a reference. To access the Automated Animations menu, which we'll call the Autorec menu from now on:   
+    1. Go to the `Settings` tab
+    2. Click on `Configure Settings`.
+    3. Then select Automated Animations in the sidebar
+    4. And click on `Launch Menu`.
+
+    <p align="center"><Image src={guideAaSettings} alt="Accessing the Automatic Recognition Menu" style="width: 50%;"/></p>
+
+3. Explore the Autorec Menu. Everything to do with Automated Animations is in this window. The various tabs for creating or customising effects and the two buttons in the top bar to access the module's parameters and help you troubleshoot any problems.
+
+    <p align="center"><Image src={guideAaExplore} alt="Automatic Recognition Menu" style="width: 50%;"/></p>
+
+4. **Quick Tip:** To simplify access to the menu, Automated Animation provides a macro allowing you to open this window directly from the hot bar.
+    1. At the top of the Autorec Menu window, click `Settings`. 
+    2. At the bottom of this window, there is an area called `Automatic Recognition Menu Macro`, click on the area and drag the macro into the hot bar.
+    3. To return to the Autorec Menu, you can now either:
+        - Close the window and use the macro,
+        - or click on `Main Menu`.
+
+    <p align="center"><Image src={guideAaMacro} alt="Automatic Recognition Menu, Settings Window" style="width: 50%;"/></p>
+
+5. Back on the canvas, with Akra, we're going to attack the Acolyte with his mace.
+    1. First, target the Acolyte,
+    2. and then select Akra.
+    3. Finally, trigger the attack from his character sheet. 
+    4. The animation should be triggered after rolling the dice. You've just triggered your first animated effect!
+
+    <p align="center"><video  controls muted="true" ><source src={ guideAaMaceAttack } type="video/webm"></source></video></p>
+
+6. But why stop there. Now, move Akra a few dozen feet away from the Acolyte, check that he still has his target and make an attack with the light crossbow. An animation should be triggered when you roll the dice.
+
+    <p align="center"><video  controls muted="true" ><source src={ guideAaCrossbowAttack } type="video/webm"></source></video></p>
+
+7. Then try Fog Cloud. The animation should be triggered after you place the template on the canvas.
+
+    <p align="center"><video  controls muted="true" ><source src={ guideAaFogCloud } type="video/webm"></source></video></p>
+
+    In this case, there are two options for deleting the template: Click on the Template tool in the FoundryVTT left-hand toolbar and delete the template.
+
+    <p align="center"><video  controls muted="true" ><source src={ guideAaFogDelete01 } type="video/webm"></source></video></p>
+
+    Alternatively, go to the Sequencer Manager, the button on the left-hand bar of FoundryVTT. This is where you'll find all the effects that persist on the Canvas. Then go to the template tool to remove the template from the canvas.
+
+    <p align="center"><video  controls muted="true" ><source src={ guideAaFogDelete02 } type="video/webm"></source></video></p>
+
+8. Finally do the same thing with Inflict Wound. Normally, if you have exactly the same setup, there are no animations after triggering the attack. This is perfectly normal!
+9. Open the Autorec menu and look at the melee tab. You'll see that the Mace is there. All our melee attack animations must be configured in this tab to work correctly.
+
+    <p align="center"><Image src={guideAaMelee} alt="Automatic Recognition Menu, Melee Tab" style="width: 50%;"/></p>
+
+10. Then go to the Range tab, and you'll see that there's only the Crossbow preset and not Light Crossbow. This is because Automated Animations has recognised part of the name of the weapon and used this effect. All our ranged attack animations must be configured in this tab to work correctly.
+
+    <p align="center"><Image src={guideAaRange} alt="Automatic Recognition Menu, Range Tab" style="width: 50%;"/></p>
+
+11. In the Template tab, you'll find Fog Cloud. This is where all spells/abilities similar to it must be configured. Whether it's a square, circular, conical template, etc... 
+
+    <p align="center"><Image src={guideAaTemplate} alt="Automatic Recognition Menu, Template Tab" style="width: 50%;"/></p>
+
+12. Inflict Wounds is a bit special. It would be possible to configure it in the melee tab but also in the On Token tab, depending on the animations you want to use. This was simply to illustrate what follows.
+13. Automated Animations has very few pre-configured animated effects. These are generally called Effects. Depending on the game system you are using, there are several options available to you:
+    - If you are using D&D5e, you can install the D&D5e animations module made by Vauxs among others. It can be downloaded and installed via FoundryVTT directly.
+
+    <LinkCard title="D&D5e Animations" href="/jb2a-wiki/external-resources/community-links#dd5e-animations" />
+
+    - If you are using PF2e, you can install the PF2e Animations module or the PF2e Graphics module, which is currently under development. They can be downloaded and installed via FoundryVTT directly.
+
+    <CardGrid>
+        <LinkCard title="PF2e Animations" href="/jb2a-wiki/external-resources/community-links#pf2e-animations" />
+        <LinkCard title="PF2e Graphics" href="/jb2a-wiki/external-resources/community-links#pf2e-graphics" />
+    </CardGrid>
+
+    - For other game systems, you can join our Discord server, in the channel #aa-autorec-sharing,  where people may have shared their presets. For example Cyberpunk and Warhammer.
+
+    <LinkButton href="https://github.com/otigon/automated-jb2a-animations?tab=readme-ov-file#introduction" icon="external" variant="secondary">Join our Discord</LinkButton>
+    
+14. This is where the guide ends. To go further with Automated Animation, we recommend that you read its documentation. Otigon has explained everything in more detail. For example :
+
+    <LinkButton href="https://github.com/otigon/automated-jb2a-animations/wiki/Configure-Effects" icon="external" variant="secondary">How to configure an Effect</LinkButton>
+    <LinkButton href="https://github.com/otigon/automated-jb2a-animations/wiki/PERSISTENT-EFFECTS" icon="external" variant="secondary">About persistent Effects</LinkButton>
+ 
+</Steps>
