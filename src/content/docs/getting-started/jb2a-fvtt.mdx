@@ -1,5 +1,5 @@
 ---
-title: JB2A & Foundry VTT
+title: JB2A & FoundryVTT
 ---
 
 import { Image } from 'astro:assets';
@@ -16,7 +16,7 @@ import aaItemDetail from '/src/assets/img/guide-aa-item-detail.png';
 import aaItemMenu from '/src/assets/img/guide-aa-item-menu.png';
 
 
-*Advanced notions and guidelines using our content on Foundry VTT*
+*Advanced notions and guidelines using our content on FoundryVTT*
 
 ## Best Practices
 
@@ -27,14 +27,14 @@ When something goes wrong, opening the console should be your first impulse.
 - MacOS: Press `Option + CMD + J`
 
 You can safely ignore the yellow deprecation warnings. They're not breaking anything, just letting the developers know that they'll have to modify some of their code eventually. 
-The red error messages are what we're looking for. Most of the time, they'll give you information about what module is implicated in the error. 
+The red error messages are what we're looking for. Most of the time, they'll give you information about which module is implicated in the error. 
 
 <Aside>
 Take a screenshot of it if you're reporting the error, it could be really useful!
     - Windows: `ALT + SHIFT + S` to open the Snipping tool.
 </Aside>
 
-If you're overwhelmed with the huge amount of logs, you can clear the console by pressing a button like this one. Here it's on Chrome but there will exist a similar one on other browsers:
+If you're overwhelmed with the huge amount of logs, you can clear the console by pressing a button like this one. Here it's on Chrome but there will be a similar one on other browsers:
 <p align="center"><Image src={consoleClear} alt="console clear image" style="width: 50%;"/></p>
 Then recreate the issue and check if a red message appears. 
 
@@ -42,7 +42,7 @@ Then recreate the issue and check if a red message appears.
 Here are a few best practices for things to check or try when you're having an issue:
 
 <Aside type="danger" title="Important">
-Before updating your Foundry VTT version, your system or your modules, BACKUP YOUR DATA!
+Before updating your FoundryVTT version, your system or your modules, BACKUP YOUR DATA!
 
 <LinkButton href="https://foundryvtt.com/article/user-data-backup/" icon="external" variant="secondary">How to make a backup</LinkButton>
 
@@ -66,13 +66,13 @@ If you are new to this, make sure to read our "Prerequisites" and "Understanding
         3. Check for any updates that might be available for the module you are having issues with and all of its dependencies. It's usually safe to update your modules.
 
             <Aside type="caution">
-            You have to be careful with **game system updates** and **major updates** for Foundry VTT, as the module developers have to play "catch-up" with potentially breaking changes.
+            You have to be careful with **game system updates** and **major updates** for FoundryVTT, as the module developers have to play "catch-up" with potentially breaking changes.
             </Aside>
 
         4. Have you forgotten to enable the module in the world?
         5. Is there an error in the console when you trigger the macro or item? Errors are red, yellow ones are deprecation warnings and are safe for you to ignore.
 
-            To open the console in Foundry VTT:
+            To open the console in FoundryVTT:
             - Windows: Press `F12`
             - MacOS: Press `Option + CMD + J`
 
@@ -154,25 +154,25 @@ If you are new to this, make sure to read our "Prerequisites" and "Understanding
 ## Advanced
 
 ### Macros
-You need at least a basic understanding of Javascript, knowing what variables are, how to create and manipulate arrays, objects…etc
+You need at least a basic understanding of Javascript, knowing what variables are, how to create and manipulate arrays, objects…etc.
 There are plenty of different beginner courses online for free, here's an example below.
 
 <LinkButton href="https://www.codecademy.com/enrolled/courses/introduction-to-javascript" icon="external">Javascript Codecademy Course</LinkButton>
 
-Then, there are some key concepts for Foundry VTT to understand. Looking through the ``#macro-polo`` channel on the main Foundry VTT discord server is really helpful and there's almost always someone around to answer any questions you may have.
+Then, there are some key concepts for FoundryVTT to understand. Looking through the ``#macro-polo`` channel on the main FoundryVTT discord server is really helpful and there's almost always someone around to answer any questions you may have.
 
-<LinkButton href="https://discord.gg/foundryvtt" icon="discord">Join the Foundry VTT Discord</LinkButton>
+<LinkButton href="https://discord.gg/foundryvtt" icon="discord">Join the FoundryVTT Discord</LinkButton>
 
 ### Hooks and Worldscripts
-Now that you know a bit more about Javascript, macros and Foundry VTT's API, you may want to look into hooks. 
+Now that you know a bit more about Javascript, macros and FoundryVTT's API, you may want to look into hooks. 
 #### What is a hook and why would you need it?
-In simple words, everytime something happens in your game, a hook is triggered. It can be from you hovering your mouse on a Token, using a skill, opening a character sheet, the list goes on and on. Foundry VTT provides hooks by default and every system and module can implement its own hooks.
+In simple words, everytime something happens in your game, a hook is triggered. It can be from you hovering your mouse on a Token, using a skill, opening a character sheet, the list goes on and on. FoundryVTT provides hooks by default and every system and module can implement its own hooks.
 To interact with these hooks, retrieving the data and doing something with it, it's usually better to use a world script. If you use a macro, you'd have to execute it every time you load or refresh your game.  
 
-It's a vast subject and out of scope of this website. However, here is some <a href="https://foundryvtt.wiki/en/basics/world-scripts">documentation on World scripts</a>
+It's a vast subject and behond the scope of this website. However, here is some <a href="https://foundryvtt.wiki/en/basics/world-scripts">documentation on World scripts</a>
 
 ### Modules
-The next step further is to create a module.
+The next step is to create a module.
 A common way to share your compendia and world scripts across different worlds for example is by creating a small module that you can activate in different worlds! 
 
 <LinkButton href="https://foundryvtt.com/article/module-development/" icon="external">Module Development Article</LinkButton>
