@@ -12,6 +12,9 @@ import fvttAddOnModulesInstallFree from '/src/assets/img/fvtt-addon-modules-inst
 import fvttManageModule from '/src/assets/img/fvtt-managemodules.png'
 import fvttModuleManagement from '/src/assets/img/fvtt-modulemanagement.png'
 import fvttModuleOption from '/src/assets/img/fvtt-jb2a-module-options.png'
+import fvttLandingPageSettings from '/src/assets/img/fvtt-landingpage-settings.png'
+import fvttDataPath from '/src/assets/img/fvtt-settings.png'
+import fvttToolFilePicker from '/src/assets/img/fvtt-toolbar-filepicker.png'
 
 import jb2aPatreonHomePage from '/src/assets/img/jb2a-patreon-homepage.png'
 import jb2aPatreonMembership from '/src/assets/img/jb2a-patreon-membership.png'
@@ -26,6 +29,8 @@ import forgeSearchFree from '/src/assets/img/theforge-bazaar-search-free.png'
 import forgeSearchPatreon from '/src/assets/img/theforge-bazaar-search-patreon.png'
 import forgeFree from '/src/assets/img/theforge-bazaar-free.png'
 import forgePatreon from '/src/assets/img/theforge-bazaar-patreon.png'
+import forgeAssetLocationFree from '/src/assets/img/theforge-assetlocation-free.png'
+import forgeAssetLocationPatreon from '/src/assets/img/theforge-assetlocation-patreon.png'
 
 import aaAssetLocation from '/src/assets/img/guide-aa-assetlocation.png'
 
@@ -316,7 +321,7 @@ The installation process may differ depending on your hosting method. Select the
 
       <Steps>
         
-        1. Download the "Complete Collection" zip from the <a href="https://www.patreon.com/posts/56246490/" target="_blank">Master Post</a> on the JB2A Patreon.
+        1. Download the "Complete Collection" zip from the <a href="https://www.patreon.com/posts/56246490/" >Master Post</a> on the JB2A Patreon.
 
             <p align="center"><Image src={jb2aPatreonMasterPost} alt="Preview of the Master Post" style="width: 50%;"/></p>
 
@@ -324,7 +329,7 @@ The installation process may differ depending on your hosting method. Select the
 
         3. Open up the Cloud Commander (CC).
 
-            <a href="https://molten-hosting.notion.site/Managing-Server-Files-df96be0dcde74775994a86c844ba1a4e" target="_blank">How to access the Cloud Commander</a>
+            <a href="https://molten-hosting.notion.site/Managing-Server-Files-df96be0dcde74775994a86c844ba1a4e" >How to access the Cloud Commander</a>
 
         4. In CC, navigate to the `Data/modules` folder.
 
@@ -361,12 +366,14 @@ If you're having issues with the manifest link for whatever reason or you have d
   2. Browse to your FoundryVTT User Data folder. There are two ways to locate this folder. 
 
       - If you have the App installed, you can right-click the FoundryVTT icon in your taskbar and choose "Browse to User Data"
-      - Otherwise, on the home page of FoundryVTT, click the gear icon to change the configuration settings and the User Data folder path will appear there.
-
-      <p align="center"><Image src={jb2aPatreonMasterPost} alt="Preview of the Master Post" style="width: 50%;"/></p>
+      - Otherwise, on the home page of FoundryVTT, 
+        - click the gear icon to change the configuration settings, 
+        <p align="center"><Image src={fvttLandingPageSettings} alt="FoundryVTT Settings - Datapath setting location" style="width: 50%;"/></p>
+        - and the User Data folder path will appear there.
+        <p align="center"><Image src={fvttDataPath} alt="FoundryVTT Settings - Datapath setting location" style="width: 50%;"/></p>
 
   3. Inside the User Data folder, open the ``modules`` folder.
-  4. Create a folder called exactly ``jb2a-patreon``. It's case-sensitive.
+  4. Create a folder called **exactly** ``jb2a-patreon``. It's case-sensitive.
   5. Back to our extracted zip, we want to drag the files inside over to the newly created ``jb2a_patreon`` folder. The file transfer might take a while, it's a large amount of data! 
   Once finished, it should look like this:
 
@@ -394,25 +401,121 @@ If you're having issues with the manifest link for whatever reason or you have d
 
 What is described in this subsection applies to any game system and without additional modules. In other words, with the FoundryVTT core.
 
-Our assets are in the `Library` folder in our modules. Once in the FoundryVTT `data` folder, you'll find them in this location: 
+#### Assets Location
 
-<FileTree>
+##### Free Module
 
-- data
-  - modules
-    - jb2a-moduleName
-      - artwork/
-      - **Library/**
-      - packs/
-      - scripts/
-      - module.json
-  - systems/
-  - worlds/
+<Tabs syncKey="modulelocation">
+    <TabItem label="Default Location">
 
-</FileTree>
+        Our assets are in the `Library` folder in our modules. Once in the FoundryVTT `data` folder, you'll find them in this location: 
+    
+        <FileTree>
+            - data
+              - modules
+                - JB2A_DnD5e
+                  - artwork/
+                  - **Library/**
+                  - packs/
+                  - scripts/
+                  - module.json
+              - systems/
+              - worlds/
+        </FileTree>
+
+        You can also browse our assets once your world is loaded. In the toolbar on the left of your screen, click on the `Tile Control` button, then on `Tile Browser` to open the file picker window.
+
+        <p align="center"><Image src={fvttToolFilePicker} alt="Accessing FilePicker on FoundryVTT" style="width: 10%;"/></p>
+
+        By default, you can find all our assets using this path:
+
+        ```
+        data/modules/JB2A_DnD5e/Library/
+        ```
+        
+    </TabItem>
+
+    <TabItem label="The Forge Location">
+
+        You cannot access our assets via The Forge interface but you can browse our assets once in your world, on FoundryVTT.
+
+        <Steps>
+
+            1. In the toolbar on the left of your screen, click on the `Tile Control` button and then `Tile Browser` to open the file picker window.
+
+                <p align="center"><Image src={fvttToolFilePicker} alt="Accessing FilePicker on FoundryVTT" style="width: 10%;"/></p>
+
+            2. Once the file picker is open, go to `The Baazar` tab and all our assets are listed in the `modules/jb2a_patreon/Library` folder.
+
+                <p align="center"><Image src={forgeAssetLocationFree} alt="The Forge and our Free Module - Asset Location in FoundryVTT" style="width: 50%;"/></p>
+
+        </Steps>      
+    </TabItem>
+
+</Tabs>
+
+##### Patreon Module
+
+<Tabs syncKey="modulelocation">
+    <TabItem label="Default Location">
+    
+        Our assets are in the `Library` folder in our modules. Once in the FoundryVTT `data` folder, you'll find them in this location: 
+    
+        <FileTree>
+            - data
+              - modules
+                - jb2a_patreon
+                  - artwork/
+                  - **Library/**
+                  - packs/
+                  - scripts/
+                  - module.json
+              - systems/
+              - worlds/
+        </FileTree>
+
+        You can also browse our assets once your world is loaded. In the toolbar on the left of your screen, click on the `Tile Control` button, then on `Tile Browser` to open the file picker window.
+
+        <p align="center"><Image src={fvttToolFilePicker} alt="Accessing FilePicker on FoundryVTT" style="width: 10%;"/></p>
+
+        By default, you can find all our assets using this path:
+
+        ```
+        data/modules/jb2a_patreon/Library/
+        ```
+
+    </TabItem>
+
+    <TabItem label="The Forge Location">
+
+        You cannot access our assets via The Forge interface, nor download them directly from The Forge.
+
+        <Aside>
+            Once you have subscribed to one of our tiers on Patreon, we recommend that you download the `.zip` file of our module directly from the <a href="https://www.patreon.com/posts/56246490/" >Master Post</a>. Simply so that you have a backup of our module when needed.
+        </Aside>
+
+        You can browse our assets once in your world, on FoundryVTT.
+
+        <Steps>
+
+            1. In the toolbar on the left of your screen, click on the `Tile Control` button and then `Tile Browser` to open the file picker window.
+
+                <p align="center"><Image src={fvttToolFilePicker} alt="Accessing FilePicker on FoundryVTT" style="width: 10%;"/></p>
+
+            2. Once the file picker is open, go to `The Baazar` tab and all our assets are listed in the `modules/jb2a_patreon/Library` folder.
+
+                <p align="center"><Image src={forgeAssetLocationPatreon} alt="The Forge and our Patreon Module - Asset Location in FoundryVTT" style="width: 50%;"/></p>
+
+        </Steps>  
+        
+    </TabItem>
+    
+</Tabs>
+
+#### App Tools
 
 <Tabs>
-  <TabItem label="Tiles" icon="star">
+  <TabItem label="Tiles">
 
     To use an animated asset as a tile to a FoundryVTT canvas, follow the instructions on the official website.
     [FoundryVTT Tiles Documentation](https://foundryvtt.com/article/tiles/)
@@ -422,7 +525,7 @@ Our assets are in the `Library` folder in our modules. Once in the FoundryVTT `d
     </Aside>
 
   </TabItem>
-  <TabItem label="Tokens" icon="moon">
+  <TabItem label="Tokens">
 
     To use an animated asset as a token on FoundryVTT, follow the instructions on the official website. The information you need can be found in the ‘Token Configuration Options -> The Appearance Tab’ section. 
     [FoundryVTT Token Documentation](https://foundryvtt.com/article/tokens/)
@@ -432,7 +535,7 @@ Our assets are in the `Library` folder in our modules. Once in the FoundryVTT `d
     </Aside>
 
   </TabItem>
-    <TabItem label="Macros" icon="moon">
+    <TabItem label="Macros">
     
     This method requires a __good knowledge of javascript__ to be able to do just about anything with our assets. To find out more about what a macro is on FoundryVTT and how to use them, read the documentation provided on their official website.
     [FoundryVTT Macros Documentation](https://foundryvtt.com/article/macros/)
