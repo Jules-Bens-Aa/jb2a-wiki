@@ -15,6 +15,7 @@ import fvttModuleOption from '/src/assets/img/fvtt-jb2a-module-options.png'
 import fvttLandingPageSettings from '/src/assets/img/fvtt-landingpage-settings.png'
 import fvttDataPath from '/src/assets/img/fvtt-settings.png'
 import fvttToolFilePicker from '/src/assets/img/fvtt-toolbar-filepicker.png'
+import fvttModuleUpdate from '/src/assets/img/fvtt-moduleupdate.png'
 
 import jb2aPatreonHomePage from '/src/assets/img/jb2a-patreon-homepage.png'
 import jb2aPatreonMembership from '/src/assets/img/jb2a-patreon-membership.png'
@@ -31,6 +32,9 @@ import forgeFree from '/src/assets/img/theforge-bazaar-free.png'
 import forgePatreon from '/src/assets/img/theforge-bazaar-patreon.png'
 import forgeAssetLocationFree from '/src/assets/img/theforge-assetlocation-free.png'
 import forgeAssetLocationPatreon from '/src/assets/img/theforge-assetlocation-patreon.png'
+import forgeFreeUpdate from '/src/assets/img/theforge-bazaar-free-update.png'
+import forgePatreonUpdate from '/src/assets/img/theforge-bazaar-patreon-update.png'
+
 
 import aaAssetLocation from '/src/assets/img/guide-aa-assetlocation.png'
 
@@ -58,7 +62,7 @@ import seqDatabaseViewer from '/src/assets/img/seq-database-viewer.png'
 This is the recommended way to install either the free or the Patreon JB2A module.
 ### Free module
 
-The free module could be considered a demo of our module on patreon. We're working hard to ensure that the module has all the animated assets we've made, minus their colour variations and a few exceptions to comply with licensing requirements.
+The free module could be considered a demo of our module on Patreon. We're working hard to ensure that the module has all the animated assets we've made, minus their colour variations and a few exceptions to comply with licensing requirements.
 
 It's a good place to start, if you want to discover the whole FoundryVTT effects environment before committing yourself to our Patreon module. Simple to install, and can be updated directly on FoundryVTT.
 
@@ -66,114 +70,125 @@ The installation process may differ depending on your hosting method. Select the
 
 <Tabs syncKey="hostingMethod">
 
-  <TabItem label="Self-Hosting">
-    <Steps>
-      1. Go to the FoundryVTT landing page and click on the “Add-On Modules” tab.
+    <TabItem label="Self-Hosting">
 
-          <p align="center"><Image src={fvttLandingPage} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+        <Steps>
 
-      2. Click on the “Install Module”
+            1. Go to the FoundryVTT landing page and click on the “Add-On Modules” tab.
 
-          <p align="center"><Image src={fvttAddOnModules} alt="Add-On Modules Tab on FoundryVTT" style="width: 50%;"/></p>
+                <p align="center"><Image src={fvttLandingPage} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
 
-      3. Search for JB2A and click “Install” and the installation process will occur.
+            2. Click on the “Install Module”
 
-          <p align="center"><Image src={fvttAddOnModulesInstallFree} alt="Researching JB2A in the 'Install Module' window" style="width: 50%;"/></p>
+                <p align="center"><Image src={fvttAddOnModules} alt="Add-On Modules Tab on FoundryVTT" style="width: 50%;"/></p>
 
-      4. Once installed, you need to enable our module in your world. Start your world and click on “Manage Modules” in the Settings tab.
+            3. Search for JB2A and click “Install” and the installation process will occur.
 
-          <p align="center"><Image src={fvttManageModule} alt="Open 'Manage Module' in the world settings" style="width: 50%;"/></p>
+                <p align="center"><Image src={fvttAddOnModulesInstallFree} alt="Researching JB2A in the 'Install Module' window" style="width: 50%;"/></p>
 
-      5. Finally find our module and enable it. That’s it, our free module is ready for you to use.
+            4. Once installed, you need to enable our module in your world. Start your world and click on “Manage Modules” in the Settings tab.
 
-          <p align="center"><Image src={fvttModuleManagement} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
+                <p align="center"><Image src={fvttManageModule} alt="Open 'Manage Module' in the world settings" style="width: 50%;"/></p>
 
-    </Steps>
-  </TabItem>
+            5. Finally find our module and enable it. That’s it, our free module is ready for you to use.
 
-  <TabItem label="Foundry Server">
-      Our free module is 1.2GB in size. (as of october 2024)
-      As long as you have enough space from the tier you've subscribed to on Foundry Server, you can find and install our free module from the list from within FoundryVTT
+                <p align="center"><Image src={fvttModuleManagement} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
 
-      <Steps>
+        </Steps>
 
-      1. Go to the FoundryVTT landing page and click on the “Add-On Modules” tab.
+    </TabItem>
 
-          <p align="center"><Image src={fvttLandingPage} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+    <TabItem label="Foundry Server">
 
-      2. Click on the “Install Module”
+    Our free module is 1.2GB in size. (as of october 2024)
+    As long as you have enough space from the tier you've subscribed to on Foundry Server, you can find and install our free module from the list from within FoundryVTT
 
-          <p align="center"><Image src={fvttAddOnModules} alt="Add-On Modules Tab on FoundryVTT" style="width: 50%;"/></p>
+        <Steps>
 
-      3. Search for JB2A and click “Install” and the installation process will occur.
+            1. Go to the FoundryVTT landing page and click on the “Add-On Modules” tab.
 
-          <p align="center"><Image src={fvttAddOnModulesInstallFree} alt="Researching JB2A in the 'Install Module' window" style="width: 50%;"/></p>
+                <p align="center"><Image src={fvttLandingPage} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
 
-      4. Once installed, you need to enable our module in your world. Start your world and click on “Manage Modules” in the Settings tab.
+            2. Click on the “Install Module”
 
-          <p align="center"><Image src={fvttManageModule} alt="Open 'Manage Module' in the world settings" style="width: 50%;"/></p>
+                <p align="center"><Image src={fvttAddOnModules} alt="Add-On Modules Tab on FoundryVTT" style="width: 50%;"/></p>
 
-      5. Finally find our module and enable it. That’s it, our free module is ready for you to use.
+            3. Search for JB2A and click “Install” and the installation process will occur.
 
-          <p align="center"><Image src={fvttModuleManagement} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
+                <p align="center"><Image src={fvttAddOnModulesInstallFree} alt="Researching JB2A in the 'Install Module' window" style="width: 50%;"/></p>
 
-      </Steps>
-  </TabItem>
+            4. Once installed, you need to enable our module in your world. Start your world and click on “Manage Modules” in the Settings tab.
 
-  <TabItem label="The Forge">
-    <Steps>
-      1. We'll assume you already know the basics about The Forge. If not read their [documentation](https://forums.forge-vtt.com/t/getting-your-game-started-on-the-forge/11295)
-      2. To install the module, go to "The Bazaar" tab and click on "Modules".
+                <p align="center"><Image src={fvttManageModule} alt="Open 'Manage Module' in the world settings" style="width: 50%;"/></p>
 
-            <p align="center"><Image src={forgeBazaarModules} alt="Go to 'The Bazaar' Tab and click on 'Modules'" style="width: 50%;"/></p>
+            5. Finally find our module and enable it. That’s it, our free module is ready for you to use.
 
-      3. Search for `jb2a` in the search bar and select "JB2A - Jules&Ben's Animated Assets"
+                <p align="center"><Image src={fvttModuleManagement} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
 
-            <p align="center"><Image src={forgeSearchFree} alt="Search for 'JB2A' and select select 'JB2A - Jules&Ben's Animated Assets'" style="width: 50%;"/></p>
+        </Steps>
 
-      3. Then install the module.
+    </TabItem>
 
-            <p align="center"><Image src={forgeFree} alt="How to install the Free module on The Forge" style="width: 25%;"/></p>
+    <TabItem label="The Forge">
 
-      4. Once installed, you need to enable our module in your world. Start your world and click on “Manage Modules” in the Settings tab.
+        <Steps>
 
-          <p align="center"><Image src={fvttManageModule} alt="Open 'Manage Module' in the world settings" style="width: 50%;"/></p>
+            1. We'll assume you already know the basics about The Forge. If not read their [documentation](https://forums.forge-vtt.com/t/getting-your-game-started-on-the-forge/11295)
 
-      5. Finally find our module and enable it. That’s it, our free module is ready for you to use.
+            2. To install the module, go to "The Bazaar" tab and click on "Modules".
 
-          <p align="center"><Image src={fvttModuleManagement} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
+                <p align="center"><Image src={forgeBazaarModules} alt="Go to 'The Bazaar' Tab and click on 'Modules'" style="width: 50%;"/></p>
 
-    </Steps>
-  </TabItem>
+            3. Search for `jb2a` in the search bar and select "JB2A - Jules&Ben's Animated Assets"
 
-  <TabItem label="Molten Hosting">
-      Our free module is 1.2GB in size. (as of october 2024)
-      As long as you have enough space from the tier you've subscribed to on Molten Hosting, you can find and install our free module from the list from within FoundryVTT
+                <p align="center"><Image src={forgeSearchFree} alt="Search for 'JB2A' and select select 'JB2A - Jules&Ben's Animated Assets'" style="width: 50%;"/></p>
 
-      <Steps>
+            3. Then install the module.
 
-      1. Go to the FoundryVTT landing page and click on the “Add-On Modules” tab.
+                <p align="center"><Image src={forgeFree} alt="How to install the Free module on The Forge" style="width: 25%;"/></p>
 
-          <p align="center"><Image src={fvttLandingPage} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+            4. Once installed, you need to enable our module in your world. Start your world and click on “Manage Modules” in the Settings tab.
 
-      2. Click on the “Install Module”
+                <p align="center"><Image src={fvttManageModule} alt="Open 'Manage Module' in the world settings" style="width: 50%;"/></p>
 
-          <p align="center"><Image src={fvttAddOnModules} alt="Add-On Modules Tab on FoundryVTT" style="width: 50%;"/></p>
+            5. Finally find our module and enable it. That’s it, our free module is ready for you to use.
 
-      3. Search for JB2A and click “Install” and the installation process will occur.
+                <p align="center"><Image src={fvttModuleManagement} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
 
-          <p align="center"><Image src={fvttAddOnModulesInstallFree} alt="Researching JB2A in the 'Install Module' window" style="width: 50%;"/></p>
+        </Steps>
 
-      4. Once installed, you need to enable our module in your world. Start your world and click on “Manage Modules” in the Settings tab.
+    </TabItem>
 
-          <p align="center"><Image src={fvttManageModule} alt="Open 'Manage Module' in the world settings" style="width: 50%;"/></p>
+    <TabItem label="Molten Hosting">
+    
+    Our free module is 1.2GB in size. (as of october 2024)
+    As long as you have enough space from the tier you've subscribed to on Molten Hosting, you can find and install our free module from the list from within FoundryVTT
 
-      5. Finally find our module and enable it. That’s it, our free module is ready for you to use.
+        <Steps>
 
-          <p align="center"><Image src={fvttModuleManagement} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
+            1. Go to the FoundryVTT landing page and click on the “Add-On Modules” tab.
 
-      </Steps>
-  </TabItem>
+                <p align="center"><Image src={fvttLandingPage} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+
+            2. Click on the “Install Module”
+
+                <p align="center"><Image src={fvttAddOnModules} alt="Add-On Modules Tab on FoundryVTT" style="width: 50%;"/></p>
+
+            3. Search for JB2A and click “Install” and the installation process will occur.
+
+                <p align="center"><Image src={fvttAddOnModulesInstallFree} alt="Researching JB2A in the 'Install Module' window" style="width: 50%;"/></p>
+
+            4. Once installed, you need to enable our module in your world. Start your world and click on “Manage Modules” in the Settings tab.
+
+                <p align="center"><Image src={fvttManageModule} alt="Open 'Manage Module' in the world settings" style="width: 50%;"/></p>
+
+            5. Finally find our module and enable it. That’s it, our free module is ready for you to use.
+
+                <p align="center"><Image src={fvttModuleManagement} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
+
+        </Steps>
+
+    </TabItem>
 
 </Tabs>
 
@@ -185,215 +200,431 @@ The installation process may differ depending on your hosting method. Select the
 
 <Tabs syncKey="hostingMethod">
 
-  <TabItem label="Self-Hosting">
-    <Steps>
-      1. You must have an account and [subscribe to any tier](https://www.patreon.com/c/jb2a/membership) on our Patreon. They all have access to the same module. To find out more about how our Patreon works, click [here](./our-patreon#_top).
+    <TabItem label="Self-Hosting">
 
-          <p align="center"><Image src={jb2aPatreonHomePage} alt="Patreon homepage of JB2A" style="width: 50%;"/></p>
+        <Steps>
 
-      2. Find the [Master Post](https://www.patreon.com/posts/jb2a-master-post-56246490), it's a pinned post in the “Home” section. It will always be at the top of the list of recent posts.
+            1. You must have an account and [subscribe to any tier](https://www.patreon.com/c/jb2a/membership) on our Patreon. They all have access to the same module. To find out more about how our Patreon works, click [here](./our-patreon#_top).
 
-          <p align="center"><Image src={jb2aPatreonMasterPost} alt="Preview of the Master Post" style="width: 50%;"/></p>
+                <p align="center"><Image src={jb2aPatreonHomePage} alt="Patreon homepage of JB2A" style="width: 50%;"/></p>
 
-      3. Consult the Master Post section called "Download Links".
-      4. Under “Manifest Link”, right-click on the link and “Copy Link Address”.
+            2. Find the [Master Post](https://www.patreon.com/posts/jb2a-master-post-56246490), it's a pinned post in the “Home” section. It will always be at the top of the list of recent posts.
 
-          <p align="center"><Image src={jb2aPatreonManifestLink} alt="Copy the Manifest Link" style="width: 50%;"/></p>
+                <p align="center"><Image src={jb2aPatreonMasterPost} alt="Preview of the Master Post" style="width: 50%;"/></p>
 
-      5. Go to the FoundryVTT landing page.
+            3. Consult the Master Post section called “Manifest Link”.
 
-          <p align="center"><Image src={fvttLandingPage} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+            4. Right-click on the link and “Copy Link Address”.
 
-      6. Click on the “Install Module”.
+                <p align="center"><Image src={jb2aPatreonManifestLink} alt="Copy the Manifest Link" style="width: 50%;"/></p>
 
-          <p align="center"><Image src={fvttAddOnModules} alt="Add-On Modules Tab on FoundryVTT" style="width: 50%;"/></p>
+            5. Start FoundryVTT, go to the FoundryVTT landing page.
 
-      7. Paste the manifest link inside the field named "Manifest URL". Click “Install” and the installation process will occur.
+                <p align="center"><Image src={fvttLandingPage} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
 
-          <p align="center"><Image src={fvttAddOnModulesInstall} alt="Pasting the manifest link and click on 'Install'" style="width: 50%;"/></p>
+            6. Click on the “Install Module”.
 
-      8. Once installed, you need to enable our module in your world. Start your world and click on “Manage Modules” in the Settings tab.
+                <p align="center"><Image src={fvttAddOnModules} alt="Add-On Modules Tab on FoundryVTT" style="width: 50%;"/></p>
 
-          <p align="center"><Image src={fvttManageModule} alt="Open 'Manage Module' in the world settings" style="width: 50%;"/></p>
+            7. Paste the manifest link inside the field named "Manifest URL". Click “Install” and the installation process will occur.
 
-      9. Finally find our module and enable it. That’s it, our Patreon module is ready for you to use.
+                <p align="center"><Image src={fvttAddOnModulesInstall} alt="Pasting the manifest link and click on 'Install'" style="width: 50%;"/></p>
 
-          <p align="center"><Image src={fvttModuleManagement} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
+            8. Once installed, you need to enable our module in your world. Start your world and click on “Manage Modules” in the Settings tab.
 
-    </Steps>
-  </TabItem>
+                <p align="center"><Image src={fvttManageModule} alt="Open 'Manage Module' in the world settings" style="width: 50%;"/></p>
 
+            9. Finally find our module and enable it. That’s it, our Patreon module is ready for you to use.
 
+                <p align="center"><Image src={fvttModuleManagement} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
 
-  <TabItem label="Foundry Server">
+        </Steps>
+
+        <Aside type="danger" title="Important">
+        When you try to update our Patreon module, you will receive the following error.
+        > *The module jb2a_patreon has no manifest URL provided*
+        </Aside>
+
+        To avoid having this error every time FoundryVTT tries to update our module, we advise you to lock it like this:
+
+        <p align="center"><Image src={fvttModuleOption} alt="How to lock our Patreon Module" style="width: 25%;"/></p>
+
+        <LinkCard title="How to update the Patreon Module" href="/jb2a-wiki/getting-started/guides#patreon-module-1" />
+
+    </TabItem>
+
+    <TabItem label="Foundry Server">
+
     Credits and thanks to ``WWQuicksilver (Rob)`` on Discord for this guide! 
     This post is to assist anyone using the Foundry Server hosting site and Digital Ocean (or similar S3 bucket service for asset storage). It assumes you're NOT using the manifest option because you don't want to eat up ~6GB directly on Foundry Server, and are instead uploading the entire package to your S3 bucket.
+
     <Aside>
     Using the manifest would actually temporarily require twice the size of our module since FoundryVTT downloads the zip, and only deletes it once the installation process is completed.
     </Aside>
-      <Steps>
-        1. Create a folder on the root (easiest option) of your S3 bucket called `jb2a_patreon` (case sensitive).
+    
+        <Steps>
 
-        2. From wherever you've unzipped the contents of the complete JB2A package, go into the `jb2a_patreon` folder and copy the entire Library folder over to your `jb2a_patreon` folder on your S3 bucket. Because the Library folder and its subfolders are large in size and the number of files, you quite likely will need to upload it in smaller chunks...while maintaining the directory structure **AND** making sure to mark the files as public during the process. Attention to detail here will save you time and frustration later. 😉
+            1. Create a folder on the root (easiest option) of your S3 bucket called `jb2a_patreon` (case sensitive).
 
-        3. Check that you can access/view some of the webm files via the tile browser
+            2. From wherever you've unzipped the contents of the complete JB2A package, go into the `jb2a_patreon` folder and copy the entire Library folder over to your `jb2a_patreon` folder on your S3 bucket. Because the Library folder and its subfolders are large in size and the number of files, you quite likely will need to upload it in smaller chunks...while maintaining the directory structure **AND** making sure to mark the files as public during the process. Attention to detail here will save you time and frustration later. 😉
 
-        4. Install just the free version of JB2A on your Foundry Server instance of FoundryVTT and then shut the FVTT instance down so you can safely update some files (Hit the red Game Control button on Foundry Server).
+            3. Check that you can access/view some of the webm files via the tile browser
 
-        5. Using your SFTP tool of choice (e.g. FileZilla), find the `/Data/modules/JB2A_DnD5e` folder and rename it to jb2a_patreon. Then replace the contents of every subfolder (except Library) with the files from your JB2A package.
+            4. Install just the free version of JB2A on your Foundry Server instance of FoundryVTT and then shut the FVTT instance down so you can safely update some files (Hit the red Game Control button on Foundry Server).
 
-        6. Restart FVTT, launch your world, and enable JB2A.
+            5. Using your SFTP tool of choice (e.g. FileZilla), find the `/Data/modules/JB2A_DnD5e` folder and rename it to `jb2a_patreon`. Then replace the contents of every subfolder (except Library) with the files from your JB2A package.
+
+            6. Restart FVTT, launch your world, and enable JB2A.
         
-        7. In Configure Settings select JB2A and in the JB2A - location field enter the full path of your S3 bucket, including `https://`, as in this example (no slash at the end): 
+            7. In Configure Settings select JB2A and in the JB2A - location field enter the full path of your S3 bucket, including `https://`, as in this example (no slash at the end): 
         
                 ```
                 https://mygame123.sfo3.digitaloceanspaces.com 
                 ```
 
-        8. If you're using Automated Animations, in its settings for the JB2A Asset Location field enter the same thing, plus this at the end `/jb2a_patreon`. example:
+            8. If you're using Automated Animations, in its settings for the JB2A Asset Location field enter the same thing, plus this at the end `/jb2a_patreon`. example:
 
                 ```
                 https://mygame123.sfo3.digitaloceanspaces.com/jb2a_patreon 
                 ```        
 
-            <p align="center"><Image src={aaAssetLocation} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
+                <p align="center"><Image src={aaAssetLocation} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
 
-      </Steps>
+        </Steps>
 
-  </TabItem>
+    </TabItem>
 
+    <TabItem label="The Forge">
 
+        <Steps>
 
-  <TabItem label="The Forge">
-    <Steps>
-      1. We'll assume you already know the basics about The Forge. If not, read their [documentation](https://forums.forge-vtt.com/t/getting-your-game-started-on-the-forge/11295).
+            1. We'll assume you already know the basics about The Forge. If not, read their [documentation](https://forums.forge-vtt.com/t/getting-your-game-started-on-the-forge/11295).
 
-          <Aside type="danger" title="Important">
-          On The Forge, don’t use the manifest link to install our Patreon module or it will count against your data quota ! Follow these steps to avoid that.
-          </Aside>
+                <Aside type="danger" title="Important">
+                On The Forge, don’t use the manifest link to install our Patreon module or it will count against your data quota ! Follow these steps to avoid that.
+                </Aside>
 
-      2. You must have an account and [subscribe to any tier](https://www.patreon.com/c/jb2a/membership) on our Patreon. They all have access to the same module. To find out more about how our Patreon works, click [here](./our-patreon#_top).
+            2. You must have an account and [subscribe to any tier](https://www.patreon.com/c/jb2a/membership) on our Patreon. They all have access to the same module. To find out more about how our Patreon works, click [here](./our-patreon#_top).
 
-          <p align="center"><Image src={jb2aPatreonHomePage} alt="Patreon homepage of JB2A" style="width: 50%;"/></p>
+                <p align="center"><Image src={jb2aPatreonHomePage} alt="Patreon homepage of JB2A" style="width: 50%;"/></p>
 
-      3. In the My Account section of The Forge, link your Patreon account in the "Linked Account" tab.
+            3. In the My Account section of The Forge, link your Patreon account in the "Linked Account" tab.
 
-          <p align="center"><Image src={forgeLinkedAccountPatreon} alt="Showing how to link a Patreon account in the Linked Account tab on the Forge account settings" style="width: 50%;"/></p>
+                <p align="center"><Image src={forgeLinkedAccountPatreon} alt="Showing how to link a Patreon account in the Linked Account tab on the Forge account settings" style="width: 50%;"/></p>
 
-      4. The Forge will ask you to allow them to look for your personal info. Click on the "Allow" button.
+            4. The Forge will ask you to allow them to look for your personal info. Click on the "Allow" button.
 
-          <p align="center"><Image src={forgeWouldLikeTo} alt="Showing the window prompt from The Forge about your personal info" style="width: 20%;"/></p>
+                <p align="center"><Image src={forgeWouldLikeTo} alt="Showing the window prompt from The Forge about your personal info" style="width: 20%;"/></p>
 
-      5. Then, still on The Forge, in the My Account section, go to the "Patreon" tab and click on the "Refresh Pledges" button on the right of your screen.
+            5. Then, still on The Forge, in the My Account section, go to the "Patreon" tab and click on the "Refresh Pledges" button on the right of your screen.
 
-          <p align="center"><Image src={forgeAccountPatreon} alt="Showing the 'Refresh Pledges' button in the Patreon Tab on The Forge account settings" style="width: 50%;"/></p>
+                <p align="center"><Image src={forgeAccountPatreon} alt="Showing the 'Refresh Pledges' button in the Patreon Tab on The Forge account settings" style="width: 50%;"/></p>
 
-      6. To install the module, go to "The Bazaar" tab and click on "Modules".
+            6. To install the module, go to "The Bazaar" tab and click on "Modules".
 
-            <p align="center"><Image src={forgeBazaarModules} alt="Go to 'The Bazaar' Tab and click on 'Modules'" style="width: 50%;"/></p>
+                <p align="center"><Image src={forgeBazaarModules} alt="Go to 'The Bazaar' Tab and click on 'Modules'" style="width: 50%;"/></p>
 
-      7. Search for `jb2a` in the search bar and select "JB2A - Patreon Complete Collection".
+            7. Search for `jb2a` in the search bar and select "JB2A - Patreon Complete Collection".
 
-            <p align="center"><Image src={forgeSearchPatreon} alt="Search for 'JB2A' and select select 'JB2A - Patreon Complete Collection'" style="width: 50%;"/></p>
+                <p align="center"><Image src={forgeSearchPatreon} alt="Search for 'JB2A' and select select 'JB2A - Patreon Complete Collection'" style="width: 50%;"/></p>
 
-      8. Then install the module.
+            8. Then install the module.
 
-            <p align="center"><Image src={forgePatreon} alt="How to install the Free module on The Forge" style="width: 25%;"/></p>
+                <p align="center"><Image src={forgePatreon} alt="How to install the Free module on The Forge" style="width: 25%;"/></p>
 
-      9. Once installed, you need to enable our module in your world. Start your world and click on “Manage Modules” in the Settings tab.
+            9. Once installed, you need to enable our module in your world. Start your world and click on “Manage Modules” in the Settings tab.
 
-          <p align="center"><Image src={fvttManageModule} alt="Open 'Manage Module' in the world settings" style="width: 50%;"/></p>
+                <p align="center"><Image src={fvttManageModule} alt="Open 'Manage Module' in the world settings" style="width: 50%;"/></p>
 
-      10. Finally find our module and enable it. That’s it, our free module is ready for you to use.
+            10. Finally find our module and enable it. That’s it, our free module is ready for you to use.
 
-          <p align="center"><Image src={fvttModuleManagement} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
+                <p align="center"><Image src={fvttModuleManagement} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
  
-    </Steps>
-  </TabItem>
+        </Steps>
 
+    </TabItem>
 
+    <TabItem label="Molten Hosting">
+  
+        Credits and thanks to `Tyreal2012` on Discord for this guide! 
 
-  <TabItem label="Molten Hosting">
-      Credits and thanks to `Tyreal2012` on Discord for this guide! 
+        Depending on what tier/plan you opt for in Molten Hosting (MH), you may not have enough space to host all the files, the module being 6GB+ in size! On top of this, if you use the manifest link like in the Self-Hosting section, you will need twice that temporarily as FoundryVTT downloads the zip and installs the module and only once the install goes through does it delete the zip.
+        This means the "Basic Plan" will not be enough, you'll need at least the "Pro Plan" or "Elite Plan", or you could alternatively use Digital Ocean or an AWS bucket to host only the `Library` folder. See the steps for Foundry Server to see how that's done.
 
-      Depending on what tier/plan you opt for in Molten Hosting (MH), you may not have enough space to host all the files, the module being 6GB+ in size! On top of this, if you use the manifest link like in the Self-Hosting section, you will need twice that temporarily as FoundryVTT downloads the zip and installs the module and only once the install goes through does it delete the zip.
-      This means the "Basic Plan" will not be enough, you'll need at least the "Pro Plan" or "Elite Plan", or you could alternatively use Digital Ocean or an AWS bucket to host only the `Library` folder. See the steps for Foundry Server to see how that's done.
-
-      <Steps>
+        <Steps>
         
-        1. Download the "Complete Collection" zip from the <a href="https://www.patreon.com/posts/56246490/" >Master Post</a> on the JB2A Patreon.
+            1. Download the "Complete Collection" zip from the <a href="https://www.patreon.com/posts/56246490/" >Master Post</a> on the JB2A Patreon.
 
-            <p align="center"><Image src={jb2aPatreonMasterPost} alt="Preview of the Master Post" style="width: 50%;"/></p>
+                <p align="center"><Image src={jb2aPatreonMasterPost} alt="Preview of the Master Post" style="width: 50%;"/></p>
 
-        2. Extract it on your local hard drive.
+            2. Extract it on your local hard drive.
 
-        3. Open up the Cloud Commander (CC).
+            3. Open up the Cloud Commander (CC).
 
-            <a href="https://molten-hosting.notion.site/Managing-Server-Files-df96be0dcde74775994a86c844ba1a4e" >How to access the Cloud Commander</a>
+                <a href="https://molten-hosting.notion.site/Managing-Server-Files-df96be0dcde74775994a86c844ba1a4e" >How to access the Cloud Commander</a>
 
-        4. In CC, navigate to the `Data/modules` folder.
+            4. In CC, navigate to the `Data/modules` folder.
 
-        5. Create a folder inside called `jb2a_patreon` (case-sensitive) and open it.
+            5. Create a folder inside called `jb2a_patreon` (case-sensitive) and open it.
 
-        6. Drag all files except the `Library` folder from the extracted zip (Step 2) into the CC. 
+            6. Drag all files except the `Library` folder from the extracted zip (Step 2) into the CC. 
 
-        8. Create a folder called `Library`. The `Library` folder is very large and needs to be uploaded little by little. So, this means upload the `1st_Level`,`2nd_Level` folders one by one.  CC, for whatever reason, seems to have issues with large quantities of files in one go.
+            8. Create a folder called `Library`. The `Library` folder is very large and needs to be uploaded little by little. So, this means upload the `1st_Level`,`2nd_Level` folders one by one.  CC, for whatever reason, seems to have issues with large quantities of files in one go.
 
-        7. The Generic folder is also very large at around 5GB in size, so create a folder called `Generic` and upload in small batches into this folder.
+            7. The Generic folder is also very large at around 5GB in size, so create a folder called `Generic` and upload in small batches into this folder.
 
-        8. Once you have uploaded all of the files, restart your Foundry instance.
+            8. Once you have uploaded all of the files, restart your Foundry instance.
 
-        9. You're done! You can activate our module in your world and browse the assets using the Sequencer Database Viewer! 
+            9. You're done! You can activate our module in your world and browse the assets using the Sequencer Database Viewer! 
 
-            <p align="center"><Image src={seqDatabaseViewer} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
+                <p align="center"><Image src={seqDatabaseViewer} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
 
-      </Steps>
+        </Steps>
 
-  </TabItem>
+    </TabItem>
 
 </Tabs>
 
 ## Manual Install
-If you're having issues with the manifest link for whatever reason or you have downloaded the "Complete Collection" zip as a backup and need to re-install our module, here's how.
-    <Aside title= "Note">
-    This only concerns the Patreon module as you shouldn't have to install our free module this way.
-    </Aside>
 
+### FoundryVTT Data Folder
+
+You need to know the location of FoundryVTT's data folder. There are two ways to locate it:
+
+    - If you have the App installed, you can right-click the FoundryVTT icon in your taskbar and choose `Browse to User Data`.
+    - Otherwise, on the home page of FoundryVTT,
+
+        <Steps>
+    
+            1. click the gear icon to change the configuration settings,
+    
+                <p align="center"><Image src={fvttLandingPageSettings} alt="FoundryVTT Settings - Datapath setting location" style="width: 50%;"/></p>
+    
+            2. and the User Data folder path will appear there.
+    
+                <p align="center"><Image src={fvttDataPath} alt="FoundryVTT Settings - Datapath setting location" style="width: 50%;"/></p>
+    
+        </Steps>
+
+### Steps
+
+If you're having issues with the manifest link for whatever reason or you have downloaded the "Complete Collection" zip as a backup and need to re-install our module, here's how.
+
+<Aside title= "Note">
+This only concerns the Patreon module as you shouldn't have to install our free module this way.
+</Aside>
 
 <Steps>
-  1. Download and Extract the "Complete Collection" zip somewhere on your hard drive.
 
-  2. Browse to your FoundryVTT User Data folder. There are two ways to locate this folder. 
+    1. Download and Extract the "Complete Collection" zip somewhere on your hard drive.
 
-      - If you have the App installed, you can right-click the FoundryVTT icon in your taskbar and choose "Browse to User Data"
-      - Otherwise, on the home page of FoundryVTT, 
-        - click the gear icon to change the configuration settings, 
-        <p align="center"><Image src={fvttLandingPageSettings} alt="FoundryVTT Settings - Datapath setting location" style="width: 50%;"/></p>
-        - and the User Data folder path will appear there.
-        <p align="center"><Image src={fvttDataPath} alt="FoundryVTT Settings - Datapath setting location" style="width: 50%;"/></p>
+    3. Inside the Data folder, open the ``modules`` folder.
 
-  3. Inside the User Data folder, open the ``modules`` folder.
-  4. Create a folder called **exactly** ``jb2a-patreon``. It's case-sensitive.
-  5. Back to our extracted zip, we want to drag the files inside over to the newly created ``jb2a_patreon`` folder. The file transfer might take a while, it's a large amount of data! 
-  Once finished, it should look like this:
+    4. Create a folder called **exactly** ``jb2a-patreon``. It's case-sensitive.
 
-      <FileTree>
+    5. Back to our extracted zip, we want to drag the files inside over to the newly created ``jb2a_patreon`` folder. The file transfer might take a while, it's a large amount of data! 
+    Once finished, it should look like this:
+
+        <FileTree>
       
-      - data
-        - modules
-          - jb2a-patreon
-            - artwork/
-            - Library/
-            - packs/
-            - scripts/
-            - module.json
-        - systems/
-        - worlds/
+        - data
+          - modules
+            - jb2a-patreon
+              - artwork/
+              - Library/
+              - packs/
+              - scripts/
+              - module.json
+          - systems/
+          - worlds/
 
-      </FileTree>
-  6. Restart your FoundryVTT server.
-  7. That's it! You should be able to enable our module in any of your worlds!
+        </FileTree>
+
+    6. Restart your FoundryVTT server.
+
+    7. That's it! You should be able to enable our module in any of your worlds!
+
 </Steps>
+
+## How to update
+
+### Free module
+
+<Tabs syncKey="hostingMethod">
+
+    <TabItem label="Self-Hosting">
+
+        Unlike the Patreon module, **you can** update the free module directly from FoundryVTT.
+
+        <Steps>
+
+            1. Go to the FoundryVTT landing page, and click on the “Add-On Modules” tab.
+
+                <p align="center"><Image src={fvttLandingPage} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+
+            2. Like any other module, you should be able to hit the update button.
+
+                <p align="center"><Image src={fvttModuleUpdate} alt="Module Update button" style="width: 50%;"/></p>
+
+        </Steps>
+
+    </TabItem>
+
+    <TabItem label="Foundry Server">
+
+        Follow the instructions in the Self-Hosting tab.
+
+    </TabItem>
+
+    <TabItem label="The Forge">
+
+        <Steps>
+
+            1. We'll assume you already know the basics about The Forge. If not read their [documentation](https://forums.forge-vtt.com/t/getting-your-game-started-on-the-forge/11295)
+    
+            2. To install the module, go to "The Bazaar" tab and click on "Modules".
+
+                <p align="center"><Image src={forgeBazaarModules} alt="Go to 'The Bazaar' Tab and click on 'Modules'" style="width: 50%;"/></p>
+
+            3. Search for `jb2a` in the search bar and select "JB2A - Jules&Ben's Animated Assets"
+
+                <p align="center"><Image src={forgeSearchFree} alt="Search for 'JB2A' and select select 'JB2A - Jules&Ben's Animated Assets'" style="width: 50%;"/></p>
+
+            3. Then update the module.
+
+                <p align="center"><Image src={forgeFreeUpdate} alt="How to update the Free module on The Forge" style="width: 25%;"/></p>
+
+        </Steps>
+
+    </TabItem>
+
+    <TabItem label="Molten Hosting">
+        
+        Follow the instructions in the Self-Hosting tab. 
+
+    </TabItem>
+
+</Tabs>
+
+### Patreon module
+
+<Tabs syncKey="hostingMethod">
+
+    <TabItem label="Self-Hosting">
+
+        There are two ways of updating our module:
+
+        ##### Method 1
+
+        The first is simple but has its drawbacks.
+
+        <Steps>
+
+            1. First, shutdown your FoundryVTT Server.
+
+            2. Delete the old version of our module.
+
+            3. Then follow the installation steps described in this section.
+
+                <LinkCard title="Install Patreon Module" href="/jb2a-wiki/getting-started/guides#patreon-module" />
+
+        </Steps>
+
+        ##### Method 2
+
+        The second method requires a little more handling. But it's quicker because you only download what's been added to the old version. This method is the most efficient in terms of download time and bandwidth usage.
+
+        <Steps>
+
+            1. First, shutdown your FoundryVTT Server and go to our <a href="https://www.patreon.com/posts/56246490/" >Master Post</a>.
+
+            2. Look for the `Only New Stuff` section.
+
+            3. Download the `.zip` file(s) you need, to catch up with the latest version of our module.
+
+            4. Repeat the following steps depending on the number of `.zip` files you have just downloaded. In the order of publication:
+
+                <Steps>
+
+                    1. Open the zip file.
+                    2. Extract the contents of the `.zip` file into our module located in the FoundryVTT `data` folder. By default our module should be located in `data/modules/jb2a_patreon` and inside it should look like this:
+
+                        <FileTree>
+
+                        - data
+                          - modules
+                            - **jb2a-patreon**
+                              - artwork/
+                              - Library/
+                              - packs/
+                              - scripts/
+                              - module.json
+                          - systems/
+                          - worlds/
+
+                        </FileTree>
+
+                    3. Overwrite all the files when you are asked to do so.
+
+                </Steps>
+
+            5. Start your FoundryVTT server. Our module should now be update to date.
+
+        </Steps>        
+
+    </TabItem>
+
+    <TabItem label="Foundry Server">
+
+        Follow the instructions in the `Self-Hosting` tab. We recommend method 2, but we don't know the exact details. You will need to adapt the steps accordingly.
+
+        If you know the steps and would like to help us complete this information:
+            - You can contact us on our [Discord server](https://discord.gg/gmd8MAPX4m) in the `#suggestions-n-feedback` channel.
+            - Or you can write us the precise details directly on Github.
+
+            <LinkCard title="Contribute to this Wiki" href="/jb2a-wiki/uncategorised/contribute-wiki" />
+
+    </TabItem>
+
+    <TabItem label="The Forge">
+
+        <Steps>
+
+            1. We'll assume you already know the basics about The Forge. If not read their [documentation](https://forums.forge-vtt.com/t/getting-your-game-started-on-the-forge/11295)
+
+            2. To install the module, go to "The Bazaar" tab and click on "Modules".
+
+                <p align="center"><Image src={forgeBazaarModules} alt="Go to 'The Bazaar' Tab and click on 'Modules'" style="width: 50%;"/></p>
+
+            3. Search for `jb2a` in the search bar and select "JB2A - Patreon Complete Collection".
+
+                <p align="center"><Image src={forgeSearchPatreon} alt="Search for 'JB2A' and select select 'JB2A - Patreon Complete Collection'" style="width: 50%;"/></p>
+
+            4. Then update the module.
+
+                <p align="center"><Image src={forgePatreonUpdate} alt="How to update the Patreon module on The Forge" style="width: 25%;"/></p>
+
+            5. If you're having trouble updating our module on The Forge, try refreshing your pledge in the `My Account` section. Most of the time this solves the problem.
+
+                <p align="center"><Image src={forgeAccountPatreon} alt="Showing the 'Refresh Pledges' button in the Patreon Tab on The Forge account settings" style="width: 50%;"/></p>
+
+        </Steps>
+
+    </TabItem>
+
+    <TabItem label="Molten Hosting">
+
+        Follow the instructions in the `Self-Hosting` tab. We recommend method 2, but we don't know the exact details. You will need to adapt the steps accordingly.
+
+        If you know the steps and would like to help us complete this information:
+            - You can contact us on our [Discord server](https://discord.gg/gmd8MAPX4m) in the `#suggestions-n-feedback` channel.
+            - Or you can write us the precise details directly on Github.
+
+            <LinkCard title="Contribute to this Wiki" href="/jb2a-wiki/uncategorised/contribute-wiki" />
+
+    </TabItem>
+
+</Tabs>
 
 ## How to use
 
@@ -406,11 +637,13 @@ What is described in this subsection applies to any game system and without addi
 ##### Free Module
 
 <Tabs syncKey="modulelocation">
+
     <TabItem label="Default Location">
 
         Our assets are in the `Library` folder in our modules. Once in the FoundryVTT `data` folder, you'll find them in this location: 
     
         <FileTree>
+
             - data
               - modules
                 - JB2A_DnD5e
@@ -421,7 +654,10 @@ What is described in this subsection applies to any game system and without addi
                   - module.json
               - systems/
               - worlds/
+
         </FileTree>
+
+        <LinkCard title="How to find Foundry Data Folder" href="/jb2a-wiki/getting-started/guides#foundryvtt-data-folder" />
 
         You can also browse our assets once your world is loaded. In the toolbar on the left of your screen, click on the `Tile Control` button, then on `Tile Browser` to open the file picker window.
 
@@ -449,7 +685,8 @@ What is described in this subsection applies to any game system and without addi
 
                 <p align="center"><Image src={forgeAssetLocationFree} alt="The Forge and our Free Module - Asset Location in FoundryVTT" style="width: 50%;"/></p>
 
-        </Steps>      
+        </Steps>
+
     </TabItem>
 
 </Tabs>
@@ -457,14 +694,16 @@ What is described in this subsection applies to any game system and without addi
 ##### Patreon Module
 
 <Tabs syncKey="modulelocation">
+
     <TabItem label="Default Location">
     
         Our assets are in the `Library` folder in our modules. Once in the FoundryVTT `data` folder, you'll find them in this location: 
     
         <FileTree>
+
             - data
               - modules
-                - jb2a_patreon
+                - JB2A_DnD5e
                   - artwork/
                   - **Library/**
                   - packs/
@@ -472,7 +711,10 @@ What is described in this subsection applies to any game system and without addi
                   - module.json
               - systems/
               - worlds/
+
         </FileTree>
+
+        <LinkCard title="How to find Foundry Data Folder" href="/jb2a-wiki/getting-started/guides#foundryvtt-data-folder" />
 
         You can also browse our assets once your world is loaded. In the toolbar on the left of your screen, click on the `Tile Control` button, then on `Tile Browser` to open the file picker window.
 
@@ -515,40 +757,44 @@ What is described in this subsection applies to any game system and without addi
 #### App Tools
 
 <Tabs>
-  <TabItem label="Tiles">
 
-    To use an animated asset as a tile to a FoundryVTT canvas, follow the instructions on the official website.
-    [FoundryVTT Tiles Documentation](https://foundryvtt.com/article/tiles/)
+    <TabItem label="Tiles">
 
-    <Aside title= "What is a Tile?">
-    If you don't know what a tile is on FoundryVTT, we encourage you to read the first `Overview` section of their documentation.
-    </Aside>
+        To use an animated asset as a tile to a FoundryVTT canvas, follow the instructions on the official website.
+        [FoundryVTT Tiles Documentation](https://foundryvtt.com/article/tiles/)
 
-  </TabItem>
-  <TabItem label="Tokens">
+        <Aside title= "What is a Tile?">
+        If you don't know what a tile is on FoundryVTT, we encourage you to read the first `Overview` section of their documentation.
+        </Aside>
 
-    To use an animated asset as a token on FoundryVTT, follow the instructions on the official website. The information you need can be found in the ‘Token Configuration Options -> The Appearance Tab’ section. 
-    [FoundryVTT Token Documentation](https://foundryvtt.com/article/tokens/)
+    </TabItem>
 
-    <Aside title="What is a Token?">
-    If you don't know what a token is on FoundryVTT, we encourage you to read the first `Overview` section of their documentation.
-    </Aside>
+    <TabItem label="Tokens">
 
-  </TabItem>
+        To use an animated asset as a token on FoundryVTT, follow the instructions on the official website. The information you need can be found in the ‘Token Configuration Options -> The Appearance Tab’ section. 
+        [FoundryVTT Token Documentation](https://foundryvtt.com/article/tokens/)
+
+        <Aside title="What is a Token?">
+        If you don't know what a token is on FoundryVTT, we encourage you to read the first `Overview` section of their documentation.
+        </Aside>
+
+    </TabItem>
+  
     <TabItem label="Macros">
     
-    This method requires a __good knowledge of javascript__ to be able to do just about anything with our assets. To find out more about what a macro is on FoundryVTT and how to use them, read the documentation provided on their official website.
-    [FoundryVTT Macros Documentation](https://foundryvtt.com/article/macros/)
+        This method requires a __good knowledge of javascript__ to be able to do just about anything with our assets. To find out more about what a macro is on FoundryVTT and how to use them, read the documentation provided on their official website.
+        [FoundryVTT Macros Documentation](https://foundryvtt.com/article/macros/)
 
-    Depending on the game system you're using, you won't necessarily have to use macros to do the most basic automation, such as triggering an animated effect when a player takes an action on their character sheet.
+        Depending on the game system you're using, you won't necessarily have to use macros to do the most basic automation, such as triggering an animated effect when a player takes an action on their character sheet.
 
-    <Aside>
-    The Sequencer module, created by Fantasy Computerworks, makes it much easier to write macros to create effects from our animated assets. We'll talk more about this later.
-    </Aside>
+        <Aside>
+        The Sequencer module, created by Fantasy Computerworks, makes it much easier to write macros to create effects from our animated assets. We'll talk more about this later.
+        </Aside>
 
-    <LinkCard title="More about Sequencer" href="/jb2a-wiki/external-resources/community-links#sequencer" />
+        <LinkCard title="More about Sequencer" href="/jb2a-wiki/external-resources/community-links#sequencer" />
 
-  </TabItem>
+    </TabItem>
+
 </Tabs>
 
 ### JB2A + Automated Animations
@@ -593,89 +839,115 @@ The version of our Free or Patreon module is not important for this guide.
 
 <Steps>
 
-1. First, import two actors from the SRD compendium and drag and drop them onto the canvas. We'll use `Akra` as the Player Character and an `Acolyte` as the Non-Player Character.
+    1. First, import two actors from the SRD compendium and drag and drop them onto the canvas. We'll use `Akra` as the Player Character and an `Acolyte` as the Non-Player Character.
 
-    <p align="center"><Image src={guideCompendiumActors} alt="Actor Compendiums from the D&D5e game system" style="width: 50%;"/></p>
-    <p align="center"><Image src={guideTokenCanvas} alt="Canvas on FoundryVTT with 2 tokens" style="width: 50%;"/></p>
+        <p align="center"><Image src={guideCompendiumActors} alt="Actor Compendiums from the D&D5e game system" style="width: 50%;"/></p>
+        <p align="center"><Image src={guideTokenCanvas} alt="Canvas on FoundryVTT with 2 tokens" style="width: 50%;"/></p>
 
-2. Automated Animations has a number of animated effects already configured. There are only a few of them and they serve as a reference. To access the Automated Animations menu, which we'll call the Autorec menu from now on:   
-    1. Go to the `Settings` tab
-    2. Click on `Configure Settings`.
-    3. Then select Automated Animations in the sidebar
-    4. And click on `Launch Menu`.
+    2. Automated Animations has a number of animated effects already configured. There are only a few of them and they serve as a reference. To access the Automated Animations menu, which we'll call the Autorec menu from now on:
 
-    <p align="center"><Image src={guideAaSettings} alt="Accessing the Automatic Recognition Menu" style="width: 50%;"/></p>
+        <Steps>
 
-3. Explore the Autorec Menu. There are various tabs for creating or customising effects (Melee - Active Effects), Settings, and Diagnostics (to help you troubleshoot any problems).
+            1. Go to the `Settings` tab.
 
-    <p align="center"><Image src={guideAaExplore} alt="Automatic Recognition Menu" style="width: 50%;"/></p>
+            2. Click on `Configure Settings`.
 
-4. **Quick Tip:** To simplify access to the menu, Automated Animations provides a macro allowing you to open this window directly from the hot bar.
-    1. At the top of the Autorec Menu window, click `Settings`. 
-    2. At the bottom of this window, there is an area called `Automatic Recognition Menu Macro`, click on the area and drag the macro into the hot bar.
-    3. To return to the Autorec Menu, you can now either:
-        - Close the window and use the macro,
-        - or click on `Main Menu`.
+            3. Then select Automated Animations in the sidebar.
 
-    <p align="center"><Image src={guideAaMacro} alt="Automatic Recognition Menu, Settings Window" style="width: 50%;"/></p>
+            4. And click on `Launch Menu`.
 
-5. Back on the canvas, with `Akra`, we're going to attack the `Acolyte` with his mace.
-    1. First, target the Acolyte,
-    2. then, select Akra.
-    3. Finally, trigger the attack from his character sheet. 
-    4. The animation should be triggered after rolling the dice. You've just triggered your first animated effect!
+                <p align="center"><Image src={guideAaSettings} alt="Accessing the Automatic Recognition Menu" style="width: 50%;"/></p>
 
-    <p align="center"><video  controls muted="true" ><source src={ guideAaMaceAttack } type="video/webm"></source></video></p>
+        </Steps>
 
-6. But why stop there? Now, move `Akra` a few dozen feet away from the `Acolyte`, check that he still has his target and make an attack with the light crossbow. An animation should be triggered when you roll the dice.
+    3. Explore the Autorec Menu. There are various tabs for creating or customising effects (Melee - Active Effects), Settings, and Diagnostics (to help you troubleshoot any problems).
 
-    <p align="center"><video  controls muted="true" ><source src={ guideAaCrossbowAttack } type="video/webm"></source></video></p>
+        <p align="center"><Image src={guideAaExplore} alt="Automatic Recognition Menu" style="width: 50%;"/></p>
 
-7. Then try Fog Cloud. The animation should be triggered after you place the template on the canvas.
+    4. **Quick Tip:** To simplify access to the menu, Automated Animations provides a macro allowing you to open this window directly from the hot bar.
 
-    <p align="center"><video  controls muted="true" ><source src={ guideAaFogCloud } type="video/webm"></source></video></p>
+        <Steps>
 
-    In this case, there are two options for deleting the template: Click on the Template tool in the FoundryVTT left-hand toolbar and delete the template.
+            1. At the top of the Autorec Menu window, click `Settings`.
 
-    <p align="center"><video  controls muted="true" ><source src={ guideAaFogDelete01 } type="video/webm"></source></video></p>
+            2. At the bottom of this window, there is an area called `Automatic Recognition Menu Macro`, click on the area and drag the macro into the hot bar.
 
-    Alternatively, go to the Sequencer Manager, the button on the left-hand bar of FoundryVTT. This is where you'll find all the persistant animation on the Canvas. Then go to the template tool to remove the template from the canvas.
+            3. To return to the Autorec Menu, you can now either:
+                - Close the window and use the macro,
+                - or click on `Main Menu`.
 
-    <p align="center"><video  controls muted="true" ><source src={ guideAaFogDelete02 } type="video/webm"></source></video></p>
+                <p align="center"><Image src={guideAaMacro} alt="Automatic Recognition Menu, Settings Window" style="width: 50%;"/></p>
 
-8. Finally do the same thing with Inflict Wounds. Normally, if you have exactly the same setup, there are no animations after triggering the attack. This is perfectly normal!
-9. Open the Autorec menu and look at the melee tab. You'll see that the Mace is there. All our melee attack animations must be configured in this tab to work correctly.
+        </Steps>
 
-    <p align="center"><Image src={guideAaMelee} alt="Automatic Recognition Menu, Melee Tab" style="width: 50%;"/></p>
+    5. Back on the canvas, with `Akra`, we're going to attack the `Acolyte` with his mace.
 
-10. Then go to the Range tab, and you'll see that there's only the Crossbow preset and not Light Crossbow. This is because Automated Animations has recognised part of the name of the weapon and used this effect. All our ranged attack animations must be configured in this tab to work correctly.
+        <Steps>
 
-    <p align="center"><Image src={guideAaRange} alt="Automatic Recognition Menu, Range Tab" style="width: 50%;"/></p>
+            1. First, target the Acolyte,
 
-11. In the Template tab, you'll find Fog Cloud. This is where all spells/abilities similar to it must be configured. Whether it's a square, circular, conical template, etc... 
+            2. then, select Akra.
 
-    <p align="center"><Image src={guideAaTemplate} alt="Automatic Recognition Menu, Template Tab" style="width: 50%;"/></p>
+            3. Finally, trigger the attack from his character sheet. 
 
-12. Inflict Wounds is a bit special. It could be possible to configure it in the melee tab but also in the On Token tab, depending on the animations you want to use. This was simply to illustrate what follows.
-13. Automated Animations has very few pre-configured animated effects. These are generally called Effects. Depending on the game system you are using, there are several options available to you:
-    - If you are using D&D5e, you can install the D&D5e animations module made by Vauxs among others. It can be downloaded and installed via FoundryVTT directly.
+            4. The animation should be triggered after rolling the dice. You've just triggered your first animated effect!
 
-    <LinkCard title="D&D5e Animations" href="/jb2a-wiki/external-resources/community-links#dd5e-animations" />
+                <p align="center"><video  controls muted="true" ><source src={ guideAaMaceAttack } type="video/webm"></source></video></p>
 
-    - If you are using PF2e, you can install the PF2e Animations module or the PF2e Graphics module, which is currently under development. They can be downloaded and installed via FoundryVTT directly.
+        </Steps>
 
-    <CardGrid>
-        <LinkCard title="PF2e Animations" href="/jb2a-wiki/external-resources/community-links#pf2e-animations" />
-        <LinkCard title="PF2e Graphics" href="/jb2a-wiki/external-resources/community-links#pf2e-graphics" />
-    </CardGrid>
+    6. But why stop there? Now, move `Akra` a few dozen feet away from the `Acolyte`, check that he still has his target and make an attack with the light crossbow. An animation should be triggered when you roll the dice.
 
-    - For other game systems, you can join our Discord server, in the channel #aa-autorec-sharing,  where people may have shared their presets. For example Cyberpunk and Warhammer.
+        <p align="center"><video  controls muted="true" ><source src={ guideAaCrossbowAttack } type="video/webm"></source></video></p>
 
-    <LinkButton href="https://github.com/otigon/automated-jb2a-animations?tab=readme-ov-file#introduction" icon="external" variant="secondary">Join our Discord</LinkButton>
+    7. Then try Fog Cloud. The animation should be triggered after you place the template on the canvas.
+
+        <p align="center"><video  controls muted="true" ><source src={ guideAaFogCloud } type="video/webm"></source></video></p>
+
+        In this case, there are two options for deleting the template: Click on the Template tool in the FoundryVTT left-hand toolbar and delete the template.
+
+        <p align="center"><video  controls muted="true" ><source src={ guideAaFogDelete01 } type="video/webm"></source></video></p>
+
+        Alternatively, go to the Sequencer Manager, the button on the left-hand bar of FoundryVTT. This is where you'll find all the persistant animation on the Canvas. Then go to the template tool to remove the template from the canvas.
+
+        <p align="center"><video  controls muted="true" ><source src={ guideAaFogDelete02 } type="video/webm"></source></video></p>
+
+    8. Finally do the same thing with Inflict Wounds. Normally, if you have exactly the same setup, there are no animations after triggering the attack. This is perfectly normal!
+
+    9. Open the Autorec menu and look at the melee tab. You'll see that the Mace is there. All our melee attack animations must be configured in this tab to work correctly.
+
+        <p align="center"><Image src={guideAaMelee} alt="Automatic Recognition Menu, Melee Tab" style="width: 50%;"/></p>
+
+    10. Then go to the Range tab, and you'll see that there's only the Crossbow preset and not Light Crossbow. This is because Automated Animations has recognised part of the name of the weapon and used this effect. All our ranged attack animations must be configured in this tab to work correctly.
+
+        <p align="center"><Image src={guideAaRange} alt="Automatic Recognition Menu, Range Tab" style="width: 50%;"/></p>
+
+    11. In the Template tab, you'll find Fog Cloud. This is where all spells/abilities similar to it must be configured. Whether it's a square, circular, conical template, etc... 
+
+        <p align="center"><Image src={guideAaTemplate} alt="Automatic Recognition Menu, Template Tab" style="width: 50%;"/></p>
+
+    12. Inflict Wounds is a bit special. It could be possible to configure it in the melee tab but also in the On Token tab, depending on the animations you want to use. This was simply to illustrate what follows.
+
+    13. Automated Animations has very few pre-configured animated effects. These are generally called Effects. Depending on the game system you are using, there are several options available to you:
+
+        - If you are using D&D5e, you can install the D&D5e animations module made by Vauxs among others. It can be downloaded and installed via FoundryVTT directly.
+
+        <LinkCard title="D&D5e Animations" href="/jb2a-wiki/external-resources/community-links#dd5e-animations" />
+
+        - If you are using PF2e, you can install the PF2e Animations module or the PF2e Graphics module, which is currently under development. They can be downloaded and installed via FoundryVTT directly.
+
+        <CardGrid>
+            <LinkCard title="PF2e Animations" href="/jb2a-wiki/external-resources/community-links#pf2e-animations" />
+            <LinkCard title="PF2e Graphics" href="/jb2a-wiki/external-resources/community-links#pf2e-graphics" />
+        </CardGrid>
+
+        - For other game systems, you can join our Discord server, in the channel #aa-autorec-sharing,  where people may have shared their presets. For example Cyberpunk and Warhammer.
+
+        <LinkButton href="https://github.com/otigon/automated-jb2a-animations?tab=readme-ov-file#introduction" icon="external" variant="secondary">Join our Discord</LinkButton>
     
-14. This is where the guide ends. To go further with Automated Animations, we recommend that you read its documentation. Otigon has explained everything in more detail. For example :
+    14. This is where the guide ends. To go further with Automated Animations, we recommend that you read its documentation. Otigon has explained everything in more detail. For example :
 
-    <LinkButton href="https://github.com/otigon/automated-jb2a-animations/wiki/Configure-Effects" icon="external" variant="secondary">How to configure an Effect</LinkButton>
-    <LinkButton href="https://github.com/otigon/automated-jb2a-animations/wiki/PERSISTENT-EFFECTS" icon="external" variant="secondary">About persistent Effects</LinkButton>
+        <LinkButton href="https://github.com/otigon/automated-jb2a-animations/wiki/Configure-Effects" icon="external" variant="secondary">How to configure an Effect</LinkButton>
+        <LinkButton href="https://github.com/otigon/automated-jb2a-animations/wiki/PERSISTENT-EFFECTS" icon="external" variant="secondary">About persistent Effects</LinkButton>
  
 </Steps>
