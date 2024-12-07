@@ -103,15 +103,15 @@ export default defineConfig({
             //         'faq/about-fvtt'
             //     ]
             // },
-            {
-                label: 'Troubleshooting',
-                collapsed: true,
-                items: [
-                    'troubleshooting/mci',
-                    'troubleshooting/jb2a',
-                    'troubleshooting/fvtt'
-                ]
-            },
+            // {
+            //     label: 'Troubleshooting',
+            //     collapsed: true,
+            //     items: [
+            //         'troubleshooting/mci',
+            //         'troubleshooting/jb2a',
+            //         'troubleshooting/fvtt'
+            //     ]
+            // },
             {
                 label: 'External Resources',
                 collapsed: true,
