@@ -3,7 +3,7 @@ title: JB2A & FoundryVTT
 ---
 
 import { Image } from 'astro:assets';
-import { Aside, LinkButton, LinkCard, Steps, Tabs, TabItem  } from '@astrojs/starlight/components';
+import { Aside, CardGrid, LinkButton, LinkCard, Steps, Tabs, TabItem  } from '@astrojs/starlight/components';
 
 import consoleClear from '/src/assets/img/chrome-console-clear.png';
 import tokenTarget from '/src/assets/img/token-target.png';
@@ -50,8 +50,10 @@ Before updating your FoundryVTT version, your system or your modules, BACKUP YOU
 
 If you are new to this, make sure to read our "Prerequisites" and "Understanding Automation" sections first.
 
-<LinkCard title="Prerequisites" href="/jb2a-wiki/getting-started/prerequisites" />
-<LinkCard title="Understanding Automation" href="/jb2a-wiki/getting-started/understanding-automation" />
+<CardGrid>
+    <LinkCard title="Prerequisites" href="/jb2a-wiki/getting-started/prerequisites" />
+    <LinkCard title="Understanding Automation" href="/jb2a-wiki/getting-started/understanding-automation" />
+</CardGrid>
 
 <Tabs>
     <TabItem label="JB2A Modules">
