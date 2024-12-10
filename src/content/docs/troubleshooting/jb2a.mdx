@@ -30,16 +30,82 @@ import { Aside, Cards, CardGrid, FileTree, LinkButton, LinkCard, Steps, Tabs, Ta
 
 #### No access to the Master Post
 
+<details>
+
+  <summary>...</summary>
+
+    This usually means one of your payments has been declined, in which case, the best course of action is to wait for a few days, until Patreon tries to re-process the payment and your status can be cleared.
+
+    <Aside type="caution">  
+      Make sure you haven't signed for a custom pledge. A custom pledge does not give you access to our Patreon content. We recommend that you do not use this method.   
+    </Aside>
+
+    <LinkButton href="https://www.patreon.com/JB2A" icon="patreon" variant="secondary">JB2A Patreon Page</LinkButton>
+
+</details>
 
 ## Modules
 
 
 ### Issues during Download
 #### With manifest link
+
+<details>
+
+  <summary>...</summary>
+
+    It’s possible we made a mistake but make sure you follow the steps in our installation guide first to make sure you’ve done it correctly.
+
+    If your problem persists even after following all the steps in our installation guide, please contact us on our [Discord server](https://discord.gg/gmd8MAPX4m) on the `jb2a-troubleshooting` channel.
+
+  <CardGrid>
+
+    <LinkCard title="Install with manifest link" href="/jb2a-wiki/getting-started/guides#patreon-module" />
+    <LinkCard title="Report your issue" href="/jb2a-wiki/troubleshooting/mci" />
+    
+  </CardGrid>
+
+</details>  
+
 #### Too long, stops
+
+<details>
+
+  <summary>...</summary>
+
+  It’s possible your internet connection is either too slow, your router gets micro-disconnections or the server we use to share the files is far away from where you live. Whatever the case, the manifest link might not be the ideal solution for you.
+  
+  Try the alternative download link to install it manually on our [Master Post](https://www.patreon.com/posts/jb2a-master-post-56246490). If it still takes too long, you might want to try a download manager like [Persepolis](https://persepolisdm.github.io/).
+  
+  <CardGrid>
+
+    <LinkCard title="Manual Install Instruction" href="/jb2a-wiki/getting-started/guides#manual-install" />
+    <LinkCard title="Report your issue" href="/jb2a-wiki/troubleshooting/mci" />
+
+  </CardGrid>
+
+</details> 
 
 ### Issues during Install
 #### Manual install
+
+<details>
+
+  <summary>...</summary>
+
+  Make sure you follow the steps in our installation guide first to make sure you’ve done it correctly.
+
+  If your problem persists even after following all the steps in our installation guide, please contact us on our [Discord server](https://discord.gg/gmd8MAPX4m) on the `jb2a-troubleshooting` channel.
+
+  <CardGrid>
+
+    <LinkCard title="Manual Install Instruction" href="/jb2a-wiki/getting-started/guides#manual-install" />
+    <LinkCard title="Report your issue" href="/jb2a-wiki/troubleshooting/mci" />
+    
+  </CardGrid>
+
+</details>
+
 #### Module not displaying
 
 ### Issues during Update
@@ -47,10 +113,103 @@ import { Aside, Cards, CardGrid, FileTree, LinkButton, LinkCard, Steps, Tabs, Ta
 #### No manifest URL error
 #### Only new stuff
 
+<details>
+
+  <summary>...</summary>
+
+  Make sure you follow the steps in our installation guide first to make sure you’ve done it correctly.
+
+  If your problem persists even after following all the steps in our installation guide, please contact us on our [Discord server](https://discord.gg/gmd8MAPX4m) on the `jb2a-troubleshooting` channel.
+
+  <CardGrid>
+
+    <LinkCard title="Only new stuff update" href="/jb2a-wiki/getting-started/guides#patreon-module-1" />
+    <LinkCard title="Report your issue" href="/jb2a-wiki/troubleshooting/mci" />
+    
+  </CardGrid>
+
+</details>
+
 ### Issues using our content
 #### Can't find animation
+
+<details>
+
+  <summary>...</summary>
+
+  If your problem persists even after following all the steps in our installation guide, please contact us on our [Discord server](https://discord.gg/gmd8MAPX4m) on the `jb2a-troubleshooting` channel.
+
+  <CardGrid>
+
+    <LinkCard title="Assets Location" href="/jb2a-wiki/getting-started/guides#assets-location" />
+    <LinkCard title="Report your issue" href="/jb2a-wiki/troubleshooting/mci" />
+    
+  </CardGrid>
+
+</details>
+
 #### No Patreon assets, only free
+
+<details>
+
+  <summary>...</summary>
+
+  Uninstall the free module, you don’t need it anymore. Once you have the Patreon module **installed** and **activated** in your world, all your setup using the database paths will be flawlessly transferred over. 
+  
+  Any tile or token you have setup using file paths may break though. If you don’t have many, you can fix them yourself manually or we can provide a macro in our [Discord server](https://discord.gg/gmd8MAPX4m) to fix all of them with a batch macro.
+
+  ```txt title="File path example" "JB2A_DnD5e" "jb2a_patreon"
+  ### Free module
+  modules/JB2A_DnD5e/Library/Generic/Creature/Bite_01_Regular_Red_400x400.webm
+  ### Patreon module
+  modules/jb2a_patreon/Library/Generic/Creature/Bite_01_Regular_Red_400x400.webm
+  ```
+
+  ```txt title="Data path example"
+  ### For both modules
+  jb2a.bite.400px.red
+  ```
+
+  <CardGrid>
+
+    <LinkCard title="Install Instruction" href="/jb2a-wiki/getting-started/guides#patreon-module" />
+    <LinkCard title="Report your issue" href="/jb2a-wiki/troubleshooting/mci" />
+    
+  </CardGrid>
+
+</details>
+
 #### Tiles, tokens and macros broken
+
+<details>
+
+  <summary>...</summary>
+
+  You should use Sequencer database paths for macros whenever possible, as it would work for both the free and the patreon module. 
+  
+  We can provide a batch macro in our [Discord server](https://discord.gg/gmd8MAPX4m) to fix tokens, tiles and macros if you need however.
+
+  ```txt title="File path example" "JB2A_DnD5e" "jb2a_patreon"
+  ### Free module
+  modules/JB2A_DnD5e/Library/Generic/Creature/Bite_01_Regular_Red_400x400.webm
+  ### Patreon module
+  modules/jb2a_patreon/Library/Generic/Creature/Bite_01_Regular_Red_400x400.webm
+  ```
+
+  ```txt title="Data path example"
+  ### For both modules
+  jb2a.bite.400px.red
+  ```
+
+  <CardGrid>
+
+    <LinkCard title="Install Instruction" href="/jb2a-wiki/getting-started/guides#patreon-module" />
+    <LinkCard title="Report your issue" href="/jb2a-wiki/troubleshooting/mci" />
+    
+  </CardGrid>
+
+</details>
+
 #### Can't drop animations on scene
 #### Tiled template texture
 #### No sounds

@@ -112,6 +112,10 @@
 	--sl-text-h4: var(--sl-text-xl);
 	--sl-text-h5: var(--sl-text-lg);
 
+	.sl-markdown-content :is(h4):not(:where(.not-content *)) {
+		color: var(--jb2a-yellow-000);
+		font-weight: 500;
+	}
 	--sl-line-height: 1.75;
 	--sl-line-height-headings: 1.2;
 
@@ -219,6 +223,10 @@
 	--sl-color-hairline-shade: 			var(--sl-color-gray-6);
 
 	--sl-color-backdrop-overlay: 		hsla(225, 9%, 36%, 0.66);
+
+	.sl-markdown-content :is(h4):not(:where(.not-content *)) {
+		color: var(--jb2a-orange-200);
+	}
 
 	/* Shadows (light mode) */
 	--sl-shadow-sm: 0px 1px 1px hsla(0, 0%, 0%, 0.06), 0px 2px 1px hsla(0, 0%, 0%, 0.06);
