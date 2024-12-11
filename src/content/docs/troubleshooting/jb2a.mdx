@@ -20,7 +20,7 @@ import fvttModuleOption from '/src/assets/img/fvtt-jb2a-module-options.png'
       You must have subscribed to one of our tiers to have access to the Master Post. A custom pledge does not give you access to our Patreon content. We recommend that you do not use a custom pledge.
     </Aside>    
     
-    Alternatively, you can find the link to access it on this Wiki, on each of our public posts about our releases on Patreon, and on each of our release announcements on our Discord server.
+    You can find a link to access it on this Wiki, on each of our public posts about our releases on Patreon, and on each of our release announcements on our Discord server.
 
     <LinkButton href="https://discord.gg/gmd8MAPX4m" icon="patreon" variant="secondary">Master Post on Patreon</LinkButton>
     <LinkButton href="https://discord.gg/gmd8MAPX4m" icon="discord" variant="secondary">Join our Discord Server</LinkButton>
@@ -44,9 +44,9 @@ import fvttModuleOption from '/src/assets/img/fvtt-jb2a-module-options.png'
 ### Issues during Download
 #### With manifest link
 
-    It’s possible we made a mistake but make sure you follow the steps in our installation guide first to make sure you’ve done it correctly.
+    It’s possible we've made a mistake but make sure you follow the steps in our installation guide, just in case.
 
-    If your problem persists even after following all the steps in our installation guide, please report your issue so we can help you out.
+    If your problem persists even after following all the steps in our installation guide, please report your issue so we can try and help you.
 
   <CardGrid>
 
@@ -72,9 +72,9 @@ import fvttModuleOption from '/src/assets/img/fvtt-jb2a-module-options.png'
 ### Issues during Install
 #### Manual install
 
-  Make sure you follow the steps in our installation guide first to make sure you’ve done it correctly.
+  Make sure you follow the steps in our installation guide first.
 
-  If your problem persists even after following all the steps in our installation guide, please report your issue so we can help you out.
+  If your problem persists, please report your issue so we can try and help you.
 
   <CardGrid>
 
@@ -108,7 +108,7 @@ import fvttModuleOption from '/src/assets/img/fvtt-jb2a-module-options.png'
 
   </Steps>
 
-  If everything failed, please report your issue so we can help you out.
+  If everything failed, please report your issue so we can try and help you.
 
   <LinkCard title="Report an issue" href="/jb2a-wiki/troubleshooting/how-to#-report-an-issue" />
 
@@ -128,9 +128,9 @@ Please follow one of these instructions to update our Patreon module correctly.
 
 #### Only new stuff
 
-  Make sure you follow the steps in our installation guide first to make sure you’ve done it correctly.
+  Make sure you follow the steps in our installation guide first.
 
-  If your problem persists even after following all the steps in our installation guide, please contact us on our [Discord server](https://discord.gg/gmd8MAPX4m) on the `jb2a-troubleshooting` channel.
+  If your problem persists, please contact us on our [Discord server](https://discord.gg/gmd8MAPX4m) on the `jb2a-troubleshooting` channel.
 
   <CardGrid>
 
@@ -143,7 +143,7 @@ Please follow one of these instructions to update our Patreon module correctly.
 ### Issues using our content
 #### Can't find animation
 
-  If your problem persists even after following all the steps in our installation guide, please contact us on our [Discord server](https://discord.gg/gmd8MAPX4m) on the `jb2a-troubleshooting` channel.
+  If your problem persists, please contact us on our [Discord server](https://discord.gg/gmd8MAPX4m) on the `jb2a-troubleshooting` channel.
 
   <CardGrid>
 
@@ -154,9 +154,9 @@ Please follow one of these instructions to update our Patreon module correctly.
 
 #### No Patreon assets, only free
 
-  Uninstall the free module, you don’t need it anymore. Once you have the Patreon module **installed** and **activated** in your world, all your setup using the database paths will be flawlessly transferred over. 
+  Uninstall the free module, you don’t need it anymore. Once you have the Patreon module **installed** and **activated** in your world, all your setup using the database paths will be transferred over. 
   
-  Any tile or token you have setup using file paths may break though. If you don’t have many, you can fix them yourself manually or we can provide a macro in our [Discord server](https://discord.gg/gmd8MAPX4m) to fix all of them with a batch macro.
+  Any tile or token you have setup using file paths may break though. It's an easy fix but we can provide a macro in our [Discord server](https://discord.gg/gmd8MAPX4m) to fix all of them with a batch macro if you have too many of them.
 
   ```txt title="File path example" "JB2A_DnD5e" "jb2a_patreon"
   ### Free module
@@ -206,7 +206,7 @@ Please follow one of these instructions to update our Patreon module correctly.
 
 There’s a known issue with the [Drag Upload](https://github.com/amir-arad/FoundryVTT-Drag-Upload) module where it breaks the webm animations being dragged on the canvas to create a tile.
 
-Deactivating this module will solve the problem.
+As far as we know, only deactivating this module will solve the problem, unfortunately.
 
 #### Tiled template texture
 
@@ -218,7 +218,7 @@ Deactivating this module will solve the problem.
 
   We only provide visuals, no sounds.
 
-  If you have asked yourself this question, we strongly recommend that you read the following two sections to gain a better understanding of what you can expect from the content of JB2A.
+  We strongly recommend that you read the following two sections to gain a better understanding of what you can expect from the content of JB2A.
 
   <CardGrid>
 
@@ -227,7 +227,11 @@ Deactivating this module will solve the problem.
     
   </CardGrid>
 
-#### Weird animations on template
+  As a sidenote, there are plenty of solutions to add sound to our animations, like modules or resources online for you to explore/
+
+    <LinkCard title="PSFX" href="/jb2a-wiki/external-resources/community-links#psfx" />
+
+#### Unexpected animations on template
 
   The [Token Magic FX](https://foundryvtt.com/packages/tokenmagic/) module, or TMFX, provides some PIXI filter overlay on templates, linked to damage types. 
   
@@ -296,8 +300,18 @@ Deactivating this module will solve the problem.
 
 
 #### I don't have a role
+<Steps>
+  1. Go to your Patreon account settings.
+  2. Click on "More" and then, the "Connected Apps" option.
+  3. Once you've connected your Discord account here, you should be assigned your role automatically in our Discord server, corresponding to the tier at which you've joined.
+  4. It may take a moment. Try restarting the Discord application.
+</Steps>
+
 #### No Pareon-exlusive channels
+If you have already linked your Discord account to your Patreon account, you should have been assigned automatically a role which gives you access to the Patreon-Exclusive channels. If that's not the case, get in touch with us on Discord.
+
 #### Missing channels
+Check the "Browse Channels" at the top of the cahnnels list to join other channels.
 
 
 
