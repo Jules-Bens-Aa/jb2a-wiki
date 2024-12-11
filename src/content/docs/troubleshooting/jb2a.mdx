@@ -3,6 +3,10 @@ title: JB2A issues
 ---
 import { Aside, Cards, CardGrid, FileTree, LinkButton, LinkCard, Steps, Tabs, TabItem } from '@astrojs/starlight/components';
 
+import { Image } from 'astro:assets'
+
+import fvttModuleOption from '/src/assets/img/fvtt-jb2a-module-options.png'
+
 *Use the sidebar to find your issue quickly.*
 
 ## Patreon
@@ -110,8 +114,18 @@ import { Aside, Cards, CardGrid, FileTree, LinkButton, LinkCard, Steps, Tabs, Ta
 
 
 ### Issues during Update
-#### Free module
 #### "No manifest URL" error
+
+If you're experiencing this problem, you've probably tried to update our Patreon module on FoundryVTT.
+
+Unlike our free module, **you can't update our Patreon module this way.** To avoid having this error every time FoundryVTT tries to update our module, we advise you to lock it like this:
+
+  <p align="center"><Image src={fvttModuleOption} alt="How to lock our Patreon Module" style="width: 25%;"/></p>
+
+Please follow one of these instructions to update our Patreon module correctly.
+
+<LinkCard title="Update Patreon module" href="/jb2a-wiki/getting-started/guides#patreon-module-1" />
+
 #### Only new stuff
 
   Make sure you follow the steps in our installation guide first to make sure you’ve done it correctly.
@@ -137,8 +151,6 @@ import { Aside, Cards, CardGrid, FileTree, LinkButton, LinkCard, Steps, Tabs, Ta
     <LinkCard title="Report an issue" href="/jb2a-wiki/troubleshooting/how-to#-report-an-issue" />
     
   </CardGrid>
-
-
 
 #### No Patreon assets, only free
 
@@ -265,7 +277,11 @@ Deactivating this module will solve the problem.
 
       3. **You updated our module manually using the ‘Only new stuff’.**
 
-          Same as reason n°2
+          This is more or less the same as reason n°2. However, you may not have to reinstall the entire module. You can try again to transfer the contents of the ‘Only new stuff’ zip files to our Patreon module.
+
+            <LinkCard title="Update with Only new stuff" href="/jb2a-wiki/getting-started/guides#patreon-module-1" />
+
+          Once this has been done, use the Sequencer command to confirm that everything is in place.
 
     </Steps>
 
