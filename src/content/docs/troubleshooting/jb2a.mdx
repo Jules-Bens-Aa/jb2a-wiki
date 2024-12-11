@@ -1,5 +1,5 @@
 ---
-title: JB2A
+title: JB2A issues
 ---
 import { Aside, Cards, CardGrid, FileTree, LinkButton, LinkCard, Steps, Tabs, TabItem } from '@astrojs/starlight/components';
 
@@ -56,7 +56,7 @@ import { Aside, Cards, CardGrid, FileTree, LinkButton, LinkCard, Steps, Tabs, Ta
 
     It’s possible we made a mistake but make sure you follow the steps in our installation guide first to make sure you’ve done it correctly.
 
-    If your problem persists even after following all the steps in our installation guide, please contact us on our [Discord server](https://discord.gg/gmd8MAPX4m) on the `jb2a-troubleshooting` channel.
+    If your problem persists even after following all the steps in our installation guide, please report your issue so we can help you out.
 
   <CardGrid>
 
@@ -95,7 +95,7 @@ import { Aside, Cards, CardGrid, FileTree, LinkButton, LinkCard, Steps, Tabs, Ta
 
   Make sure you follow the steps in our installation guide first to make sure you’ve done it correctly.
 
-  If your problem persists even after following all the steps in our installation guide, please contact us on our [Discord server](https://discord.gg/gmd8MAPX4m) on the `jb2a-troubleshooting` channel.
+  If your problem persists even after following all the steps in our installation guide, please report your issue so we can help you out.
 
   <CardGrid>
 
@@ -108,9 +108,42 @@ import { Aside, Cards, CardGrid, FileTree, LinkButton, LinkCard, Steps, Tabs, Ta
 
 #### Module not displaying
 
+<details>
+
+  <summary>...</summary>
+
+  **Module installed with the manifest link:**
+
+  - Restart FoundryVTT, this is not necessary in most cases. But you never know.
+  - If you did the installation procedure yourself, try to follow our instructions to the letter.
+
+  <LinkCard title="Install with manifest link" href="/jb2a-wiki/getting-started/guides#how-to-install" />
+
+  **Module installed manually:**
+
+  <Steps>
+
+    1. Don't forget to restart FoundryVTT after installation.
+
+    2. Inside the directory `data/modules` of FoundryVTT, our module folder should be exactly `jb2a_patreon`. It is case sensitive!
+
+    3. Inside our `jb2a_patreon` folder, there should be a file called `module.json`. It is provided in the zip file.
+
+    4. If you did the installation procedure yourself, try to follow our instructions to the letter.
+
+        <LinkCard title="Manual Install Instruction" href="/jb2a-wiki/getting-started/guides#manual-install" />
+
+  </Steps>
+
+  If everything failed, please report your issue so we can help you out.
+
+  <LinkCard title="Report your issue" href="/jb2a-wiki/troubleshooting/mci" />
+
+</details>
+
 ### Issues during Update
 #### Free module
-#### No manifest URL error
+#### "No manifest URL" error
 #### Only new stuff
 
 <details>
