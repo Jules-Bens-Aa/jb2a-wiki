@@ -3,13 +3,15 @@ title: Discord
 ---
 
 import { Image } from 'astro:assets';
-import { Aside, Code, Icon, LinkButton } from '@astrojs/starlight/components';
+import { Aside, Code, Icon, LinkButton, Steps } from '@astrojs/starlight/components';
 
 import consoleClear from '/src/assets/img/chrome-console-clear.png';
 import tokenTarget from '/src/assets/img/token-target.png';
 import discordSearch from '/src/assets/img/discord-search.png';
 
-
+import patreonSidebar from '/src/assets/img/patreon-sidebar.png';
+import patreonSettings from '/src/assets/img/patreon-settings.png';
+import patreonConnectedApp from '/src/assets/img/patreon-connected-app.png';
 
 
 *Some useful things to know about how Discord works*
@@ -28,6 +30,27 @@ Discord is the best place to get in touch with us!
 ## Channels and Roles
 During the onboarding, the first time you join the server, you can choose which channels you might be most interested in. You can always join or quit channels later by clicking on the “Channels & Roles” button at the top.
 
+## Patreon Exclusive Roles
+
+How to enable your Patreon roles:
+
+<Steps>
+
+  1. Go to your Patreon account settings.
+
+      <p align="center"><Image src={patreonSidebar} alt="Sidebar on your Patreon Homepage" style="width: 25%;"/></p>
+
+  2. Click on "More" and then, the "Connected Apps" option.
+
+      <p align="center"><Image src={patreonSettings} alt="Patreon Settings Page" style="width: 25%;"/></p>
+
+  3. Once you've connected your Discord account here, you should be assigned your role automatically in our Discord server, corresponding to the tier at which you've joined.
+
+      <p align="center"><Image src={patreonConnectedApp} alt="Patreon Connected Apps Page" style="width: 25%;"/></p>
+
+  4. It may take a moment. Try restarting the Discord application.
+
+</Steps>
 
 ## Opt-in Roles for Notifications
 Having joined many Discord servers ourselves, we understand how notifications can become quickly disruptive or even annoying if overdone. We have decided to create an “opt-in role” system where you can choose which subjects you'd like a notification about. 
@@ -39,7 +62,7 @@ The search function on Discord can be quite useful, once you know how to use it.
 When you click on the search field in Discord, plenty of options appear that can help you restrict the search to specific user, channels, date...etc
 <p align="center"><Image src={discordSearch} alt="search box in Discord" style="width: 50%;"/></p>
 
-<LinkButton href="https://support.discord.com/hc/en-us/articles/115000468588-Using-Search" icon="discord">Do you want to know more?</LinkButton>
+<LinkButton href="https://support.discord.com/hc/en-us/articles/115000468588-Using-Search" icon="discord">Would you like to know more?</LinkButton>
 
 ## Syntax Highlighting
 Discord uses the Markdown language and you can use Syntax Highlighting. Here's how:
