@@ -111,7 +111,7 @@ export default defineConfig({
                     'troubleshooting/how-to',         
                     'troubleshooting/jb2a',
                     'troubleshooting/fvtt',
-                    // 'troubleshooting/mci',           
+                    'troubleshooting/online-hosting',           
                 ]
             },
             {
