@@ -3,16 +3,17 @@ title: FoundryVTT issues
 ---
 
 import { Aside, CardGrid, LinkButton, LinkCard, Steps, Tabs, TabItem  } from '@astrojs/starlight/components';
-import PIXI-Fix from '/src/assets/img/PIXI-Fix.png'
+import { Image } from 'astro:assets'
+import PIXIFix from '/src/assets/img/PIXI-Fix.png'
 
 ## FoundryVTT
 
 
 #### Pixelated/Overblown animations
 
-This problem occurs, as far as we have figured out, because of a browser or graphic card update. Toggle the "PIXI FIx" option in the Sequencer module settings, meaning if it's on, turn it off and if it's off, turn it on.
+<p align="center"><Image src={PIXIFix} alt="How to lock our Patreon Module" style="width: 25%;"/></p>
 
-<p align="center"><Image src={PIXI-Fix} alt="How to lock our Patreon Module" style="width: 25%;"/></p>
+This problem occurs, as far as we understand, because of a browser or graphic card update. Toggle the "PIXI FIx" option in the Sequencer module settings, meaning if it's on, turn it off and if it's off, turn it on.
 
 #### Dark/Muddy outline on animations
 
