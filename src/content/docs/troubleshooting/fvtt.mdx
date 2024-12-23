@@ -2,31 +2,80 @@
 title: FoundryVTT issues
 ---
 
+import { Aside, CardGrid, LinkButton, LinkCard, Steps, Tabs, TabItem  } from '@astrojs/starlight/components';
+
 ## FoundryVTT
 
 
 #### Pixelated/Overblown animations
-#### Dark/Muddy outline on animations
-#### Macros broken after update
 
+This problem occurs, as far as we have figured out, because of a browser or graphic card update. Toggle the "PIXI FIx" option in the Sequencer module settings, meaning if it's on, turn it off and if it's off, turn it on.
+
+#### Dark/Muddy outline on animations
+
+It can be more noticeable on some assets than others. If you do notice a dark grey outline on our assets, try the second option in the Sequencer settings called "Global PIXI Fix".
 
 ## Other Modules
 
-
 ### Automated-Animations
 #### Effects don't trigger
+
+There are a few reasons why this could happen. Going though the steps linked below, under the Automated-Animations tab, should help you diagnostic the probable cause.
+<LinkCard title="Troubleshooting Steps" href="/jb2a-wiki/troubleshooting/how-to#-troubleshoot-an-issue-yourself" />
+
 #### Only some effects trigger
+
+By default, Automated-Animations only comes with a few pre-configured attacks and spells. Depending on your game system, you may need to install another module to install some effect presets. 
+Make sure you read the prerequisites to better understand how it all works and go through the Troubleshooting steps for Automated-Animations
+
+<CardGrid>
+<LinkCard title="Understanding Automation" href="/jb2a-wiki/getting-started/understanding-automation" />
+<LinkCard title="Troubleshooting Steps" href="/jb2a-wiki/troubleshooting/how-to#-troubleshoot-an-issue-yourself" />
+</CardGrid>
+
 #### Incomplete assets list
+
+The dropdown menus do not include all of our assets. You can however use the "Custom" field to use a database path, referencing any of our assets. You can browse and copy the database path from the Sequencer Database Viewer or from our Libray Viewer website.
+
+<LinkButton href="https://fantasycomputer.works/FoundryVTT-Sequencer/#/database-basics?id=opening-the-database-viewer" icon="external" variant="custom">Opening the Sequencer Database Viewer</LinkButton>
+
+<LinkButton href="https://library.jb2a.com/" icon="external" variant="custom">JB2A Asset Library Viewer</LinkButton>
+
 #### Missing effects
+
+By default, Automated-Animations only comes with a few pre-configured attacks and spells. Depending on your game system, you may need to install another module to install some effect presets. 
+Make sure you read the prerequisites to better understand how it all works and go through the Troubleshooting steps for Automated-Animations
+
+<CardGrid>
+<LinkCard title="Understanding Automation" href="/jb2a-wiki/getting-started/understanding-automation" />
+<LinkCard title="Troubleshooting Steps" href="/jb2a-wiki/troubleshooting/how-to#-troubleshoot-an-issue-yourself" />
+</CardGrid>
+
 #### Can't delete effect template on scene
+
+An animation attached to a measured template should get deleted along with the measured template. If the animation is not attached, for example if you prefer to be able to delete the template and enjoy the animation by itself, you can dismiss it from the Sequencer Effect Manager.
+If that doesn't work, it may simply be a tile or an overhead tile (in the Foreground Layer)
+
+<LinkButton href="https://fantasycomputer.works/FoundryVTT-Sequencer/#/effect-manager?id=show-effect-manager" icon="external" variant="custom">Sequencer Effect Manager</LinkButton>
+<LinkButton href="https://foundryvtt.com/article/tiles/" icon="external" variant="custom">Tiles in FoundryVTT</LinkButton>
+
 #### No sounds
+
+We only provide the animations. If there should be an associated sound provided by an effect preset, check its source. The sound file could be stored with the module providing the effect presets, or coming from another module specifically for sounds like PSFX or SoundFX Library.
+
+<LinkCard title="Sound FX Modules for FoundryVTT" href="/jb2a-wiki/external-resources/sfx#online-free-resources" />
 
 ### D&D5e Animations
 #### No sounds
 
+There are a few sound files provided directly by D&D5e-Animations and some referenced from the SoundFX Library module.
+
+<LinkCard title="SoundFX Library module" href="/jb2a-wiki/external-resources/community-links#soundfx-library" />
+
 ### FXMaster
-#### Assets missing
-#### Incomplete list
+#### Assets Missing
+
+Before the Sequencer module existed, we started to register our assets via the FXMaster module, in the "Special Effects" section. Due to the large amount of assets we provide, this menu was getting very bloated and slowed down performances in some cases. Now that we register our assets via a Sequencer Database, we have stopped adding assets to FXMaster and disabled it in our settings by default. We left the script files for this integration as a template/reference if you wish to make your own, using a world script or a separate module.
 
 ### PF2e Animations
 
@@ -35,8 +84,20 @@ title: FoundryVTT issues
 ### Sequencer
 #### Can't delete effects on scene
 
+On some rare instances, it happens that some animations remain on the canvas and cannot be removed from the Sequencer Effect Manager. If you paste this little command line in the console (F12), it should remove every existing animation in the scene:
+```js
+canvas.scene.unsetFlag("sequencer", "effects")
+```
+
 ### Warpgate
 #### Can't find Warpgate
+
+Warpgate has been discontinued and will not work for versions of FoundryVTT V12 or above. You can still find a zip for V11 in the official FoundryVTT Discord, pinned in the #module-discussion channel.
+The crosshair functionnality has been since implemented and expanded in the Sequencer module, but not the mutation system.
+
+<LinkButton href="https://discord.com/channels/170995199584108546/513918036919713802/1255239377982853175" icon="Discord" variant="custom">V11 Warpgate Zip</LinkButton>
+<LinkButton href="https://fantasycomputer.works/FoundryVTT-Sequencer/#/crosshair" icon="Discord" variant="custom">Sequencer Crosshair Documentation</LinkButton>
+
 
 
 
