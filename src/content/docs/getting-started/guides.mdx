@@ -48,6 +48,10 @@ import guideAaMacro from '/src/assets/img/guide-aa-macro.png'
 import guideAaMelee from '/src/assets/img/guide-aa-autorecmenu-melee.png'
 import guideAaRange from '/src/assets/img/guide-aa-autorecmenu-range.png'
 import guideAaTemplate from '/src/assets/img/guide-aa-autorecmenu-template.png'
+import guideAaCustomField from '/src/assets/img/guide-aa-custom-field.png'
+import guideAaAssetLibrary from '/src/assets/img/Asset-Library-Datapath.png'
+import guideAaInformations from '/src/assets/img/guide-aa-autorecmenu-informations.png'
+
 
 import guideAaMaceAttack from '/src/assets/vid/aa-mace-attack.webm'
 import guideAaCrossbowAttack from '/src/assets/vid/aa-crossbow-attack.webm'
@@ -56,6 +60,11 @@ import guideAaFogDelete01 from '/src/assets/vid/aa-fogcloud-delete01.webm'
 import guideAaFogDelete02 from '/src/assets/vid/aa-fogcloud-delete02.webm'
 
 import seqDatabaseViewer from '/src/assets/img/seq-database-viewer.png'
+import seqDatabaseListView from '/src/assets/img/seq-database-viewer-list-view.png'
+
+import seqDatapathIcon from '/src/assets/vect/database-solid.svg'
+import seqFilepathIcon from '/src/assets/vect/file-solid.svg'
+import seqPlayIcon from '/src/assets/vect/play-solid.svg'
 
 
 ## How to install
@@ -962,4 +971,40 @@ The version of our Free or Patreon module is not important for this guide.
         <LinkButton href="https://github.com/otigon/automated-jb2a-animations/wiki/Configure-Effects" icon="external" variant="secondary">How to configure an Effect</LinkButton>
         <LinkButton href="https://github.com/otigon/automated-jb2a-animations/wiki/PERSISTENT-EFFECTS" icon="external" variant="secondary">About persistent Effects</LinkButton>
  
+</Steps>
+
+#### Customize your effect
+
+Since the dropdown menus don't include all of our assets, there's a handy Custom Field in each Auto-Rec entry so you can copy and paste any datapath. To search for an animation and copy its datapath, you can use the Sequencer Database Viewer, from the Sequencer module.
+
+<Steps>
+
+    1. Click on this button, in the Token Tools on the left-hand side toolbar.
+
+        <p align="center"><Image src={seqDatabaseViewer} alt="Sequencer Database Viewer" style="width: 50%;"/></p>
+    
+    2. You can now browse through all our animations, search for a specific one, preview it <Image src={seqPlayIcon} alt="datapath icon" style="display: inline; width: 20px; background-color: white; border-radius: 0.2em; padding: 0.3em;" /> and copy the filepath <Image src={seqFilepathIcon} alt="datapath icon" style="display: inline; width: 20px; background-color: white; border-radius: 0.2em; padding: 0.3em;" /> or database path <Image src={seqDatapathIcon} alt="datapath icon" style="display: inline; width: 20px; background-color: white; border-radius: 0.2em; padding: 0.3em;" />. We recommend using the database path for more flexibility, and added intelligent behaviours from the Sequencer module. Click on the little datapath icon to copy it in your clipboard.        
+
+    3. You can then paste it directly in the Custom Field in the auto-rec entry.
+
+        <p align="center"><Image src={guideAaCustomField} alt="Auto-Rec Custom Field" style="width: 50%;"/></p>
+
+    4. Alternatively, you can as easily use our Asset Library online for the same results. If you click on the database path at the bottom right, it will copy it in your clipboard.
+
+        <p align="center"><Image src={guideAaAssetLibrary} alt="Auto-Rec Custom Field" style="width: 50%;"/></p>
+    
+    5. Extra tips: 
+            <Steps>
+
+                1. The little blue information button in all auto-rec entries is really handy to figure out what all the settings mean.
+
+                    <p align="center"><Image src={guideAaInformations} alt="Auto-Rec Informations button" style="width: 50%;"/></p>
+
+                2. Using Sequencer's datapath allows for some randomisation. For example, ``jb2a.condition.boon.01.001.blue`` refers to one specific animation. If you remove the color at the end of it and only have ``jb2a.condition.boon.01.001``, Sequencer will pick one of 4 different animations, corresponding to the blue, green, red and yellow existing animations. <br></br> Furthermore, if you remove the 001 part and paste ``jb2a.condition.boon.01`` instead, Sequencer will pick at random in the 68 existing animations under that particular datapath! To better understand this, untick the "List View" option of the Sequencer Database Viewer. If you press the preview button on a category a few times, you'll see that the animation is picked at random! <br></br> In theory, you could just write ``jb2a`` and it would pick at random from **ALL** our animations but we do not advise you to try as there are too many animations to handle and it could be very costly for your computer!
+
+                    <p align="center"><Image src={seqDatabaseListView} alt="Sequencer Database Viewer List-View" style="width: 50%;"/></p>
+                    
+
+            </Steps>
+
 </Steps>
