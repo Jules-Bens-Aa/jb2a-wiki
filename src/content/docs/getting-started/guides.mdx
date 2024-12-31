@@ -50,10 +50,6 @@ import guideAaRange from '/src/assets/img/guide-aa-autorecmenu-range.png'
 import guideAaTemplate from '/src/assets/img/guide-aa-autorecmenu-template.png'
 import guideAaAssetLibrary from '/src/assets/img/Asset-Library-Datapath.png'
 import guideAaInformations from '/src/assets/img/guide-aa-autorecmenu-informations.png'
-import guideAaSanctuarySource from '/src/assets/img/guide-aa-sanctuary-source.png'
-import guideAaSanctuaryPrimary from '/src/assets/img/guide-aa-sanctuary-primary.png'
-import guideAaSanctuarySecondary from '/src/assets/img/guide-aa-sanctuary-secondary.png'
-import guideAaSanctuaryTarget from '/src/assets/img/guide-aa-sanctuary-target.png'
 
 import guideAaMaceAttack from '/src/assets/vid/aa-mace-attack.webm'
 import guideAaCrossbowAttack from '/src/assets/vid/aa-crossbow-attack.webm'
@@ -62,8 +58,19 @@ import guideAaFogDelete01 from '/src/assets/vid/aa-fogcloud-delete01.webm'
 import guideAaFogDelete02 from '/src/assets/vid/aa-fogcloud-delete02.webm'
 import guideAaSanctuary from '/src/assets/vid/aa-sanctuary.webm'
 
+import guideAaSanctuaryAkra from '/src/assets/img/guide-aa-akra-sanctuary.png'
+import guideAaSanctuaryCreate from '/src/assets/img/guide-aa-sanctuary-create.png'
+import guideAaSanctuaryNew from '/src/assets/img/guide-aa-sanctuary-effect-new.png'
+import guideAaSanctuarySource from '/src/assets/img/guide-aa-sanctuary-source.png'
+import guideAaSanctuaryPrimary from '/src/assets/img/guide-aa-sanctuary-primary.png'
+import guideAaSanctuarySecondary from '/src/assets/img/guide-aa-sanctuary-secondary.png'
+import guideAaSanctuaryTarget from '/src/assets/img/guide-aa-sanctuary-target.png'
+
+import guideSeqDatabase from '/src/assets/img/guide-seq-database-viewer.png'
+
 import seqDatabaseViewer from '/src/assets/img/seq-database-viewer.png'
 import seqDatabaseListView from '/src/assets/img/seq-database-viewer-list-view.png'
+import seqManager from '/src/assets/img/seq-manager.png'
 
 import seqDatapathIcon from '/src/assets/vect/database-solid.svg'
 import seqFilepathIcon from '/src/assets/vect/file-solid.svg'
@@ -821,6 +828,44 @@ What is described in this subsection applies to any game system and without addi
 
 </Tabs>
 
+### JB2A + Sequencer
+
+#### Database Viewer
+
+Click on this button, in the Token Tools on the left-hand side toolbar to open the Sequencer Database Viewer.
+
+            <p align="center"><Image src={seqDatabaseViewer} alt="Sequencer Database Viewer" style="width: 50%;"/></p>
+
+            <Image src={seqPlayIcon} alt="play icon" style="display: inline; width: 30px; background-color: white; border-radius: 0.2em; padding: 0.3em;" /> Preview the animation
+
+            <Image src={seqFilepathIcon} alt="filepath icon" style="display: inline; width: 30px; background-color: white; border-radius: 0.2em; padding: 0.3em;" /> Copy the full Filepath to the animation
+
+            <Image src={seqDatapathIcon} alt="datapath icon" style="display: inline; width: 30px; background-color: white; border-radius: 0.2em; padding: 0.3em;" /> Copy the Datapath to the animation(s)
+
+            You can now browse through all our animations, search for a specific one, preview it and copy the **Filepath** or database path, also called **Datapath** .
+
+            <Aside>
+            We recommend using the **Database Path** for more flexibility, and added intelligent behaviours from the Sequencer module. 
+            </Aside>
+
+##### Randomisation of animations
+
+Using Sequencer's Datapath allows for some randomisation. 
+
+For example, ``jb2a.condition.boon.01.001.blue`` refers to one specific animation. 
+
+If you remove the color at the end of it and only have ``jb2a.condition.boon.01.001``, Sequencer will pick one of 4 different animations, corresponding to the blue, green, red and yellow existing animations.
+
+Furthermore, if you remove the 001 part and paste ``jb2a.condition.boon.01`` instead, Sequencer will pick at random in the 68 existing animations under that particular Datapath! To better understand this, untick the "List View" option of the Sequencer Database Viewer. If you press the preview button on a category a few times, you'll see that the animation is picked at random!
+
+In theory, you could just write ``jb2a`` and it would pick at random from **ALL** our animations but we do not advise you to try as there are too many animations to handle and it could be very costly for your computer!
+
+<p align="center"><Image src={seqDatabaseListView} alt="Sequencer Database Viewer List-View" style="width: 50%;"/></p>
+
+#### Sequencer Manager
+
+<p align="center"><Image src={seqManager} alt="How to open the Sequencer Manager" style="width: 50%;"/></p>
+
 ### JB2A + Automated Animations
 
 #### Trigger your first effect
@@ -978,18 +1023,21 @@ The version of our Free or Patreon module is not important for this guide.
 
 #### Customize your effect
 
-Since the dropdown menus don't include all of our assets, there's a handy Custom Field in each Auto-Rec entry so you can copy and paste any datapath. To search for an animation and copy its datapath, you can use the Sequencer Database Viewer, from the Sequencer module. In the next example, we'll setup the Sanctuary spell as an On-Token effect.
+Since the dropdown menus don't include all of our assets, there's a handy Custom Field in each Autorec menu effect so you can copy and paste any Datapath.
+
+In the next example, we will reuse concepts explained in the previous section and setup the Sanctuary spell as an On-Token effect. 
+
+##### Creating a new effect
 
 <Steps>
 
-    1. The actor called "Akra" from the previous section already has the Sanctuary spell in its list. Import another Starter Hero to be the target of the spell.
+    1. The actor called `Akra` from the previous section already has the `Sanctuary` spell in its list.
 
-    2. In the Auto-rec, under the On-Token tab, create a new entry called Sancturay.
+        <p align="center"><Image src={guideAaSanctuaryAkra} alt="Akra's Character Sheet - Spell Tab" style="width: 50%;"/></p>
 
-    3. Let's tick the Source Animation checkbox so we can add an animation on Akra, the source token, the one casting the spell. 
-    
-    4. Click on this button, in the Token Tools on the left-hand side toolbar to open the Sequencer Database Viewer.
+    2. In the Autorec menu, under the On-Token tab, create a new effect called `Sanctuary`.
 
+<<<<<<< Updated upstream
             <p align="center"><Image src={seqDatabaseViewer} alt="Sequencer Database Viewer" style="width: 50%;"/></p>
 
             You can now browse through all our animations, search for a specific one, preview it and copy the filepath or database path, also called datapath . We recommend using the database path for more flexibility, and added intelligent behaviours from the Sequencer module. Click on the little datapath icon to copy it in your clipboard. Here, we'll search and copy this database path: ``jb2a.cast_shape.circle.single01.yellow``
@@ -1033,11 +1081,139 @@ Since the dropdown menus don't include all of our assets, there's a handy Custom
     12. As per the Sanctuary spell, if the ally makes an attack and we need to dismiss the spell, we can just click on the Sequencer Effect Manager and end it there as shown in the video above. 
 
     13. This was only one way to setup and customize a spell. There are plenty of different ways to approach this. Some prefer to use the Active Effects tab to setup persistent animations, so that the animation is dismissed automatically when the active effect is turned off. It can be beneficial if you decided to go with a fully automated game using MIDI and the like. You can also use macros and plug them into an auto-rec entry in order to go beyond what A-A's user interface has to offer. It really comes down to preference and how far you want to take things, and how much time you want to invest!
+=======
+        <p align="center"><Image src={guideAaSanctuaryCreate} alt="Autorecognition Menu - OnToken Tab - Creating Sanctuary Entry" style="width: 50%;"/></p>
+>>>>>>> Stashed changes
 
 </Steps>
 
-#### Randomisation of animations.
+##### Setting up the Source Animation
 
-Using Sequencer's datapath allows for some randomisation. For example, ``jb2a.condition.boon.01.001.blue`` refers to one specific animation. If you remove the color at the end of it and only have ``jb2a.condition.boon.01.001``, Sequencer will pick one of 4 different animations, corresponding to the blue, green, red and yellow existing animations. <br></br> Furthermore, if you remove the 001 part and paste ``jb2a.condition.boon.01`` instead, Sequencer will pick at random in the 68 existing animations under that particular datapath! To better understand this, untick the "List View" option of the Sequencer Database Viewer. If you press the preview button on a category a few times, you'll see that the animation is picked at random! <br></br> In theory, you could just write ``jb2a`` and it would pick at random from **ALL** our animations but we do not advise you to try as there are too many animations to handle and it could be very costly for your computer!
+Let's create the Source Animation checkbox so we can add an animation on `Akra`, the source token, the one casting the spell.
 
-                    <p align="center"><Image src={seqDatabaseListView} alt="Sequencer Database Viewer List-View" style="width: 50%;"/></p>
+<Steps>
+
+    1. Tick the Source Animation Checkbox.
+
+        <p align="center"><Image src={guideAaSanctuaryNew} alt="Sanctuary Effect freshly created" style="width: 50%;"/></p>
+
+    2. Open the Sequencer Database Viewer and search for:
+
+        ```
+        cast shape circle single
+        ```
+        Click on the little Datapath icon to copy it in your clipboard.
+
+        ```
+        jb2a.cast_shape.circle.single01.yellow
+        ```
+
+        <p align="center"><Image src={guideSeqDatabase} alt="Find an asset in the Sequencer Database Viewer" style="width: 50%;"/></p> 
+
+        <LinkCard title="How to use the Sequencer Database Viewer" href="/jb2a-wiki/getting-started/guides#database-viewer" />
+
+        Alternatively, you can as easily use our <a href="https://library.jb2a.com/">Asset Library</a> online for the same results. If you click on the database path at the bottom right, it will copy it in your clipboard.
+
+        <p align="center"><Image src={guideAaAssetLibrary} alt="Asset Library Website" style="width: 50%;"/></p>
+
+    3. Enable the custom field and paste the Datapath for the source animation.      
+
+        By default, all the subsequent effect sections will wait for the end of this source animation section in order to start. For this example, let's set the ``Wait`` section at the bottom to be ``-2000``, which means the next section will start 2000 milliseconds before the end of this current effect section, so almost at the same time.
+
+        <p align="center"><Image src={guideAaSanctuarySource} alt="Sequencer Database Viewer" style="width: 50%;"/></p>
+
+</Steps>
+
+By the way, there are many settings to explore here, and the little round blue ``i`` button will give you more information about what each setting does.
+
+<p align="center"><Image src={guideAaInformations} alt="Auto-Rec Informations button" style="width: 50%;"/></p>
+
+
+##### Setting up the Primary Animation
+
+Now the Primary Animation. We'll use a boon condition for this one.
+
+<Steps>
+
+    1. Open the Sequencer Database Viewer and search for:
+
+        ```
+        condition boon yellow 003
+        ```
+
+        Click on the little Datapath icon to copy it in your clipboard.
+
+        ```
+        jb2a.condition.boon.01.003.yellow
+        ```
+    2. Enable the custom field and paste the Datapath for the source animation.
+
+        <p align="center"><Image src={guideAaSanctuaryPrimary} alt="Sequencer Database Viewer" style="width: 50%;"/></p>
+
+</Steps>
+
+##### Setting up the Secondary Animation
+
+You can add a Secondary Animation, like a particle animation, perfect for adding little more details.
+    
+<Steps>
+
+    1. Open the Sequencer Database Viewer and search for:
+
+        ```
+        particles inward greenyellow
+        ```
+
+        Click on the little Datapath icon to copy it in your clipboard.
+
+        ```
+        jb2a.particles.inward.greenyellow.01.02
+        ```
+
+    2. Enable the custom field and paste the Datapath for the source animation. Changing the playback rate to 2 in this case adds a little bit more dynamism to the overall feel.
+
+        <p align="center"><Image src={guideAaSanctuarySecondary} alt="Sequencer Database Viewer" style="width: 50%;"/></p>
+
+</Steps>
+
+##### Setting up the Target Animation
+
+Now, finally, the Target Animation. The animation from this section needs to stay on the target, looping, until we dismiss it. For this, we'll use one of the "complete" animations. 
+
+These complete animations have extra timing information saved in the Sequencer Database, so using the Datapath will let Sequencer know how to handle the intro, loop and outro sections.
+
+<Steps>
+
+    1. Open the Sequencer Database Viewer and search for:
+
+        ```
+        markers shield rampart complete yellow
+        ```
+
+        Click on the little Datapath icon to copy it in your clipboard.
+
+        ```
+        jb2a.markers.shield_rampart.complete.03.yellow
+        ```
+
+    2. Enable the custom field and paste the Datapath for the source animation. 
+    
+        In the options, make sure you tick the `Persistent` setting, and we can tick the `Bind Visibility` and `Bind Alpha` settings too, so that the animation turns invisible in case the token becomes invisible.
+
+        <p align="center"><Image src={guideAaSanctuaryTarget} alt="Sequencer Database Viewer" style="width: 50%;"/></p>
+
+</Steps>
+
+##### Trigger your newly created effect
+
+It's done! Let's target the token of an ally and cast the spell!
+
+<p align="center"><video  controls muted="true" ><source src={ guideAaSanctuary } type="video/webm"></source></video></p>
+        
+As per the Sanctuary spell, if the ally makes an attack and we need to dismiss the spell, we can just click on the Sequencer Effect Manager and end it there as shown in the video above. 
+
+This was only one way to setup and customize a spell. There are plenty of different ways to approach this.
+    
+Some prefer to use the Active Effects tab to setup persistent animations, so that the animation is dismissed automatically when the active effect is turned off. It can be beneficial if you decided to go with a fully automated game using MIDI and the like. 
+        
+You can also use macros and plug them into an Autorec effect in order to go beyond what A-A's user interface has to offer. It really comes down to preference and how far you want to take things, and how much time you want to invest!
