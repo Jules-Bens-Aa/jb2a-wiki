@@ -48,14 +48,33 @@ import guideAaMacro from '/src/assets/img/guide-aa-macro.png'
 import guideAaMelee from '/src/assets/img/guide-aa-autorecmenu-melee.png'
 import guideAaRange from '/src/assets/img/guide-aa-autorecmenu-range.png'
 import guideAaTemplate from '/src/assets/img/guide-aa-autorecmenu-template.png'
+import guideAaAssetLibrary from '/src/assets/img/Asset-Library-Datapath.png'
+import guideAaInformations from '/src/assets/img/guide-aa-autorecmenu-informations.png'
 
 import guideAaMaceAttack from '/src/assets/vid/aa-mace-attack.webm'
 import guideAaCrossbowAttack from '/src/assets/vid/aa-crossbow-attack.webm'
 import guideAaFogCloud from '/src/assets/vid/aa-fogcloud-spell.webm'
 import guideAaFogDelete01 from '/src/assets/vid/aa-fogcloud-delete01.webm'
 import guideAaFogDelete02 from '/src/assets/vid/aa-fogcloud-delete02.webm'
+import guideAaSanctuary from '/src/assets/vid/aa-sanctuary.webm'
+
+import guideAaSanctuaryAkra from '/src/assets/img/guide-aa-akra-sanctuary.png'
+import guideAaSanctuaryCreate from '/src/assets/img/guide-aa-sanctuary-create.png'
+import guideAaSanctuaryNew from '/src/assets/img/guide-aa-sanctuary-effect-new.png'
+import guideAaSanctuarySource from '/src/assets/img/guide-aa-sanctuary-source.png'
+import guideAaSanctuaryPrimary from '/src/assets/img/guide-aa-sanctuary-primary.png'
+import guideAaSanctuarySecondary from '/src/assets/img/guide-aa-sanctuary-secondary.png'
+import guideAaSanctuaryTarget from '/src/assets/img/guide-aa-sanctuary-target.png'
+
+import guideSeqDatabase from '/src/assets/img/guide-seq-database-viewer.png'
 
 import seqDatabaseViewer from '/src/assets/img/seq-database-viewer.png'
+import seqDatabaseListView from '/src/assets/img/seq-database-viewer-list-view.png'
+import seqManager from '/src/assets/img/seq-manager.png'
+
+import seqDatapathIcon from '/src/assets/vect/database-solid.svg'
+import seqFilepathIcon from '/src/assets/vect/file-solid.svg'
+import seqPlayIcon from '/src/assets/vect/play-solid.svg'
 
 
 ## How to install
@@ -194,13 +213,17 @@ The installation process may differ depending on your hosting method. Select the
 
 ### Patreon module
 
-Our Patreon module **has all the assets** we've produced since the early days of JB2A, with a few exceptions to comply with licensing requirements. Currently, the zip file size is around 6.5GB (as of october 2024). 
+Our Patreon module **has all the assets** we've produced since the early days of JB2A, with a few exceptions to comply with licensing requirements. Currently, the zip file size is around 6.5GB (as of october 2024).
 
 The installation process may differ depending on your hosting method. Select the corresponding tab below.
 
 <Tabs syncKey="hostingMethod">
 
     <TabItem label="Self-Hosting">
+
+        <Aside type="danger" title="Important">
+            Before installing our Patreon module, make sure you have the space required for it. This is at least twice the size of our zip file.
+        </Aside>
 
         <Steps>
 
@@ -288,7 +311,7 @@ The installation process may differ depending on your hosting method. Select the
                 https://mygame123.sfo3.digitaloceanspaces.com/jb2a_patreon 
                 ```        
 
-                <p align="center"><Image src={aaAssetLocation} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
+                <p align="center"><Image src={aaAssetLocation} alt="JB2A Asset Location option in the module settings" style="width: 50%;"/></p>
 
         </Steps>
 
@@ -326,7 +349,7 @@ The installation process may differ depending on your hosting method. Select the
 
             7. Search for `jb2a` in the search bar and select "JB2A - Patreon Complete Collection".
 
-                <p align="center"><Image src={forgeSearchPatreon} alt="Search for 'JB2A' and select select 'JB2A - Patreon Complete Collection'" style="width: 50%;"/></p>
+                <p align="center"><Image src={forgeSearchPatreon} alt="Search for 'JB2A' and select 'JB2A - Patreon Complete Collection'" style="width: 50%;"/></p>
 
             8. Then install the module.
 
@@ -377,7 +400,7 @@ The installation process may differ depending on your hosting method. Select the
 
             9. You're done! You can activate our module in your world and browse the assets using the Sequencer Database Viewer! 
 
-                <p align="center"><Image src={seqDatabaseViewer} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
+                <p align="center"><Image src={seqDatabaseViewer} alt="Preview of the Sequencer Database Viewer" style="width: 50%;"/></p>
 
         </Steps>
 
@@ -389,7 +412,11 @@ The installation process may differ depending on your hosting method. Select the
 
 ### FoundryVTT Data Folder
 
-You need to know the location of FoundryVTT's data folder. There are two ways to locate it:
+You need to know the location of FoundryVTT's data folder. If you know where it is, you can skip to the next section.
+
+<LinkCard title="Steps for manual install" href="/jb2a-wiki/getting-started/guides#steps" />
+
+There are two ways to locate it:
 
     - If you have the App installed, you can right-click the FoundryVTT icon in your taskbar and choose `Browse to User Data`.
     - Otherwise, on the home page of FoundryVTT,
@@ -398,11 +425,11 @@ You need to know the location of FoundryVTT's data folder. There are two ways to
     
             1. click the gear icon to change the configuration settings,
     
-                <p align="center"><Image src={fvttLandingPageSettings} alt="FoundryVTT Settings - Datapath setting location" style="width: 50%;"/></p>
+                <p align="center"><Image src={fvttLandingPageSettings} alt="FoundryVTT Settings" style="width: 50%;"/></p>
     
             2. and the User Data folder path will appear there.
     
-                <p align="center"><Image src={fvttDataPath} alt="FoundryVTT Settings - Datapath setting location" style="width: 50%;"/></p>
+                <p align="center"><Image src={fvttDataPath} alt="FoundryVTT Settings - User Data Path Folder location setting" style="width: 50%;"/></p>
     
         </Steps>
 
@@ -420,7 +447,7 @@ This only concerns the Patreon module as you shouldn't have to install our free 
 
     3. Inside the Data folder, open the ``modules`` folder.
 
-    4. Create a folder called **exactly** ``jb2a-patreon``. It's case-sensitive.
+    4. Create a new folder called **exactly** ``jb2a_patreon``. It's case-sensitive.
 
     5. Back to our extracted zip, we want to drag the files inside over to the newly created ``jb2a_patreon`` folder. The file transfer might take a while, it's a large amount of data! 
     Once finished, it should look like this:
@@ -429,7 +456,7 @@ This only concerns the Patreon module as you shouldn't have to install our free 
       
         - data
           - modules
-            - jb2a-patreon
+            - jb2a_patreon
               - artwork/
               - Library/
               - packs/
@@ -442,7 +469,7 @@ This only concerns the Patreon module as you shouldn't have to install our free 
 
     6. Restart your FoundryVTT server.
 
-    7. That's it! You should be able to enable our module in any of your worlds!
+    7. That's it! Don't forget to enable our module in any of your worlds!
 
 </Steps>
 
@@ -538,6 +565,8 @@ This only concerns the Patreon module as you shouldn't have to install our free 
 
             1. First, shutdown your FoundryVTT Server and go to our <a href="https://www.patreon.com/posts/56246490/" >Master Post</a>.
 
+                <p align="center"><Image src={jb2aPatreonMasterPost} alt="Preview of the Master Post" style="width: 50%;"/></p>
+
             2. Look for the `Only New Stuff` section.
 
             3. Download the `.zip` file(s) you need, to catch up with the latest version of our module.
@@ -553,7 +582,7 @@ This only concerns the Patreon module as you shouldn't have to install our free 
 
                         - data
                           - modules
-                            - **jb2a-patreon**
+                            - **jb2a_patreon**
                               - artwork/
                               - Library/
                               - packs/
@@ -564,11 +593,13 @@ This only concerns the Patreon module as you shouldn't have to install our free 
 
                         </FileTree>
 
+                        <LinkCard title="Locate the User Data Folder" href="/jb2a-wiki/getting-started/guides#foundryvtt-data-folder" />
+
                     3. Overwrite all the files when you are asked to do so.
 
                 </Steps>
 
-            5. Start your FoundryVTT server. Our module should now be update to date.
+            5. Start your FoundryVTT server. Our module should now be up to date.
 
         </Steps>        
 
@@ -661,7 +692,7 @@ What is described in this subsection applies to any game system and without addi
 
         You can also browse our assets once your world is loaded. In the toolbar on the left of your screen, click on the `Tile Control` button, then on `Tile Browser` to open the file picker window.
 
-        <p align="center"><Image src={fvttToolFilePicker} alt="Accessing FilePicker on FoundryVTT" style="width: 10%;"/></p>
+        <p align="center"><Image src={fvttToolFilePicker} alt="Accessing Tile FilePicker on FoundryVTT" style="width: 10%;"/></p>
 
         By default, you can find all our assets using this path:
 
@@ -679,7 +710,7 @@ What is described in this subsection applies to any game system and without addi
 
             1. In the toolbar on the left of your screen, click on the `Tile Control` button and then `Tile Browser` to open the file picker window.
 
-                <p align="center"><Image src={fvttToolFilePicker} alt="Accessing FilePicker on FoundryVTT" style="width: 10%;"/></p>
+                <p align="center"><Image src={fvttToolFilePicker} alt="Accessing Tile FilePicker on FoundryVTT" style="width: 10%;"/></p>
 
             2. Once the file picker is open, go to `The Baazar` tab and all our assets are listed in the `modules/jb2a_patreon/Library` folder.
 
@@ -718,7 +749,7 @@ What is described in this subsection applies to any game system and without addi
 
         You can also browse our assets once your world is loaded. In the toolbar on the left of your screen, click on the `Tile Control` button, then on `Tile Browser` to open the file picker window.
 
-        <p align="center"><Image src={fvttToolFilePicker} alt="Accessing FilePicker on FoundryVTT" style="width: 10%;"/></p>
+        <p align="center"><Image src={fvttToolFilePicker} alt="Accessing Tile FilePicker on FoundryVTT" style="width: 10%;"/></p>
 
         By default, you can find all our assets using this path:
 
@@ -742,7 +773,7 @@ What is described in this subsection applies to any game system and without addi
 
             1. In the toolbar on the left of your screen, click on the `Tile Control` button and then `Tile Browser` to open the file picker window.
 
-                <p align="center"><Image src={fvttToolFilePicker} alt="Accessing FilePicker on FoundryVTT" style="width: 10%;"/></p>
+                <p align="center"><Image src={fvttToolFilePicker} alt="Accessing Tile FilePicker on FoundryVTT" style="width: 10%;"/></p>
 
             2. Once the file picker is open, go to `The Baazar` tab and all our assets are listed in the `modules/jb2a_patreon/Library` folder.
 
@@ -796,6 +827,46 @@ What is described in this subsection applies to any game system and without addi
     </TabItem>
 
 </Tabs>
+
+### JB2A + Sequencer
+
+#### Database Viewer
+
+Click on this button, in the Token Tools on the left-hand side toolbar to open the Sequencer Database Viewer.
+
+<p align="center"><Image src={seqDatabaseViewer} alt="Sequencer Database Viewer" style="width: 50%;"/></p>
+
+<Image src={seqPlayIcon} alt="play icon" style="display: inline; width: 20px; background-color: white; border-radius: 0.3em; padding: 0.3em;" /> Preview the animation
+
+<Image src={seqFilepathIcon} alt="filepath icon" style="display: inline; width: 20px; background-color: white; border-radius: 0.3em; padding: 0.3em;" /> Copy the full Filepath to the animation
+
+<Image src={seqDatapathIcon} alt="datapath icon" style="display: inline; width: 20px; background-color: white; border-radius: 0.3em; padding: 0.3em;" /> Copy the Datapath to the animation(s)
+
+You can now browse through all our animations, search for a specific one, preview it and copy the **Filepath** or database path, also called **Datapath** .
+
+<Aside>
+We recommend using the **Database Path** for more flexibility, and added intelligent behaviours from the Sequencer module. 
+</Aside>
+
+##### Randomisation of animations
+
+Using Sequencer's Datapath allows for some randomisation. 
+
+For example, ``jb2a.condition.boon.01.001.blue`` refers to one specific animation. 
+
+If you remove the color at the end of it and only have ``jb2a.condition.boon.01.001``, Sequencer will pick one of 4 different animations, corresponding to the blue, green, red and yellow existing animations.
+
+Furthermore, if you remove the 001 part and paste ``jb2a.condition.boon.01`` instead, Sequencer will pick at random in the 68 existing animations under that particular Datapath! To better understand this, untick the "List View" option of the Sequencer Database Viewer. If you press the preview button on a category a few times, you'll see that the animation is picked at random!
+
+In theory, you could just write ``jb2a`` and it would pick at random from **ALL** our animations but we do not advise you to try as there are too many animations to handle and it could be very costly for your computer!
+
+<p align="center"><Image src={seqDatabaseListView} alt="Sequencer Database Viewer List-View setting unchecked" style="width: 50%;"/></p>
+
+#### Sequencer Manager
+
+The [Sequencer Effect Manager](https://fantasycomputer.works/FoundryVTT-Sequencer/#/effect-manager?id=show-effect-manager) can be used to stop any persistent animation on the FoundryVTT Canvas. However, in order for the animation to appear in the Sequencer manager, persistent animations must be created using the `.persist()` Sequencer function.
+
+<p align="center"><Image src={seqManager} alt="How to open the Sequencer Effect Manager" style="width: 50%;"/></p>
 
 ### JB2A + Automated Animations
 
@@ -932,18 +1003,18 @@ The version of our Free or Patreon module is not important for this guide.
 
         - If you are using D&D5e, you can install the D&D5e animations module made by Vauxs among others. It can be downloaded and installed via FoundryVTT directly.
 
-        <LinkCard title="D&D5e Animations" href="/jb2a-wiki/external-resources/community-links#dd5e-animations" />
+            <LinkCard title="D&D5e Animations" href="/jb2a-wiki/external-resources/community-links#dd5e-animations" />
 
         - If you are using PF2e, you can install the PF2e Animations module or the PF2e Graphics module, which is currently under development. They can be downloaded and installed via FoundryVTT directly.
 
-        <CardGrid>
-            <LinkCard title="PF2e Animations" href="/jb2a-wiki/external-resources/community-links#pf2e-animations" />
-            <LinkCard title="PF2e Graphics" href="/jb2a-wiki/external-resources/community-links#pf2e-graphics" />
-        </CardGrid>
+            <CardGrid>
+                <LinkCard title="PF2e Animations" href="/jb2a-wiki/external-resources/community-links#pf2e-animations" />
+                <LinkCard title="PF2e Graphics" href="/jb2a-wiki/external-resources/community-links#pf2e-graphics" />
+            </CardGrid>
 
         - For other game systems, you can join our Discord server, in the channel #aa-autorec-sharing,  where people may have shared their presets. For example Cyberpunk and Warhammer.
 
-        <LinkButton href="https://github.com/otigon/automated-jb2a-animations?tab=readme-ov-file#introduction" icon="external" variant="secondary">Join our Discord</LinkButton>
+            <LinkButton href="https://github.com/otigon/automated-jb2a-animations?tab=readme-ov-file#introduction" icon="external" variant="secondary">Join our Discord</LinkButton>
     
     14. This is where the guide ends. To go further with Automated Animations, we recommend that you read its documentation. Otigon has explained everything in more detail. For example :
 
@@ -951,3 +1022,154 @@ The version of our Free or Patreon module is not important for this guide.
         <LinkButton href="https://github.com/otigon/automated-jb2a-animations/wiki/PERSISTENT-EFFECTS" icon="external" variant="secondary">About persistent Effects</LinkButton>
  
 </Steps>
+
+#### Customize your effect
+
+Since the dropdown menus don't include all of our assets, there's a handy Custom Field in each Autorec menu effect so you can copy and paste any Datapath.
+
+In the next example, we will reuse concepts explained in the previous section and setup the Sanctuary spell as an On-Token effect. 
+
+##### Creating a new effect
+
+<Steps>
+
+    1. The actor called `Akra` from the previous section already has the `Sanctuary` spell in its list.
+
+        <p align="center"><Image src={guideAaSanctuaryAkra} alt="Akra's Character Sheet - Spell Tab" style="width: 50%;"/></p>
+
+    2. In the Autorec menu, under the On-Token tab, create a new effect called `Sanctuary`.
+
+        <p align="center"><Image src={guideAaSanctuaryCreate} alt="Autorecognition Menu - OnToken Tab - Creating Sanctuary Entry" style="width: 50%;"/></p>
+
+</Steps>
+
+##### Setting up the Source Animation
+
+Let's create the Source Animation checkbox so we can add an animation on `Akra`, the source token, the one casting the spell.
+
+<Steps>
+
+    1. Tick the Source Animation Checkbox.
+
+        <p align="center"><Image src={guideAaSanctuaryNew} alt="Sanctuary Effect freshly created" style="width: 50%;"/></p>
+
+    2. Open the Sequencer Database Viewer and search for:
+
+        ```
+        cast shape circle single
+        ```
+        Click on the little Datapath icon to copy it in your clipboard.
+
+        ```
+        jb2a.cast_shape.circle.single01.yellow
+        ```
+
+        <p align="center"><Image src={guideSeqDatabase} alt="Find an asset in the Sequencer Database Viewer" style="width: 50%;"/></p> 
+
+        <LinkCard title="How to use the Sequencer Database Viewer" href="/jb2a-wiki/getting-started/guides#database-viewer" />
+
+        Alternatively, you can as easily use our <a href="https://library.jb2a.com/">Asset Library</a> online for the same results. If you click on the database path at the bottom right, it will copy it in your clipboard.
+
+        <p align="center"><Image src={guideAaAssetLibrary} alt="Asset Library Website" style="width: 50%;"/></p>
+
+    3. Enable the custom field and paste the Datapath for the source animation.      
+
+        By default, all the subsequent effect sections will wait for the end of this source animation section in order to start. For this example, let's set the ``Wait`` section at the bottom to be ``-2000``, which means the next section will start 2000 milliseconds before the end of this current effect section, so almost at the same time.
+
+        <p align="center"><Image src={guideAaSanctuarySource} alt="Primary Animation in Autorecognition Menu for Sanctuary" style="width: 50%;"/></p>
+
+</Steps>
+
+By the way, there are many settings to explore here, and the little round blue ``i`` button will give you more information about what each setting does.
+
+<p align="center"><Image src={guideAaInformations} alt="Auto-Rec Informations button" style="width: 50%;"/></p>
+
+
+##### Setting up the Primary Animation
+
+Now the Primary Animation. We'll use a boon condition for this one.
+
+<Steps>
+
+    1. Open the Sequencer Database Viewer and search for:
+
+        ```
+        condition boon yellow 003
+        ```
+
+        Click on the little Datapath icon to copy it in your clipboard.
+
+        ```
+        jb2a.condition.boon.01.003.yellow
+        ```
+    2. Enable the custom field and paste the Datapath for the source animation.
+
+        <p align="center"><Image src={guideAaSanctuaryPrimary} alt="Custom Field in Autorecognition Menu" style="width: 50%;"/></p>
+
+</Steps>
+
+##### Setting up the Secondary Animation
+
+You can add a Secondary Animation, like a particle animation, perfect for adding little more details.
+    
+<Steps>
+
+    1. Open the Sequencer Database Viewer and search for:
+
+        ```
+        particles inward greenyellow
+        ```
+
+        Click on the little Datapath icon to copy it in your clipboard.
+
+        ```
+        jb2a.particles.inward.greenyellow.01.02
+        ```
+
+    2. Enable the custom field and paste the Datapath for the source animation. Changing the playback rate to 2 in this case adds a little bit more dynamism to the overall feel.
+
+        <p align="center"><Image src={guideAaSanctuarySecondary} alt="Secondary Animation in Autorecognition Menu for Sanctuary" style="width: 50%;"/></p>
+
+</Steps>
+
+##### Setting up the Target Animation
+
+Now, finally, the Target Animation. The animation from this section needs to stay on the target, looping, until we dismiss it. For this, we'll use one of the "complete" animations. 
+
+These complete animations have extra timing information saved in the Sequencer Database, so using the Datapath will let Sequencer know how to handle the intro, loop and outro sections.
+
+<Steps>
+
+    1. Open the Sequencer Database Viewer and search for:
+
+        ```
+        markers shield rampart complete yellow
+        ```
+
+        Click on the little Datapath icon to copy it in your clipboard.
+
+        ```
+        jb2a.markers.shield_rampart.complete.03.yellow
+        ```
+
+    2. Enable the custom field and paste the Datapath for the source animation. 
+    
+        In the options, make sure you tick the `Persistent` setting, and we can tick the `Bind Visibility` and `Bind Alpha` settings too, so that the animation turns invisible in case the token becomes invisible.
+
+        <p align="center"><Image src={guideAaSanctuaryTarget} alt="Target Animation in Autorecognition Menu for Sanctuary" style="width: 50%;"/></p>
+
+</Steps>
+
+##### Trigger your newly created effect
+
+It's done! Let's target the token of an ally and cast the spell!
+
+<p align="center"><video  controls muted="true" ><source src={ guideAaSanctuary } type="video/webm"></source></video></p>
+        
+As per the Sanctuary spell, if the ally makes an attack and we need to dismiss the spell, we can just click on the Sequencer Effect Manager and end it there as shown in the video above. 
+
+This was only one way to setup and customize a spell. There are plenty of different ways to approach this.
+    
+Some prefer to use the Active Effects tab to setup persistent animations, so that the animation is dismissed automatically when the active effect is turned off. It can be beneficial if you decided to go with a fully automated game using MIDI and the like. 
+        
+You can also use macros and plug them into an Autorec effect in order to go beyond what A-A's user interface has to offer. It really comes down to preference and how far you want to take things, and how much time you want to invest!

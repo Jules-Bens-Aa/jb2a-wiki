@@ -1,9 +1,7 @@
 ---
 title: Prerequisites
 ---
-import { Aside } from '@astrojs/starlight/components';
-import { Tabs, TabItem } from '@astrojs/starlight/components';
-import { FileTree } from '@astrojs/starlight/components';
+import { Aside, LinkCard, LinkButton, Tabs, TabItem, FileTree  } from '@astrojs/starlight/components';
 
 ## First and foremost
 
@@ -30,3 +28,72 @@ It is important to understand that adding animations and automating their use on
 
 The following section is necessary to understand how everything fits together. After reading it you'll know everything you need to master how the environment works and avoid any further confusion.
 
+## Glossary
+
+Some terms or definitions may not make much sense at this stage. It's not really necessary to read this sub-section at the moment. But it may prove useful if, while reading our wiki, you are looking for clarification.
+
+#### A-A
+
+Short for the Automated-Animations module.
+
+<LinkCard title="Automated-Animations" href="/jb2a-wiki/external-resources/community-links#automated-animations" />
+
+#### Autorec Menu
+
+Short for the "Global Auto-Recognition menu" from the Automated-Animations module, accessible from its setting. This is where all effect presets are configured.
+
+<LinkCard title="Automated-Animations" href="/jb2a-wiki/external-resources/community-links#automated-animations" />
+
+#### Data Path
+
+This is one of the powerful Sequencer features. 
+
+<LinkCard title="Sequencer" href="/jb2a-wiki/external-resources/community-links#sequencer" />
+
+Data paths are defined in a Sequencer database and each of them is associated with the file paths of one or more media files. In the database, they can be assigned useful information about the media file(s) they represent. This information is automatically taken into account when you use data paths in an effect created with Sequencer functions.
+
+Basically, it's a data path that offers more functionality and is easier to use in code to create an effect.
+
+Here is an example of two file paths for the same asset. In this case, the bite animation. This asset is present in our free module and in our Patreon module. If one of these file paths is used in a macro, effect or preset, there is a risk that the path will break when you switch from the free module to the Patreon module, or vice versa.
+
+  ```txt title="File path example" "JB2A_DnD5e" "jb2a_patreon"
+  ### Free module
+  modules/JB2A_DnD5e/Library/Generic/Creature/Bite_01_Regular_Red_400x400.webm
+  ### Patreon module
+  modules/jb2a_patreon/Library/Generic/Creature/Bite_01_Regular_Red_400x400.webm
+  ```
+The following is the data path for the bite animation. It's the same for both our modules. This is very useful to prevent a macro, effect or preset from no longer working when you switch from the free module or the Patreon module.
+
+  ```txt title="Data path example"
+  ### For both modules
+  jb2a.bite.400px.red
+  ```
+We recommend that you use data paths whenever possible. Note that they only work with Sequencer functions.
+
+#### Dependency
+
+A module's dependencies are simply the other modules required for it to function. FoundryVTT warns you when one or more dependencies need to be installed.
+
+#### Effect
+
+An effect is generally a set of commands in a macro or presented in the form of a user interface. It allows you to place, transform and combine one or more media files (image, video and/or sound) so that they fit in with a specific use. 
+
+It has default settings and can usually be customised to create a preset.
+
+#### Macro
+
+Macros are pre-written commands in the Javascript coding language that you can trigger from within FoundryVTT to do powerful things. With our content, macros are mainly used to create effects. 
+
+<LinkButton href="https://foundryvtt.com/article/macros/" icon="external" variant="secondary">More Info</LinkButton>
+
+#### Manifest Link
+
+This is a URL address used to download and install a module or game system on FoundryVTT. This address is defined in a module.json file for the module or game system you wish to install.
+
+#### Module.json
+
+It is a file required for a module or game system to function properly in FoundryVTT. It contains information such as the name and version of the module, its dependencies and the URLs needed to download and update its content.
+
+#### Preset
+
+A preset is an effect with predefined parameters, ready to use.

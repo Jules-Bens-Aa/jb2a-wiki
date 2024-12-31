@@ -1,3 +1,353 @@
 ---
-title: JB2A
+title: JB2A issues
 ---
+import { Aside, Cards, CardGrid, FileTree, LinkButton, LinkCard, Steps, Tabs, TabItem } from '@astrojs/starlight/components';
+
+import { Image } from 'astro:assets'
+
+import fvttModuleOption from '/src/assets/img/fvtt-jb2a-module-options.png'
+
+*Use the sidebar to find your issue quickly.*
+
+## Patreon
+
+
+#### Manifest/download links, where ?
+
+    All the download links for our content are on the **Master Post** of our **Patreon page**.
+
+    <Aside type="caution">
+      You must have subscribed to one of our tiers to have access to the Master Post. A custom pledge does not give you access to our Patreon content. We recommend that you do not use a custom pledge.
+    </Aside>    
+    
+    You can find a link to access it on this Wiki, on each of our public posts about our releases on Patreon, and on each of our release announcements on our Discord server.
+
+    <LinkButton href="https://discord.gg/gmd8MAPX4m" icon="patreon" variant="secondary">Master Post on Patreon</LinkButton>
+    <LinkButton href="https://discord.gg/gmd8MAPX4m" icon="discord" variant="secondary">Join our Discord Server</LinkButton>
+
+    <LinkCard title="About our Patreon" href="/jb2a-wiki/getting-started/our-patreon" />
+
+#### No access to the Master Post
+
+    This usually means one of your payments has been declined, in which case, the best course of action is to wait for a few days, until Patreon tries to re-process the payment and your status can be cleared.
+
+    <Aside type="caution">  
+      Make sure you haven't signed for a custom pledge. A custom pledge does not give you access to our Patreon content. We recommend that you do not use this method.   
+    </Aside>
+
+    <LinkButton href="https://www.patreon.com/JB2A" icon="patreon" variant="secondary">JB2A Patreon Page</LinkButton>
+
+
+## Modules
+
+
+### Issues during Download
+#### With manifest link
+
+    It’s possible we've made a mistake but make sure you follow the steps in our installation guide, just in case. 
+    
+    If your problem still persists, please report your issue so we can try and help you.
+
+  <CardGrid>
+
+    <LinkCard title="Install with manifest link" href="/jb2a-wiki/getting-started/guides#patreon-module" />
+    <LinkCard title="Report an issue" href="/jb2a-wiki/troubleshooting/how-to#-report-an-issue" />
+    
+  </CardGrid>
+
+#### Too long, stops
+
+  If your download is stuck or takes to long, it’s possible your internet connection is either too slow, your router gets micro-disconnections or the server we use to share the files is far away from where you live. Whatever the case, the manifest link might not be the ideal solution for you.
+  
+  Try the alternative download link to install it manually on our [Master Post](https://www.patreon.com/posts/jb2a-master-post-56246490). If it still takes too long, you might want to try a download manager like [Persepolis](https://persepolisdm.github.io/).
+  
+  <CardGrid>
+
+    <LinkCard title="Manual Install Instruction" href="/jb2a-wiki/getting-started/guides#manual-install" />
+    <LinkCard title="Report an issue" href="/jb2a-wiki/troubleshooting/how-to#-report-an-issue" />
+
+  </CardGrid>
+
+
+### Issues during Install
+#### Manual install
+
+  Make sure you follow the steps in our installation guide first.
+
+  If your problem persists, please report your issue so we can try and help you.
+
+  <CardGrid>
+
+    <LinkCard title="Manual Install Instruction" href="/jb2a-wiki/getting-started/guides#manual-install" />
+    <LinkCard title="Report an issue" href="/jb2a-wiki/troubleshooting/how-to#-report-an-issue" />
+    
+  </CardGrid>
+
+#### Module not displaying
+
+  **Module installed with the manifest link:**
+
+  - Restart FoundryVTT, this is not necessary in most cases. But you never know.
+  - If you did the installation procedure yourself, try to follow our instructions to the letter.
+
+  <LinkCard title="Install with manifest link" href="/jb2a-wiki/getting-started/guides#how-to-install" />
+
+  **Module installed manually:**
+
+  <Steps>
+
+    1. Don't forget to restart FoundryVTT after installation.
+
+    2. Inside the directory `data/modules` of FoundryVTT, our module folder should be exactly `jb2a_patreon`. It is case sensitive!
+
+    3. Inside our `jb2a_patreon` folder, there should be a file called `module.json`. It is provided in the zip file.
+
+          <FileTree>
+
+            - data
+              - modules
+                - JB2A_DnD5e
+                  - artwork/
+                  - **Library/**
+                  - packs/
+                  - scripts/
+                  - module.json
+              - systems/
+              - worlds/
+
+        </FileTree>
+
+    4. If you did the installation procedure yourself, try to follow our instructions to the letter.
+
+        <LinkCard title="Manual Install Instruction" href="/jb2a-wiki/getting-started/guides#manual-install" />
+
+  </Steps>
+
+  If everything failed, please report your issue so we can try and help you.
+
+  <LinkCard title="Report an issue" href="/jb2a-wiki/troubleshooting/how-to#-report-an-issue" />
+
+
+### Issues during Update
+#### "No manifest URL" error
+
+If you're experiencing this problem, you've probably tried to update our Patreon module on FoundryVTT.
+
+Unlike our free module, **you can't update our Patreon module this way.** To avoid having this error every time FoundryVTT tries to update our module, we advise you to lock it like this:
+
+  <p align="center"><Image src={fvttModuleOption} alt="How to lock our Patreon Module" style="width: 25%;"/></p>
+
+Please follow one of these instructions to update our Patreon module correctly.
+
+<LinkCard title="Update Patreon module" href="/jb2a-wiki/getting-started/guides#patreon-module-1" />
+
+#### Only new stuff
+
+  Make sure you follow the steps in our installation guide first.
+
+  If your problem persists, please report your issue so we can try and help you.
+
+  <CardGrid>
+
+    <LinkCard title="Only new stuff update" href="/jb2a-wiki/getting-started/guides#patreon-module-1" />
+    <LinkCard title="Report an issue" href="/jb2a-wiki/troubleshooting/how-to#-report-an-issue" />
+    
+  </CardGrid>
+
+
+### Issues using our content
+#### Can't find animation
+
+  If you can't find our animations via the tile browser or the Sequencer Database Viewer, it may be because the installation wasn't done correctly,the FoundryVTT server wasn't restarted since the install, or our module isn't enabled in the world. 
+  If your problem persists, please report your issue so we can try and help you.
+
+  <CardGrid>
+
+    <LinkCard title="Assets Location" href="/jb2a-wiki/getting-started/guides#assets-location" />
+    <LinkCard title="Report an issue" href="/jb2a-wiki/troubleshooting/how-to#-report-an-issue" />
+    
+  </CardGrid>
+
+#### No Patreon assets, only free
+
+  Uninstall the free module, you don’t need it anymore. Once you have the Patreon module **installed** and **activated** in your world, all your setup using the database paths will be transferred over. 
+  
+  Any tile or token you have setup using file paths may break though. It's an easy fix and we can provide a macro in our [Discord server](https://discord.gg/gmd8MAPX4m) to fix all of them with a batch macro if you have too many of them.
+
+  ```txt title="File path example" "JB2A_DnD5e" "jb2a_patreon"
+  ### Free module
+  modules/JB2A_DnD5e/Library/Generic/Creature/Bite_01_Regular_Red_400x400.webm
+  ### Patreon module
+  modules/jb2a_patreon/Library/Generic/Creature/Bite_01_Regular_Red_400x400.webm
+  ```
+
+  ```txt title="Data path example"
+  ### For both modules
+  jb2a.bite.400px.red
+  ```
+
+  <CardGrid>
+
+    <LinkCard title="Install Instruction" href="/jb2a-wiki/getting-started/guides#patreon-module" />
+    <LinkCard title="Report an issue" href="/jb2a-wiki/troubleshooting/how-to#-report-an-issue" />
+    
+  </CardGrid>
+
+#### Tiles, tokens and macros broken
+
+  You should use Sequencer database paths for macros whenever possible, as it would work for both the free and the patreon module. 
+  
+  We can provide a batch macro in our [Discord server](https://discord.gg/gmd8MAPX4m) to fix tokens, tiles and macros if you need however.
+
+  ```txt title="File path example" "JB2A_DnD5e" "jb2a_patreon"
+  ### Free module
+  modules/JB2A_DnD5e/Library/Generic/Creature/Bite_01_Regular_Red_400x400.webm
+  ### Patreon module
+  modules/jb2a_patreon/Library/Generic/Creature/Bite_01_Regular_Red_400x400.webm
+  ```
+
+  ```txt title="Data path example"
+  ### For both modules
+  jb2a.bite.400px.red
+  ```
+
+  <CardGrid>
+
+    <LinkCard title="Install Instruction" href="/jb2a-wiki/getting-started/guides#patreon-module" />
+    <LinkCard title="Report an issue" href="/jb2a-wiki/troubleshooting/how-to#-report-an-issue" />
+    
+  </CardGrid>
+
+#### Can't drop animations on scene
+
+There’s a known issue with the [Drag Upload](https://github.com/amir-arad/FoundryVTT-Drag-Upload) module where it breaks the webm animations being dragged on the canvas to create a tile.
+
+As far as we know, only deactivating this module will solve the problem, unfortunately.
+
+#### Tiled template texture
+
+  By default, placing an image or an animation directly as a template texture looks “tiled”. The [Token Magic FX (TMFX)](https://foundryvtt.com/packages/tokenmagic/) module does fix this behaviour. 
+  
+  There are alternatives using the Sequencer module, for example, to place the animation on top of the template, or even attach the animation to it, using a macro or another module like Automated-Animations.
+
+#### No sounds
+
+  We only provide visuals, no sounds.
+
+  We strongly recommend that you read the following two sections to gain a better understanding of what you can expect from the content of JB2A.
+
+  <CardGrid>
+
+    <LinkCard title="Prerequisites" href="/jb2a-wiki/getting-started/prerequisites" />
+    <LinkCard title="Understanding Automation" href="/jb2a-wiki/getting-started/understanding-automation" />
+    
+  </CardGrid>
+
+  As a sidenote, there are plenty of solutions to add sound to our animations, like modules or resources online for you to explore.
+
+  <CardGrid>
+
+    <LinkCard title="PSFX" href="/jb2a-wiki/external-resources/community-links#psfx" />
+    <LinkCard title="SFX Resources" href="/jb2a-wiki/external-resources/sfx" />
+
+  </CardGrid>
+
+#### Unexpected animations on template
+
+  The [Token Magic FX](https://foundryvtt.com/packages/tokenmagic/) module, or TMFX, provides some PIXI filter overlay on templates, linked to damage types. 
+  
+  You can remove this feature by either disabling the module or opting out of this feature in the module’s settings
+
+#### Sequencer Database error
+
+    An error in the Sequencer database can occur for these reasons:
+
+    <Steps>
+
+      1. **We made an error when updating the database.**
+
+          Every time we add or modify the database, we use this handy Sequencer command.
+
+          ```js
+          Sequencer.Database.validateEntries("jb2a")
+          ```
+
+          It allows us to check that all our file paths are correct. If you get ‘404’ errors it's unlikely, but not impossible, that the error is ours. Check the other two reasons.
+
+          **However**, the command does not allow us to check whether we have assigned the data path to the correct asset. It is therefore possible that the colour, size or duration is not the right one! If this is the case, please let us know as soon as possible.
+
+          <LinkCard title="Report an issue" href="/jb2a-wiki/troubleshooting/how-to#-report-an-issue" />
+
+      2. **You installed our module manually and the procedure was not carried out correctly.**
+
+          If you get ‘404’ errors, it's possible that our assets were not copied correctly. To easily create a list of all the missing assets, you can copy the command above and paste it into the FoundryVTT console. 
+
+          <LinkCard title="How to use the console" href="/jb2a-wiki/getting-started/jb2a-fvtt#console" />
+
+          If the list is not too large, you can place the assets in their corresponding folders and run the Sequencer command again to confirm that everything is in place.
+
+          If the list is substantial, we recommend that you:
+
+            <Steps>
+
+              1. Stop FoundryVTT
+
+              2. Delete our module completely.
+
+              3. And proceed with a new installation by following all these steps.
+
+                  <LinkCard title="Manual Install" href="/jb2a-wiki/getting-started/guides#manual-install" />
+
+            </Steps>
+
+      3. **You updated our module manually using the ‘Only new stuff’.**
+
+          This is more or less the same as reason n°2. However, you may not have to reinstall the entire module. You can try again to transfer the contents of the ‘Only new stuff’ zip files to our Patreon module.
+
+            <LinkCard title="Update with Only new stuff" href="/jb2a-wiki/getting-started/guides#patreon-module-1" />
+
+          Once this has been done, use the Sequencer command to confirm that everything is in place.
+
+    </Steps>
+
+#### Black square instead of animation
+
+  It could be the browser you use, we’ve had reports of **Firefox** having this issue with some webms. 
+  
+  The VP9 codec for Webm files is usually more efficient but we’ve had some unpredictable behaviour using it and other programs using Unity don’t support them, so we tend to steer away from it and we aim to convert our remaining VP9 animations to VP8.
+
+
+## Discord Server
+
+
+#### I subscribed, I don't have a role
+
+Try these instructions, it may take a while to take effect.
+
+<LinkCard title="Sync Patreon with Discord" href="/jb2a-wiki/getting-started/discord#patreon-exclusive-roles" />
+
+#### No Patreon-exlusive channels
+If you have already linked your Discord account to your Patreon account, you should have been assigned automatically a role which gives you access to the Patreon-Exclusive channels. If that's not the case, get in touch with us on Discord.
+
+#### Missing channels
+Check the "Browse Channels" section at the top of the channels list to join any other available channel.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

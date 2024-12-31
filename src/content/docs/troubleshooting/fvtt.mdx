@@ -1,3 +1,147 @@
 ---
-title: FoundryVTT
+title: FoundryVTT issues
 ---
+
+import { Aside, CardGrid, LinkButton, LinkCard, Steps, Tabs, TabItem  } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets'
+import PIXIFix from '/src/assets/img/PIXI-Fix.png'
+
+import seqSettingsPixiFix from '/src/assets/img/seq-settings-pixi-fix.png'
+import seqSettingsPixiFix02 from '/src/assets/img/seq-settings-pixi-fix02.png'
+import aaIncompleteList from '/src/assets/img/aa-incomplete-list.png'
+import tsDeletingAnimation from '/src/assets/vid/ts-deleting-animation.webm'
+
+## FoundryVTT
+
+
+#### Pixelated/Overblown animations
+
+This problem occurs, as far as we understand, because of a browser or graphic card update. 
+
+<p align="center"><Image src={PIXIFix} alt="An example of a pixelated or overblown animation" style="width: 25%;"/></p>
+
+Toggle the "PIXI FIx" option in the Sequencer module settings, meaning if it's on, turn it off and if it's off, turn it on.
+
+<p align="center"><Image src={seqSettingsPixiFix} alt="Pixi fix in Sequencer's settings" style="width: 50%;"/></p>
+
+
+#### Dark/Muddy outline on animations
+
+It can be more noticeable on some assets than others. If you do notice a dark grey outline on our assets, try the second option in the Sequencer settings called "Global PIXI Fix".
+
+<p align="center"><Image src={seqSettingsPixiFix02} alt="Alternate Pixi fix in Sequencer's settings" style="width: 50%;"/></p>
+
+## Other Modules
+
+### Automated-Animations
+#### Effects don't trigger
+
+There are a few reasons why this could happen. Going though the steps linked below, under the Automated-Animations tab, should help you diagnostic the probable cause.
+<LinkCard title="Troubleshooting Steps" href="/jb2a-wiki/troubleshooting/how-to#-troubleshoot-an-issue-yourself" />
+
+#### Only some effects trigger
+
+By default, Automated-Animations only comes with a few pre-configured attacks and spells. Depending on your game system, you may need to install another module to install some effect presets. 
+
+Make sure you read the prerequisites to better understand how it all works and go through the Troubleshooting steps for Automated-Animations
+
+<CardGrid>
+<LinkCard title="Understanding Automation" href="/jb2a-wiki/getting-started/understanding-automation" />
+<LinkCard title="Troubleshooting Steps" href="/jb2a-wiki/troubleshooting/how-to#-troubleshoot-an-issue-yourself" />
+</CardGrid>
+
+#### Incomplete assets list
+
+The dropdown menus do not include all of our assets. You can however use the "Custom" field to use a database path, referencing any of our assets.
+
+
+
+<LinkCard title="Create a Custom Effect" href="/jb2a-wiki/getting-started/guides#customize-your-effect" />
+
+#### Missing effects
+
+By default, Automated-Animations only comes with a few pre-configured attacks and spells. Depending on your game system, you may need to install another module to install some effect presets.
+
+<p align="center"><Image src={aaIncompleteList} alt="Example of an dropdown menu with pre-configured animations in Automated Animations" style="width: 50%;"/></p>
+
+Make sure you read the prerequisites to better understand how it all works and go through the Troubleshooting steps for Automated-Animations
+
+<CardGrid>
+<LinkCard title="Understanding Automation" href="/jb2a-wiki/getting-started/understanding-automation" />
+<LinkCard title="Troubleshooting Steps" href="/jb2a-wiki/troubleshooting/how-to#-troubleshoot-an-issue-yourself" />
+</CardGrid>
+
+#### Can't delete effect template on scene
+
+An animation attached to a measured template should get deleted along with the measured template. If the animation is not attached, for example if you prefer to be able to delete the template and enjoy the animation by itself, you can dismiss it from the Sequencer Effect Manager.
+
+<LinkCard title="Sequencer Manager" href="/jb2a-wiki/getting-started/guides#sequencer-manager" />
+
+If that doesn't work, it may simply be a [tile or an overhead tile](https://foundryvtt.com/article/tiles/) (in the Foreground Layer)
+
+<p align="center"><video  controls muted="true" ><source src={ tsDeletingAnimation } type="video/webm"></source></video></p>
+
+#### No sounds
+
+We only provide the animations. If there should be an associated sound provided by an effect preset, check its source. The sound file could be stored with the module providing the effect presets, or coming from another module specifically for sounds like PSFX or SoundFX Library.
+
+<LinkCard title="Sound FX Modules for FoundryVTT" href="/jb2a-wiki/external-resources/sfx#online-free-resources" />
+
+### D&D5e Animations
+#### No sounds
+
+There are a few sound files provided directly by D&D5e-Animations and some referenced from the SoundFX Library module.
+
+<LinkCard title="SoundFX Library module" href="/jb2a-wiki/external-resources/community-links#soundfx-library" />
+
+### FXMaster
+#### Assets Missing
+
+Before the Sequencer module existed, we started to register our assets via the FXMaster module, in the "Special Effects" section. Due to the large amount of assets we provide, this menu was getting very bloated and slowed down performances in some cases. Now that we register our assets via a Sequencer Database, we have stopped adding assets to FXMaster and disabled it in our settings by default. We left the script files for this integration as a template/reference if you wish to make your own, using a world script or a separate module.
+
+### PF2e Animations
+
+Any issue with this module that we know how to resolve will be added here. 
+
+If it's not, please read the [documentation on the wiki](https://github.com/MrVauxs/pf2e-jb2a-macros/wiki) and then reach us on our Discord server, under the #pf2e-discussion channel.
+
+<LinkCard title="Discord" href="/jb2a-wiki/getting-started/discord" />
+
+
+### PF2e Graphics
+
+Any issue with this module that we know how to resolve will be added here. 
+
+If it's not, please read the [documentation on the wiki]() and then reach us on our Discord server, under the #pf2e-discussion channel.
+
+<LinkCard title="Discord" href="/jb2a-wiki/getting-started/discord" />
+
+### Sequencer
+#### Can't delete effects on scene
+
+On some rare instances, it happens that some animations remain on the canvas and cannot be removed from the Sequencer Effect Manager. If you paste this little command line in the console (F12), it should remove every existing animation in the scene:
+```js
+canvas.scene.unsetFlag("sequencer", "effects")
+```
+
+    To open the console in FoundryVTT:
+    - Windows: Press `F12`
+    - MacOS: Press `Option + CMD + J`
+
+### Warpgate
+#### Can't find Warpgate
+
+Warpgate has been discontinued and will not work for versions of FoundryVTT V12 or above. You can still find a [zip for V11](https://discord.com/channels/170995199584108546/513918036919713802/1255239377982853175) in the official FoundryVTT Discord, pinned in the #module-discussion channel.
+The crosshair functionnality has been since implemented and expanded in the [Sequencer module](https://fantasycomputer.works/FoundryVTT-Sequencer/#/crosshair), but not the mutation system.
+
+
+
+
+
+
+
+
+
+
+
+

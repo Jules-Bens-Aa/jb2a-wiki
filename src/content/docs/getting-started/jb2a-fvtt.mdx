@@ -1,9 +1,9 @@
 ---
-title: JB2A & FoundryVTT
+title: FoundryVTT
 ---
 
 import { Image } from 'astro:assets';
-import { Aside, LinkButton, LinkCard, Steps, Tabs, TabItem  } from '@astrojs/starlight/components';
+import { Aside, CardGrid, LinkButton, LinkCard, Steps, Tabs, TabItem  } from '@astrojs/starlight/components';
 
 import consoleClear from '/src/assets/img/chrome-console-clear.png';
 import tokenTarget from '/src/assets/img/token-target.png';
@@ -37,119 +37,6 @@ Take a screenshot of it if you're reporting the error, it could be really useful
 If you're overwhelmed with the huge amount of logs, you can clear the console by pressing a button like this one. Here it's on Chrome but there will be a similar one on other browsers:
 <p align="center"><Image src={consoleClear} alt="console clear image" style="width: 50%;"/></p>
 Then recreate the issue and check if a red message appears. 
-
-### How to Troubleshoot
-Here are a few best practices for things to check or try when you're having an issue:
-
-<Aside type="danger" title="Important">
-Before updating your FoundryVTT version, your system or your modules, BACKUP YOUR DATA!
-
-<LinkButton href="https://foundryvtt.com/article/user-data-backup/" icon="external" variant="secondary">How to make a backup</LinkButton>
-
-</Aside>
-
-If you are new to this, make sure to read our "Prerequisites" and "Understanding Automation" sections first.
-
-<LinkCard title="Prerequisites" href="/jb2a-wiki/getting-started/prerequisites" />
-<LinkCard title="Understanding Automation" href="/jb2a-wiki/getting-started/understanding-automation" />
-
-<Tabs>
-    <TabItem label="JB2A Modules">
-
-        <Steps>
-        1. Non-Chromium browsers (such as Firefox, Opera, Safari) are known to cause issues. Use a Chromium based browser like Chrome or Edge.
-        2. Sometimes, refreshing the page, re-starting the server or re-installing the module with the issue can be enough. It's worth a try.
-
-            - Windows: `F5` to refresh or `CTRL + F5` to refresh and clear the cache.
-            - MacOS: `CMD + R` to refresh or `SHIFT + CTRL + R` to refresh and clear the cache.
-
-        3. Check for any updates that might be available for the module you are having issues with and all of its dependencies. It's usually safe to update your modules.
-
-            <Aside type="caution">
-            You have to be careful with **game system updates** and **major updates** for FoundryVTT, as the module developers have to play "catch-up" with potentially breaking changes.
-            </Aside>
-
-        4. Have you forgotten to enable the module in the world?
-        5. Is there an error in the console when you trigger the macro or item? Errors are red, yellow ones are deprecation warnings and are safe for you to ignore.
-
-            To open the console in FoundryVTT:
-            - Windows: Press `F12`
-            - MacOS: Press `Option + CMD + J`
-
-            If you do have an error, **please include a screenshot when reporting it**.
-
-        6. Make sure you try with only the required modules activated. It's often easier to do so in a fresh new world.
-
-            You would need at least these modules activated:
-            - JB2A module, Free **or** Patreon
-            - Sequencer
-            - Socketlib _(Sequencer dependency)_
-            - Any other module required for your automation
-
-        7. The Github page for each module is, almost always, the best source of information about the module. That's where the information is most up to date and you can see when the last update to the module occured.
-
-            <LinkCard title="Community Links" href="/jb2a-wiki/external-resources/community-links" />
-        </Steps>
-    </TabItem>
-
-    <TabItem label="Automated Animations">
-    If you use Automated-Animations:
-    <Steps>
-
-    1. Have you <strong>targeted</strong> a token?
-
-        <p align="center"><Image src={tokenTarget} alt="console clear image" style="width: 50%;"/></p>
-    2. Is the Sequencer module up to date?
-    3. Is your game system supported by Automated-Animations (AA)?
-
-        <LinkButton href="https://github.com/otigon/automated-jb2a-animations?tab=readme-ov-file#introduction" icon="external" variant="secondary">List of compatible game systems</LinkButton>
-
-    4. Is the Diagnostic all green?
-
-        1. Open the Autorecognition Menu.
-
-            <p align="center">
-                <Image src={aaDiagnosticsButton} alt="Diagnostics window on Automated Animations' Autorec Menu" style="width: 25%;"/>
-            </p>
-
-        2. Click "Diagnostics" button to open the Diagnotics Window. It should look something lile this.
-
-            <p align="center">
-                <Image src={aaDiagnostics} alt="Diagnostics window on Automated Animations" style="width: 20%;"/>
-            </p>
-
-    5. Is the item/spell/feature in the global recognition menu?
-
-        1. Open the Autorecognition Menu and select the apprioprate tab for your effect.
-        2. Use the search bar to find it quickly.
-
-        <p align="center">
-        <Image src={aaSearch} alt="Search for Effects on Automated Animations" style="width: 25%;"/>
-        </p>
-
-    6. Is the item/spell/feature disabled in its AA configuration menu?
-
-        1. Open the details of an item/spell/feature.
-        <p align="center">
-            <Image src={aaItemDetail} alt="Item's details window on D&D5e" style="width: 25%;"/>
-        </p>
-
-        2. Check if the animation is enabled and activate "Customize Item" if you want this item to have its own animation. 
-
-        <p align="center">
-            <Image src={aaItemMenu} alt="Item menu of Automated Animations" style="width: 25%;"/>
-        </p>
-
-    7. Have you rolled for attack or damage? Check in AA's settings.
-
-        <p align="center">
-            <Image src={aaDamageRoll} alt="Diagnostics window on Automated Animations" style="width: 20%;"/>
-        </p>
-
-    8. ??? (about joining the troubleshooting channel)
-    </Steps>
-    </TabItem>
-</Tabs>
 
 ## Advanced
 
