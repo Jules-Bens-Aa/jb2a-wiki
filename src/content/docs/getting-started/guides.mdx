@@ -1037,53 +1037,7 @@ In the next example, we will reuse concepts explained in the previous section an
 
     2. In the Autorec menu, under the On-Token tab, create a new effect called `Sanctuary`.
 
-<<<<<<< Updated upstream
-            <p align="center"><Image src={seqDatabaseViewer} alt="Sequencer Database Viewer" style="width: 50%;"/></p>
-
-            You can now browse through all our animations, search for a specific one, preview it and copy the filepath or database path, also called datapath . We recommend using the database path for more flexibility, and added intelligent behaviours from the Sequencer module. Click on the little datapath icon to copy it in your clipboard. Here, we'll search and copy this database path: ``jb2a.cast_shape.circle.single01.yellow``
-
-            <Image src={seqPlayIcon} alt="play icon" style="display: inline; width: 30px; background-color: white; border-radius: 0.2em; padding: 0.3em;" /> Preview the animation
-
-            <Image src={seqFilepathIcon} alt="filepath icon" style="display: inline; width: 30px; background-color: white; border-radius: 0.2em; padding: 0.3em;" /> Copy the full Filepath to the animation
-
-            <Image src={seqDatapathIcon} alt="datapath icon" style="display: inline; width: 30px; background-color: white; border-radius: 0.2em; padding: 0.3em;" /> Copy the datapath to the animation(s)
-    
-    5. Alternatively, you can as easily use our <a href="https://library.jb2a.com/">Asset Library</a> online for the same results. If you click on the database path at the bottom right, it will copy it in your clipboard.
-
-            <p align="center"><Image src={guideAaAssetLibrary} alt="Asset Library Website" style="width: 50%;"/></p>
-    
-    5. Paste the datapath into the custom field for the source animation.
-    
-            <p align="center"><Image src={guideAaSanctuarySource} alt="Sequencer Database Viewer" style="width: 50%;"/></p>
-
-    6. By default, all the subsequent effect sections will wait for the end of this source animation section in order to start. For this example, let's set the ``Wait`` section at the bottom to be ``-2000``, which means the next section will start 2000 milliseconds before the end of this current effect section, so almost at the same time.
-
-    7. By the way, there are many settings to explore here, and the little round blue ``i`` button will give you more information about what each setting does.
-
-            <p align="center"><Image src={guideAaInformations} alt="Auto-Rec Informations button" style="width: 50%;"/></p>
-
-    8. Now the Primary Animation. We'll use a boon condition for this one. From the Sequencer Database Viewer, let's copy the datapath for this animation: ``jb2a.condition.boon.01.003.yellow``. 
-
-            <p align="center"><Image src={guideAaSanctuaryPrimary} alt="Sequencer Database Viewer" style="width: 50%;"/></p>
-
-    9. You can add a Secondary Animation, like a particle animation. This one for example: ``jb2a.particles.inward.greenyellow.01.02``. Changing the playback rate to 2 in this case adds a little bit more dynamism to the overall feel.
-
-            <p align="center"><Image src={guideAaSanctuarySecondary} alt="Sequencer Database Viewer" style="width: 50%;"/></p>
-
-    10. Now, finally, the Target Animation. The animation from this section needs to stay on the target, looping, until we dismiss it. For this, we'll use one of the "complete" animations. These complete animations have extra timing information saved in the Sequencer Database, so using the datapath will let Sequencer know how to handle the intro, loop and outro sections. Let's use this datapath: ``jb2a.markers.shield_rampart.complete.03.yellow``. In the options, make sure you tick the persistent setting, and we can tick the bind visibility and bind alpha settings too, so that the animation turns invisible in case the token becomes invisible.
-
-            <p align="center"><Image src={guideAaSanctuaryTarget} alt="Sequencer Database Viewer" style="width: 50%;"/></p>
-
-    11. It's done! Let's target the token of an ally and cast the spell!
-
-            <p align="center"><video  controls muted="true" ><source src={ guideAaSanctuary } type="video/webm"></source></video></p>
-
-    12. As per the Sanctuary spell, if the ally makes an attack and we need to dismiss the spell, we can just click on the Sequencer Effect Manager and end it there as shown in the video above. 
-
-    13. This was only one way to setup and customize a spell. There are plenty of different ways to approach this. Some prefer to use the Active Effects tab to setup persistent animations, so that the animation is dismissed automatically when the active effect is turned off. It can be beneficial if you decided to go with a fully automated game using MIDI and the like. You can also use macros and plug them into an auto-rec entry in order to go beyond what A-A's user interface has to offer. It really comes down to preference and how far you want to take things, and how much time you want to invest!
-=======
         <p align="center"><Image src={guideAaSanctuaryCreate} alt="Autorecognition Menu - OnToken Tab - Creating Sanctuary Entry" style="width: 50%;"/></p>
->>>>>>> Stashed changes
 
 </Steps>
 
