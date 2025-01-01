@@ -311,7 +311,7 @@ The installation process may differ depending on your hosting method. Select the
                 https://mygame123.sfo3.digitaloceanspaces.com/jb2a_patreon 
                 ```        
 
-                <p align="center"><Image src={aaAssetLocation} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
+                <p align="center"><Image src={aaAssetLocation} alt="JB2A Asset Location option in the module settings" style="width: 50%;"/></p>
 
         </Steps>
 
@@ -349,7 +349,7 @@ The installation process may differ depending on your hosting method. Select the
 
             7. Search for `jb2a` in the search bar and select "JB2A - Patreon Complete Collection".
 
-                <p align="center"><Image src={forgeSearchPatreon} alt="Search for 'JB2A' and select select 'JB2A - Patreon Complete Collection'" style="width: 50%;"/></p>
+                <p align="center"><Image src={forgeSearchPatreon} alt="Search for 'JB2A' and select 'JB2A - Patreon Complete Collection'" style="width: 50%;"/></p>
 
             8. Then install the module.
 
@@ -400,7 +400,7 @@ The installation process may differ depending on your hosting method. Select the
 
             9. You're done! You can activate our module in your world and browse the assets using the Sequencer Database Viewer! 
 
-                <p align="center"><Image src={seqDatabaseViewer} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
+                <p align="center"><Image src={seqDatabaseViewer} alt="Preview of the Sequencer Database Viewer" style="width: 50%;"/></p>
 
         </Steps>
 
@@ -425,11 +425,11 @@ There are two ways to locate it:
     
             1. click the gear icon to change the configuration settings,
     
-                <p align="center"><Image src={fvttLandingPageSettings} alt="FoundryVTT Settings - Datapath setting location" style="width: 50%;"/></p>
+                <p align="center"><Image src={fvttLandingPageSettings} alt="FoundryVTT Settings" style="width: 50%;"/></p>
     
             2. and the User Data folder path will appear there.
     
-                <p align="center"><Image src={fvttDataPath} alt="FoundryVTT Settings - Datapath setting location" style="width: 50%;"/></p>
+                <p align="center"><Image src={fvttDataPath} alt="FoundryVTT Settings - User Data Path Folder location setting" style="width: 50%;"/></p>
     
         </Steps>
 
@@ -692,7 +692,7 @@ What is described in this subsection applies to any game system and without addi
 
         You can also browse our assets once your world is loaded. In the toolbar on the left of your screen, click on the `Tile Control` button, then on `Tile Browser` to open the file picker window.
 
-        <p align="center"><Image src={fvttToolFilePicker} alt="Accessing FilePicker on FoundryVTT" style="width: 10%;"/></p>
+        <p align="center"><Image src={fvttToolFilePicker} alt="Accessing Tile FilePicker on FoundryVTT" style="width: 10%;"/></p>
 
         By default, you can find all our assets using this path:
 
@@ -710,7 +710,7 @@ What is described in this subsection applies to any game system and without addi
 
             1. In the toolbar on the left of your screen, click on the `Tile Control` button and then `Tile Browser` to open the file picker window.
 
-                <p align="center"><Image src={fvttToolFilePicker} alt="Accessing FilePicker on FoundryVTT" style="width: 10%;"/></p>
+                <p align="center"><Image src={fvttToolFilePicker} alt="Accessing Tile FilePicker on FoundryVTT" style="width: 10%;"/></p>
 
             2. Once the file picker is open, go to `The Baazar` tab and all our assets are listed in the `modules/jb2a_patreon/Library` folder.
 
@@ -749,7 +749,7 @@ What is described in this subsection applies to any game system and without addi
 
         You can also browse our assets once your world is loaded. In the toolbar on the left of your screen, click on the `Tile Control` button, then on `Tile Browser` to open the file picker window.
 
-        <p align="center"><Image src={fvttToolFilePicker} alt="Accessing FilePicker on FoundryVTT" style="width: 10%;"/></p>
+        <p align="center"><Image src={fvttToolFilePicker} alt="Accessing Tile FilePicker on FoundryVTT" style="width: 10%;"/></p>
 
         By default, you can find all our assets using this path:
 
@@ -773,7 +773,7 @@ What is described in this subsection applies to any game system and without addi
 
             1. In the toolbar on the left of your screen, click on the `Tile Control` button and then `Tile Browser` to open the file picker window.
 
-                <p align="center"><Image src={fvttToolFilePicker} alt="Accessing FilePicker on FoundryVTT" style="width: 10%;"/></p>
+                <p align="center"><Image src={fvttToolFilePicker} alt="Accessing Tile FilePicker on FoundryVTT" style="width: 10%;"/></p>
 
             2. Once the file picker is open, go to `The Baazar` tab and all our assets are listed in the `modules/jb2a_patreon/Library` folder.
 
@@ -860,13 +860,13 @@ Furthermore, if you remove the 001 part and paste ``jb2a.condition.boon.01`` ins
 
 In theory, you could just write ``jb2a`` and it would pick at random from **ALL** our animations but we do not advise you to try as there are too many animations to handle and it could be very costly for your computer!
 
-<p align="center"><Image src={seqDatabaseListView} alt="Sequencer Database Viewer List-View" style="width: 50%;"/></p>
+<p align="center"><Image src={seqDatabaseListView} alt="Sequencer Database Viewer List-View setting unchecked" style="width: 50%;"/></p>
 
 #### Sequencer Manager
 
 The [Sequencer Effect Manager](https://fantasycomputer.works/FoundryVTT-Sequencer/#/effect-manager?id=show-effect-manager) can be used to stop any persistent animation on the FoundryVTT Canvas. However, in order for the animation to appear in the Sequencer manager, persistent animations must be created using the `.persist()` Sequencer function.
 
-<p align="center"><Image src={seqManager} alt="How to open the Sequencer Manager" style="width: 50%;"/></p>
+<p align="center"><Image src={seqManager} alt="How to open the Sequencer Effect Manager" style="width: 50%;"/></p>
 
 ### JB2A + Automated Animations
 
@@ -1076,7 +1076,7 @@ Let's create the Source Animation checkbox so we can add an animation on `Akra`,
 
         By default, all the subsequent effect sections will wait for the end of this source animation section in order to start. For this example, let's set the ``Wait`` section at the bottom to be ``-2000``, which means the next section will start 2000 milliseconds before the end of this current effect section, so almost at the same time.
 
-        <p align="center"><Image src={guideAaSanctuarySource} alt="Sequencer Database Viewer" style="width: 50%;"/></p>
+        <p align="center"><Image src={guideAaSanctuarySource} alt="Primary Animation in Autorecognition Menu for Sanctuary" style="width: 50%;"/></p>
 
 </Steps>
 
@@ -1104,7 +1104,7 @@ Now the Primary Animation. We'll use a boon condition for this one.
         ```
     2. Enable the custom field and paste the Datapath for the source animation.
 
-        <p align="center"><Image src={guideAaSanctuaryPrimary} alt="Sequencer Database Viewer" style="width: 50%;"/></p>
+        <p align="center"><Image src={guideAaSanctuaryPrimary} alt="Custom Field in Autorecognition Menu" style="width: 50%;"/></p>
 
 </Steps>
 
@@ -1128,7 +1128,7 @@ You can add a Secondary Animation, like a particle animation, perfect for adding
 
     2. Enable the custom field and paste the Datapath for the source animation. Changing the playback rate to 2 in this case adds a little bit more dynamism to the overall feel.
 
-        <p align="center"><Image src={guideAaSanctuarySecondary} alt="Sequencer Database Viewer" style="width: 50%;"/></p>
+        <p align="center"><Image src={guideAaSanctuarySecondary} alt="Secondary Animation in Autorecognition Menu for Sanctuary" style="width: 50%;"/></p>
 
 </Steps>
 
@@ -1156,7 +1156,7 @@ These complete animations have extra timing information saved in the Sequencer D
     
         In the options, make sure you tick the `Persistent` setting, and we can tick the `Bind Visibility` and `Bind Alpha` settings too, so that the animation turns invisible in case the token becomes invisible.
 
-        <p align="center"><Image src={guideAaSanctuaryTarget} alt="Sequencer Database Viewer" style="width: 50%;"/></p>
+        <p align="center"><Image src={guideAaSanctuaryTarget} alt="Target Animation in Autorecognition Menu for Sanctuary" style="width: 50%;"/></p>
 
 </Steps>
 
