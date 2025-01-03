@@ -85,14 +85,14 @@ import fvttModuleOption from '/src/assets/img/fvtt-jb2a-module-options.png'
 
 #### Module not displaying
 
-  **Module installed with the manifest link:**
+##### Module installed with the manifest link:
 
   - Restart FoundryVTT, this is not necessary in most cases. But you never know.
   - If you did the installation procedure yourself, try to follow our instructions to the letter.
 
   <LinkCard title="Install with manifest link" href="/jb2a-wiki/getting-started/guides#how-to-install" />
 
-  **Module installed manually:**
+##### Module installed manually:
 
   <Steps>
 
@@ -106,12 +106,12 @@ import fvttModuleOption from '/src/assets/img/fvtt-jb2a-module-options.png'
 
             - data
               - modules
-                - JB2A_DnD5e
+                - jb2a_patreon
                   - artwork/
-                  - **Library/**
+                  - Library/
                   - packs/
                   - scripts/
-                  - module.json
+                  - **module.json**
               - systems/
               - worlds/
 
@@ -133,9 +133,9 @@ import fvttModuleOption from '/src/assets/img/fvtt-jb2a-module-options.png'
 
 If you're experiencing this problem, you've probably tried to update our Patreon module on FoundryVTT.
 
-Unlike our free module, **you can't update our Patreon module this way.** To avoid having this error every time FoundryVTT tries to update our module, we advise you to lock it like this:
+Unlike our free module, **you can't update our Patreon module this way.** To avoid having this error every time FoundryVTT tries to update our module, we advise you to lock it by right clicking on our module
 
-  <p align="center"><Image src={fvttModuleOption} alt="How to lock our Patreon Module" style="width: 25%;"/></p>
+<p align="center"><Image src={fvttModuleOption} alt="How to lock our Patreon Module" style="width: 50%;"/></p>
 
 Please follow one of these instructions to update our Patreon module correctly.
 
@@ -158,7 +158,12 @@ Please follow one of these instructions to update our Patreon module correctly.
 ### Issues using our content
 #### Can't find animations
 
-  If you can't find our animations via the tile browser or the Sequencer Database Viewer, it may be because the installation wasn't done correctly,the FoundryVTT server wasn't restarted since the install, or our module isn't enabled in the world. 
+  If you can't find our animations via the tile browser or the Sequencer Database Viewer, it may be because:
+
+    - The installation wasn't done correctly,
+    - The FoundryVTT server wasn't restarted after a manual install, or 
+    - Our module isn't enabled in the world. 
+  
   If your problem persists, please report your issue so we can try and help you.
 
   <CardGrid>
@@ -174,18 +179,6 @@ Please follow one of these instructions to update our Patreon module correctly.
   
   Any tile or token you have setup using file paths may break though. It's an easy fix and we can provide a macro in our [Discord server](https://discord.gg/gmd8MAPX4m) to fix all of them with a batch macro if you have too many of them.
 
-  ```txt title="File path example" "JB2A_DnD5e" "jb2a_patreon"
-  ### Free module
-  modules/JB2A_DnD5e/Library/Generic/Creature/Bite_01_Regular_Red_400x400.webm
-  ### Patreon module
-  modules/jb2a_patreon/Library/Generic/Creature/Bite_01_Regular_Red_400x400.webm
-  ```
-
-  ```txt title="Data path example"
-  ### For both modules
-  jb2a.bite.400px.red
-  ```
-
   <CardGrid>
 
     <LinkCard title="Install Instruction" href="/jb2a-wiki/getting-started/guides#patreon-module" />
@@ -195,28 +188,23 @@ Please follow one of these instructions to update our Patreon module correctly.
 
 #### Tiles, tokens and macros broken
 
-  You should use Sequencer database paths for macros whenever possible, as it would work for both the free and the patreon module. 
+  You should use Sequencer database paths for macros whenever possible, as it would work for both the free and the patreon module.
+
+<CardGrid>
+
+  <LinkCard title="What's a Datapath?" href="/jb2a-wiki/getting-started/prerequisites#data-path" />
+  <LinkCard title="Sequencer Database Viewer" href="/jb2a-wiki/getting-started/guides#database-viewer" />  
+
+</CardGrid>
   
   We can provide a batch macro in our [Discord server](https://discord.gg/gmd8MAPX4m) to fix tokens, tiles and macros if you need however.
 
-  ```txt title="File path example" "JB2A_DnD5e" "jb2a_patreon"
-  ### Free module
-  modules/JB2A_DnD5e/Library/Generic/Creature/Bite_01_Regular_Red_400x400.webm
-  ### Patreon module
-  modules/jb2a_patreon/Library/Generic/Creature/Bite_01_Regular_Red_400x400.webm
-  ```
+<CardGrid>
 
-  ```txt title="Data path example"
-  ### For both modules
-  jb2a.bite.400px.red
-  ```
-
-  <CardGrid>
-
-    <LinkCard title="Install Instruction" href="/jb2a-wiki/getting-started/guides#patreon-module" />
-    <LinkCard title="Report an issue" href="/jb2a-wiki/troubleshooting/how-to#-report-an-issue" />
+  <LinkCard title="Install Instruction" href="/jb2a-wiki/getting-started/guides#patreon-module" />
+  <LinkCard title="Report an issue" href="/jb2a-wiki/troubleshooting/how-to#-report-an-issue" />
     
-  </CardGrid>
+</CardGrid>
 
 #### Can't drop animations on scene
 
@@ -262,53 +250,53 @@ As far as we know, only deactivating this module will solve the problem, unfortu
 
     An error in the Sequencer database can occur for these reasons:
 
-    <Steps>
 
-      1. **We made an error when updating the database.**
 
-          Every time we add or modify the database, we use this handy Sequencer command.
+##### We made an error when updating the database.
 
-          ```js
-          Sequencer.Database.validateEntries("jb2a")
-          ```
+  Every time we add or modify the database, we use this handy Sequencer command.
 
-          It allows us to check that all our file paths are correct. If you get ‘404’ errors it's unlikely, but not impossible, that the error is ours. Check the other two reasons.
+  ```js
+  Sequencer.Database.validateEntries("jb2a")
+  ```
 
-          **However**, the command does not allow us to check whether we have assigned the data path to the correct asset. It is therefore possible that the colour, size or duration is not the right one! If this is the case, please let us know as soon as possible.
+  It allows us to check that all our file paths are correct. If you get ‘404’ errors it's unlikely, but not impossible, that the error is ours. Check the other two reasons.
 
-          <LinkCard title="Report an issue" href="/jb2a-wiki/troubleshooting/how-to#-report-an-issue" />
+  **However**, the command does not allow us to check whether we have assigned the data path to the correct asset. It is therefore possible that the colour, size or duration is not the right one! If this is the case, please let us know as soon as possible.
 
-      2. **You installed our module manually and the procedure was not carried out correctly.**
+  <LinkCard title="Report an issue" href="/jb2a-wiki/troubleshooting/how-to#-report-an-issue" />
 
-          If you get ‘404’ errors, it's possible that our assets were not copied correctly. To easily create a list of all the missing assets, you can copy the command above and paste it into the FoundryVTT console. 
+##### You installed our module manually and the procedure was not carried out correctly.
 
-          <LinkCard title="How to use the console" href="/jb2a-wiki/getting-started/jb2a-fvtt#console" />
+If you get ‘404’ errors, it's possible that our assets were not copied correctly. To easily create a list of all the missing assets, you can copy the command above and paste it into the FoundryVTT console. 
 
-          If the list is not too large, you can place the assets in their corresponding folders and run the Sequencer command again to confirm that everything is in place.
+<LinkCard title="How to use the console" href="/jb2a-wiki/getting-started/jb2a-fvtt#console" />
 
-          If the list is substantial, we recommend that you:
+If the list is not too large, you can place the assets in their corresponding folders and run the Sequencer command again to confirm that everything is in place.
 
-            <Steps>
+If the list is substantial, we recommend that you:
 
-              1. Stop FoundryVTT
+  <Steps>
 
-              2. Delete our module completely.
+    1. Stop FoundryVTT
 
-              3. And proceed with a new installation by following all these steps.
+    2. Delete our module completely.
 
-                  <LinkCard title="Manual Install" href="/jb2a-wiki/getting-started/guides#manual-install" />
+    3. And proceed with a new installation by following all these steps.
 
-            </Steps>
+        <LinkCard title="Manual Install" href="/jb2a-wiki/getting-started/guides#manual-install" />
 
-      3. **You updated our module manually using the ‘Only new stuff’.**
+  </Steps>
 
-          This is more or less the same as reason n°2. However, you may not have to reinstall the entire module. You can try again to transfer the contents of the ‘Only new stuff’ zip files to our Patreon module.
+##### You updated our module manually using the ‘Only new stuff’.
 
-            <LinkCard title="Update with Only new stuff" href="/jb2a-wiki/getting-started/guides#patreon-module-1" />
+This is more or less the same as reason n°2. However, you may not have to reinstall the entire module. You can try again to transfer the contents of the ‘Only new stuff’ zip files to our Patreon module.
 
-          Once this has been done, use the Sequencer command to confirm that everything is in place.
+  <LinkCard title="Update with Only new stuff" href="/jb2a-wiki/getting-started/guides#patreon-module-1" />
 
-    </Steps>
+Once this has been done, use the Sequencer command to confirm that everything is in place.
+
+
 
 #### Black square instead of animation
 
