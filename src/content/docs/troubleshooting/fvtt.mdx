@@ -125,7 +125,7 @@ If it's not, please read the [documentation on the wiki]() and then reach us on 
 
 On some rare instances, it happens that some animations remain on the canvas and cannot be removed from the Sequencer Effect Manager. If you paste this little command line in the console (F12), it should remove every existing animation in the scene:
 ```js
-canvas.scene.unsetFlag("sequencer", "effects")
+await canvas.scene.unsetFlag("sequencer", "effects")
 ```
 
     To open the console in FoundryVTT:
