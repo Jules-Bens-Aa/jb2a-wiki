@@ -1,5 +1,5 @@
 ---
-const {title = "Title", href = ""} = Astro.props
+const {title = "Title", href = ""} = Astro.locals.starlightRoute
 ---
 
 <a href={href}><h2 class="anchor-link">{title}</h2></a>

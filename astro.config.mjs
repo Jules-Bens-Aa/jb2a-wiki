@@ -26,12 +26,28 @@ export default defineConfig({
             dark: './src/assets/img/wikilogo-dark-512x128.webp',
             replacesTitle: true
           },
-        social: {
-            github: 'https://github.com/Jules-Bens-Aa/jb2a-wiki',
-            discord: 'https://discord.gg/gmd8MAPX4m',
-            patreon: 'https://www.patreon.com/JB2A',
-            youtube: 'https://www.youtube.com/channel/UCqLusRtLV7GXJo_xNNM3dOw',
-        },
+        social: [
+            {
+                icon: 'github',
+                label: 'Github',
+                href: 'https://github.com/Jules-Bens-Aa/jb2a-wiki'
+            },
+            {
+                icon: 'discord',
+                label: 'Discord',
+                href: 'https://discord.gg/gmd8MAPX4m'
+            },
+            {
+                icon: 'patreon',
+                label: 'Patreon',
+                href: 'https://www.patreon.com/JB2A'
+            },
+            {
+                icon: 'youtube',
+                label: 'Youtube',
+                href: 'https://www.youtube.com/channel/UCqLusRtLV7GXJo_xNNM3dOw'
+            }
+        ],
         editLink: {
             baseUrl: 'https://github.com/Jules-Bens-Aa/jb2a-wiki/tree/main',
           }, 
