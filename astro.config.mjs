@@ -124,16 +124,17 @@ export default defineConfig({
                 ]
             },
             {
+                label: 'Patch Notes',
+                collapsed: true,
+                items: [
+                    // 'patchnotes/pn-demo',
+                    'patchnotes/pn-main'
+                ]
+            },
+            {
                 slug: 'uncategorised/contribute-wiki'
             },
-            // {
-            //     label: 'Patch Notes',
-            //     collapsed: true,
-            //     items: [
-            //         'patchnotes/pn-demo',
-            //         'patchnotes/pn-main'
-            //     ]
-            // },
+
             // {
             //     label: 'Template',
             //     collapsed: true,
