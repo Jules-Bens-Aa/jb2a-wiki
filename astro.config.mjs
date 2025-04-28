@@ -3,6 +3,7 @@ import starlight from '@astrojs/starlight';
 
 import starlightHeadingBadges from 'starlight-heading-badges'
 import starlightImageZoom from 'starlight-image-zoom'
+import starlightBlog from 'starlight-blog'
 
 
 // https://astro.build/config
@@ -17,7 +18,13 @@ export default defineConfig({
 // Plugins        
         plugins: [
             starlightImageZoom(),
-            starlightHeadingBadges()
+            starlightHeadingBadges(),
+            starlightBlog({
+                title: "patchnotes",
+                postCount: 10,
+                recentPostCount: 6,
+                navigation: 'header-start'
+            })
         ],
 
 // Website Config        
@@ -107,10 +114,6 @@ export default defineConfig({
                 link: '',
                 attrs: {style: '  border-bottom: 1px solid var(--sl-color-hairline); border-radius: 0px; opacity: 1'}
             },
-            // { 
-            //     label: 'Other Projects',
-            //     link: '/other-projects',
-            // },
             // {
             //     label: 'Frequently Asked Questions',
             //     collapsed: true,
@@ -131,6 +134,13 @@ export default defineConfig({
                     'troubleshooting/online-hosting',           
                 ]
             },
+            { 
+                label: 'Other Projects',
+                collapsed: true,
+                items: [
+                    'other-projects/token-animator-guide'
+                ]
+            },
             {
                 label: 'External Resources',
                 collapsed: true,
@@ -141,17 +151,8 @@ export default defineConfig({
                 ]
             },
             {
-                label: 'Patch Notes',
-                collapsed: true,
-                items: [
-                    // 'patchnotes/pn-demo',
-                    'patchnotes/pn-main'
-                ]
-            },
-            {
                 slug: 'uncategorised/contribute-wiki'
             },
-
             // {
             //     label: 'Template',
             //     collapsed: true,

@@ -1,0 +1,796 @@
+---
+title: Token Animator Guide
+---
+import { Aside, Cards, CardGrid, FileTree, LinkButton, LinkCard, Steps, Tabs, TabItem } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets'
+
+import banner from '/src/assets/img/token-animator/Image/Patreon_ArrowBOlt_Thumbnails.png'
+import winexplorer from '/src/assets/img/token-animator/Image/TA_Content.png'
+import ui from '/src/assets/img/token-animator/Image/RightAfterOpeningTheFile_Edited.png'
+import browserpanel from '/src/assets/img/token-animator/Slides/01_BrowselPanel.png'
+import managerpanel from '/src/assets/img/token-animator/Slides/02_ManagerPanel.png'
+import shaderpanel from '/src/assets/img/token-animator/Slides/03_ShaderPanel.png'
+import borderexamples from '/src/assets/img/token-animator/Image/Borders_Example.png'
+import stageexamples from '/src/assets/img/token-animator/Image/Stage_Example.png'
+import rendertab from '/src/assets/img/token-animator/Image/RenderTab.png'
+
+
+
+
+
+import demo01 from '/src/assets/vid/token-animator/Demo010000-0096.mp4'
+import demo02 from '/src/assets/vid/token-animator/Demo020000-0096.mp4'
+import demo03 from '/src/assets/vid/token-animator/Demo030000-0096.mp4'
+import demo04 from '/src/assets/vid/token-animator/Demo040000-0096.mp4'
+import relpaths from '/src/assets/vid/token-animator/Token-Animator-RelativePaths.webm'
+import artworkguide from '/src/assets/vid/token-animator/Artwork_Guide.mp4'
+import bordersguide from '/src/assets/vid/token-animator/Borders_Guide.mp4'
+import browserpanelexplained from '/src/assets/vid/token-animator/BrowserPanel_Explained.mp4'
+import managerexplained from '/src/assets/vid/token-animator/Manager_Explained.mp4'
+import particleexample from '/src/assets/vid/token-animator/Particle_Example.webm'
+import particlesguide from '/src/assets/vid/token-animator/Particles_Guide.mp4'
+import pngexample from '/src/assets/vid/token-animator/PNG_Example.webm'
+import pngsguide from '/src/assets/vid/token-animator/PNGs_Guide.mp4'
+import previewpanelexplained from '/src/assets/vid/token-animator/PreviewPanel_Explained.mp4'
+import rendertabwebmpng from '/src/assets/vid/token-animator/RenderTab_Webm_PngSeq.mp4'
+import ringexample from '/src/assets/vid/token-animator/Ring_Example.webm'
+import ringsguide from '/src/assets/vid/token-animator/Rings_Guide.mp4'
+import shaderpanelexplained from '/src/assets/vid/token-animator/ShaderPanel_Explained.mp4'
+import shortexample from '/src/assets/vid/token-animator/Short_Example.webm'
+import shortssguide from '/src/assets/vid/token-animator/Shorts_Guide.mp4'
+import stageanimexample from '/src/assets/vid/token-animator/StageAnim_Example.webm'
+import stageanimssguide from '/src/assets/vid/token-animator/StageAnims_Guide.mp4'
+import stagesguide from '/src/assets/vid/token-animator/Stages_Guide.mp4'
+import timelinepanelexplained from '/src/assets/vid/token-animator/TimelinePanel_Explained.mp4'
+
+
+import gif from '/src/assets/gif/logo_circle_400.gif'
+
+<p align="center"><Image src={banner} alt="Landing Page of FoundryVTT" style="width: 100%;"/></p>
+
+## Introduction
+
+This is a guide for our Token Animator tool made with the 3D software Blender.
+Blender is free, you can download it on the official website.
+It was developped for version 3.1, so we can't guarantee it'll work properly for later versions of Blender. We recommend downloading this specific version on the release page: https://download.blender.org/release/
+
+If you are currently pledged to the Epic Tier on our Patreon, you can find and download our project file on the Epic Master Post: https://www.patreon.com/posts/64188575
+
+
+## Its purpose
+
+With this tool, you'll be able to create your own animated token by using your favorite artist's splash-art or topdown token and adding multiples animated effects to it. It has limited options to edit an artwork. It is recommended to use an editing software to make specific changes on an artwork, like Photoshop, for example, or GIMP (free alternative). The Token Animator tool is only useful if you want to add animated effects made by us and provided with the tool on a specific artwork such as splash-arts and topdown tokens.
+
+https://www.gimp.org/tutorials/
+
+Here are a few examples of what you can do with it.
+
+
+*Duration : 4sec*  
+*Fps : 24.*
+
+<div class="responsive">
+  <div class="gallery">
+      <video  controls muted="true" ><source src={ demo01 } type="video/webm"></source></video>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+      <video  controls muted="true" ><source src={ demo02 } type="video/webm"></source></video>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+      <video  controls muted="true" ><source src={ demo03 } type="video/webm"></source></video>
+  </div>
+</div>
+
+<div class="responsive">
+  <div class="gallery">
+      <video  controls muted="true" ><source src={ demo04 } type="video/webm"></source></video>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+
+
+
+Here are a couple of creators providing topdown tokens. It is non-exaustive, please contact us on discord if you want us to add your favorite Creator to the list.  
+- <a href='https://www.patreon.com/forgottenadventures'>Forgotten Adventures</a>
+- <a href='https://www.patreon.com/caeora'>Caeora</a>
+
+  <Aside type="note" title="Note">
+    Webp format isn't compatible with this version of Blender, not without plugins.
+  </Aside>
+
+You can also create your own topdown token with HeroForge and Photoshop.
+Here is a step-bystep guide on Youtube, made by us, showing how to do it.
+
+<a href="https://youtu.be/p8cMilic_Oo?si=1Z2tmfNxQF5F1-j_" >Create your own topdown token with HeroForge and Photoshop</a>
+
+
+
+## Installation
+
+You need to install Blender first if not already done.
+Then download the archive of the Token Animator. It contains the entire tool. You don't need anything else.
+Extract the archive in your prefered location on your computer.
+Inside the archive you should see something like this :
+
+Visual of the folder
+<p align="center"><Image src={winexplorer} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+
+That done, the installation is complete. But before jumping right into the fun part, you might need to know a bit more about how to use Blender.
+
+
+## Things to know before the start
+
+First, I recommend you to watch at the very least the Part 1 of the tutorial series made by Andrew Price. This video is well-made, I personnally began to learn Blender thanks to him. Also, in the description of his video, he provides a PDF with useful shorcuts. A must have. After that you should be familiar with the UI of Blender.
+
+https://youtube.com/playlist?list=PLjEaoINr3zgEPv5y--4MKpciLaoQYZB1Z&si=1fJRoEqBGPsHrsec
+
+
+## The User Interface
+
+This section covers all you need to know to be able to navigate in the software and use different part of the tool.
+Let's open the tool and see what's inside !
+
+### Visual of the UI
+
+<p align="center"><Image src={ui} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+
+You'll notice that the UI layout is different than the Default UI of Blender. It is organised so only what's useful for you is easily accessible to create your animated token.
+
+### Panels descriptions
+
+{/* PANELS DESCRIPTIONS
+/************************************************************************************************************ 
+/************************************************************************************************************
+/************************************************************************************************************
+/************************************************************************************************************
+/************************************************************************************************************
+/************************************************************************************************************
+/************************************************************************************************************
+*/}
+
+
+
+<Tabs syncKey="panels">
+
+    <TabItem label="Browser">
+      <p align="center"><Image src={browserpanel} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+      It allows you to navigate between the project's folders. It will help you to find artworks, effects, borders, etc ... without having to rely on your OS's browser.
+      It is working very similarly to any other browser with features like : previous folder, next folder, parent folder, refresh, address bar and search bar.
+    </TabItem>
+
+    <TabItem label="Tabs">
+      Tabs in Blender are mostly used to have a different UI layout depending of you want to do, for example modeling, texture editing, sculpting, etc ... But in this case I decided to use them to      divide effects into groups. It should make it easier to navigate between type of effects and to allow you to go straight to what you want to achieve. They are located on the top part of     Blender's UI.
+      They are explained more in depth later in the guide.
+
+      Video showing me switching between tabs ?
+    </TabItem>
+
+    <TabItem label="Manager">
+      <p align="center"><Image src={managerpanel} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+      Each Tabs have their own Manager Panel. That means they are completely independant between each other. 
+      It will allow you to decide which effects you want to display in the Preview Panel and to choose the height of effect's layer. 
+
+      And when you want to edit the material of the effect, you can select it select its corresponding cog to display its material in the Shader Panel.
+      And finally to select the corresponding material of the effect so you can edit its mask, scale, rotation, colors, etc... 
+
+      Each effects have a name associated to them and it can be edited to allow a better organisation. An effect also have a slider going from position 0 to position 9. Position 0 means the effect      is hidden in the Preview Panel and positions 1 to 9 represent the height of the layer. At the end of the slider there is a cog symbol. When selected, it will display the corresponding shader      associated to the effect in the Shader Panel.
+
+      TLDR.
+      - Manager Panels are independant between tabs.
+      - When a slider is at position 0, the effect is hidden in the Preview Panel.
+      - Position 1 to 9, display the effect in the Preview Panel and set the height of the effect's layer.
+      - Selecting the cog will display the corresponding effect's shader in the Shader Panel.
+      - You can edit a slider's name by selecting it and use the TAB key to toggle the edit mode.
+
+      <video  controls muted="true" ><source src={ managerexplained } type="video/webm"></source></video>
+
+        <Aside type="note" title="Shortcuts to remember">
+        - Left Mouse Button to select a slider, cog or slider's names.
+        - G Key to move a selected slider or a cog.
+        - TAB key to edit a selected slider's name.
+        - Mouse Wheel to zoom in or out the view.
+        - Middle Mouse Button to orbit the view. (Should not be needed)
+        - CTRL + Middle Mouse Button to pan the view.
+        - Numpad 7 to toggle to toggle the Top View.
+        </Aside>
+
+    </TabItem>
+
+    <TabItem label="Preview">
+      This is a 3D viewport of Blender but the point of view from a camera with an orthographic projection. The Grid shows you the size of an effect/png in pixels but it won't be visible on the       final render. 
+      Use the Spacebar to play or pause the animation in the Preview. Depending on your computer, Blender should need to play the entire animation once so you can preview it at the right speed.       Keep in mind that if you have a low-end computer, it is highly possible that the preview will always be slower than the final result.
+
+      Video of the preview panel in use.
+
+      **Shortcuts to remember :**
+      - Spacebar to play/pause the animation.
+      - Mouse Wheel to zoom in or out the view.
+      - Middle Mouse Button to orbit the view. (Should not be needed)
+      - CTRL + Middle Mouse Button to pan the view.
+      - Numpad 0 to toggle the camera point of view. (In case you lost focus on the camera's point of view)
+    </TabItem>
+
+    <TabItem label="Shader">
+      <p align="center"><Image src={shaderpanel} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+      This is where you edit an effect or your artwork/top-down token. It is composed of nodes linked to each other to form a node tree going from left (branches) to right (trunk). The far right side of the node tree is the final result of the shader where every nodes converge to a single one, the Material Output. In this case it will an artwork, or an animated effect.
+      If you want to learn how nodes are working, you can read the documentation of Blender. https://docs.blender.org/manual/en/2.79/render/blender_render/materials/nodes/introduction.html
+      To edit an artwork, a border or an animated effect in the Shader Panel, you must first select its corresponding cog in the Manager Panel. Only then the right shader will be displayed here and you'll be able to edit it. Don't forget to change the slider's position to something higher than position 0 or the effect will be hidden in the Preview Panel and you won't be able to see the changes you have made.
+
+      Video of the shader panel in use.
+
+      **Shortcuts to remember :**
+      - Mouse Wheel to zoom in or out the view.
+      - Middle Mouse Button to pan the view.
+      - Home Key to frame all the node.
+      - Numpad . to frame the selected node.
+      - Hold CTRL + Right Mouse Button to cut a node link.
+      - Hold Alt and drag a node with Left Mouse Button to unlink it without severing the link.
+      - Press the G Key while having a node selected to move it. You can also hold Left Mouse Button on a node to do the exact same thing.
+    </TabItem>
+
+    <TabItem label="Timeline">
+      Useful in very few cases. It is collapsed at the botton of Blender's window.
+      To expand the Timeline Panel, 
+      Move your cursor until it reaches the separation between the Browser Panel and the Playback Panel.
+      Your cursor should change to a "Two-side" arrow.
+      Click and hold the Left Mouse Button then drag your mouse toward the top of your screen until the timeline appears.
+      A light grey area going from frame 0 to frame 96 represent the timeline of the whole animation.
+      To hide the panel, same principle but drag your mouse toward the bottom of your screen instead.
+      Moving the Playhead
+      On the timeline, you should see a blue Playhead. You can move it to see specific frame in the animation.
+      To move the Play head, click and hold the Left Mouse Button on the playhead then use your mouse to drag it.
+    </TabItem>
+    <hr></hr>
+</Tabs>
+
+
+## Blender's Browser and Relative Paths
+
+To avoid doing the same things each time you open the project, I recommend you to do the following instructions. As shown on the video below, copy the corresponding relative path for each available tab and paste it in the Browser Panel's address bar. Then save the file.
+
+``//Previews\Artworks\``  
+``//Previews\Pngs\``  
+``//TokenBorder\``  
+``//Previews\Shorts\``  
+``//Previews\Rings\``  
+``//Previews\Particles\``  
+``//Previews\Stages\``  
+``//Previews\StagesAnim\``  
+
+<p align="center"><video  controls muted="true" ><source src={ relpaths } type="video/webm"></source></video></p>
+
+Fortunately, you don't have to do this for each assets. As long as you don't change the structure of the archive, Blender should be able to find them automatically. But it doesn't work that way for the Browser Panel. The purpose of the Browser Panel is explained here.
+
+<LinkCard title="Panels Descriptions" href="/jb2a-wiki/other-projects/token-animator-guide/#panels-descriptions" />
+
+  <Aside type="caution" title="Back up the file">
+    I recommend to not skip this step. You'll be able to start from a pristine file if something goes wrong with your project. And you won't have to redownload the project.  
+    Two ways to do it :  
+    - With your operating system browser, simply copy/paste the *.blend file to make a duplicate of the file.
+    - Inside Blender, Go the the File menu and Save As a new file.
+  </Aside>
+
+
+
+
+
+
+
+  <Aside type="note" title="Note">
+    After saving the file for the first time, Blender will create a new file with the *.blend1 extension. It will be used by the software as a backup file if for some reason you can't open the main file.
+  </Aside>
+
+
+## Tools Tabs Description
+
+Tabs in Blender are mostly used to have a different UI layout depending of what you want to do, for example modeling, texture editing, sculpting, etc ... But in this case I decided to use them to divide effects into groups. It should make it easier to navigate between type of effects and to allow you to go straight to what you want to add to your token. They are located on the top part of Blender's UI.
+
+I divided them in two categories.
+- Builder Tabs  
+- Utility Tabs
+
+
+{/* TOOL TABS DESCRIPTIONS
+/************************************************************************************************************ 
+/************************************************************************************************************
+/************************************************************************************************************
+/************************************************************************************************************
+/************************************************************************************************************
+/************************************************************************************************************
+/************************************************************************************************************
+*/}
+
+#### Builder Tabs
+
+<Tabs syncKey="builder-tabs">
+
+    <TabItem label="Artworks">
+      This tabs is where you'll load your token image. It can be any artwork and you'll be able to use a mask if necessary without having to edit it with another software.
+    </TabItem>
+
+    <TabItem label="PNGs">
+      Mostly composed of sequences of pngs representing artworks with effects embeded on top of them. 
+      For example, rotating cogs, shimmering borders, etc...
+    </TabItem>
+    
+    <TabItem label="Borders">
+      For now most of available borders are from the github XXXX. But more will come in the future. 
+      If you want us to include specific borders you like be sure they are under a suitable license.
+
+      <p align="center"><Image src={borderexamples} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+
+    </TabItem>
+
+    <TabItem label="Shorts">
+      Very brief effects, the final animation has 97 frames in total. These effects will be shorter than that. 
+      For example a glint or a shimmer.
+    </TabItem>
+
+    <TabItem label="Rings">
+      Speaks by itself, this effects are in a ring shape and will loop seamlessly.
+    </TabItem>
+
+    <TabItem label="Particles">
+      Same as for the Rings, pretty straight forward. This tab will gather all animated effects with particles and will loop seamlessly.
+    </TabItem>
+
+    <TabItem label="Stages">
+      This one is a bit an extra. I liked the idea of adding stages on topdown tokens. Like figurines when we play around a table. I don't know if it will be popular. 
+      Different shapes are available, and also different textures for the flat side of the stage. For example, Cobblestone, Woodplanks, etc ...
+
+      <p align="center"><Image src={stageexamples} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+    </TabItem>
+
+    <TabItem label="S-Anim">
+      Related to the previous tabs, these are animations made to be added on top of the stages. Could be useful to simply highlight an imporant NPC.
+    </TabItem>
+
+
+
+</Tabs>
+
+
+#### Utility Tabs
+
+<Tabs syncKey="utility-tabs">
+
+    <TabItem label="Render">
+      When your token is ready to render, you can hit **CTRL+F12** to render your animated token in a webm format. Or you can use this tab to change the settings to render it to another format or       an image sequence.
+      You can also change its resolution or the name of the rendered file.
+      <p align="center"><Image src={rendertab} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+    </TabItem>
+
+    <TabItem label="Backstage">
+      This is were I test things to keep other tabs tidy. I decided to leave it in the final file just in case some people want to do the same.
+    </TabItem>
+
+</Tabs>  
+
+
+{/* GUIDES SECTION
+/************************************************************************************************************ 
+/************************************************************************************************************
+/************************************************************************************************************
+/************************************************************************************************************
+/************************************************************************************************************
+/************************************************************************************************************
+/************************************************************************************************************
+*/}
+
+
+## Guides :
+
+### How to load your artwork.
+
+<video  controls muted="true" ><source src={ artworkguide } type="video/webm"></source></video>
+
+  <steps>
+
+    1. First, copy your artwork in the ``//Previews\Artworks`` folder located inside the project folder.
+
+    2. Then in the ARTWORKS tab, refresh the Browser Panel to confirm that Blender can properly see it.
+
+    3. **In the Manager Panel**:
+    
+        <steps>
+
+          1. Choose a layer.
+          2. Select its slider with Left Mouse Button.
+          3. Press the G key and move the slider to the desired position with your mouse.
+          4. Press Left Mouse Button to confirm (or Right Mouse Button to cancel).
+          5. Then select the corresponding cog to display the material of the effect in the Shader Panel.
+            
+              <Aside type="note" title="Note">
+                I recommend to choose the position 4 or 5 for your artwork to have enough space if you want to stack effects below it.
+              </Aside>
+
+        </steps>
+    
+    4. **In the Shader Panel**:
+
+        <steps>
+
+            - **Load your artwork**  
+            You should see two frames with nodes inside, one orange and one black. Inside the orange one, you'll need to load your artwork in the node on the right. Click on the folder icon, it will open a window browser and select your artwork. Then click on Open Image to confirm.
+            Now you might want to change the mask. By default your artwork will be inside a sharp round mask. To change the mask's shape, inside the black frame, you'll need to load another mask in the node on the right. Click on the folder icon, it will open a window browser with a list of various masks. Select the desired one and Click on Open Image to confirm.
+            - **Loading a Top Down token**  
+            Loading a Top-down token is slightly different. Since it should already have an alpha, you won't need to load the mask separately. Use one of the last 5 layers in the Manager Panel, move its slider to a desired position to display it on the Preview Panel and select its corresponding cog to be able to edit its material.
+            The nodes are a bit different. As you can see, there is only one node to load your token (the orange one).  
+            Load your artwork in the orange node on the right.
+            Click on the folder icon, it will open a window browser and select your artwork. Click on Open Image to confirm.
+            You should see your top-down token appear in the Preview Panel, if necessary use the node named "Transfomation" to resize, rotate and move it as you see fit.
+
+        <Aside type="note" title="Note">
+          You can create your own mask with an editing software like photoshop. Remember, white shade for full opacity, and black shade for full transparency. All available masks in the tool have a resolution of 400x400 pixels. 
+        </Aside>
+
+        <Aside type="note" title="Note">
+          The Image length and height of the original image are useful to keep in mind if you want to be able to scale your artwork/mask while keeping the ratio intact. Values are in pixels.
+        </Aside>
+
+            - **Edit the transformation for your artwork or the mask**  
+            The node named "Transformation" located on the left of both, the orange and the black frame, is useful if you want to tweak the size, rotation and position of your artwork and/or mask. If necessary, tweak the value as you see fit.
+
+              More information about the "Transformation node here.
+
+              <LinkCard title="Transformation Node" href="/jb2a-wiki/other-projects/token-animator-guide/#transformation-node" />
+
+        </steps>
+
+
+  </steps>
+
+
+
+
+
+<Aside type="note" title="You can skip sections">
+All following sections can be skipped individually since you don't need to use every single tab to create your animated token. If you're not interested by the content of a tab you can skip it, you don't have to follow a particular order with the tabs.
+</Aside>
+
+
+
+
+
+
+### PNG sequences
+
+<video  controls muted="true" ><source src={ pngsguide } type="video/webm"></source></video>
+
+Remember, you are not limited to one effect per tab. You can absolutely combine multiple effects together in a single tab.
+
+<steps>
+
+  1. **Browser Panel**  
+  If you have correctly set the relative paths as described in the section "Blender's Browser and Relative Paths" you should see a list of thumbnails in the Browser Panel. These are preview of image sequences ready to be added to your token. The list will grow if/when the tool receives future updates.
+
+  2. **Manager Panel**  
+  - Select with Left Mouse Button the sequence's slider you want to display.  
+  - Press the G key and move the slider to the desired position with your mouse.  
+  - Press Left Mouse Button to confirm (or Right Mouse Button to cancel).  
+  - Then select the corresponding cog to display the material of the effect in the Shader Panel.
+
+  3. **Shader Panel**  
+  The node named "Transformation" located inside the green frame is useful if you want to tweak the size, rotation and position of your artwork and/or mask. If necessary, tweak the value as you see fit.  
+  More information about the "Transformation node here.
+
+  <LinkCard title="Transformation Node" href="/jb2a-wiki/other-projects/token-animator-guide/#transformation-node" />
+
+
+    
+</steps>
+
+
+### Borders
+
+<video  controls muted="true" ><source src={ bordersguide } type="video/webm"></source></video>
+
+<steps>
+
+  1. **Browser Panel**  
+  If you have correctly set the relative paths as described in the section "Blender's Browser and Relative Paths" you should see a list of folders in the Browser Panel. Inside of them are   multiples token borders coming mostly from this source. Since there is more borders than layers in the Manager Panel. There is a relatively high chance that you'll want to load a different  one than those already set up. Browse folders until you find your desired token border.
+
+  2. **Manager Panel**  
+  - Choose any layer and select its name with Left Mouse Button.
+  - Press the TAB key once to enter in "Edit" Mode and edit the text. Backspace key to delete the current name.
+  - Once you renamed it, press the TAB key one more time to exit the "Edit" Mode.
+  - Select with Left Mouse Button the layer's slider you want to display.
+  - Press the G key and move the slider to the desired position with your mouse.
+  - Press Left Mouse Button to confirm (or Right Mouse Button to cancel).
+  - Then select the corresponding cog to display the material of the effect in the Shader Panel.
+
+  3. **Shader Panel**  
+  You should see 2 nodes inside a green frame.
+  First load the border you want by using on the folder icon on the node with the orange topbar.
+  It will open a window browser and select your border. Click on Open Image to confirm.
+  Then you can use the node named "Transformation" inside the green frame to resize, rotate the border as you see fit.
+
+  4. **Additional Node**  
+  On the left of the green frame, you should see a node named "Degree to Radian". You can edit its "factor" value to enable a rotation animation.  
+  The factor must be an integer for a seamlessly looped rotation.  
+  A positive value for a clockwise rotation, for example "1".  
+  A negative value for an anti-clockwise rotation, for example "-1".
+
+  <Aside type="note" title="Note">
+   Until I find a proper set up, you need to keep the "Translation X and Y" on the "Transformation" node to a value of 0 if you want the rotation to be centered.
+  </Aside>
+
+    
+</steps>
+
+
+### Shorts
+
+<video  controls muted="true" ><source src={ shortssguide } type="video/webm"></source></video>
+
+<steps>
+
+  1. **Browser Panel**  
+  If you have correctly set the relative paths as described in the section "Blender's Browser and Relative Paths" you should see a list of thumbnail in the Browser Panel. These are preview of   short animations ready to be added to your token.
+
+  2. **Manager Panel**  
+  - Select with Left Mouse Button the slider of the effect you want to display.
+  - Press the G key and move the slider to the desired position with your mouse.
+  - Press Left Mouse Button to confirm (or Right Mouse Button to cancel).
+  - Then select the corresponding cog to display the material of the effect in the Shader Panel.
+
+  3. **Shader Panel**  
+  This setup of node is different than the previous one with saw in the guide. Here you can tweak the effect transformation and coloration. You can also mask parts of the effect. Although this  feature is a work in progress and won't be explained at the moment.
+
+  4. **Effect Node**  
+  The main node, named "Short00x" is slightly similar than the "Transformation" node seen in the Artwork and Borders tabs. You can not only tweak the scale, and position of the effect but you   can also change its opacity, contrast, mask contrast and intensity.  
+  More information about the Effect node here.
+  <LinkCard title="Transformation Node" href="/jb2a-wiki/other-projects/token-animator-guide/#the-colorramp-node" />
+
+  5. **ColorRamp Node**
+  This node is useful when you want to change the color of the effect. It is very powerful and you can create a lot of color variations with it.
+  More information about the ColorRamp node here.  
+  <LinkCard title="Transformation Node" href="/jb2a-wiki/other-projects/token-animator-guide/#the-colorramp-node" />
+
+  6. **Masking Parts of the Effects**  
+  Work in Progress
+  - **Scale** : Scales on both axis.
+  - **Image length** : Enter the current length of the artwork/mask in pixels.
+  - **Image height** : Enter the current height of the artwork/mask in pixeks.
+  - **Translation X** (default : 0) : Moves only the artwork/mask on the X axis.
+  - **Translation Y** (default : 0) : Moves only the artwork/mask on the Y axis.
+  - #######
+  - **Opacity** : A value of 1 is opaque and a value of 0 is completely transparent. 
+  - **Constrast** : 0.5 is the default value. A value close to 0 decrease, a value close to 1 increase the constrast of the effect.
+  - **Mask Contrast** : Increasing this value chokes the effect. (It is a bit counter intuitive, I'd like to change that in a future update)
+  - **Intensity** : Increasing this value reduces the intensity of the effect. (Same as above)
+
+    
+</steps>
+
+
+#### The ColorRamp node.
+Once the settings of the node are tweaked, you might want to change the effect's coloration. On the right, there is a new node call "ColorRamp". It is essentially a gradient that you can customise.
+
+Something to understand to use this node properly : Without this node, the image sequence of the effect is in black and white. Colors set in the left side of the gradient tint black and dark shades of grey of the sequence and colors set in the right of the gradient tint white and light shades of grey of the sequence.
+If you want to learn more about this node, check its officiel documentation.
+<a href="https://docs.blender.org/manual/en/latest/modeling/geometry_nodes/color/color_ramp.html">color ramp official Blender documentation</a>
+
+  Editing the gradient
+  By default there are 4 color stops set on the gradient. To change the color of a color stop
+  Select it with the Left Mouse Button then click on the color box at the bottom of the ColorRamp with Left Mouse Button to open the color picker.
+  Then choose your color.
+  Repeat these steps for each color stop.
+  
+  Changing the position a color stop
+  Select a color stop with Left Mouse Button and hold it then move your mouse to the position you want. You call also enter a value between 0 and 1 in the "Pos" field.
+
+  Optional:
+  You can delete or add color stops.
+  To delete a color stop, select it with Left Mouse Button and click on the minus symbol. Simple as that.
+  To add a new color stop, select a stop with Left Mouse Button and click on the plus symbol. It will add a stop on the right side of the one you have just selected.
+
+  Switching the current ColorRamp to another one :
+  You should see 5 unlinked ColorRamp at the bottom of the Shader Panel. You can quickly switch one of them with the current one.
+  First, hold the ALT key and drag the current ColorAmp with Left Mouse Button to unlink the node without severing the links.
+  While still holding, move the ColorRamp to an empty space.
+  Then select one of the ColorRamp below and while holding Left Mouse Button move it on top of the link now free of the previous color node.
+  Release the mouse button, the node should automatically be linked and new colors should be applied to the effect in the Preview Panel. 
+
+You can also change the interpolation of the gradient by changing for another option in the right dropdown menu just above it. By default it is set to "Ease" but in some cases it can provide interesting result to change it to something else.
+
+ADVANCED
+
+By default, all Shorts start right at the beginning of the whole animation. You might want to tweak that. Unfortunately it requires to get a little bit more technical.
+
+#### Timeline Panel
+First, you need to expand the Timeline Panel. At the bottom of Blender's window, there is a collapsed panel name "Playback". 
+Move your cursor until it reaches the separation between the Browser Panel and the Playback Panel.
+Your cursor should change to a "Two-side" arrow.
+Click and hold the Left Mouse Button then drag your mouse toward the top of your screen until the timeline appears.
+A light grey area going from frame 0 to frame 96 represent the timeline of the whole animation.
+On the timeline, you should see a blue Playhead. Click and hold the Left Mouse Button on the playhead and move it back and forth between the frame 0 and the frame 20.
+You should see the effect react as the Playhead moves.
+
+#### Changing the starting point of a Short
+Select the main node named "Short00X" and press the TAB key to open the node.
+Press the Home key to frame all nodes inside the Shader Panel.
+Place your cursor around the middle of the node tree and Zoom In with the Mouse Wheel.
+You should see a node with an orange top bar larger than the rest. It should be named like this "Short00X_00000.png"
+Now the only thing you are interested with is the "Start Frame". By default it should be 0.
+Now return to the Timeline Panel and move the Playhead at the frame you want the Short to start.
+Read the number displayed on the Playhead and enter it in the "Start Frame" field.
+Now the Short should start at the right frame.
+Once you are done, keep your mouse cursor above the Shader Panel and press the TAB key to exit the node.   
+
+
+
+
+### Rings
+
+<video  controls muted="true" ><source src={ ringsguide } type="video/webm"></source></video>
+
+<steps>
+
+  1. **Browser Panel**  
+  If you have correctly set the relative paths as described in the section "Blender's Browser and Relative Paths" you should see a list of thumbnail in the Browser Panel. These are preview of   Ring animations ready to be added to your token.
+
+  2. **Manager Panel**  
+  - Select with Left Mouse Button the slider of the effect you want to display.
+  - Press the G key and move the slider to the desired position with your mouse.
+  - Press Left Mouse Button to confirm (or Right Mouse Button to cancel).
+  - Then select the corresponding cog to display the material of the effect in the Shader Panel.
+    
+</steps>
+
+### How to render the final result
+
+<video  controls muted="true" ><source src={ rendertabwebmpng } type="video/webm"></source></video>
+
+
+By defaut, rendered files will be located inside the "Render" folder at the root of the Tool.
+
+#### Naming and changing the location of the rendered File
+
+- In the Properties Panel, look at the "Output" menu.
+- In the field, it should be ``//Render\MyAnimatedToken.``
+- If the default location is fine for you, just change "MyAnimatedToken" by something else.
+- If you want to change the location, click with the Left Mouse Button on the folder symbol.
+- And choose your desired location, then enter the name of your file in the field at the botton of the Browser.
+- Then click on "Accept" or Press Enter.
+
+  <Aside type="caution" title="Warning!">
+    Blender will automatically overwrite any file with the same name (and extension) when you render your animation.
+    To avoid that and loose your previous render, before every render, add a suffix to the file name, for example :  
+    ``//Render\MyAnimatedToken01`` then hit "Render"  
+    ``//Render\MyAnimatedToken02`` then hit "Render"  
+    and so on.
+  </Aside>
+
+There are two ways to start to render the animation
+
+  - At the top left of Blender's window : "Render" Menu -> "Render Animation".
+  - Or simply press CTRL+F12
+
+But you might want to change some settings in the Properties Panel depending on what you want to do.
+
+#### Changing the resolution of the animation.
+
+  - Look at the Properties Panel, in the "Format" submenu
+  - Change the Resolution X and Y, values are un pixels
+  - Keep a ration of 1:1 for best result.
+  - You can also change the purcentage instead. If the resolution is 400x400, then at 50% the rendered file will have a resolution of 200x200 pixels. And at 200%, 800x800 pixels.
+
+In the second part of the video above, I'm showing you how to Render an Image Sequence instead of a Webm
+
+
+### Conclusion 
+
+This is the end, beautiful friend !
+This is the end of this guide. If you have questions, don't forget to check out the FAQ at the end of this guide. And if you don't find your answer, please join our Discord Server and I'll be happy to assist you. I hope this tool isn't to complicated and this guide provides enough information to help you to create awesome animated tokens !
+Don't hesitate to share your work on our Discord, just be careful to avoid any license issue. And in doubt, always share a link of the original work !
+
+
+## Blender Tips and Tricks
+
+### Transformation Node
+
+Inside the orange and the black frame, the left node named "Transformation" is exactly there for that.
+
+- **Scale** : Scales on both axis.
+- **Scale X** : Scales only on X axis.
+- **Scale Y** : Scales only on Y axis.
+- **Image length** : Enter the current length of the artwork/mask in pixels.
+- **Image height** : Enter the current height of the artwork/mask in pixeks.
+- **Angle** (default : 0) : Rotation of the artwork/mask in Degrees.
+- **Translation X** (default : 0) : Moves only the artwork/mask on the X axis.
+- **Translation Y** (default : 0) : Moves only the artwork/mask on the Y axis.
+
+  <Aside type="note" title="Note">
+   the Image length and height are useful if you want to be able to scale your artwork/mask while keeping its own ratio. Values are in pixels.
+  </Aside>
+
+
+
+
+
+## FAQ
+
+### General
+
+##### What format is recommended to use for my artwork ?
+If you don't need to use the transparency, PNG and JPG are fine.
+If you need the transparency for your top-down token for example, PNG is recommend since it has an alpha channel.
+Webp doesn't seem to be compatible with Blender.
+
+##### How long is the animation ?
+4 seconds at 24 frames per second for a total of 97 frames.
+
+##### The animation has a black frame at the end of it. What's wrong with it ?
+If you are using Firefox, please consider using another internet browser such as Chrome, Edge or Vivaldi.
+
+##### How can I preview the rendered webm file outside VTTs ?
+Open the webm with your prefered internet browser. Avoid Firefox, it has know issue concerning webms.
+When a webm is opened with Chrome (for example), you can can make it loop by right clicking on the player to open the contextual menu and select the "Loop" option.
+
+##### Can I add my own animations ?
+It should be doable. Although I haven't written a guide about it yet.
+If you know Blender enough to do it by yourself, here there are a couple of things to know.
+The entire Blender file is setup for animations of 97 frames for a duration of 4 seconds at 24 frames per seconds. So if you want your animations to loop, it has to follow these requirements. It you want to add an effect like those in the SHORTS tab, then it only needs less than 97 frames.
+
+##### Can I use this commercially ?
+Not at the moment no.
+
+
+### Preview Panel
+
+##### The Preview Panel is completely grey. What did I do wrong ?
+This is because the shading mode of the preview panel is in "Solid" mode. You'll have to manually switch it to "Material" mode.
+
+##### The point of view of the Preview Panel is wrong, how can I fix it ?
+While having your cursor above the Preview Panel, press the Numpad 0 to return to the camera point of view.
+
+##### The Preview Panel is hightlighted in Orange and Blender doesn't behave as it used to. What did I do wrong ?
+It must be because you switched inadvertently in Edit Mode. Press TAB once, to switch back to Object Mode.
+
+
+### Manager Panel
+
+##### The point of view of the Manager Panel is wrong, how can I fix it ?
+While having your cursor above the Manager Panel, press the Numpad 7 to return to orthographic Top-View. Then use :
+
+Mouse Wheel to zoom in or out the view. To locate the corresponding Manager Panel.
+CTRL + Middle Mouse Button to pan the view. To center the Manager Panel.
+
+##### A slider in the Manager Panel is hightlighted in Orange and Blender doesn't behave as it used to. What did I do wrong ?
+It must be because you switched inadvertently in Edit Mode. Press TAB once, to switch back to Object Mode.
+
+
+### Shader Panel
+
+##### I can't seem to fing a way to edit the effect in the Shader Panel. Please Help ?
+If you see a group of nodes inside a red frame called "Cursor Material" then you must first select with Left Mouse Button the corresponding cog of the effect you want, in the Manager Panel, to display its material inside the Shader Panel.
+
+##### When I change values on a node, nothing is happening in the Preview Panel or it changes the wrong effect. Is there something wrong ?
+Before editing values of a node in the Shader Panel, be sure to be in the right tab and, in the Manager Panel, you have selected with Left Mouse Button the right cog corresponding to the effect you are trying to edit.
+
+
+### Render Panel
+
+##### I want to render an image sequence instead of a webm format. How can I do that ?
+Follow these instructions shown in the video.
+
+##### The rendered webm has a black background. How can I make it transparent ?
+In the Render tab, look at the Properties Panel, in the Output submenu,below the "File Format" setting, make sure the "Color" setting is set to "RGBA" instead of "RGB".
+
+
+
+All the content is registered under the Creative Commons License Attribution-NonCommercial CC BY-NC-SA. You can click here to know more about this.
+
+This means anyone can use it, share it or modify it as long as we are credited in text with our name JB2A and a link to our website or Patreon page somewhere in the description of the content you're distributing.
+
+It cannot be used commercially.
+
+
