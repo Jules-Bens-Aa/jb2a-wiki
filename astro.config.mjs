@@ -138,7 +138,7 @@ export default defineConfig({
                 label: 'Other Projects',
                 collapsed: true,
                 items: [
-                    'other-projects/other-projects-introduction',
+                    'other-projects/other-projects-presentation',
                     'other-projects/token-animator-guide',
                     'other-projects/extras-free-module'
                 ]
