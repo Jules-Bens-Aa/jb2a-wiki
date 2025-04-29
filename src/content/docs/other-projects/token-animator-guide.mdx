@@ -166,10 +166,10 @@ You'll notice that the UI layout is different than the Default UI of Blender. It
     </TabItem>
 
     <TabItem label="Tabs">
-      Tabs in Blender are mostly used to have a different UI layout depending of you want to do, for example modeling, texture editing, sculpting, etc ... But in this case I decided to use them to      divide effects into groups. It should make it easier to navigate between type of effects and to allow you to go straight to what you want to achieve. They are located on the top part of     Blender's UI.
+      Tabs in Blender are mostly used to have a different UI layout depending of you want to do, for example modeling, texture editing, sculpting, etc ... But in this case I decided to use them to divide effects into groups. It should make it easier to navigate between type of effects and to allow you to go straight to what you want to achieve. They are located on the top part of Blender's UI.
       They are explained more in depth later in the guide.
 
-      Video showing me switching between tabs ?
+      {/*Video showing me switching between tabs ?*/}
     </TabItem>
 
     <TabItem label="Manager">
@@ -207,14 +207,16 @@ You'll notice that the UI layout is different than the Default UI of Blender. It
       This is a 3D viewport of Blender but the point of view from a camera with an orthographic projection. The Grid shows you the size of an effect/png in pixels but it won't be visible on the       final render. 
       Use the Spacebar to play or pause the animation in the Preview. Depending on your computer, Blender should need to play the entire animation once so you can preview it at the right speed.       Keep in mind that if you have a low-end computer, it is highly possible that the preview will always be slower than the final result.
 
-      Video of the preview panel in use.
+      <video  controls muted="true" ><source src={ previewpanelexplained } type="video/webm"></source></video>
 
-      **Shortcuts to remember :**
-      - Spacebar to play/pause the animation.
-      - Mouse Wheel to zoom in or out the view.
-      - Middle Mouse Button to orbit the view. (Should not be needed)
-      - CTRL + Middle Mouse Button to pan the view.
-      - Numpad 0 to toggle the camera point of view. (In case you lost focus on the camera's point of view)
+      <Aside type="note" title="Shortcuts to remember">
+        - Spacebar to play/pause the animation.
+        - Mouse Wheel to zoom in or out the view.
+        - Middle Mouse Button to orbit the view. (Should not be needed)
+        - CTRL + Middle Mouse Button to pan the view.
+        - Numpad 0 to toggle the camera point of view. (In case you lost focus on the camera's point of view)
+      </Aside>
+
     </TabItem>
 
     <TabItem label="Shader">
@@ -223,19 +225,24 @@ You'll notice that the UI layout is different than the Default UI of Blender. It
       If you want to learn how nodes are working, you can read the documentation of Blender. https://docs.blender.org/manual/en/2.79/render/blender_render/materials/nodes/introduction.html
       To edit an artwork, a border or an animated effect in the Shader Panel, you must first select its corresponding cog in the Manager Panel. Only then the right shader will be displayed here and you'll be able to edit it. Don't forget to change the slider's position to something higher than position 0 or the effect will be hidden in the Preview Panel and you won't be able to see the changes you have made.
 
-      Video of the shader panel in use.
+      <video  controls muted="true" ><source src={ shaderpanelexplained } type="video/webm"></source></video>
 
-      **Shortcuts to remember :**
-      - Mouse Wheel to zoom in or out the view.
-      - Middle Mouse Button to pan the view.
-      - Home Key to frame all the node.
-      - Numpad . to frame the selected node.
-      - Hold CTRL + Right Mouse Button to cut a node link.
-      - Hold Alt and drag a node with Left Mouse Button to unlink it without severing the link.
-      - Press the G Key while having a node selected to move it. You can also hold Left Mouse Button on a node to do the exact same thing.
+      <Aside type="note" title="Shortcuts to remember">
+        - Mouse Wheel to zoom in or out the view.
+        - Middle Mouse Button to pan the view.
+        - Home Key to frame all the node.
+        - Numpad . to frame the selected node.
+        - Hold CTRL + Right Mouse Button to cut a node link.
+        - Hold Alt and drag a node with Left Mouse Button to unlink it without severing the link.
+        - Press the G Key while having a node selected to move it. You can also hold Left Mouse Button on a node to do the exact same thing.
+     </Aside>
+
     </TabItem>
 
     <TabItem label="Timeline">
+
+      <video  controls muted="true" ><source src={ timelinepanelexplained } type="video/webm"></source></video>
+
       Useful in very few cases. It is collapsed at the botton of Blender's window.
       To expand the Timeline Panel, 
       Move your cursor until it reaches the separation between the Browser Panel and the Playback Panel.
@@ -243,7 +250,7 @@ You'll notice that the UI layout is different than the Default UI of Blender. It
       Click and hold the Left Mouse Button then drag your mouse toward the top of your screen until the timeline appears.
       A light grey area going from frame 0 to frame 96 represent the timeline of the whole animation.
       To hide the panel, same principle but drag your mouse toward the bottom of your screen instead.
-      Moving the Playhead
+      - **Moving the Playhead**
       On the timeline, you should see a blue Playhead. You can move it to see specific frame in the animation.
       To move the Play head, click and hold the Left Mouse Button on the playhead then use your mouse to drag it.
     </TabItem>
@@ -545,14 +552,14 @@ Remember, you are not limited to one effect per tab. You can absolutely combine 
   This setup of node is different than the previous one with saw in the guide. Here you can tweak the effect transformation and coloration. You can also mask parts of the effect. Although this  feature is a work in progress and won't be explained at the moment.
 
   4. **Effect Node**  
-  The main node, named "Short00x" is slightly similar than the "Transformation" node seen in the Artwork and Borders tabs. You can not only tweak the scale, and position of the effect but you   can also change its opacity, contrast, mask contrast and intensity.  
+  The main node, named "Short00x" is slightly similar than the "Transformation" node seen in the Artwork and Borders tabs. You can not only tweak the scale, and position of the effect but you can also change its opacity, contrast, mask contrast and intensity.  
   More information about the Effect node here.
   <LinkCard title="Transformation Node" href="/jb2a-wiki/other-projects/token-animator-guide/#the-colorramp-node" />
 
   5. **ColorRamp Node**
   This node is useful when you want to change the color of the effect. It is very powerful and you can create a lot of color variations with it.
   More information about the ColorRamp node here.  
-  <LinkCard title="Transformation Node" href="/jb2a-wiki/other-projects/token-animator-guide/#the-colorramp-node" />
+  <LinkCard title="Color Ramp Node" href="/jb2a-wiki/other-projects/token-animator-guide/#the-colorramp-node" />
 
   6. **Masking Parts of the Effects**  
   Work in Progress
@@ -689,7 +696,7 @@ In the second part of the video above, I'm showing you how to Render an Image Se
 ### Conclusion 
 
 This is the end, beautiful friend !
-This is the end of this guide. If you have questions, don't forget to check out the FAQ at the end of this guide. And if you don't find your answer, please join our Discord Server and I'll be happy to assist you. I hope this tool isn't to complicated and this guide provides enough information to help you to create awesome animated tokens !
+This is the end of this guide. If you have questions, don't forget to check out the FAQ at the end of this guide. And if you don't find your answer, please join our [Discord server](https://discord.gg/gmd8MAPX4m) and I'll be happy to assist you. I hope this tool isn't to complicated and this guide provides enough information to help you to create awesome animated tokens !
 Don't hesitate to share your work on our Discord, just be careful to avoid any license issue. And in doubt, always share a link of the original work !
 
 
@@ -737,7 +744,7 @@ When a webm is opened with Chrome (for example), you can can make it loop by rig
 
 ##### Can I add my own animations ?
 It should be doable. Although I haven't written a guide about it yet.
-If you know Blender enough to do it by yourself, here there are a couple of things to know.
+If you know Blender enough to do it by yourself, there are a couple of things to know.
 The entire Blender file is setup for animations of 97 frames for a duration of 4 seconds at 24 frames per seconds. So if you want your animations to loop, it has to follow these requirements. It you want to add an effect like those in the SHORTS tab, then it only needs less than 97 frames.
 
 ##### Can I use this commercially ?
@@ -780,17 +787,20 @@ Before editing values of a node in the Shader Panel, be sure to be in the right 
 ### Render Panel
 
 ##### I want to render an image sequence instead of a webm format. How can I do that ?
-Follow these instructions shown in the video.
+Follow the instructions shown in the second part of the video.
+<LinkCard title="Panels Descriptions" href="/jb2a-wiki/other-projects/token-animator-guide/#how-to-render-the-final-result" />
 
 ##### The rendered webm has a black background. How can I make it transparent ?
 In the Render tab, look at the Properties Panel, in the Output submenu,below the "File Format" setting, make sure the "Color" setting is set to "RGBA" instead of "RGB".
 
+<Aside type="note" title="Licence">
+  All the content is registered under the Creative Commons License Attribution-NonCommercial CC BY-NC-SA.  
+
+  This means anyone can use it, share it or modify it as long as we are credited in text with our name JB2A and a link to our website or Patreon page somewhere in the description of the content you're distributing.  
+
+  It cannot be used commercially.
+</Aside>
 
 
-All the content is registered under the Creative Commons License Attribution-NonCommercial CC BY-NC-SA. You can click here to know more about this.
-
-This means anyone can use it, share it or modify it as long as we are credited in text with our name JB2A and a link to our website or Patreon page somewhere in the description of the content you're distributing.
-
-It cannot be used commercially.
 
 
