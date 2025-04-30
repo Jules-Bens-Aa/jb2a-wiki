@@ -14,6 +14,16 @@ import borderexamples from '/src/assets/img/token-animator/Image/Borders_Example
 import stageexamples from '/src/assets/img/token-animator/Image/Stage_Example.png'
 import rendertab from '/src/assets/img/token-animator/Image/RenderTab.png'
 
+import thumbnailArtwork from '/src/assets/img/token-animator/Thumbnails/Guide_Tab.png'
+import thumbnailPngs from '/src/assets/img/token-animator/Thumbnails/Guide_Tab2.png'
+import thumbnailBorders from '/src/assets/img/token-animator/Thumbnails/Guide_Tab3.png'
+import thumbnailShorts from '/src/assets/img/token-animator/Thumbnails/Guide_Tab4.png'
+import thumbnailRings from '/src/assets/img/token-animator/Thumbnails/Guide_Tab5.png'
+import thumbnailParticles from '/src/assets/img/token-animator/Thumbnails/Guide_Tab6.png'
+import thumbnailStages from '/src/assets/img/token-animator/Thumbnails/Guide_Tab7.png'
+import thumbnailStageAnims from '/src/assets/img/token-animator/Thumbnails/Guide_Tab8.png'
+import thumbnailRender from '/src/assets/img/token-animator/Thumbnails/Guide_Tab9.png'
+
 
 
 
@@ -71,25 +81,25 @@ Here are a few examples of what you can do with it.
 
 <div class="responsive">
   <div class="gallery">
-      <video  controls muted="true" ><source src={ demo01 } type="video/webm"></source></video>
+      <video  autoplay loop muted="true" ><source src={ demo01 } type="video/webm"></source></video>
   </div>
 </div>
 
 <div class="responsive">
   <div class="gallery">
-      <video  controls muted="true" ><source src={ demo02 } type="video/webm"></source></video>
+      <video  autoplay loop muted="true" ><source src={ demo02 } type="video/webm"></source></video>
   </div>
 </div>
 
 <div class="responsive">
   <div class="gallery">
-      <video  controls muted="true" ><source src={ demo03 } type="video/webm"></source></video>
+      <video  autoplay loop muted="true" ><source src={ demo03 } type="video/webm"></source></video>
   </div>
 </div>
 
 <div class="responsive">
   <div class="gallery">
-      <video  controls muted="true" ><source src={ demo04 } type="video/webm"></source></video>
+      <video  autoplay loop muted="true" ><source src={ demo04 } type="video/webm"></source></video>
   </div>
 </div>
 
@@ -119,8 +129,7 @@ Then download the archive of the Token Animator. It contains the entire tool. Yo
 Extract the archive in your prefered location on your computer.
 Inside the archive you should see something like this :
 
-Visual of the folder
-<p align="center"><Image src={winexplorer} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+<p><Image src={winexplorer} alt="Landing Page of FoundryVTT" style="width: 35%;"/></p>
 
 That done, the installation is complete. But before jumping right into the fun part, you might need to know a bit more about how to use Blender.
 
@@ -284,13 +293,7 @@ Fortunately, you don't have to do this for each assets. As long as you don't cha
     - Inside Blender, Go the the File menu and Save As a new file.
   </Aside>
 
-
-
-
-
-
-
-  <Aside type="note" title="Note">
+  <Aside type="tip" title="Tip">
     After saving the file for the first time, Blender will create a new file with the *.blend1 extension. It will be used by the software as a backup file if for some reason you can't open the main file.
   </Aside>
 
@@ -316,19 +319,40 @@ I divided them in two categories.
 
 #### Builder Tabs
 
+
+thumbnailPngs
+thumbnailBorders
+thumbnailShorts
+thumbnailRings
+thumbnailParticles
+thumbnailStages
+thumbnailStageAnims
+thumbnailRender
+
 <Tabs syncKey="builder-tabs">
 
     <TabItem label="Artworks">
+    <div class="video-container">
+    <iframe align="center" poster= {thumbnailArtwork} width="auto" height="auto" src="https://www.youtube.com/embed/QEPgOwiZhLk?si=P-8S670fcXN0DDVl" title="YouTube video player" frameborder="0" allow="accelerometer;    autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+      {/* <p align="center"><Image src={thumbnailArtwork} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p> */}
       This tabs is where you'll load your token image. It can be any artwork and you'll be able to use a mask if necessary without having to edit it with another software.
     </TabItem>
 
     <TabItem label="PNGs">
+    <div class="video-container">
+    <iframe width="560" height="500" src="https://www.youtube.com/embed/QEPgOwiZhLk?si=girJu9uBuFbJs61F" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write;    encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+      {/* <p align="center"><Image src={thumbnailPngs} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p> */}
       Mostly composed of sequences of pngs representing artworks with effects embeded on top of them. 
       For example, rotating cogs, shimmering borders, etc...
     </TabItem>
     
     <TabItem label="Borders">
-      For now most of available borders are from the github XXXX. But more will come in the future. 
+      <div class="video-container">
+      <iframe width="560" height="315" src="https://www.youtube.com/embed/cA7eoFe7dgY?si=rVQQfg-MboJoMRHP" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      {/* <p align="center"><Image src={thumbnailBorders} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p> */}
       If you want us to include specific borders you like be sure they are under a suitable license.
 
       <p align="center"><Image src={borderexamples} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
@@ -336,19 +360,35 @@ I divided them in two categories.
     </TabItem>
 
     <TabItem label="Shorts">
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/NBaOvDQEsUI?si=OCzMaUzyufCdnu_-" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      {/* <p align="center"><Image src={thumbnailShorts} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p> */}
       Very brief effects, the final animation has 97 frames in total. These effects will be shorter than that. 
       For example a glint or a shimmer.
     </TabItem>
 
     <TabItem label="Rings">
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/Mc7mC09ZpeQ?si=uHx78tkdKQ6FrKMe" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      {/* <p align="center"><Image src={thumbnailRings} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p> */}
       Speaks by itself, this effects are in a ring shape and will loop seamlessly.
     </TabItem>
 
     <TabItem label="Particles">
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/ZlosuZ9-4mw?si=EI4Ni4Kxg3mBlSxB" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      {/* <p align="center"><Image src={thumbnailParticles} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p> */}
       Same as for the Rings, pretty straight forward. This tab will gather all animated effects with particles and will loop seamlessly.
     </TabItem>
 
     <TabItem label="Stages">
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/N_tjmc0MM8Q?si=ZAGU3QysOBjZZCqg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      {/* <p align="center"><Image src={thumbnailStages} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p> */}
       This one is a bit an extra. I liked the idea of adding stages on topdown tokens. Like figurines when we play around a table. I don't know if it will be popular. 
       Different shapes are available, and also different textures for the flat side of the stage. For example, Cobblestone, Woodplanks, etc ...
 
@@ -356,6 +396,10 @@ I divided them in two categories.
     </TabItem>
 
     <TabItem label="S-Anim">
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/N14T2DNJxpI?si=nvjJUmr1xKG4mx_7" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      {/* <p align="center"><Image src={thumbnailStageAnims} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p> */}
       Related to the previous tabs, these are animations made to be added on top of the stages. Could be useful to simply highlight an imporant NPC.
     </TabItem>
 
@@ -369,6 +413,10 @@ I divided them in two categories.
 <Tabs syncKey="utility-tabs">
 
     <TabItem label="Render">
+      <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/jgStLe0D56M?si=Vv2E1uTYCGjFAFWE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      {/* <p align="center"><Image src={thumbnailRender} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p> */}
       When your token is ready to render, you can hit **CTRL+F12** to render your animated token in a webm format. Or you can use this tab to change the settings to render it to another format or       an image sequence.
       You can also change its resolution or the name of the rendered file.
       <p align="center"><Image src={rendertab} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>

@@ -140,7 +140,8 @@ export default defineConfig({
                 items: [
                     'other-projects/other-projects-presentation',
                     'other-projects/token-animator-guide',
-                    'other-projects/extras-free-module'
+                    'other-projects/extras-free-module',
+                    'other-projects/music-puzzle'
                 ]
             },
             {
