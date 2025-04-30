@@ -20,7 +20,7 @@ export default defineConfig({
             starlightImageZoom(),
             starlightHeadingBadges(),
             starlightBlog({
-                title: "patchnotes",
+                title: "Patch Notes",
                 postCount: 10,
                 recentPostCount: 6,
                 navigation: 'header-start',
@@ -139,7 +139,7 @@ export default defineConfig({
                 label: 'Other Projects',
                 collapsed: true,
                 items: [
-                    'other-projects/other-projects-presentation',
+                    'other-projects/other-projects-overview',
                     'other-projects/token-animator-guide',
                     'other-projects/extras-free-module',
                     'other-projects/music-puzzle'
