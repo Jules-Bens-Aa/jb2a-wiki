@@ -23,7 +23,8 @@ export default defineConfig({
                 title: "patchnotes",
                 postCount: 10,
                 recentPostCount: 6,
-                navigation: 'header-start'
+                navigation: 'header-start',
+                prefix: 'patchnotes'
             })
         ],
 
