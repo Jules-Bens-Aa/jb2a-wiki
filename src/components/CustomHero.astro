@@ -4,7 +4,7 @@ import { PAGE_TITLE_ID } from '../../node_modules/@astrojs/starlight/constants';
 import type { Props } from '../../node_modules/@astrojs/starlight/props';
 import LinkButton from '../../node_modules/@astrojs/starlight/user-components/LinkButton.astro';
 
-const { data } = Astro.props.entry;
+const { data } = Astro.locals.starlightRoute.entry;
 const { title = data.title, tagline, image, actions = [] } = data.hero || {};
 
 const imageAttrs = {

@@ -263,3 +263,24 @@ Code here
 +   console.log('New and shiny code!')
   }
 ```
+
+## Update Astro, Starlight and Plugins
+
+To check currently installed versions, look in the package.json
+Also ``pnpm astro info`` can be a good recap to send for troubleshooting astro itself, nodeJS, package manager...etc
+
+For Astro and Starlight, it should be as easy as this: 
+```js
+pnpm dlx @astrojs/upgrade
+```
+
+Then check the changelog for any breaking changes relevant to our build.
+Astro: https://github.com/withastro/astro/blob/main/packages/astro/CHANGELOG.md
+Starlight: https://github.com/withastro/starlight/blob/main/packages/starlight/CHANGELOG.md
+
+
+For each plugin, check in Astro config ``astro.config.mjs``, in the imports for the plugins to get the proper name. 
+For example for Starlight Heading Badges:
+```js
+pnpm i starlight-heading-badges@latest
+```

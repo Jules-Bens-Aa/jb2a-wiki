@@ -3,6 +3,7 @@ import starlight from '@astrojs/starlight';
 
 import starlightHeadingBadges from 'starlight-heading-badges'
 import starlightImageZoom from 'starlight-image-zoom'
+import starlightBlog from 'starlight-blog'
 
 
 // https://astro.build/config
@@ -11,12 +12,19 @@ export default defineConfig({
     // ? 'https://jules-bens-aa.github.io' : 'http://localhost:4321',
     site: 'https://jules-bens-aa.github.io',
     base: '/jb2a-wiki',
+
     integrations: [starlight({
 
 // Plugins        
         plugins: [
             starlightImageZoom(),
-            starlightHeadingBadges()
+            starlightHeadingBadges(),
+            starlightBlog({
+                title: "patchnotes",
+                postCount: 10,
+                recentPostCount: 6,
+                navigation: 'header-start'
+            })
         ],
 
 // Website Config        
@@ -26,12 +34,28 @@ export default defineConfig({
             dark: './src/assets/img/wikilogo-dark-512x128.webp',
             replacesTitle: true
           },
-        social: {
-            github: 'https://github.com/Jules-Bens-Aa/jb2a-wiki',
-            discord: 'https://discord.gg/gmd8MAPX4m',
-            patreon: 'https://www.patreon.com/JB2A',
-            youtube: 'https://www.youtube.com/channel/UCqLusRtLV7GXJo_xNNM3dOw',
-        },
+        social: [
+            {
+                icon: 'github',
+                label: 'Github',
+                href: 'https://github.com/Jules-Bens-Aa/jb2a-wiki'
+            },
+            {
+                icon: 'discord',
+                label: 'Discord',
+                href: 'https://discord.gg/gmd8MAPX4m'
+            },
+            {
+                icon: 'patreon',
+                label: 'Patreon',
+                href: 'https://www.patreon.com/JB2A'
+            },
+            {
+                icon: 'youtube',
+                label: 'Youtube',
+                href: 'https://www.youtube.com/channel/UCqLusRtLV7GXJo_xNNM3dOw'
+            }
+        ],
         editLink: {
             baseUrl: 'https://github.com/Jules-Bens-Aa/jb2a-wiki/tree/main',
           }, 
@@ -90,10 +114,6 @@ export default defineConfig({
                 link: '',
                 attrs: {style: '  border-bottom: 1px solid var(--sl-color-hairline); border-radius: 0px; opacity: 1'}
             },
-            // { 
-            //     label: 'Other Projects',
-            //     link: '/other-projects',
-            // },
             // {
             //     label: 'Frequently Asked Questions',
             //     collapsed: true,
@@ -114,6 +134,16 @@ export default defineConfig({
                     'troubleshooting/online-hosting',           
                 ]
             },
+            { 
+                label: 'Other Projects',
+                collapsed: true,
+                items: [
+                    'other-projects/other-projects-presentation',
+                    'other-projects/token-animator-guide',
+                    'other-projects/extras-free-module',
+                    'other-projects/music-puzzle'
+                ]
+            },
             {
                 label: 'External Resources',
                 collapsed: true,
@@ -124,17 +154,8 @@ export default defineConfig({
                 ]
             },
             {
-                label: 'Patch Notes',
-                collapsed: true,
-                items: [
-                    // 'patchnotes/pn-demo',
-                    'patchnotes/pn-main'
-                ]
-            },
-            {
                 slug: 'uncategorised/contribute-wiki'
             },
-
             // {
             //     label: 'Template',
             //     collapsed: true,

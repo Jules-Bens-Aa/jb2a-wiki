@@ -1,0 +1,65 @@
+---
+title: Extras - Free module
+---
+import { LinkCard, Steps, LinkButton, Tabs, TabItem } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+
+import fvttLandingPage from '/src/assets/img/fvtt-landingpage.png'
+import fvttAddOnModules from '/src/assets/img/fvtt-addon-modules.png'
+import fvttAddOnModulesInstall from '/src/assets/img/fvtt-addon-modules-install.png'
+import fvttManageModule from '/src/assets/img/fvtt-managemodules.png'
+import fvttModuleManagement from '/src/assets/img/fvtt-modulemanagement.png'
+
+import jb2aPatreonHomePage from '/src/assets/img/jb2a-patreon-homepage.png'
+import jb2aPatreonMasterPost from '/src/assets/img/jb2a-patreon-masterpost.png'
+import jb2aPatreonManifestLink from '/src/assets/img/jb2a-patreon-manifestlink.png'
+import extradatabase from '/src/assets/img/jb2a-extras-database.png'
+
+## How to Install
+
+<Tabs syncKey="hostingMethod">
+    
+    <TabItem label="Manifest Link">
+        <Steps>
+        1. Right-click the following manifest link and choose "Copy link adress":
+
+                https://github.com/Jules-Bens-Aa/jb2a-extras/releases/latest/download/module.json
+
+        2. Go to the FoundryVTT landing page.
+
+            <p align="center"><Image src={fvttLandingPage} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+
+        6. Click on the “Install Module”.
+
+            <p align="center"><Image src={fvttAddOnModules} alt="Add-On Modules Tab on FoundryVTT" style="width: 50%;"/></p>
+
+        7. Paste the manifest link inside the field named "Manifest URL". Click “Install” and the installation process will occur.
+
+            <p align="center"><Image src={fvttAddOnModulesInstall} alt="Pasting the manifest link and click on 'Install'" style="width: 50%;"/></p>
+
+        8. Once installed, you need to enable our module in your world. Start your world and click on “Manage Modules” in the Settings tab.
+
+            <p align="center"><Image src={fvttManageModule} alt="Open 'Manage Module' in the world settings" style="width: 50%;"/></p>
+
+        9. Finally find our module and enable it. That's it, our JB2A-Extras module is ready for you to use.
+
+            <p align="center"><Image src={fvttModuleManagement} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
+
+        </Steps>
+    </TabItem>
+
+        <TabItem label="Manual Download">
+
+            Alternatively, you can download the files from the Github Project. Find the Green button named Code and you'll find the option to download the zip.
+
+<LinkButton href="https://github.com/Jules-Bens-Aa/jb2a-extras" icon="github" style="margin-left: 20%;">JB2A-Extra Github Project</LinkButton>
+    </TabItem>
+
+</Tabs>
+
+## How to Use
+
+Once activated, you can find these animations in the Sequencer Database Viewer. You'll notice this library of assets is registered under ``jb2a.extras``
+<p align="center"><Image src={extradatabase} alt="jb2a-extra database" style="width: 50%;"/></p>
+You can always find the animations via the browser if you need to drag them and create tiles, or you can use their datapath to use in macros and other modules.
+
