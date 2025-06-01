@@ -4,6 +4,13 @@ title: Music Puzzle Guide
 import { Aside, Cards, CardGrid, FileTree, LinkButton, LinkCard, Steps, Tabs, TabItem } from '@astrojs/starlight/components';
 import { Image } from 'astro:assets';
 
+
+import fvttLandingPage from '/src/assets/img/fvtt-landingpage.png'
+import fvttAddOnModules from '/src/assets/img/fvtt-addon-modules.png'
+import fvttAddOnModulesInstall from '/src/assets/img/fvtt-addon-modules-install.png'
+import fvttManageModule from '/src/assets/img/fvtt-managemodules.png'
+import fvttModuleManagement from '/src/assets/img/fvtt-modulemanagement.png'
+
 import macroImport from '/src/assets/img/music-puzzle/01music-puzzle-Compendium.png'
 import macroDrag from '/src/assets/img/music-puzzle/02music-puzzle-MacroDrag.png'
 import setup from '/src/assets/img/music-puzzle/03music-puzzle-Setup.png'
@@ -37,14 +44,33 @@ It also requires these modules to be installed as dependencies:
 - <a href="https://foundryvtt.com/packages/socketlib">Socketlib</a>
 
 #### Install the module
-<steps>
+<Steps>
     1. Right-click the manifest link below and choose "Copy Link Address" :   
-    https://github.com/Jules-Bens-Aa/jb2a_puzzle/releases/latest/download/module.json
+            https://github.com/Jules-Bens-Aa/jb2a_puzzle/releases/latest/download/module.json
     2. Go to your FoundryVTT's "Add-on Modules" tab
+
+            <p align="center"><Image src={fvttLandingPage} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+
     3. Click on "Install Module"
+
+            <p align="center"><Image src={fvttAddOnModules} alt="Add-On Modules Tab on FoundryVTT" style="width: 50%;"/></p>            
+
     5. Paste the manifest link in the relevant field and click install.
-    6. Don't forget to install the modules listed as dependencies in the previous section
-</steps>
+
+            <p align="center"><Image src={fvttAddOnModulesInstall} alt="Pasting the manifest link and click on 'Install'" style="width: 50%;"/></p>
+
+    6. Don't forget to install the modules listed as dependencies in the previous section.
+
+            <LinkCard title="Dependencies to install" href="/jb2a-wiki/other-projects/music-puzzle/" />
+            
+    8. Once installed, you need to enable our module in your world. Start your world and click on “Manage Modules” in the Settings tab.
+
+            <p align="center"><Image src={fvttManageModule} alt="Open 'Manage Module' in the world settings" style="width: 50%;"/></p>
+
+    9. Finally find our module and enable it. That's it, our JB2A-Extras module is ready for you to use.
+
+            <p align="center"><Image src={fvttModuleManagement} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
+</Steps>
 
 #### Setup the Scene
 
@@ -55,7 +81,7 @@ It also requires these modules to be installed as dependencies:
     *Music track is ``Deadlock``, by <a href="https://www.purple-planet.com/">Purple Planet Music</a>* 
   </Aside>
 
-<steps>
+<Steps>
 
     1. Once the module is activated, open the Compendium tab and right-click on the "JB2A PUZLLE MACROS" compendium and choose "import all"
 
@@ -90,7 +116,7 @@ It also requires these modules to be installed as dependencies:
         <p align="center"><Image src={playerSteps} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
 
 
-</steps>
+</Steps>
 
 #### Cleanup
 
