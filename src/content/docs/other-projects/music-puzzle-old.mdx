@@ -1,0 +1,144 @@
+---
+title: Music Puzzle Guide
+---
+import { Aside, Cards, CardGrid, FileTree, LinkButton, LinkCard, Steps, Tabs, TabItem } from '@astrojs/starlight/components';
+import { Image } from 'astro:assets';
+
+
+import fvttLandingPage from '/src/assets/img/fvtt-landingpage.png'
+import fvttAddOnModules from '/src/assets/img/fvtt-addon-modules.png'
+import fvttAddOnModulesInstall from '/src/assets/img/fvtt-addon-modules-install.png'
+import fvttManageModule from '/src/assets/img/fvtt-managemodules.png'
+import fvttModuleManagement from '/src/assets/img/fvtt-modulemanagement.png'
+
+import macroImport from '/src/assets/img/music-puzzle/01music-puzzle-Compendium.png'
+import macroDrag from '/src/assets/img/music-puzzle/02music-puzzle-MacroDrag.png'
+import setup from '/src/assets/img/music-puzzle/03music-puzzle-Setup.png'
+import walls from '/src/assets/img/music-puzzle/04music-puzzle-Walls.png'
+import door from '/src/assets/img/music-puzzle/05music-puzzle-Door.png'
+import pressurePlate from '/src/assets/img/music-puzzle/06music-puzzle-PressurePlate.png'
+import playerSteps from '/src/assets/img/music-puzzle/07music-puzzle-PlayerSteps.png'
+
+import videoguide from '/src/assets/vid/MusicPuzzleV017.mp4'
+
+
+
+## Puzzle Objective
+
+The first time a player steps on the pressure plate, a sequence of four notes will play.  
+This sequence of notes will be inscribed in a GM-only journal.  
+The players then have to remember the sequence and input it in their shared journal by stepping on the correct tiles in the same order. 
+When the players think they have the right sequence, one of them can step on the pressure plate once more to check if they have the correct answer.  
+If the pattern is the same, the door will open. The twist is they only have 5 seconds before the door closes again and a new pattern starts. I felt it was my duty to come up with a way to split the party!😈
+
+## How to Install
+
+  <Aside type="note" title="Previous version">
+    If you're on Foundry VTT V13, here is the new guide:
+  </Aside>
+  <LinkCard title="Music Puzzle - Previous Versions" href="/jb2a-wiki/other-projects/music-puzzle" />
+
+#### Prerequisites
+
+This module is free but it requires the JB2A Patreon collection (The music notes were added a long time ago so you don't necessarily need the latest version)  
+It should work for FoundryVTT V10, V11 and V12.  
+It also requires these modules to be installed as dependencies: 
+- <a href="https://foundryvtt.com/packages/sequencer">Sequencer</a>
+- <a href="https://foundryvtt.com/packages/tagger">Tagger</a>
+- <a href="https://foundryvtt.com/packages/monks-active-tiles/">Monk's Active Tile Triggers</a>
+- <a href="https://foundryvtt.com/packages/socketlib">Socketlib</a>
+
+#### Install the module
+<Steps>
+    1. Right-click the manifest link below and choose "Copy Link Address" :   
+            https://github.com/Jules-Bens-Aa/jb2a_puzzle/releases/latest/download/module.json
+    2. Go to your FoundryVTT's "Add-on Modules" tab
+
+            <p align="center"><Image src={fvttLandingPage} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+
+    3. Click on "Install Module"
+
+            <p align="center"><Image src={fvttAddOnModules} alt="Add-On Modules Tab on FoundryVTT" style="width: 50%;"/></p>            
+
+    5. Paste the manifest link in the relevant field and click install.
+
+            <p align="center"><Image src={fvttAddOnModulesInstall} alt="Pasting the manifest link and click on 'Install'" style="width: 50%;"/></p>
+
+    6. Don't forget to install the modules listed as dependencies in the previous section.
+
+            <LinkCard title="Dependencies to install" href="/jb2a-wiki/other-projects/music-puzzle/" />
+            
+    8. Once installed, you need to enable our module in your world. Start your world and click on “Manage Modules” in the Settings tab.
+
+            <p align="center"><Image src={fvttManageModule} alt="Open 'Manage Module' in the world settings" style="width: 50%;"/></p>
+
+    9. Finally find our module and enable it. That's it, our JB2A-Extras module is ready for you to use.
+
+            <p align="center"><Image src={fvttModuleManagement} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
+</Steps>
+
+#### Setup the Scene
+
+<video  controls ><source src={ videoguide } type="video/webm"></source></video>
+
+
+  <Aside type="tip" title="Music Track">
+    *Music track is ``Deadlock``, by <a href="https://www.purple-planet.com/">Purple Planet Music</a>* 
+  </Aside>
+
+<Steps>
+
+    1. Once the module is activated, open the Compendium tab and right-click on the "JB2A PUZLLE MACROS" compendium and choose "import all"
+
+        <p align="center"><Image src={macroImport} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+    
+    2. Then drag the three macros on your macro hotbar at the bottom
+
+        <p align="center"><Image src={macroDrag} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+
+    3. Click on the Saw icon, executing the macro called "JB2A - Puzzle Setup"
+    You'll see loads of tiles appearing in your scene, in a sort of pattern. You can arrange these as you wish, this is just a suggestion. And you can also change the texture of the pressure plate. 
+
+        <p align="center"><Image src={setup} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+    
+    4. Now, you can setup walls if you so wish. I've drawn them like so
+
+        <p align="center"><Image src={walls} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+
+    5. Add a door somewhere. I've made mine the exit of this weird confined chamber but you don't have to.  
+    Double right-click on this newly created door and add the tag ``jb2a-door`` like so
+
+        <p align="center"><Image src={door} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+
+    6. You'll notice in your Journals tab that the setup macro has created two journal entries. They're empty for now.  
+    Click to execute the "JB2A - Pressure Plate" macro in your hotbar (or step on it with a token, it does the same thing). 
+
+        <p align="center"><Image src={pressurePlate} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+
+    7. After 5 seconds, a preliminary sequence will appear in the GM journal. That's it, the puzzle is setup!
+    The next time a player steps onto the pressure plate, it'll create a new sequence and they'll have to carefully step on the right "notes" to make a guess, which will appear in their journal and finally step on the pressure plate once more to resolve the puzzle.
+
+        <p align="center"><Image src={playerSteps} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+
+
+</Steps>
+
+#### Cleanup
+
+Once the session has ended, you can execute the "JB2A - Puzzle Cleanup" macro (crossed bones icon). It will delete the journals, tiles and macros (except the three you imported at the start)  
+The only things left will be the walls, the door and the three setup macros.
+
+#### Additional Notes
+
+The sounds provided in the module are from the <a href="https://theremin.music.uiowa.edu/MIS.html">University of Iowa Musical Instrument Samples</a>
+
+There are quite a few things I'd like to add and improve for this project, but alas, we don't often have the extra time!  
+If you have an idea and would like to contribute, please let us know in our [Discord server](https://discord.gg/gmd8MAPX4m)  
+I'd love to add:  
+- Different Puzzle/Ciphers
+- Add some settings for more custom configuration:
+    - sequence of 5 notes or more for increased difficulty for example
+    - an option to change the musical scale for all music notes. The GM could choose from a dropdown or input the scale themselves. Right now it's in a basic C major scale, picked at random over 5 octaves.
+    - Replace the macros by buttons in the settings and make it entirely script-based instead. It would make the setup much easier and straightforward, despite removing some freedom of customization perhaps, for the more code-oriented people.
+- Maybe make an actual piano-like design with a pitch up/down an octave.
+- Bring some more instrument sounds like a guitar, harp, violin/cello, maybe Peri from PSFX would be interested in a collab? 😉

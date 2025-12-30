@@ -20,28 +20,40 @@ import pressurePlate from '/src/assets/img/music-puzzle/06music-puzzle-PressureP
 import playerSteps from '/src/assets/img/music-puzzle/07music-puzzle-PlayerSteps.png'
 
 import videoguide from '/src/assets/vid/MusicPuzzleV017.mp4'
+import videoguidesetup from '/src/assets/vid/MusicPuzzleSetupV020.mp4'
+
 
 
 
 ## Puzzle Objective
 
-The first time a player steps on the pressure plate, a sequence of four notes will play.  
+Players need to repeat the sequence of notes in the exact same order by walking on each note and then walking on the pressure plate to check their answer against the solution.
+By default, a failure will reset the pattern and the GM can spawn a creature of their choice whereas a success will open the doors for the players to escape/access another room.
+
+The first time a player steps on the pressure plate, a sequence of notes will play above the pressure plate in the middle.
+
 This sequence of notes will be inscribed in a GM-only journal.  
 The players then have to remember the sequence and input it in their shared journal by stepping on the correct tiles in the same order. 
+
 When the players think they have the right sequence, one of them can step on the pressure plate once more to check if they have the correct answer.  
-If the pattern is the same, the door will open. The twist is they only have 5 seconds before the door closes again and a new pattern starts. I felt it was my duty to come up with a way to split the party!😈
+
+If the pattern is the same, the doors will open (any door with the tag "jb2a_puzzle"). 
+If the "reset pattern" setting is turned on, the players will only have a few seconds (determined by the countdown setting) before the door closes again and a new pattern starts once more. I'm sure you'll find a clever way to split the party!😈
 
 ## How to Install
 
 #### Prerequisites
 
-This module is free but it requires the JB2A Patreon collection (The music notes were added a long time ago so you don't necessarily need the latest version)  
-It should work for FoundryVTT V10, V11 and V12.  
+This module is free but it requires the JB2A Patreon collection.
+This new version requires Foundry VTT V12 or above.
 It also requires these modules to be installed as dependencies: 
 - <a href="https://foundryvtt.com/packages/sequencer">Sequencer</a>
 - <a href="https://foundryvtt.com/packages/tagger">Tagger</a>
 - <a href="https://foundryvtt.com/packages/monks-active-tiles/">Monk's Active Tile Triggers</a>
 - <a href="https://foundryvtt.com/packages/socketlib">Socketlib</a>
+
+Optional: 
+- <a href="https://foundryvtt.com/packages/psfx">PSFX (free version)</a> or <a href="https://patreon.com/PeriSFX">PSFX - Patreon</a>
 
 #### Install the module
 <Steps>
@@ -67,14 +79,14 @@ It also requires these modules to be installed as dependencies:
 
             <p align="center"><Image src={fvttManageModule} alt="Open 'Manage Module' in the world settings" style="width: 50%;"/></p>
 
-    9. Finally find our module and enable it. That's it, our JB2A-Extras module is ready for you to use.
+    9. Finally find our module and enable it. That's it, our JB2A-Music Puzzle module is ready for you to use.
 
             <p align="center"><Image src={fvttModuleManagement} alt="Enabling our module in the Module Management window" style="width: 50%;"/></p>
 </Steps>
 
 #### Setup the Scene
 
-<video  controls ><source src={ videoguide } type="video/webm"></source></video>
+<video  controls ><source src={ videoguidesetup } type="video/webm"></source></video>
 
 
   <Aside type="tip" title="Music Track">
@@ -83,57 +95,35 @@ It also requires these modules to be installed as dependencies:
 
 <Steps>
 
-    1. Once the module is activated, open the Compendium tab and right-click on the "JB2A PUZLLE MACROS" compendium and choose "import all"
+    1. Once the module is activated, open the settings and peruse through the options. Keep in mind that wall creation and musical scale are two options that will require a full reset because tiles and walls are only configured during setup.
 
-        <p align="center"><Image src={macroImport} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+    2. You'll notice in your Journals tab that two journal entries have been added. Players will only have access to the player entry. (Also, if you add players after the setup, you'll need to give them permissions to it)
+    That's it, the puzzle is ready. You can move the tiles around, change the texture of the pressure plate, move the doors, delete one of them or even copy paste one of these doors if you want/need.
+
+    3. When a player steps on the pressure plate, they will see and hear a new pattern. They need to replicate this pattern by stepping on the correct note tiles, which will fill their journal entry with their "guess". 
     
-    2. Then drag the three macros on your macro hotbar at the bottom
+    4. You can now increase the number of notes in the pattern from the settings so the first or next pattern will be harder to remember if you so wish. 
 
-        <p align="center"><Image src={macroDrag} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
-
-    3. Click on the Saw icon, executing the macro called "JB2A - Puzzle Setup"
-    You'll see loads of tiles appearing in your scene, in a sort of pattern. You can arrange these as you wish, this is just a suggestion. And you can also change the texture of the pressure plate. 
-
-        <p align="center"><Image src={setup} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
-    
-    4. Now, you can setup walls if you so wish. I've drawn them like so
-
-        <p align="center"><Image src={walls} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
-
-    5. Add a door somewhere. I've made mine the exit of this weird confined chamber but you don't have to.  
-    Double right-click on this newly created door and add the tag ``jb2a-door`` like so
-
-        <p align="center"><Image src={door} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
-
-    6. You'll notice in your Journals tab that the setup macro has created two journal entries. They're empty for now.  
-    Click to execute the "JB2A - Pressure Plate" macro in your hotbar (or step on it with a token, it does the same thing). 
-
-        <p align="center"><Image src={pressurePlate} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
-
-    7. After 5 seconds, a preliminary sequence will appear in the GM journal. That's it, the puzzle is setup!
-    The next time a player steps onto the pressure plate, it'll create a new sequence and they'll have to carefully step on the right "notes" to make a guess, which will appear in their journal and finally step on the pressure plate once more to resolve the puzzle.
-
-        <p align="center"><Image src={playerSteps} alt="Landing Page of FoundryVTT" style="width: 50%;"/></p>
+    5. Also, you have the option to spawn an enemy to fight when the pattern the players entered is wrong (careful, the enemy will also trigger the tiles!). If you have an actor ready, you can just add its name into the settings. Copying the uuid from a compendium actor will also work. Leaving this field empty will skip this functionality.
 
 
 </Steps>
 
 #### Cleanup
 
-Once the session has ended, you can execute the "JB2A - Puzzle Cleanup" macro (crossed bones icon). It will delete the journals, tiles and macros (except the three you imported at the start)  
-The only things left will be the walls, the door and the three setup macros.
+Once finished, you can go to the module's settings and click on the cleanup button. This will delete everything related to the puzzle only.
 
 #### Additional Notes
 
 The sounds provided in the module are from the <a href="https://theremin.music.uiowa.edu/MIS.html">University of Iowa Musical Instrument Samples</a>
 
-There are quite a few things I'd like to add and improve for this project, but alas, we don't often have the extra time!  
+It's a good improvement on what the module was originally, but more importantly, it should be easier to expand and bring different ideas of puzzles!  
 If you have an idea and would like to contribute, please let us know in our [Discord server](https://discord.gg/gmd8MAPX4m)  
 I'd love to add:  
 - Different Puzzle/Ciphers
 - Add some settings for more custom configuration:
-    - sequence of 5 notes or more for increased difficulty for example
-    - an option to change the musical scale for all music notes. The GM could choose from a dropdown or input the scale themselves. Right now it's in a basic C major scale, picked at random over 5 octaves.
-    - Replace the macros by buttons in the settings and make it entirely script-based instead. It would make the setup much easier and straightforward, despite removing some freedom of customization perhaps, for the more code-oriented people.
+    - ~~sequence of 5 notes or more for increased difficulty for example~~
+    - ~~an option to change the musical scale for all music notes. The GM could choose from a dropdown or input the scale themselves. Right now it's in a basic C major scale, picked at random over 5 octaves.~~
+    - ~~Replace the macros by buttons in the settings and make it entirely script-based instead. It would make the setup much easier and straightforward, despite removing some freedom of customization perhaps, for the more code-oriented people.~~
 - Maybe make an actual piano-like design with a pitch up/down an octave.
-- Bring some more instrument sounds like a guitar, harp, violin/cello, maybe Peri from PSFX would be interested in a collab? 😉
+- Bring some more instrument sounds like a guitar, harp, violin/cello, maybe Peri from PSFX would be interested in a collab? 😉 (This is being discussed and we'll work on it as a side-project!!)
