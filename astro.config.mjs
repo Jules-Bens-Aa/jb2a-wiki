@@ -63,16 +63,16 @@ export default defineConfig({
         disable404Route: true,
         favicon: '/favicon.svg',
         head: [
-            // Add ICO favicon fallback for Safari.
             {
               tag: 'link',
-              attrs: {
-                rel: 'icon',
-                href: '/favicon.ico',
-                sizes: '32x32',
-              },
+              attrs: { rel: 'icon', href: '/favicon.ico', sizes: '32x32' },
             },
-          ],
+            // Auto-resize the troubleshooter iframe
+            {
+              tag: 'script',
+              attrs: { src: '/jb2a-wiki/troubleshooter-resize.js' },
+            },
+        ],
 // Custom Components
         components: {
             //Override *.astro
@@ -128,7 +128,7 @@ export default defineConfig({
                 label: 'Troubleshooting',
                 collapsed: true,
                 items: [
-
+                    'troubleshooting/guide',
                     'troubleshooting/how-to',         
                     'troubleshooting/jb2a',
                     'troubleshooting/fvtt',

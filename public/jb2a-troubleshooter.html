@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JB2A Interactive Troubleshooter</title>
+<style>
+/* ── JB2A design tokens (from custom.css) ─────────────────────── */
+:root {
+  --jb2a-grey-000:   #141414;
+  --jb2a-grey-050:   #191919;
+  --jb2a-grey-100:   #212121;
+  --jb2a-grey-200:   #313131;
+  --jb2a-grey-300:   #414141;
+  --jb2a-slate-100:  #28262e;
+  --jb2a-slate-200:  #5a4e7c;
+  --jb2a-orange-000: #e3621f;
+  --jb2a-orange-100: #cc6127;
+  --jb2a-orange-200: #ad5b2f;
+  --jb2a-orange-300: #8f5232;
+  --jb2a-yellow-000: #ffba00;
+  --jb2a-yellow-100: #dfa812;
+  --jb2a-yellow-200: #cf9f19;
+  --jb2a-yellow-300: #be9627;
+  --jb2a-white-000:  #dfdfdf;
+  --jb2a-white-100:  #cecece;
+  --jb2a-white-200:  #9b9b9b;
+  --jb2a-white-300:  #727272;
+
+  /* dark-mode working vars */
+  --accent:         var(--jb2a-yellow-000);
+  --accent-glow:    rgba(255,186,0,0.09);
+  --accent-border:  rgba(255,186,0,0.28);
+  --orange:         var(--jb2a-orange-000);
+  --orange-glow:    rgba(227,98,31,0.12);
+  --orange-border:  rgba(227,98,31,0.30);
+  --discord:        #5865F2;
+  --green:          #6dba3e;
+  --green-glow:     rgba(109,186,62,0.10);
+  --green-border:   rgba(109,186,62,0.28);
+
+  --bg:             var(--jb2a-grey-100);
+  --bg-nav:         var(--jb2a-grey-000);
+  --bg-card:        var(--jb2a-grey-050);
+  --bg-hover:       var(--jb2a-grey-200);
+  --bg-input:       var(--jb2a-grey-000);
+  --border:         var(--jb2a-grey-200);
+  --border-accent:  rgba(255,186,0,0.35);
+  --text:           var(--jb2a-white-100);
+  --text-muted:     var(--jb2a-white-200);
+  --text-dim:       var(--jb2a-white-300);
+  --text-accent:    var(--jb2a-yellow-000);
+
+  --radius:    8px;
+  --radius-lg: 12px;
+  --trans:     0.16s ease;
+  --font:      'Futura', 'Century Gothic', 'Trebuchet MS', ui-sans-serif, sans-serif;
+  --mono:      ui-monospace, 'SFMono-Regular', Menlo, monospace;
+}
+[data-theme="light"] {
+  --accent:        var(--jb2a-orange-200);
+  --accent-glow:   rgba(173,91,47,0.08);
+  --accent-border: rgba(173,91,47,0.30);
+  --text-accent:   var(--jb2a-orange-200);
+
+  --bg:        var(--jb2a-white-000);
+  --bg-nav:    var(--jb2a-white-100);
+  --bg-card:   #ffffff;
+  --bg-hover:  #ebe9e3;
+  --bg-input:  #f5f3ee;
+  --border:    #d0cdc6;
+  --border-accent: rgba(173,91,47,0.35);
+  --text:      var(--jb2a-grey-000);
+  --text-muted:#555555;
+  --text-dim:  #888888;
+}
+
+/* ── Reset ─────────────────────────────────────────────────────── */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+
+/* scrollbar, matches wiki custom.css */
+::-webkit-scrollbar{width:7px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:var(--jb2a-yellow-000);}
+::-webkit-scrollbar-thumb:hover{background:var(--jb2a-orange-000);}
+[data-theme="light"] ::-webkit-scrollbar-thumb{background:var(--jb2a-orange-300);}
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover{background:var(--jb2a-orange-000);}
+
+body{font-family:var(--font);background:var(--bg);color:var(--text);min-height:100vh;line-height:1.75;font-size:15px;}
+a{color:var(--text-accent);text-decoration:none;}
+a:hover{text-decoration:underline;}
+code{font-family:var(--mono);font-size:.82em;background:var(--jb2a-grey-300);color:var(--jb2a-yellow-000);padding:2px 7px;border-radius:5px;border:1px solid rgba(255,186,0,.2);}
+[data-theme="light"] code{background:#e8e5de;color:var(--jb2a-orange-200);border-color:rgba(173,91,47,.2);}
+
+/* ── Header ─────────────────────────────────────────────────────── */
+.site-header{background:var(--bg-nav);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100;padding:0 1.5rem;}
+.header-inner{max-width:800px;margin:0 auto;height:56px;display:flex;align-items:center;justify-content:space-between;gap:1rem;}
+.logo-group{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.logo-mark{width:34px;height:34px;background:var(--jb2a-yellow-000);border-radius:var(--radius);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:var(--jb2a-grey-000);letter-spacing:.05em;flex-shrink:0;}
+.logo-text{font-size:14px;font-weight:600;color:var(--text);display:block;letter-spacing:.03em;}
+.logo-sub{font-size:11px;color:var(--text-dim);display:block;}
+.header-actions{display:flex;align-items:center;gap:8px;}
+.hdr-btn{background:transparent;border:1px solid var(--border);border-radius:var(--radius);padding:5px 12px;font-size:12px;color:var(--text-muted);cursor:pointer;font-family:var(--font);transition:border-color var(--trans),color var(--trans);white-space:nowrap;text-decoration:none;display:inline-block;}
+.hdr-btn:hover{border-color:var(--border-accent);color:var(--text-accent);text-decoration:none;}
+
+/* ── Layout ─────────────────────────────────────────────────────── */
+.main{max-width:800px;margin:0 auto;padding:0rem 1.5rem 2rem;}
+
+/* ── Hero ───────────────────────────────────────────────────────── */
+.hero{text-align:center;margin-bottom:2.5rem;padding:1.75rem 1rem 1.25rem;}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);background:var(--accent-glow);border:1px solid var(--accent-border);border-radius:20px;padding:4px 13px;margin-bottom:1rem;}
+.hero h1{font-size:clamp(1.4rem,4vw,1.9rem);font-weight:600;color:var(--text);line-height:1.2;margin-bottom:.75rem;letter-spacing:.02em;}
+.hero p{font-size:14px;color:var(--text-muted);max-width:460px;margin:0 auto;}
+
+/* ── Progress ───────────────────────────────────────────────────── */
+.progress-wrap{height:3px;background:var(--border);border-radius:2px;margin-bottom:1.25rem;overflow:hidden;}
+.progress-fill{height:100%;background:linear-gradient(90deg,var(--jb2a-yellow-300),var(--jb2a-yellow-000));border-radius:2px;transition:width .4s cubic-bezier(.4,0,.2,1);}
+
+/* ── Breadcrumb ─────────────────────────────────────────────────── */
+.breadcrumb{font-size:12px;color:var(--text-dim);margin-bottom:1rem;min-height:20px;display:flex;flex-wrap:wrap;align-items:center;gap:4px;letter-spacing:.02em;}
+.breadcrumb a{color:var(--text-muted);text-decoration:none;transition:color var(--trans);}
+.breadcrumb a:hover{color:var(--text-accent);}
+.breadcrumb .sep{color:var(--text-dim);}
+.breadcrumb .cur{color:var(--text);}
+
+/* ── Question card ──────────────────────────────────────────────── */
+.step-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1rem;animation:fadeUp .2s ease both;}
+@keyframes fadeUp{from{opacity:0;transform:translateY(7px);}to{opacity:1;transform:translateY(0);}}
+.step-q{font-size:15px;font-weight:600;color:var(--text);margin-bottom:1.25rem;line-height:1.4;letter-spacing:.015em;}
+.step-hint{font-size:13px;color:var(--text-muted);background:var(--accent-glow);border:1px solid var(--accent-border);border-left:3px solid var(--accent);border-radius:0 var(--radius) var(--radius) 0;padding:10px 14px;margin-bottom:1.25rem;line-height:1.65;}
+.options{display:flex;flex-direction:column;gap:7px;}
+.opt-btn{background:var(--bg);border:1px solid var(--border);border-radius:var(--radius);padding:11px 14px;font-size:13.5px;color:var(--text);cursor:pointer;text-align:left;font-family:var(--font);transition:border-color var(--trans),background var(--trans),transform .1s;display:flex;align-items:center;gap:10px;letter-spacing:.01em;}
+.opt-btn::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--text-dim);flex-shrink:0;transition:background var(--trans);}
+.opt-btn:hover{border-color:var(--border-accent);background:var(--bg-hover);}
+.opt-btn:hover::before{background:var(--accent);}
+.opt-btn:active{transform:scale(.99);}
+
+/* ── Solution card ──────────────────────────────────────────────── */
+.sol-card{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.5rem;margin-bottom:1rem;animation:fadeUp .2s ease both;}
+.sol-card.fix    {border-color:rgba(255,186,0,.25);border-left:3px solid var(--jb2a-yellow-000);}
+.sol-card.solved {border-color:rgba(109,186,62,.25);border-left:3px solid var(--green);}
+.sol-card.info   {border-color:rgba(255,186,0,.2); border-left:3px solid var(--jb2a-yellow-300);}
+.sol-card.warn   {border-color:rgba(227,98,31,.28);border-left:3px solid var(--jb2a-orange-000);}
+.sol-card.discord{border-color:rgba(88,101,242,.3);border-left:3px solid var(--discord);}
+
+.tag{display:inline-flex;align-items:center;font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:3px 10px;border-radius:20px;margin-bottom:.85rem;}
+.tag.fix    {background:var(--accent-glow);  color:var(--jb2a-yellow-000);border:1px solid var(--accent-border);}
+.tag.solved {background:var(--green-glow);   color:var(--green);          border:1px solid var(--green-border);}
+.tag.info   {background:var(--accent-glow);  color:var(--jb2a-yellow-200);border:1px solid rgba(255,186,0,.2);}
+.tag.warn   {background:var(--orange-glow);  color:var(--jb2a-orange-000);border:1px solid var(--orange-border);}
+.tag.discord{background:rgba(88,101,242,.12);color:#8b9cf4;               border:1px solid rgba(88,101,242,.3);}
+
+.sol-title{font-size:15px;font-weight:600;color:var(--text);margin-bottom:.7rem;line-height:1.35;letter-spacing:.015em;}
+.sol-body{font-size:13.5px;color:var(--text-muted);line-height:1.8;margin-bottom:1rem;}
+.sol-body strong{color:var(--text);font-weight:600;}
+
+.sol-links{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:1rem;}
+.sol-link{display:inline-flex;align-items:center;gap:4px;font-size:12px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--text-accent);background:var(--accent-glow);border:1px solid var(--accent-border);border-radius:var(--radius);padding:5px 10px;text-decoration:none;transition:background var(--trans),border-color var(--trans);}
+.sol-link:hover{background:rgba(255,186,0,.15);border-color:var(--accent);text-decoration:none;}
+.sol-link::after{content:' ↗';font-size:10px;opacity:.65;}
+
+.followup-btn{display:inline-flex;align-items:center;gap:6px;background:var(--accent-glow);border:1px solid var(--accent-border);border-radius:var(--radius);padding:9px 16px;font-size:13px;font-weight:600;color:var(--text-accent);cursor:pointer;font-family:var(--font);letter-spacing:.02em;transition:background var(--trans),border-color var(--trans);margin-top:4px;}
+.followup-btn:hover{background:rgba(255,186,0,.18);border-color:var(--accent);}
+.followup-btn::after{content:' →';}
+
+/* ── Nav ────────────────────────────────────────────────────────── */
+.nav-row{display:flex;gap:8px;margin-top:1.25rem;padding-top:1.25rem;border-top:1px solid var(--border);}
+.nav-btn{background:transparent;border:1px solid var(--border);border-radius:var(--radius);padding:7px 14px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--text-muted);cursor:pointer;font-family:var(--font);transition:border-color var(--trans),color var(--trans),background var(--trans);}
+.nav-btn:hover{border-color:var(--border-accent);color:var(--text-accent);background:var(--bg-hover);}
+
+/* ── Discord report form ────────────────────────────────────────── */
+.report-intro{font-size:13.5px;color:var(--text-muted);line-height:1.75;margin-bottom:1.25rem;}
+.report-intro a{color:var(--text-accent);}
+.report-form{background:var(--bg-nav);border:1px solid var(--border);border-radius:var(--radius-lg);padding:1.25rem;margin-bottom:1rem;}
+.form-section-title{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);margin-bottom:.75rem;}
+.report-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;}
+@media(max-width:520px){.report-grid{grid-template-columns:1fr;}}
+.report-field{display:flex;flex-direction:column;gap:5px;}
+.report-field.full{grid-column:1/-1;}
+.report-field label{font-size:10.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--text-dim);}
+.report-field input,.report-field select,.report-field textarea{font-family:var(--font);font-size:13px;background:var(--bg-input);border:1px solid var(--border);border-radius:var(--radius);padding:8px 11px;color:var(--text);outline:none;transition:border-color var(--trans);}
+.report-field input:focus,.report-field select:focus,.report-field textarea:focus{border-color:var(--border-accent);}
+.report-field textarea{resize:vertical;min-height:70px;line-height:1.65;}
+.report-field select option{background:var(--jb2a-grey-050);}
+[data-theme="light"] .report-field select option{background:#fff;}
+
+.tried-area{margin-bottom:12px;}
+.tried-label{font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-dim);margin-bottom:6px;}
+.tried-tags{display:flex;flex-wrap:wrap;gap:5px;}
+.tried-tag{font-size:11.5px;background:var(--orange-glow);color:var(--jb2a-orange-000);border:1px solid var(--orange-border);border-radius:5px;padding:3px 9px;}
+
+.report-actions{display:flex;align-items:center;flex-wrap:wrap;gap:10px;margin-top:4px;}
+.copy-btn{display:inline-flex;align-items:center;gap:7px;background:var(--discord);color:#fff;border:none;border-radius:var(--radius);padding:10px 20px;font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;cursor:pointer;font-family:var(--font);transition:opacity var(--trans),transform .1s;}
+.copy-btn:hover{opacity:.88;}
+.copy-btn:active{transform:scale(.98);}
+.copy-btn.ok{background:transparent;color:var(--green);border:1px solid var(--green-border);}
+.discord-join{display:inline-flex;align-items:center;gap:5px;font-size:12px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--text-muted);border:1px solid var(--border);border-radius:var(--radius);padding:9px 16px;text-decoration:none;transition:border-color var(--trans),color var(--trans);}
+.discord-join:hover{border-color:rgba(88,101,242,.5);color:#8b9cf4;text-decoration:none;}
+
+/* ── Footer ─────────────────────────────────────────────────────── */
+.site-footer{border-top:1px solid var(--border);padding:1.5rem;text-align:center;font-size:11.5px;letter-spacing:.04em;color:var(--text-dim);}
+.site-footer a{color:var(--text-muted);transition:color var(--trans);}
+.site-footer a:hover{color:var(--text-accent);text-decoration:none;}
+.footer-sep{margin:0 8px;opacity:.4;}
+</style>
+</head>
+<body>
+
+<!-- <header class="site-header">
+  <div class="header-inner">
+    <a href="https://jules-bens-aa.github.io/jb2a-wiki/" class="logo-group">
+      <div class="logo-mark">JB2A</div>
+      <div>
+        <span class="logo-text">JB2A Wiki</span>
+        <span class="logo-sub">Interactive Troubleshooter</span>
+      </div>
+    </a>
+    <div class="header-actions">
+      <a href="https://jules-bens-aa.github.io/jb2a-wiki/" class="hdr-btn">← Wiki</a>
+      <button class="hdr-btn" id="theme-btn" onclick="toggleTheme()">☀ Light</button>
+    </div>
+  </div>
+</header> -->
+
+<main class="main">
+  <div class="hero">
+    <div class="hero-badge">Step-by-step guide</div>
+    <h1>What's the issue?</h1>
+    <p>Answer a few questions and we'll walk you to a fix, or build a ready-to-paste Discord report with everything we need.</p>
+  </div>
+  <div class="progress-wrap"><div class="progress-fill" id="prog" style="width:0%"></div></div>
+  <div class="breadcrumb" id="breadcrumb"></div>
+  <div id="content"></div>
+</main>
+
+<!-- <footer class="site-footer">
+  <a href="https://jules-bens-aa.github.io/jb2a-wiki/">Wiki</a><span class="footer-sep">·</span>
+  <a href="https://discord.gg/gmd8MAPX4m">Discord</a><span class="footer-sep">·</span>
+  <a href="https://www.patreon.com/JB2A">Patreon</a><span class="footer-sep">·</span>
+  <a href="https://library.jb2a.com/">Asset Library</a>
+</footer> -->
+
+<script>
+const WIKI    = "https://jules-bens-aa.github.io/jb2a-wiki";
+const DISCORD = "https://discord.gg/gmd8MAPX4m";
+
+const tree = {
+  start:{q:"What best describes your issue?",opts:[
+    {label:"Module not loading or not showing up",         next:"module_install"},
+    {label:"VFX / animations not working or not visible",  next:"vfx_root"},
+    {label:"Configuration or settings confusion",          next:"config_root"},
+    {label:"Conflict with another module",                 next:"conflict_root"},
+    {label:"Performance issues (lag or slowdowns)",        next:"perf_root"},
+    {label:"Patreon access or subscription issue",         next:"patreon_root"},
+    {label:"Discord server (roles or missing channels)",   next:"discord_roles"}
+  ]},
+
+  module_install:{q:"How did you install the module?",opts:[
+    {label:"Manifest link (Patreon module)",               next:"mod_manifest"},
+    {label:"Manual install via zip file",                  next:"mod_manual"},
+    {label:"Free module via FoundryVTT module browser",    next:"mod_free"},
+    {label:"I'm trying to update it",                      next:"mod_update"}
+  ]},
+  mod_manifest:{type:"sol",tag:"fix",title:"Manifest link install checklist",
+    body:`Copy the manifest URL from the <strong>Master Post</strong> on Patreon, not from a post or announcement. A paid tier subscription is required; a custom pledge will not work.<br><br>Paste the URL in FoundryVTT → Add-on Modules → Install Module, click Install, then <strong>restart FoundryVTT</strong> and enable the module inside your world.`,
+    links:[{l:"Install guide",u:`${WIKI}/getting-started/guides#patreon-module`},{l:"Patreon",u:"https://www.patreon.com/JB2A"}],followup:"module_enabled"},
+  mod_manual:{type:"sol",tag:"fix",title:"Manual install checklist",
+    body:`Your folder structure must be exactly: <code>data/modules/jb2a_patreon/module.json</code> (the folder name is case-sensitive).<br><br>After placing the files, <strong>restart FoundryVTT</strong> (required for manual installs). Then enable the module in your world's Add-on Modules settings.`,
+    links:[{l:"Manual install guide",u:`${WIKI}/getting-started/guides#manual-install`}],followup:"module_enabled"},
+  mod_free:{type:"sol",tag:"fix",title:"Free module not showing up",
+    body:"Restart FoundryVTT, then go to your world's Add-on Modules settings and confirm the module is enabled. If it still doesn't appear, try uninstalling and reinstalling it from the module browser.",
+    links:[{l:"Troubleshooting guide",u:`${WIKI}/troubleshooting/jb2a#module-not-displaying`}],followup:"module_enabled"},
+  mod_update:{q:"Which module are you updating?",opts:[
+    {label:"Free JB2A module",  next:"update_free"},
+    {label:"Patreon module",    next:"update_patreon"}
+  ]},
+  update_free:{type:"sol",tag:"fix",title:"Updating the free module",
+    body:"Use FoundryVTT's built-in updater: Add-on Modules → Update All (or click the update arrow next to JB2A Free). If you see a 'No manifest URL' error, you may be accidentally trying to update the Patreon module this way. That won't work.",
+    links:[],followup:null},
+  update_patreon:{type:"sol",tag:"fix",title:"Updating the Patreon module",
+    body:`The Patreon module <strong>cannot</strong> be updated through FoundryVTT's updater. Download the new version from the Master Post on Patreon and reinstall it manually.<br><br>To prevent the 'No manifest URL' error, right-click the module in FoundryVTT and lock it.<br><br>If using the 'Only new stuff' zip, run <code>Sequencer.Database.validateEntries("jb2a")</code> in the console afterward to verify everything is in place.`,
+    links:[{l:"Update guide",u:`${WIKI}/getting-started/guides#patreon-module-1`}],followup:null},
+  module_enabled:{q:"After installing and restarting, is the module now visible and enabled in your world?",opts:[
+    {label:"Yes, it's enabled!",       next:"sol_done"},
+    {label:"No, still not showing up", next:"sol_report"}
+  ]},
+
+  vfx_root:{q:"What kind of VFX issue are you having?",opts:[
+    {label:"Animations don't trigger at all (Automated-Animations)", next:"vfx_aa_notrigger"},
+    {label:"Only some animations trigger",                            next:"vfx_aa_some"},
+    {label:"Black square instead of the animation",                   next:"vfx_blacksquare"},
+    {label:"Animations look pixelated or overblown",                  next:"vfx_pixi"},
+    {label:"Dark or muddy outline around animations",                 next:"vfx_outline"},
+    {label:"Can't drag animations onto the scene",                    next:"vfx_drag"},
+    {label:"Can't find animations in the browser or database",        next:"vfx_notfound"},
+    {label:"Animations stuck on the scene",                           next:"vfx_stuck"},
+    {label:"Sequencer database errors or 404s",                       next:"vfx_seq_db"}
+  ]},
+  vfx_aa_notrigger:{q:"Let's run through the Automated-Animations diagnostic. Have you checked all of these?",
+    hint:"Open AA's Autorecognition menu → click Diagnostics. Is everything green? Have you targeted a token before using the item? Are Sequencer and Socketlib up to date?",opts:[
+    {label:"Yes, all green, still nothing",     next:"vfx_aa_gamesystem"},
+    {label:"I haven't checked all of these yet", next:"sol_aa_checklist"}
+  ]},
+  sol_aa_checklist:{type:"sol",tag:"fix",title:"Automated-Animations: full diagnostic checklist",
+    body:`Work through these one by one:<br><br>1. <strong>Target a token</strong> before rolling the item.<br>2. Open the AA Autorecognition Menu → click <strong>Diagnostics</strong>. All entries must be green.<br>3. Confirm <strong>Sequencer and Socketlib</strong> are up to date.<br>4. Check AA's settings. Some configurations require rolling for attack or damage before the animation triggers.`,
+    links:[{l:"Troubleshooting steps",u:`${WIKI}/troubleshooting/how-to#-troubleshoot-an-issue-yourself`},{l:"FoundryVTT issues",u:`${WIKI}/troubleshooting/fvtt#automated-animations`}],followup:"still_broken"},
+  vfx_aa_some:{type:"sol",tag:"info",title:"Only some effects trigger",
+    body:"Automated-Animations ships with only a few pre-configured spells and attacks by default. Depending on your game system you may need an additional preset module (e.g. D&D5e Animations or PF2e Animations).<br><br>Read the Understanding Automation page for the full picture, then go through the AA troubleshooting checklist.",
+    links:[{l:"Understanding Automation",u:`${WIKI}/getting-started/understanding-automation`},{l:"FoundryVTT issues",u:`${WIKI}/troubleshooting/fvtt`}],followup:null},
+  vfx_aa_gamesystem:{q:"Is your game system officially supported by Automated-Animations?",opts:[
+    {label:"Yes (D&D5e, PF2e, or another listed system)", next:"sol_aa_item_config"},
+    {label:"I'm not sure",                                next:"sol_aa_gamesystem"}
+  ]},
+  sol_aa_item_config:{type:"sol",tag:"fix",title:"Check the item/spell configuration in AA",
+    body:`Open the item/spell details and look for the AA icon. Check:<br><br>• Is the animation <strong>enabled</strong> for this item?<br>• Search for the item in the global Autorecognition menu. Is it listed?<br>• Toggle <strong>Customize Item</strong> for item-specific settings.<br>• Review the <em>Details</em> tab to confirm everything is set correctly.`,
+    links:[{l:"FoundryVTT issues",u:`${WIKI}/troubleshooting/fvtt#effects-dont-trigger`}],followup:"still_broken"},
+  sol_aa_gamesystem:{type:"sol",tag:"info",title:"Check your game system compatibility",
+    body:"Automated-Animations only supports certain game systems natively. If yours isn't on the list, AA won't trigger animations automatically. You'll need to configure them manually or use a system-specific module.",
+    links:[{l:"AA compatible systems",u:"https://github.com/otigon/automated-jb2a-animations?tab=readme-ov-file#introduction"}],followup:null},
+  vfx_blacksquare:{type:"sol",tag:"fix",title:"Black square instead of animation",
+    body:"Almost always a <strong>browser issue</strong>. Firefox is known to have problems with certain Webm files using the VP9 codec. Switch to a Chromium-based browser: <strong>Chrome or Edge</strong>.<br><br>We are gradually converting affected animations from VP9 to VP8.",
+    links:[{l:"JB2A issues",u:`${WIKI}/troubleshooting/jb2a#black-square-instead-of-animation`}],followup:null},
+  vfx_pixi:{type:"sol",tag:"fix",title:"Pixelated or overblown animations",
+    body:"Usually caused by a browser or GPU driver update. Open <strong>Sequencer module settings</strong> and toggle the <strong>PIXI Fix</strong> option (if it's on, turn it off; if it's off, turn it on). This resolves the issue in most cases immediately.",
+    links:[{l:"FoundryVTT issues",u:`${WIKI}/troubleshooting/fvtt#pixelatedoverblown-animations`}],followup:null},
+  vfx_outline:{type:"sol",tag:"fix",title:"Dark or muddy outline on animations",
+    body:"Open <strong>Sequencer module settings</strong> and enable the <strong>Global PIXI Fix</strong> option (the second PIXI setting). This removes the dark grey outline.",
+    links:[{l:"FoundryVTT issues",u:`${WIKI}/troubleshooting/fvtt#darkmuddy-outline-on-animations`}],followup:null},
+  vfx_drag:{type:"sol",tag:"fix",title:"Can't drag animations onto the scene",
+    body:"This is a known conflict with the <strong>Drag Upload</strong> module. It breaks Webm animations being dragged onto the canvas as tiles. The only fix is to <strong>deactivate the Drag Upload module</strong>.",
+    links:[{l:"JB2A issues",u:`${WIKI}/troubleshooting/jb2a#cant-drop-animations-on-scene`}],followup:null},
+  vfx_notfound:{q:"Which module are you using?",opts:[
+    {label:"Free module",                              next:"vfx_notfound_free"},
+    {label:"Patreon module (only seeing free assets)", next:"vfx_notfound_patreon"}
+  ]},
+  vfx_notfound_free:{type:"sol",tag:"fix",title:"Can't find animations in the database",
+    body:"Common causes: installation wasn't done correctly, the server wasn't restarted after a manual install, or the module isn't enabled in the current world.<br><br>Verify the module is enabled in your world's module settings, then use the Sequencer Database Viewer to browse available assets.",
+    links:[{l:"Assets location guide",u:`${WIKI}/getting-started/guides#assets-location`}],followup:"still_broken"},
+  vfx_notfound_patreon:{type:"sol",tag:"fix",title:"Patreon module showing only free assets",
+    body:"<strong>Uninstall the free module</strong>, you don't need it once the Patreon module is installed and active. All Sequencer database path setups transfer automatically.<br><br>Tiles and tokens set up with direct file paths may break. We can provide a batch fix macro on Discord.",
+    links:[{l:"Install guide",u:`${WIKI}/getting-started/guides#patreon-module`}],followup:null},
+  vfx_stuck:{type:"sol",tag:"fix",title:"Animations stuck on the scene",
+    body:`First, try the <strong>Sequencer Effect Manager</strong> (toolbar button) to dismiss persistent effects.<br><br>If that doesn't work, open the FoundryVTT console (F12 on Windows · Option+Cmd+J on Mac) and run:<br><br><code>await canvas.scene.unsetFlag("sequencer", "effects")</code><br><br>This clears all stuck effects from the current scene.`,
+    links:[{l:"Sequencer issues",u:`${WIKI}/troubleshooting/fvtt#cant-delete-effects-on-scene`}],followup:null},
+  vfx_seq_db:{q:"What kind of Sequencer database error are you seeing?",opts:[
+    {label:"404 errors (files not found)",        next:"sol_seq_404"},
+    {label:"Wrong animation assigned to a path",  next:"sol_seq_wrong"}
+  ]},
+  sol_seq_404:{type:"sol",tag:"fix",title:"Sequencer database 404 errors",
+    body:`Run this in the FoundryVTT console to list missing files:<br><br><code>Sequencer.Database.validateEntries("jb2a")</code><br><br>If the list is small, copy the missing files into the correct folders and run it again to confirm. If the list is large, delete the module entirely and do a clean reinstall.`,
+    links:[{l:"How to use the console",u:`${WIKI}/getting-started/jb2a-fvtt#console`},{l:"Manual install guide",u:`${WIKI}/getting-started/guides#manual-install`},{l:"JB2A issues",u:`${WIKI}/troubleshooting/jb2a#sequencer-database-error`}],followup:"still_broken"},
+  sol_seq_wrong:{type:"sol",tag:"warn",title:"Database path points to the wrong asset",
+    body:`Our validation command confirms file paths exist but can't verify the asset matches its documentation. If a colour, size, or duration is wrong, please let us know on Discord so we can fix it in the next update.`,
+    links:[{l:"Report an issue",u:`${WIKI}/troubleshooting/how-to#-report-an-issue`}],followup:null},
+
+  config_root:{q:"What are you trying to configure?",opts:[
+    {label:"Automated-Animations settings",             next:"sol_aa_checklist"},
+    {label:"Sequencer database paths / data paths",     next:"sol_datapath"},
+    {label:"Unexpected animations on spell templates",  next:"sol_tmfx"},
+    {label:"No sounds with animations",                 next:"sol_nosound"},
+    {label:"Tiled texture on templates",                next:"sol_tiled_texture"}
+  ]},
+  sol_datapath:{type:"sol",tag:"info",title:"Understanding data paths and the Sequencer database",
+    body:"Always use <strong>Sequencer database paths</strong> in your macros and tiles instead of direct file paths. Database paths are portable, they work with both the free and Patreon modules and won't break on updates. Use the Sequencer Database Viewer to find the correct path for any asset.",
+    links:[{l:"What's a data path?",u:`${WIKI}/getting-started/prerequisites#data-path`},{l:"Database Viewer guide",u:`${WIKI}/getting-started/guides#database-viewer`}],followup:null},
+  sol_tmfx:{type:"sol",tag:"info",title:"Unexpected animations on spell templates",
+    body:"The <strong>Token Magic FX (TMFX)</strong> module adds PIXI filter overlays to templates based on damage type. This is not from JB2A. Disable it in TMFX's settings, or disable the module entirely if you don't need its other features.",
+    links:[{l:"JB2A issues",u:`${WIKI}/troubleshooting/jb2a#unexpected-animations-on-template`}],followup:null},
+  sol_nosound:{type:"sol",tag:"info",title:"No sounds with animations",
+    body:"<strong>JB2A provides visual effects only. No audio.</strong> Sounds come from separate modules or resources. If you expected sound from a preset module (e.g. D&D5e-Animations), that module sources audio from the SoundFX Library module or its own bundled files.",
+    links:[{l:"SFX resources",u:`${WIKI}/external-resources/sfx`},{l:"Understanding Automation",u:`${WIKI}/getting-started/understanding-automation`}],followup:null},
+  sol_tiled_texture:{type:"sol",tag:"info",title:"Tiled texture on templates",
+    body:"By default, placing an animation directly as a template texture looks tiled. The <strong>Token Magic FX (TMFX)</strong> module fixes this behaviour. Alternatively, use Sequencer to place the animation on top of or attached to the template via a macro or Automated-Animations.",
+    links:[{l:"JB2A issues",u:`${WIKI}/troubleshooting/jb2a#tiled-template-texture`}],followup:null},
+
+  conflict_root:{q:"Which module conflict are you experiencing?",opts:[
+    {label:"Drag Upload (can't place animations on canvas)",  next:"vfx_drag"},
+    {label:"Token Magic FX (unexpected template effects)",    next:"sol_tmfx"},
+    {label:"Warpgate (module missing or not working)",        next:"sol_warpgate"},
+    {label:"FXMaster (assets missing from Special Effects)",  next:"sol_fxmaster"},
+    {label:"PF2e Animations or PF2e Graphics",               next:"sol_pf2e"},
+    {label:"Something else / unknown conflict",              next:"sol_conflict_generic"}
+  ]},
+  sol_warpgate:{type:"sol",tag:"warn",title:"Warpgate has been discontinued",
+    body:"Warpgate no longer works on FoundryVTT V12 or above. A V11 zip is pinned in the official FoundryVTT Discord in #module-discussion.<br><br>The crosshair functionality is now built into the <strong>Sequencer</strong> module. The mutation system does not have a direct replacement at this time.",
+    links:[{l:"FoundryVTT issues",u:`${WIKI}/troubleshooting/fvtt#cant-find-warpgate`}],followup:null},
+  sol_fxmaster:{type:"sol",tag:"info",title:"FXMaster assets missing",
+    body:"We moved from FXMaster to the Sequencer database. FXMaster integration is disabled by default in our settings, this is intentional. Use the <strong>Sequencer Database Viewer</strong> to access all our assets.",
+    links:[{l:"FoundryVTT issues",u:`${WIKI}/troubleshooting/fvtt#fxmaster`}],followup:null},
+  sol_pf2e:{type:"sol",tag:"info",title:"PF2e Animations / PF2e Graphics issues",
+    body:"Check the module's own wiki documentation first. Then reach us on our Discord server in the <strong>#pf2e-discussion</strong> channel.",
+    links:[{l:"PF2e Animations wiki",u:"https://github.com/MrVauxs/pf2e-jb2a-macros/wiki"},{l:"Discord",u:DISCORD}],followup:null},
+  sol_conflict_generic:{q:"Have you tested with only the required modules active?",
+    hint:"Required: JB2A (free or Patreon), Sequencer, Socketlib, and your automation module. Try in a fresh world with only these enabled to isolate the conflict.",opts:[
+    {label:"Yes, still broken with only required modules", next:"sol_report"},
+    {label:"I haven't tried that yet",                      next:"sol_isolate"}
+  ]},
+  sol_isolate:{type:"sol",tag:"fix",title:"Isolate the conflict",
+    body:"Create a fresh world and enable only: JB2A module, Sequencer, Socketlib, and your automation module. Test there. If the issue disappears, re-enable your other modules one by one until it reappears. That's your culprit.",
+    links:[{l:"Troubleshooting steps",u:`${WIKI}/troubleshooting/how-to#-troubleshoot-an-issue-yourself`}],followup:"still_broken"},
+
+  perf_root:{type:"sol",tag:"info",title:"Performance and lag",
+    body:`Common causes and fixes:<br><br>• <strong>Browser:</strong> Use Chrome or Edge. Firefox and Safari underperform with WebGL-heavy content.<br>• <strong>Stuck effects:</strong> Persistent animations accumulate on a scene. Use the Sequencer Effect Manager to clear them regularly.<br>• <strong>Too many concurrent effects:</strong> Webm animations are GPU-intensive. Reduce simultaneous animated tiles on large scenes.<br>• <strong>Module overload:</strong> Disable any modules you're not actively using.`,
+    links:[{l:"Troubleshooting guide",u:`${WIKI}/troubleshooting/how-to`}],followup:null},
+
+  patreon_root:{q:"What's your Patreon issue?",opts:[
+    {label:"Can't find the manifest or download links", next:"sol_patreon_links"},
+    {label:"No access to the Master Post",              next:"sol_patreon_access"},
+    {label:"Download is too slow or keeps stopping",    next:"sol_patreon_slow"}
+  ]},
+  sol_patreon_links:{type:"sol",tag:"info",title:"Where to find download links",
+    body:"All download links (manifest URL and zip files) are on the <strong>Master Post</strong> on our Patreon page. A paid tier subscription is required; a custom pledge does not grant access. Links also appear with each release announcement on Discord.",
+    links:[{l:"About our Patreon",u:`${WIKI}/getting-started/our-patreon`},{l:"Patreon page",u:"https://www.patreon.com/JB2A"}],followup:null},
+  sol_patreon_access:{type:"sol",tag:"fix",title:"No access to the Master Post",
+    body:"This usually means a payment was declined. Patreon retries over a few days and your access should restore once it clears. Also confirm you're not on a custom pledge, as those don't grant access to our content.",
+    links:[{l:"JB2A Patreon",u:"https://www.patreon.com/JB2A"}],followup:null},
+  sol_patreon_slow:{type:"sol",tag:"fix",title:"Download too slow or stopping",
+    body:`Our module is large. If your connection is slow or the server is geographically distant, the manifest link may time out. Try the <strong>alternative download link</strong> from the Master Post and use a download manager like <a href="https://persepolisdm.github.io/" target="_blank">Persepolis</a> to handle interrupted downloads.`,
+    links:[{l:"Manual install guide",u:`${WIKI}/getting-started/guides#manual-install`}],followup:null},
+
+  discord_roles:{q:"What's your Discord issue?",opts:[
+    {label:"Subscribed on Patreon but have no Discord role", next:"sol_discord_role"},
+    {label:"No access to Patreon-exclusive channels",        next:"sol_discord_channels"},
+    {label:"Channels I expect to see are missing",           next:"sol_discord_missing"}
+  ]},
+  sol_discord_role:{type:"sol",tag:"fix",title:"Patreon role not assigned",
+    body:"You need to link your Patreon account to your Discord account. Follow the instructions in the wiki. It can take a few minutes to take effect after linking.",
+    links:[{l:"Sync Patreon with Discord",u:`${WIKI}/getting-started/discord#patreon-exclusive-roles`}],followup:null},
+  sol_discord_channels:{type:"sol",tag:"info",title:"No Patreon-exclusive channels visible",
+    body:"Once your accounts are linked, the role is assigned automatically and unlocks the exclusive channels. If you've linked them but still don't see the channels after a few minutes, reach out to us directly on Discord.",
+    links:[{l:"Join Discord",u:DISCORD}],followup:null},
+  sol_discord_missing:{type:"sol",tag:"info",title:"Missing channels",
+    body:"Some channels are opt-in. Click the <strong>Browse Channels</strong> button at the top of the channel list in Discord to see all available channels and join the ones you want.",
+    links:[],followup:null},
+
+  still_broken:{q:"Did that solve your issue?",opts:[
+    {label:"Yes, it works now!", next:"sol_done"},
+    {label:"No, still broken",   next:"sol_report"}
+  ]},
+  sol_done:{type:"sol",tag:"solved",title:"Glad it's working!",
+    body:"If you run into other problems, the wiki has guides for most issues.",
+    links:[{l:"Wiki",u:WIKI}],followup:null},
+  sol_report:{type:"report"}
+};
+
+/* ── State ── */
+let history = [], triedTitles = [], _cur = "start";
+
+/* ── Render ── */
+function render(id){
+  _cur = id;
+  const node = tree[id]; if(!node) return;
+  document.getElementById("prog").style.width = (history.length ? Math.min(94, history.length*17) : 0)+"%";
+  renderCrumb();
+  const el = document.getElementById("content"); el.innerHTML = "";
+  if     (node.type==="sol")    renderSol(el,node,id);
+  else if(node.type==="report") renderReport(el);
+  else                          renderQ(el,node);
+}
+
+const CRUMB={start:"Start",module_install:"Module install",vfx_root:"VFX",config_root:"Config",conflict_root:"Conflicts",perf_root:"Performance",patreon_root:"Patreon",discord_roles:"Discord",mod_update:"Update",vfx_aa_notrigger:"AA trigger",vfx_notfound:"Find assets",vfx_seq_db:"Seq DB",still_broken:"Check"};
+function renderCrumb(){
+  const el=document.getElementById("breadcrumb");
+  const named=history.filter(id=>CRUMB[id]);
+  if(!named.length){el.innerHTML="";return;}
+  el.innerHTML=named.map((id,i)=>`<a href="#" onclick="goToIdx(${history.indexOf(id)});return false;">${CRUMB[id]}</a><span class="sep"> › </span>`).join("")+`<span class="cur">now</span>`;
+}
+
+function renderQ(el,node){
+  const d=mk("div","step-card");
+  let h=`<div class="step-q">${node.q}</div>`;
+  if(node.hint) h+=`<div class="step-hint">${node.hint}</div>`;
+  h+=`<div class="options">`+node.opts.map(o=>`<button class="opt-btn" onclick="choose('${o.next}')">${o.label}</button>`).join("")+`</div>`;
+  if(history.length) h+=nav();
+  d.innerHTML=h; el.appendChild(d);
+}
+
+function renderSol(el,node,id){
+  if(node.title&&!triedTitles.includes(node.title)) triedTitles.push(node.title);
+  const d=mk("div","sol-card "+(node.tag||"fix"));
+  const TL={fix:"fix",solved:"solved",info:"info",warn:"heads up",discord:"discord report"};
+  let h=`<span class="tag ${node.tag||"fix"}">${TL[node.tag]||node.tag}</span>`;
+  h+=`<div class="sol-title">${node.title}</div><div class="sol-body">${node.body}</div>`;
+  if(node.links?.length) h+=`<div class="sol-links">`+node.links.map(l=>`<a class="sol-link" href="${l.u}" target="_blank">${l.l}</a>`).join("")+`</div>`;
+  if(node.followup) h+=`<button class="followup-btn" onclick="choose('${node.followup}')">Did this fix your issue?</button>`;
+  h+=nav(); d.innerHTML=h; el.appendChild(d);
+}
+
+function renderReport(el){
+  const hd=mk("div","sol-card discord");
+  hd.innerHTML=`<span class="tag discord">Discord report</span><div class="sol-title">Let's get you the right help</div><div class="report-intro">The guide didn't solve the issue. Fill in the details below and click <strong>Copy report</strong> to get a formatted message ready to paste in our <a href="${DISCORD}" target="_blank">#troubleshooting-forum</a> on Discord. This gives us everything we need to help you quickly, with no back-and-forth.</div>`;
+  el.appendChild(hd);
+  const fc=mk("div","report-form");
+  const tried=triedTitles.length?`<div class="tried-area"><div class="tried-label">Steps already tried via this guide:</div><div class="tried-tags">${triedTitles.map(t=>`<span class="tried-tag">${t}</span>`).join("")}</div></div>`:"";
+  fc.innerHTML=`
+    <div class="form-section-title">Your setup</div>
+    <div class="report-grid">
+      <div class="report-field"><label>FoundryVTT version</label><input type="text" id="r-fvtt" placeholder="e.g. V12.331"></div>
+      <div class="report-field"><label>Game system &amp; version</label><input type="text" id="r-system" placeholder="e.g. DnD5e v4.x.x"></div>
+      <div class="report-field"><label>Hosting method</label><select id="r-hosting"><option value="">Select…</option><option>Self-hosted</option><option>The Forge</option><option>Molten Hosting</option><option>Foundry Server</option><option>Other</option></select></div>
+      <div class="report-field"><label>Browser</label><select id="r-browser"><option value="">Select…</option><option>Chrome</option><option>Edge</option><option>Firefox</option><option>Safari</option><option>Other</option></select></div>
+      <div class="report-field"><label>JB2A module version</label><input type="text" id="r-jb2a" placeholder="Free or Patreon + version"></div>
+      <div class="report-field"><label>Sequencer version</label><input type="text" id="r-seq" placeholder="e.g. 3.x.x"></div>
+    </div>
+    <div class="form-section-title">The issue</div>
+    <div class="report-grid">
+      <div class="report-field full"><label>Describe the issue</label><textarea id="r-desc" placeholder="What's happening? Be as specific as possible."></textarea></div>
+      <div class="report-field full"><label>Steps to reproduce</label><textarea id="r-repro" placeholder="What steps trigger the issue?"></textarea></div>
+      <div class="report-field full"><label>Expected behaviour</label><textarea id="r-expected" placeholder="What did you expect to happen?"></textarea></div>
+      <div class="report-field full"><label>Additional context (console errors, video links, screenshots)</label><textarea id="r-extra" placeholder="Paste any error messages or add links here…"></textarea></div>
+    </div>
+    ${tried}
+    <div class="report-actions">
+      <button class="copy-btn" id="copy-btn" onclick="copyReport()">Copy report to clipboard</button>
+      <a class="discord-join" href="${DISCORD}" target="_blank">Open Discord ↗</a>
+    </div>
+    ${nav()}`;
+  el.appendChild(fc);
+}
+
+function copyReport(){
+  const g=id=>document.getElementById(id)?.value?.trim()||"(not provided)";
+  const tried=triedTitles.length?triedTitles.map(t=>`• ${t}`).join("\n"):"(none)";
+  const txt=[`**Hosting Method**\n${g("r-hosting")}`,`**FoundryVTT Version**\n${g("r-fvtt")}`,`**Game System and Version**\n${g("r-system")}`,`**Browser**\n${g("r-browser")}`,`**JB2A Module Version**\n${g("r-jb2a")}`,`**Sequencer Version**\n${g("r-seq")}`,`**Describe the issue**\n${g("r-desc")}`,`**To Reproduce**\n${g("r-repro")}`,`**Expected behaviour**\n${g("r-expected")}`,`**Steps already tried (via troubleshooter)**\n${tried}`,`**Additional context**\n${g("r-extra")}`].join("\n\n");
+  const done=()=>{const b=document.getElementById("copy-btn");b.textContent="Copied!";b.classList.add("ok");setTimeout(()=>{b.textContent="Copy report to clipboard";b.classList.remove("ok");},2800);};
+  navigator.clipboard.writeText(txt).then(done).catch(()=>{const ta=document.createElement("textarea");ta.value=txt;ta.style.cssText="position:fixed;opacity:0";document.body.appendChild(ta);ta.select();document.execCommand("copy");document.body.removeChild(ta);done();});
+}
+
+/* ── Navigation ── */
+function nav(){return `<div class="nav-row">${history.length?`<button class="nav-btn" onclick="goBack()">← Back</button>`:""}<button class="nav-btn" onclick="restart()">Start over</button></div>`;}
+function choose(id){history.push(_cur);render(id);window.scrollTo({top:0,behavior:"smooth"});}
+function goBack(){if(!history.length)return;render(history.pop());window.scrollTo({top:0,behavior:"smooth"});}
+function goToIdx(i){const t=history[i];history=history.slice(0,i);render(t);window.scrollTo({top:0,behavior:"smooth"});}
+function restart(){history=[];triedTitles=[];render("start");window.scrollTo({top:0,behavior:"smooth"});}
+
+/* ── Theme ── */
+function toggleTheme(){const h=document.documentElement,l=h.getAttribute("data-theme")==="light";h.setAttribute("data-theme",l?"dark":"light");document.getElementById("theme-btn").textContent=l?"☀ Light":"☾ Dark";}
+
+/* ── Helpers ── */
+function mk(tag,cls){const e=document.createElement(tag);e.className=cls;return e;}
+
+render("start");
+</script>
+<script>
+  var lastSent = 0;
+  function sendHeight() {
+    var h = document.documentElement.offsetHeight;
+    if (h !== lastSent) {
+      lastSent = h;
+      window.parent.postMessage({ type: 'resize', height: h }, '*');
+    }
+  }
+  var observer = new ResizeObserver(sendHeight);
+  observer.observe(document.documentElement);
+  sendHeight();
+</script>
+</body>
+</html>
