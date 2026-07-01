@@ -20,5 +20,8 @@
     "starlight-heading-badges": "^0.5.0",
     "starlight-image-zoom": "^0.12.0",
     "typescript": "^5.6.3"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": ["sharp", "esbuild"]
   }
 }
