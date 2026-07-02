@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
+import { unified } from '@astrojs/markdown-remark';
 
 import starlightHeadingBadges from 'starlight-heading-badges'
 import starlightImageZoom from 'starlight-image-zoom'
@@ -12,7 +13,9 @@ export default defineConfig({
     // ? 'https://jules-bens-aa.github.io' : 'http://localhost:4321',
     site: 'https://jules-bens-aa.github.io',
     base: '/jb2a-wiki',
-
+    markdown: {                                       
+        processor: unified(),
+    },
     integrations: [starlight({
 
 // Plugins        
